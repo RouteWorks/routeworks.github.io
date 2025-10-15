@@ -1,0 +1,109 @@
+.dataset-composition-chart {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.chart-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.chart-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+
+/* Pie Chart Container */
+.pie-chart-container {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-height: 600px;
+}
+
+/* Stable Labels Overlay */
+.stable-labels-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.stable-label {
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Tooltip Styling */
+.chart-tooltip {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  z-index: 1000;
+  position: relative;
+}
+
+.tooltip-title {
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.tooltip-value {
+  color: #374151;
+  margin: 0 0 0.25rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.tooltip-category {
+  color: #6b7280;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dataset-composition-chart {
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .chart-title {
+    font-size: 1.25rem;
+  }
+
+  .pie-chart-container {
+    margin: 1rem 0;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .dataset-composition-chart {
+    padding: 1rem;
+  }
+
+  .chart-title {
+    font-size: 1.1rem;
+  }
+
+}

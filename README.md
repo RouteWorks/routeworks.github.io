@@ -1,70 +1,180 @@
-# Getting Started with Create React App
+# RouterArena Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React TypeScript website for the RouterArena research project - an open platform for comprehensive comparison of LLM routers.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+RouterArena is the first open platform enabling comprehensive evaluation and comparison of LLM routers. The platform features:
 
-### `npm start`
+- **Principled Dataset**: 8,400 queries across 9 domains and 44 categories using Dewey Decimal Classification and Bloom's taxonomy
+- **Multi-Dimensional Metrics**: Arena Score, Cost Ratio, Optimality, Latency, and Robustness evaluation
+- **Automated Framework**: Support for both academic and commercial routers with real-time leaderboard updates
+- **Fair Comparison**: Unified evaluation protocol for transparent and reproducible results
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Research Team
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Rice University**
 
-### `npm test`
+- Yifan Lu (yifan.lu@rice.edu)
+- Rixin Liu (rixin.liu@rice.edu)
+- Jiayi Yuan (jy101@rice.edu)
+- Xingqi Cui (xc66@rice.edu)
+- Shenrun Zhang (sz81@rice.edu)
+- Hongyi Liu (hl87@rice.edu)
+- Jiarong Xing (jxing@rice.edu)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Website Features
 
-### `npm run build`
+### 🏠 Home Page
+- Project overview and key features
+- Dataset statistics and difficulty levels
+- Contact information and collaboration details
+- Interactive leaderboard preview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🏆 Leaderboard Page
+- Comprehensive router rankings across multiple metrics
+- Search and filter functionality
+- Detailed performance metrics for each router
+- Links to papers and source code
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 📝 Submit Page
+- Router submission form for evaluation
+- Clear guidelines for academic and commercial routers
+- Evaluation process explanation
+- Contact information for collaboration
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ℹ️ About Page
+- Detailed project methodology
+- Research team information
+- Citation information
+- Contact and collaboration details
 
-### `npm run eject`
+## Technology Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Frontend**: React 19.2.0 with TypeScript
+- **Routing**: React Router DOM 6.8.1
+- **Icons**: Lucide React 0.263.1
+- **Charts**: Recharts 2.8.0
+- **Styling**: CSS3 with modern features
+- **Build Tool**: Create React App
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Node.js (v14 or higher)
+- npm or yarn
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repository:
+```bash
+git clone https://github.com/rice-university/routerarena.git
+cd routerarena
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Install dependencies:
+```bash
+npm install
+```
 
-### Code Splitting
+3. Start the development server:
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Analyzing the Bundle Size
+### Building for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm run build
+```
 
-### Making a Progressive Web App
+This builds the app for production to the `build` folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Project Structure
 
-### Advanced Configuration
+```
+src/
+├── components/          # Reusable UI components
+│   ├── Header.tsx      # Navigation header
+│   └── Header.css      # Header styles
+├── pages/              # Page components
+│   ├── HomePage.tsx    # Landing page
+│   ├── LeaderboardPage.tsx  # Router rankings
+│   ├── SubmitPromptPage.tsx # Router submission
+│   ├── AboutPage.tsx   # Project information
+│   └── *.css          # Page-specific styles
+├── data/               # Mock data and constants
+│   └── mockData.ts     # Router data and contact info
+├── types/              # TypeScript type definitions
+│   └── index.ts        # Router and data types
+├── assets/             # Static assets
+│   └── images/         # Figures from research paper
+├── App.tsx             # Main application component
+├── App.css             # Global styles
+└── index.tsx           # Application entry point
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Key Components
 
-### Deployment
+### Router Data Structure
+```typescript
+interface Router {
+  id: string;
+  name: string;
+  type: 'academic' | 'commercial';
+  description: string;
+  metrics: {
+    arenaScore: number;
+    costRatioScore: number;
+    optimalAccScore: number;
+    latencyScore: number;
+    robustnessScore: number;
+    overallRank: number;
+  };
+  modelPool: string[];
+  paperUrl?: string;
+  githubUrl?: string;
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Evaluation Metrics
 
-### `npm run build` fails to minify
+1. **Arena Score**: Overall performance combining accuracy and cost efficiency
+2. **Cost Ratio Score**: Efficiency in cost optimization relative to optimal routing
+3. **Optimality Score**: Frequency of selecting the most efficient model for each query
+4. **Latency Score**: Router overhead and response time performance
+5. **Robustness Score**: Stability against query perturbations and noise
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing
+
+We welcome contributions to the RouterArena platform! Please see our submission guidelines on the website or contact us directly.
+
+## Citation
+
+If you use RouterArena in your research, please cite our paper:
+
+```bibtex
+@article{lu2025routerarena,
+  title={RouterArena: An Open Platform for Comprehensive Comparison of LLM Routers},
+  author={Lu, Yifan and Liu, Rixin and Yuan, Jiayi and Cui, Xingqi and Zhang, Shenrun and Liu, Hongyi and Xing, Jiarong},
+  journal={arXiv preprint arXiv:2025.xxxxx},
+  year={2025}
+}
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+- **Email**: routerarena@rice.edu
+- **GitHub**: https://github.com/rice-university/routerarena
+- **Paper**: https://arxiv.org/abs/2025.xxxxx
+
+## Acknowledgments
+
+We thank the open-source community and all contributors who have made this project possible.
