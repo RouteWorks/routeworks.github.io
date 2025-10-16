@@ -1,0 +1,102 @@
+/* Deferral Curve Specific Styles */
+.deferral-curve-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0;
+  width: 100%;
+}
+
+.deferral-curve-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.deferral-curve-wrapper svg {
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+.deferral-legend-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 20px;
+  min-width: 200px;
+}
+
+.legend-section h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.legend-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-shape {
+  width: 18px;
+  height: 18px;
+  display: block;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.legend-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+  white-space: nowrap;
+}
+
+/* Responsive design */
+@media (max-width: 968px) {
+  .deferral-curve-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .deferral-legend-side {
+    flex-direction: row;
+    gap: 3rem;
+    padding-top: 1.5rem;
+    min-width: auto;
+    justify-content: center;
+  }
+  
+  .legend-section h4 {
+    text-align: center;
+  }
+  
+  .legend-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

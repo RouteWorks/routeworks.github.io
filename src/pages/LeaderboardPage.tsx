@@ -1,12 +1,34 @@
 import React, { useState, useMemo } from 'react';
 import { Trophy, Search } from 'lucide-react';
 import { routers } from '../data/mockData';
+import SpiderChart from '../components/SpiderChart';
+import DeferralCurve from '../components/DeferralCurve';
 import './LeaderboardPage.css';
 
 const LeaderboardPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'academic' | 'commercial'>('all');
   const [activeMetric, setActiveMetric] = useState<'overall' | 'arena' | 'cost' | 'optimal' | 'latency' | 'robustness'>('overall');
+  const [activeTab, setActiveTab] = useState<'spider' | 'deferral'>('spider');
+
+  // Deferral curve data
+  const academicPoints = {
+    "CARROT":              {"accuracy": 0.6720, "cost_per_1k": 2.060741},
+    "RouterDC":            {"accuracy": 0.3344, "cost_per_1k": 0.063751},
+    "GraphRouter":         {"accuracy": 0.6072, "cost_per_1k": 0.363695},
+    "KNN":                 {"accuracy": 0.5905, "cost_per_1k": 4.266104},
+    "MLP":                 {"accuracy": 0.6191, "cost_per_1k": 4.830245},
+    "RouteLLM":            {"accuracy": 0.6224, "cost_per_1k": 4.937691},
+    "MIRT-BERT":           {"accuracy": 0.6731, "cost_per_1k": 0.150629},
+    "NIRT-BERT":           {"accuracy": 0.6159, "cost_per_1k": 0.600228},
+  };
+
+  const commercialPoints = {
+    "NotDiamond": {"accuracy": 0.6651, "cost_per_1k": 9.330411},
+    "Azure":      {"accuracy": 0.6798, "cost_per_1k": 0.619866},
+    "GPT-5":      {"accuracy": 0.7428, "cost_per_1k": 14.407096},
+    "vLLM-SR":    {"accuracy": 0.6665, "cost_per_1k": 1.613930},
+  };
 
   const filteredAndSortedRouters = useMemo(() => {
     const metricKeyMap = {
@@ -209,64 +231,38 @@ const LeaderboardPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Spider Plot Visualization */}
-        <div className="spider-plot-section">
-          <h2>Router Performance Comparison</h2>
-          <div className="spider-plot-placeholder">
-            <div className="plot-content">
-              <h3>Multi-Dimensional Router Performance</h3>
-              <div className="performance-radar">
-                <div className="radar-chart">
-                  <div className="radar-center">
-                    <div className="center-label">Performance</div>
-                  </div>
-                  <div className="radar-axes">
-                    <div className="axis arena" data-label="Arena Score">
-                      <div className="axis-line"></div>
-                      <div className="axis-label">Arena</div>
-                    </div>
-                    <div className="axis cost" data-label="Cost Ratio">
-                      <div className="axis-line"></div>
-                      <div className="axis-label">Cost</div>
-                    </div>
-                    <div className="axis optimal" data-label="Optimality">
-                      <div className="axis-line"></div>
-                      <div className="axis-label">Optimal</div>
-                    </div>
-                    <div className="axis latency" data-label="Latency">
-                      <div className="axis-line"></div>
-                      <div className="axis-label">Latency</div>
-                    </div>
-                    <div className="axis robustness" data-label="Robustness">
-                      <div className="axis-line"></div>
-                      <div className="axis-label">Robust</div>
-                    </div>
-                  </div>
-                  <div className="performance-lines">
-                    <div className="router-line carrot" data-router="CARROT"></div>
-                    <div className="router-line routerdc" data-router="RouterDC"></div>
-                    <div className="router-line graphrouter" data-router="GraphRouter"></div>
-                  </div>
-                </div>
-                <div className="legend">
-                  <div className="legend-item">
-                    <div className="legend-color carrot"></div>
-                    <span>CARROT</span>
-                  </div>
-                  <div className="legend-item">
-                    <div className="legend-color routerdc"></div>
-                    <span>RouterDC</span>
-                  </div>
-                  <div className="legend-item">
-                    <div className="legend-color graphrouter"></div>
-                    <span>GraphRouter</span>
-                  </div>
-                </div>
+        {/* Visualizations Section with Tabs */}
+        <div className="visualizations-section">
+          <div className="viz-tabs">
+            <button 
+              className={`viz-tab ${activeTab === 'spider' ? 'active' : ''}`}
+              onClick={() => setActiveTab('spider')}
+            >
+              Router Performance Comparison
+            </button>
+            <button 
+              className={`viz-tab ${activeTab === 'deferral' ? 'active' : ''}`}
+              onClick={() => setActiveTab('deferral')}
+            >
+              Deferral Plot: Accuracy vs Inference Cost
+            </button>
+          </div>
+
+          <div className="viz-content">
+            {activeTab === 'spider' && (
+              <div className="spider-plot-section">
+                <SpiderChart routers={routers} maxRouters={5} />
               </div>
-              <p className="plot-caption">
-                Spider plot comparing six routing methods (CARROT, RouterDC, GraphRouter, MIRT-BERT, NIRT-BERT, and RouteLLM) across five evaluation dimensions: Arena Score, Cost-ratio Score, Optimal-acc Score, Latency Score, and Robustness Score. Each axis indicates higher performance in the outward direction.
-              </p>
-            </div>
+            )}
+            
+            {activeTab === 'deferral' && (
+              <div className="deferral-curve-section">
+                <DeferralCurve 
+                  academicPoints={academicPoints} 
+                  commercialPoints={commercialPoints} 
+                />
+              </div>
+            )}
           </div>
         </div>
 
