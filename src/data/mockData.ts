@@ -11,7 +11,7 @@ export const contactInfo: ContactInfo = {
     { name: 'Jiarong Xing', email: 'jxing@rice.edu', affiliation: 'Rice University' }
   ],
   institution: 'Rice University',
-  email: 'jxing@rice.edu',
+  email: 'yifan.lu@rice.edu',
   github: 'https://github.com/RouteWorks',
   paper: 'https://www.arxiv.org/abs/2510.00202'
 };

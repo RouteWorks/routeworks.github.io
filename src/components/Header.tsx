@@ -10,7 +10,6 @@ const Header: React.FC = () => {
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'Leaderboard', href: '/leaderboard', icon: Trophy },
-    { name: 'Submit Router', href: '/submit', icon: Send },
     { name: 'GitHub', href: 'https://github.com/RouteWorks', icon: Github, isExternal: true },
     { name: 'Contact', href: '#contact', icon: Users, isScroll: true },
   ];

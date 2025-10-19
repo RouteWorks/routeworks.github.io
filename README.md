@@ -1,8 +1,5 @@
-# RouterArena Website
 
-A modern React TypeScript website for the RouterArena research project - an open platform for comprehensive comparison of LLM routers.
-
-## Project Overview
+# Project Overview
 
 RouterArena is the first open platform enabling comprehensive evaluation and comparison of LLM routers. The platform features:
 
@@ -157,24 +154,23 @@ We welcome contributions to the RouterArena platform! Please see our submission 
 If you use RouterArena in your research, please cite our paper:
 
 ```bibtex
-@article{lu2025routerarena,
-  title={RouterArena: An Open Platform for Comprehensive Comparison of LLM Routers},
-  author={Lu, Yifan and Liu, Rixin and Yuan, Jiayi and Cui, Xingqi and Zhang, Shenrun and Liu, Hongyi and Xing, Jiarong},
-  journal={arXiv preprint arXiv:2025.xxxxx},
-  year={2025}
+@misc{lu2024routerarena,
+  title={RouterArena: An Open Platform for Comprehensive Comparison of LLM Routers}, 
+  author={Yifan Lu and Rixin Liu and Jiayi Yuan and Xingqi Cui and Shenrun Zhang and Hongyi Liu and Jiarong Xing},
+  year={2024},
+  eprint={2510.00202},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://arxiv.org/abs/2510.00202}
 }
 ```
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Contact
 
-- **Email**: routerarena@rice.edu
+- **Email**: yifan.lu@rice.edu
 - **GitHub**: https://github.com/rice-university/routerarena
-- **Paper**: https://arxiv.org/abs/2025.xxxxx
+- **Paper**: https://www.arxiv.org/abs/2510.00202
 
 ## Acknowledgments
 
-We thank the open-source community and all contributors who have made this project possible.
+We thank all contributors who have made this project possible.

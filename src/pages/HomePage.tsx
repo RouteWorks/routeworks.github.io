@@ -39,10 +39,6 @@ const HomePage: React.FC = () => {
                 <Trophy className="btn-icon" />
                 View Leaderboard
               </Link>
-              <Link to="/submit" className="btn btn-secondary">
-                <BarChart3 className="btn-icon" />
-                Submit Router
-              </Link>
             </div>
           </div>
           <div className="hero-right">
