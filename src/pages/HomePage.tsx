@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Trophy, BarChart3, Users, BookOpen, ArrowRight, Zap, Shield } from 'lucide-react';
+import { Trophy, BarChart3, Users, BookOpen, ArrowRight, Zap, Shield, Github } from 'lucide-react';
 import { contactInfo, datasetInfo, routers } from '../data/mockData';
 import Figure from '../components/Figure';
 import DatasetCompositionChart from '../components/DatasetCompositionChart';
@@ -42,25 +42,38 @@ const HomePage: React.FC = () => {
             </div>
           </div>
           <div className="hero-right">
-            <p className="hero-subtitle">
-              The first open platform enabling comprehensive evaluation and comparison of LLM routers 
-              with principled datasets, extensive metrics, and automated leaderboard updates.
-            </p>
-          </div>
-        </div>
-        <div className="hero-visual">
-          <div className="hero-card">
-            <div className="card-header">
-              <Trophy className="card-icon" />
-              <h3>RouterArena Leaderboard</h3>
-            </div>
-            <div className="leaderboard-preview">
-              {topRouters.map((router, index) => (
-                <div key={router.id} className={`rank-item rank-${index + 1}`}>
-                  <span className="rank">{index + 1}</span>
-                  <span className="name">{router.name}</span>
+            <div className="hero-right-content">
+              <p className="hero-subtitle">
+                The first open platform enabling comprehensive evaluation and comparison of LLM routers 
+                with principled datasets, extensive metrics, and automated leaderboard updates.
+              </p>
+              
+              <div className="hero-cards-container">
+                <div className="hero-card">
+                  <div className="card-header">
+                    <Trophy className="card-icon" />
+                    <h3>RouterArena Leaderboard</h3>
+                  </div>
+                  <div className="leaderboard-preview">
+                    {topRouters.map((router, index) => (
+                      <div key={router.id} className={`rank-item rank-${index + 1}`}>
+                        <span className="rank">{index + 1}</span>
+                        <span className="name">{router.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
+                
+                <div className="cta-card">
+                  <h3 className="cta-heading">Want to see your router on the leaderboard?</h3>
+                  <p className="cta-description">
+                    Contact us or submit a GitHub issue to evaluate your router on the RouterArena platform
+                  </p>
+                  <a href="#contact" className="btn btn-primary">
+                    Get Started →
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -229,6 +242,9 @@ const HomePage: React.FC = () => {
       <section id="contact" className="team">
         <div className="container">
           <h2 className="section-title">Research Team</h2>
+          <p className="contact-description">
+            Contact us or submit a GitHub issue to evaluate your router on the RouterArena platform
+          </p>
           
           {/* Action Buttons */}
           <div className="action-buttons">
@@ -237,7 +253,7 @@ const HomePage: React.FC = () => {
               Read Paper
             </a>
             <a href={contactInfo.github} className="btn btn-outline" target="_blank" rel="noopener noreferrer">
-              <Users className="btn-icon" />
+              <Github className="btn-icon" />
               View Code
             </a>
             <a href={`mailto:${contactInfo.email}`} className="btn btn-outline">

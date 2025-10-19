@@ -40,14 +40,58 @@
 .hero-subtitle {
   font-size: 1.25rem;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin: 0;
+  margin-left: -2rem;
+  margin-right: 2rem;
   opacity: 1;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   max-width: 30rem;
-  margin-left: -10;
-  margin-right: auto;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+
+.cta-card {
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  max-width: 320px;
+}
+
+.cta-heading {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.cta-description {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.cta-card .btn {
+  background: linear-gradient(135deg, #fa961c 0%, #ffaa00 100%);
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.cta-card .btn:hover {
+  background: linear-gradient(135deg, #ff9012 0%, #ff8809 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
 }
 
 .hero-actions {
@@ -109,10 +153,22 @@
   height: 20px;
 }
 
-.hero-visual {
+.hero-right-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+  height: 100%;
+}
+
+.hero-cards-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: left;
+  justify-content: left;
+  margin-left: 2rem;
+  margin-right: -2rem;
 }
 
 .hero-card {
@@ -447,8 +503,18 @@
   font-size: 2rem;
   font-weight: 700;
   color: #333;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
+}
+
+.contact-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Action Buttons */
@@ -565,6 +631,19 @@
   
   .difficulty-bars {
     max-width: 100%;
+  }
+  
+  
+  .cta-card {
+    max-width: 300px;
+  }
+  
+  .cta-heading {
+    font-size: 1.1rem;
+  }
+  
+  .cta-description {
+    font-size: 1.1rem;
   }
 }
 
