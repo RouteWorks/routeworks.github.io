@@ -168,7 +168,6 @@ If you use RouterArena in your research, please cite our paper:
 ## Contact
 
 - **Email**: yifan.lu@rice.edu
-- **GitHub**: https://github.com/rice-university/routerarena
 - **Paper**: https://www.arxiv.org/abs/2510.00202
 
 ## Acknowledgments
