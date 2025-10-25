@@ -332,7 +332,14 @@ const DatasetCompositionChart: React.FC = () => {
               const midAngle = (startAngle + endAngle) / 2;
               
               const RADIAN = Math.PI / 180;
-              const radius = CHART_DIMENSIONS.outerRadius + 60;
+              // Adaptive label radius: farther for sides, closer for top/bottom
+              const baseOffset = 60;   // baseline distance beyond pie edge
+              const sideBoost = 40;    // extra distance for left/right labels
+              const angleFactor = Math.abs(Math.sin(midAngle * RADIAN)); 
+              // 0 for top/bottom, 1 for sides
+
+              const radius = CHART_DIMENSIONS.outerRadius + baseOffset + sideBoost * angleFactor;
+                          
               // Use exact center coordinates matching Recharts
               const centerX = 400; // Exact center of 800x800 viewBox
               const centerY = 400; // Exact center of 800x800 viewBox
@@ -360,10 +367,10 @@ const DatasetCompositionChart: React.FC = () => {
               return (
                 <g key={index}>
                   <rect
-                    x={x - 40}
-                    y={y - 12}
-                    width="80"
-                    height="24"
+                    x={x - 50}
+                    y={y - 15}
+                    width="100"
+                    height="30"
                     fill="rgba(255, 255, 255, 0.8)"
                     stroke="none"
                     rx="4"
@@ -374,7 +381,7 @@ const DatasetCompositionChart: React.FC = () => {
                     fill="#1f2937"
                     textAnchor="middle"
                     dominantBaseline="central"
-                    fontSize="14"
+                    fontSize="19"
                     fontWeight="700"
                   >
                     {shortName}

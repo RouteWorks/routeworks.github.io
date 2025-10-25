@@ -3,6 +3,7 @@ export interface Router {
   name: string;
   type: 'academic' | 'commercial';
   description: string;
+  affiliation: string;
   metrics: {
     arenaScore: number;
     costRatioScore: number;

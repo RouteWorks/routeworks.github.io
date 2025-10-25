@@ -74,36 +74,39 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
     <div className="spider-chart-container">
       <div className="spider-chart">
         <svg width="450" height="450" viewBox="0 0 450 450">
-          {/* Grid circles with score labels */}
-          {[0.2, 0.4, 0.6, 0.8, 1.0].map((scale, index) => {
-            // Convert visual scale to actual axis values
-            const actualValue = axisMin + (scale * axisRange);
-            const score = actualValue.toFixed(1);
-            
-            return (
-              <g key={index}>
-                <circle
-                  cx={centerX}
-                  cy={centerY}
-                  r={chartRadius * scale}
-                  fill="none"
-                  stroke="#e5e7eb"
-                  strokeWidth="1"
-                />
-                <text
-                  x={centerX + chartRadius * scale + 8}
-                  y={centerY}
-                  textAnchor="start"
-                  dominantBaseline="middle"
-                  className="grid-label"
-                  fill="#9ca3af"
-                  fontSize="10"
-                >
-                  {score}
-                </text>
-              </g>
-            );
-          })}
+          {/* Grid circles drawn at real 0.1 score increments */}
+          {Array.from({ length: 11 }, (_, i) => (i * 0.1))
+            .filter(v => v >= axisMin && v <= axisMax)
+            .map((value, index) => {
+              // Map true axis value -> 0–1 visual radius fraction
+              const scale = (value - axisMin) / axisRange;
+              const r = chartRadius * scale;
+
+              return (
+                <g key={index}>
+                  <circle
+                    cx={centerX}
+                    cy={centerY}
+                    r={r}
+                    fill="none"
+                    stroke="#e5e7eb"
+                    strokeWidth="1"
+                  />
+                  <text
+                    x={centerX + r + 8}
+                    y={centerY}
+                    textAnchor="start"
+                    dominantBaseline="middle"
+                    className="grid-label"
+                    fill="#9ca3af"
+                    fontSize="22"
+                  >
+                    {value.toFixed(1)}
+                  </text>
+                </g>
+              );
+            })}
+
 
           {/* Grid lines (axes) */}
           {metrics.map((metric, index) => {
@@ -134,30 +137,15 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
               <g key={metric.key}>
                 <text
                   x={labelX}
-                  y={labelY - 8}
+                  y={labelY}
                   textAnchor="middle"
                   dominantBaseline="middle"
                   className="metric-label"
                   fill="#1f2937"
-                  fontSize="12"
+                  fontSize="16"
                   fontWeight="600"
                 >
                   {metric.label}
-                </text>
-                <text
-                  x={labelX}
-                  y={labelY + 8}
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  className="metric-score"
-                  fill="#6b7280"
-                  fontSize="10"
-                >
-                  {metric.key === 'arenaScore' ? 'Arena' :
-                   metric.key === 'costRatioScore' ? 'Cost' :
-                   metric.key === 'optimalAccScore' ? 'Optimal' :
-                   metric.key === 'latencyScore' ? 'Latency' :
-                   'Robust'}
                 </text>
               </g>
             );

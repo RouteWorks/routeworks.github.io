@@ -20,7 +20,6 @@
   padding: 0 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
   align-items: center;
 }
 
@@ -28,9 +27,19 @@
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   padding-right: 4rem;
   margin-left: 2rem;
+}
+
+.hero-subtitle-short {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  padding-right: 4rem;
+  margin-left: 2rem;
+  font-weight: 400;
 }
 
 .highlight {
@@ -154,11 +163,12 @@
 }
 
 .hero-right-content {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   align-items: start;
   height: 100%;
+  float: right;
 }
 
 .hero-cards-container {
@@ -219,25 +229,40 @@
   transition: all 0.2s ease;
 }
 
+.rank-item .name {
+  flex: 1;
+}
+
 .rank-item:hover {
   background: #e9ecef;
   transform: translateX(4px);
 }
 
+
+.affiliation {
+  font-size: 0.9rem;
+  opacity: 1;
+  font-weight: 500;
+}
+
+.rank-item .affiliation {
+  color: inherit;
+}
+
 .rank-item.rank-1 {
-  background: #fbbf24;
-  color: #0f172a;
+  background: var(--rank-1-bg);
+  color: var(--rank-1-text);
   font-weight: 600;
 }
 
 .rank-item.rank-2 {
-  background: #9ca3af;
-  color: white;
+  background: var(--rank-2-bg);
+  color: var(--rank-2-text);
 }
 
 .rank-item.rank-3 {
-  background: #f59e0b;
-  color: white;
+  background: var(--rank-3-bg);
+  color: var(--rank-3-text);
 }
 
 .rank {
@@ -552,16 +577,22 @@
   font-size: 1.1rem;
 }
 
+
+
+
 .authors-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;              /* row/col spacing */
+  justify-content: center;   /* ✅ centers the last row */
 }
 
 .author-card {
   background: #f8f9fa;
   padding: 1.5rem;
   border-radius: 8px;
+  flex: 0 1 240px;           /* grow/shrink with a preferred width */
+  max-width: 320px;          /* prevent over-stretch */
   text-align: center;
 }
 
@@ -683,12 +714,6 @@
 }
 
 /* Extra small screens - single column for authors */
-@media (max-width: 480px) {
-  .authors-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 480px) {
   .authors-grid {
     grid-template-columns: 1fr;

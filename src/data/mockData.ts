@@ -12,7 +12,7 @@ export const contactInfo: ContactInfo = {
   ],
   institution: 'Rice University',
   email: 'yifan.lu@rice.edu',
-  github: 'https://github.com/RouteWorks',
+  github: 'https://github.com/RouteWorks/RouterArena',
   paper: 'https://www.arxiv.org/abs/2510.00202'
 };
 
@@ -30,6 +30,7 @@ export const routers: Router[] = [
     name: 'CARROT',
     type: 'academic',
     description: 'Cost-aware routing with dual contrastive learning approach',
+    affiliation: 'UMich',
     metrics: {
       arenaScore: 0.85,
       costRatioScore: 0.92,
@@ -47,6 +48,7 @@ export const routers: Router[] = [
     name: 'RouterDC',
     type: 'academic',
     description: 'Dual contrastive learning-based router with cost optimization',
+    affiliation: 'SUSTech',
     metrics: {
       arenaScore: 0.82,
       costRatioScore: 0.95,
@@ -64,6 +66,7 @@ export const routers: Router[] = [
     name: 'GraphRouter',
     type: 'academic',
     description: 'Graph neural network-based routing with semantic understanding',
+    affiliation: 'UIUC',
     metrics: {
       arenaScore: 0.80,
       costRatioScore: 0.88,
@@ -81,6 +84,7 @@ export const routers: Router[] = [
     name: 'MIRT-BERT',
     type: 'academic',
     description: 'Multi-item response theory with BERT embeddings',
+    affiliation: 'Unknown',
     metrics: {
       arenaScore: 0.78,
       costRatioScore: 0.75,
@@ -98,6 +102,7 @@ export const routers: Router[] = [
     name: 'NIRT-BERT',
     type: 'academic',
     description: 'Neural item response theory with BERT-based routing',
+    affiliation: 'Unknown',
     metrics: {
       arenaScore: 0.76,
       costRatioScore: 0.70,
@@ -115,6 +120,7 @@ export const routers: Router[] = [
     name: 'RouteLLM',
     type: 'academic',
     description: 'Binary selection between strong and weak models',
+    affiliation: 'Berkeley',
     metrics: {
       arenaScore: 0.74,
       costRatioScore: 0.85,
@@ -132,6 +138,7 @@ export const routers: Router[] = [
     name: 'GPT-5',
     type: 'commercial',
     description: 'OpenAI\'s internal routing system for GPT model family',
+    affiliation: 'OpenAI',
     metrics: {
       arenaScore: 0.88,
       costRatioScore: 0.60,
@@ -149,6 +156,7 @@ export const routers: Router[] = [
     name: 'NotDiamond',
     type: 'commercial',
     description: 'Commercial routing service with access to 60+ models',
+    affiliation: 'NotDiamond',
     metrics: {
       arenaScore: 0.82,
       costRatioScore: 0.65,
@@ -166,6 +174,7 @@ export const routers: Router[] = [
     name: 'Azure Model Router',
     type: 'commercial',
     description: 'Microsoft Azure\'s model routing service',
+    affiliation: 'Microsoft',
     metrics: {
       arenaScore: 0.80,
       costRatioScore: 0.70,

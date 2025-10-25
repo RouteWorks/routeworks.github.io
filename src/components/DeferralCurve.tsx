@@ -238,7 +238,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
           <text
             x={margin.left + plotWidth - 5}
             y={scaleY(0.9089) - 8}
-            fontSize="11"
+            fontSize="1.15rem"
             fill="#22c55e"
             textAnchor="end"
             fontWeight="600"
@@ -280,7 +280,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
                 <text
                   x={x}
                   y={margin.top + plotHeight + 20}
-                  fontSize="10"
+                  fontSize="1.1rem"
                   fill="#374151"
                   textAnchor="middle"
                 >
@@ -307,7 +307,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
                   <text
                     x={margin.left - 10}
                     y={y + 4}
-                    fontSize="10"
+                    fontSize="1.1rem"
                     fill="#374151"
                     textAnchor="end"
                   >
@@ -323,7 +323,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
           <text
             x={margin.left + plotWidth / 2}
             y={chartHeight - 10}
-            fontSize="12"
+            fontSize="16"
             fill="#374151"
             textAnchor="middle"
             fontWeight="500"
@@ -333,7 +333,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
           <text
             x={20}
             y={margin.top + plotHeight / 2}
-            fontSize="12"
+            fontSize="16"
             fill="#374151"
             textAnchor="middle"
             fontWeight="500"

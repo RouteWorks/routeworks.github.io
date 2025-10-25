@@ -34,6 +34,9 @@ const HomePage: React.FC = () => {
               RouterArena: An Open Platform for
               <span className="highlight"> Comprehensive Comparison</span> of LLM Routers
             </h1>
+            <p className="hero-subtitle-short">
+              Diverse dataset, extensive metrics, and live leaderboard
+            </p>
             <div className="hero-actions">
               <Link to="/leaderboard" className="btn btn-primary">
                 <Trophy className="btn-icon" />
@@ -43,11 +46,6 @@ const HomePage: React.FC = () => {
           </div>
           <div className="hero-right">
             <div className="hero-right-content">
-              <p className="hero-subtitle">
-                The first open platform enabling comprehensive evaluation and comparison of LLM routers 
-                with principled datasets, extensive metrics, and automated leaderboard updates.
-              </p>
-              
               <div className="hero-cards-container">
                 <div className="hero-card">
                   <div className="card-header">
@@ -59,6 +57,7 @@ const HomePage: React.FC = () => {
                       <div key={router.id} className={`rank-item rank-${index + 1}`}>
                         <span className="rank">{index + 1}</span>
                         <span className="name">{router.name}</span>
+                        <span className="affiliation">{router.affiliation}</span>
                       </div>
                     ))}
                   </div>
@@ -67,7 +66,7 @@ const HomePage: React.FC = () => {
                 <div className="cta-card">
                   <h3 className="cta-heading">Want to see your router on the leaderboard?</h3>
                   <p className="cta-description">
-                    Contact us or submit a GitHub issue to evaluate your router on the RouterArena platform
+                  Open a GitHub issue on our RouterArena platform.
                   </p>
                   <a href="#contact" className="btn btn-primary">
                     Get Started →
@@ -91,7 +90,7 @@ const HomePage: React.FC = () => {
               onClick={() => setActiveTab('dataset')}
             >
               <BookOpen className="tab-icon" />
-              Principled Dataset
+              Diverse Dataset
             </button>
             <button 
               className={`tab-button ${activeTab === 'metrics' ? 'active' : ''}`}
@@ -125,7 +124,7 @@ const HomePage: React.FC = () => {
                     <BookOpen />
                   </div>
                   <div>
-                    <h3>Principled Dataset</h3>
+                    <h3>Diverse Dataset</h3>
                     <p className="tab-subtitle">
                       {datasetInfo.totalQueries.toLocaleString()} queries across {datasetInfo.domains} domains 
                       and {datasetInfo.categories} categories, designed using Dewey Decimal Classification 
@@ -243,7 +242,7 @@ const HomePage: React.FC = () => {
         <div className="container">
           <h2 className="section-title">Research Team</h2>
           <p className="contact-description">
-            Contact us or submit a GitHub issue to evaluate your router on the RouterArena platform
+            Contact us or submit a GitHub issue to evaluate your router with RouterArena 
           </p>
           
           {/* Action Buttons */}
@@ -255,10 +254,6 @@ const HomePage: React.FC = () => {
             <a href={contactInfo.github} className="btn btn-outline" target="_blank" rel="noopener noreferrer">
               <Github className="btn-icon" />
               View Code
-            </a>
-            <a href={`mailto:${contactInfo.email}`} className="btn btn-outline">
-              <ArrowRight className="btn-icon" />
-              Contact Us
             </a>
           </div>
 
