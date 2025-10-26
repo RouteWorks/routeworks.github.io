@@ -49,6 +49,27 @@ npm run build
 
 This builds the app for production to the `build` folder.
 
+### Coding/PR Style Check
+
+We use pre-commit to ensure a consistent coding style. You can set it up by
+
+```
+pip install pre-commit
+pre-commit install
+```
+
+Before pushing your code, please run the following check and make sure your code passes all checks.
+
+```
+pre-commit run --all-files
+```
+
+We have set up Google Gemini to review your code. You can use it by running the following command:
+
+```
+/gemini review
+```
+
 ### Web Stack
 
 - **Frontend**: React 19.2.0 with TypeScript
