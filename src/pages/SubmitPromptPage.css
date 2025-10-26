@@ -266,11 +266,11 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .page-title {
     font-size: 2rem;
   }
-  
+
   .submit-info,
   .submit-form-container {
     padding: 1.5rem;

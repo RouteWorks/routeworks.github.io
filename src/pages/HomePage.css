@@ -625,15 +625,15 @@
     gap: 2rem;
     text-align: center;
   }
-  
+
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .hero-actions {
     justify-content: center;
   }
-  
+
   .action-buttons {
     flex-direction: column;
     align-items: center;
@@ -647,32 +647,32 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
-  
+
   .dataset-stats {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .difficulty-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .domain-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .difficulty-bars {
     max-width: 100%;
   }
-  
-  
+
+
   .cta-card {
     max-width: 300px;
   }
-  
+
   .cta-heading {
     font-size: 1.1rem;
   }
-  
+
   .cta-description {
     font-size: 1.1rem;
   }

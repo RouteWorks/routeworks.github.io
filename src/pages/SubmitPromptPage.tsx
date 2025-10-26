@@ -28,7 +28,7 @@ const SubmitPromptPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
     try {
       await new Promise(resolve => setTimeout(resolve, 2000));
@@ -136,7 +136,7 @@ const SubmitPromptPage: React.FC = () => {
           <div className="submit-form-container">
             <form onSubmit={handleSubmit} className="submit-form">
               <h2>Router Submission Form</h2>
-              
+
               <div className="form-group">
                 <label htmlFor="name">Your Name *</label>
                 <input

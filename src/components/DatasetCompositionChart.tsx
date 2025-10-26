@@ -88,7 +88,7 @@ const categoryColors = [
 // Difficulty level colors
 const difficultyColors = {
   'Easy': '#22C55E',
-  'Medium': '#F59E0B', 
+  'Medium': '#F59E0B',
   'Hard': '#EF4444'
 };
 
@@ -166,7 +166,7 @@ const DatasetCompositionChart: React.FC = () => {
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
-      
+
       // Get subcategory descriptions
       const getSubcategoryDescription = (name: string, parent: string) => {
         const descriptions: { [key: string]: { [key: string]: string } } = {
@@ -217,10 +217,10 @@ const DatasetCompositionChart: React.FC = () => {
             'Biography and genealogy': 'Personal histories & lineages'
           }
         };
-        
+
         return descriptions[parent]?.[name] || name;
       };
-      
+
       return (
         <div className="chart-tooltip">
           <p className="tooltip-title">{data.name}</p>
@@ -257,19 +257,19 @@ const DatasetCompositionChart: React.FC = () => {
                 onMouseLeave={() => setHoveredSubcategory(null)}
               >
                 {subcategoryData.map((entry, index) => (
-                  <Cell 
-                    key={`subcell-${index}`} 
+                  <Cell
+                    key={`subcell-${index}`}
                     fill={entry.color}
                     stroke={hoveredSubcategory === entry.name ? '#d1d5db' : '#fff'}
                     strokeWidth={hoveredSubcategory === entry.name ? 2 : 1}
-                    style={{ 
+                    style={{
                       filter: hoveredSubcategory === entry.name ? 'brightness(1.1) saturate(1.1)' : 'none',
                       transition: 'all 0.2s ease'
                     }}
                   />
                 ))}
               </Pie>
-              
+
               {/* Outer ring - Main categories */}
               <Pie
                 data={mainChartData}
@@ -286,27 +286,27 @@ const DatasetCompositionChart: React.FC = () => {
                 onMouseLeave={() => setHoveredCategory(null)}
               >
                 {mainChartData.map((entry, index) => (
-                  <Cell 
-                    key={`cell-${index}`} 
+                  <Cell
+                    key={`cell-${index}`}
                     fill={entry.color}
                     stroke={hoveredCategory === entry.category ? '#9ca3af' : '#fff'}
                     strokeWidth={hoveredCategory === entry.category ? 2 : 1}
-                    style={{ 
+                    style={{
                       filter: hoveredCategory === entry.category ? 'brightness(1.12) saturate(1.15)' : 'none',
                       transition: 'all 0.2s ease'
                     }}
                   />
                 ))}
               </Pie>
-              <Tooltip 
-                content={<CustomTooltip />} 
+              <Tooltip
+                content={<CustomTooltip />}
                 wrapperStyle={{ zIndex: 9999 }}
               />
             </PieChart>
           </ResponsiveContainer>
-          
+
           {/* Independent SVG Labels Overlay */}
-          <svg 
+          <svg
             className="labels-svg-overlay"
             style={{
               position: 'absolute',
@@ -322,30 +322,30 @@ const DatasetCompositionChart: React.FC = () => {
             {mainChartData.map((entry, index) => {
               const totalValue = mainChartData.reduce((sum, item) => sum + item.value, 0);
               let cumulativeValue = 0;
-              
+
               for (let i = 0; i < index; i++) {
                 cumulativeValue += mainChartData[i].value;
               }
-              
+
               const startAngle = (cumulativeValue / totalValue) * 360 - 90;
               const endAngle = ((cumulativeValue + entry.value) / totalValue) * 360 - 90;
               const midAngle = (startAngle + endAngle) / 2;
-              
+
               const RADIAN = Math.PI / 180;
               // Adaptive label radius: farther for sides, closer for top/bottom
               const baseOffset = 60;   // baseline distance beyond pie edge
               const sideBoost = 40;    // extra distance for left/right labels
-              const angleFactor = Math.abs(Math.sin(midAngle * RADIAN)); 
+              const angleFactor = Math.abs(Math.sin(midAngle * RADIAN));
               // 0 for top/bottom, 1 for sides
 
               const radius = CHART_DIMENSIONS.outerRadius + baseOffset + sideBoost * angleFactor;
-                          
+
               // Use exact center coordinates matching Recharts
               const centerX = 400; // Exact center of 800x800 viewBox
               const centerY = 400; // Exact center of 800x800 viewBox
               const x = centerX - radius * Math.sin(midAngle * RADIAN);
               const y = centerY - radius * Math.cos(midAngle * RADIAN);
-              
+
               // Create shortened versions of category names
               const getShortName = (name: string) => {
                 const shortNames: { [key: string]: string } = {
@@ -361,9 +361,9 @@ const DatasetCompositionChart: React.FC = () => {
                 };
                 return shortNames[name] || name;
               };
-              
+
               const shortName = getShortName(entry.name);
-              
+
               return (
                 <g key={index}>
                   <rect

@@ -248,13 +248,13 @@ const LeaderboardPage: React.FC = () => {
         {/* Visualizations Section with Tabs */}
         <div className="visualizations-section">
           <div className="viz-tabs">
-            <button 
+            <button
               className={`viz-tab ${activeTab === 'spider' ? 'active' : ''}`}
               onClick={() => setActiveTab('spider')}
             >
               Router Performance Comparison
             </button>
-            <button 
+            <button
               className={`viz-tab ${activeTab === 'deferral' ? 'active' : ''}`}
               onClick={() => setActiveTab('deferral')}
             >
@@ -268,12 +268,12 @@ const LeaderboardPage: React.FC = () => {
                 <SpiderChart routers={routers} maxRouters={5} />
               </div>
             )}
-            
+
             {activeTab === 'deferral' && (
               <div className="deferral-curve-section">
-                <DeferralCurve 
-                  academicPoints={academicPoints} 
-                  commercialPoints={commercialPoints} 
+                <DeferralCurve
+                  academicPoints={academicPoints}
+                  commercialPoints={commercialPoints}
                 />
               </div>
             )}
