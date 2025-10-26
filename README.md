@@ -14,15 +14,6 @@ RouterArena is the first open platform enabling comprehensive evaluation and com
 - Hongyi Liu (hl87@rice.edu)
 - Jiarong Xing (jxing@rice.edu)
 
-## Web Stack
-
-- **Frontend**: React 19.2.0 with TypeScript
-- **Routing**: React Router DOM 6.8.1
-- **Icons**: Lucide React 0.263.1
-- **Charts**: Recharts 2.8.0
-- **Styling**: CSS3 with modern features
-- **Build Tool**: Create React App
-
 ## For Developers
 
 ### Prerequisites
@@ -58,7 +49,16 @@ npm run build
 
 This builds the app for production to the `build` folder.
 
-## Project Structure
+### Web Stack
+
+- **Frontend**: React 19.2.0 with TypeScript
+- **Routing**: React Router DOM 6.8.1
+- **Icons**: Lucide React 0.263.1
+- **Charts**: Recharts 2.8.0
+- **Styling**: CSS3 with modern features
+- **Build Tool**: Create React App
+
+### Project Structure
 
 ```
 src/
@@ -81,8 +81,6 @@ src/
 ├── App.css             # Global styles
 └── index.tsx           # Application entry point
 ```
-
-## Key Components
 
 ### Router Data Structure
 ```typescript
