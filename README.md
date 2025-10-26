@@ -146,7 +146,7 @@ If you use RouterArena in your research, please cite our paper:
 
 ## Contact
 
-- **Email**: yifan.lu@rice.edu
+- **Email**: yifan.lu@rice.edu, jxing@rice.edu
 - **Paper**: https://www.arxiv.org/abs/2510.00202
 
 ## Acknowledgments
