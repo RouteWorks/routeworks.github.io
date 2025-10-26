@@ -155,7 +155,7 @@ If you use RouterArena in your research, please cite our paper:
 
 ```bibtex
 @misc{lu2024routerarena,
-  title={RouterArena: An Open Platform for Comprehensive Comparison of LLM Routers}, 
+  title={RouterArena: An Open Platform for Comprehensive Comparison of LLM Routers},
   author={Yifan Lu and Rixin Liu and Jiayi Yuan and Xingqi Cui and Shenrun Zhang and Hongyi Liu and Jiarong Xing},
   year={2024},
   eprint={2510.00202},

@@ -20,10 +20,10 @@ const Figure: React.FC<FigureProps> = ({ src, alt, caption, className = '' }) =>
   return (
     <figure className={`figure ${className}`}>
       <div className="figure-container">
-        <img 
-          src={src} 
-          alt={alt} 
-          className="figure-image" 
+        <img
+          src={src}
+          alt={alt}
+          className="figure-image"
           onLoad={handleImageLoad}
           onError={handleImageError}
         />
