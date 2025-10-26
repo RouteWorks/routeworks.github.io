@@ -242,7 +242,7 @@ const HomePage: React.FC = () => {
         <div className="container">
           <h2 className="section-title">Research Team</h2>
           <p className="contact-description">
-            Contact us or submit a GitHub issue to evaluate your router with RouterArena 
+            Contact us or open a GitHub issue to evaluate your router with RouterArena 
           </p>
           
           {/* Action Buttons */}
