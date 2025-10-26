@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Trophy, Search } from 'lucide-react';
+import { Trophy, Search, Medal} from 'lucide-react';
 import { routers } from '../data/mockData';
 import SpiderChart from '../components/SpiderChart';
 import DeferralCurve from '../components/DeferralCurve';
@@ -54,12 +54,43 @@ const LeaderboardPage: React.FC = () => {
     return filtered.sort((a, b) => b.metrics[key] - a.metrics[key]);
   }, [searchTerm, filterType, activeMetric]);
 
-  const getRankBadge = (rank: number) => {
-    if (rank === 1) return 'rank-1';
-    if (rank === 2) return 'rank-2';
-    if (rank === 3) return 'rank-3';
-    return 'rank-other';
+  // const getRankBadge = (rank: number) => {
+  //   if (rank === 1) return 'rank-1';
+  //   if (rank === 2) return 'rank-2';
+  //   if (rank === 3) return 'rank-3';
+  //   return 'rank-other';
+  // };
+
+  const renderRankBadge = (rank: number) => {
+    const baseClass = 'rank-badge';
+    switch (rank) {
+      case 1:
+        return (
+          <div className={`${baseClass} gold`}>
+           <Trophy size={24} color="#92400e" fill="#fbbf24" strokeWidth={2.2} />
+          </div>
+        );
+      case 2:
+        return (
+          <div className={`${baseClass} silver`}>
+            <Medal size={24} color="#9ca3af" fill="#d1d5db" />
+          </div>
+        );
+      case 3:
+        return (
+          <div className={`${baseClass} bronze`}>
+            <Medal size={24} color="#b45309" fill="#f59e0b" />
+          </div>
+        );
+      default:
+        return (
+          <span className={`${baseClass} rank-other`}>
+            {rank}
+          </span>
+        );
+    }
   };
+
 
   return (
     <div className="leaderboard-page">
@@ -129,7 +160,6 @@ const LeaderboardPage: React.FC = () => {
 
           <div className="filters">
             <div className="filter-group">
-              <label>Type:</label>
               <select
                 value={filterType}
                 onChange={(e) => setFilterType(e.target.value as 'all' | 'academic' | 'commercial')}
@@ -148,28 +178,31 @@ const LeaderboardPage: React.FC = () => {
           <div className="leaderboard-header">
             <div className="rank-col">Rank</div>
             <div className="name-col">Router</div>
+            <div className="affiliation-col">Affiliation</div>
             <div className="type-col">Type</div>
             <div className="metrics-col">Arena</div>
             <div className="metrics-col">Cost</div>
             <div className="metrics-col">Optimal</div>
             <div className="metrics-col">Latency</div>
             <div className="metrics-col">Robust</div>
-            <div className="overall-col">Overall</div>
           </div>
 
           <div className="leaderboard-body">
             {filteredAndSortedRouters.map((router, index) => (
               <div key={router.id} className="leaderboard-row">
                 <div className="rank-col">
-                  <span className={`rank-badge ${getRankBadge(index + 1)}`}>
-                    {index + 1}
-                  </span>
+                {renderRankBadge(index + 1)}
+
                 </div>
 
                 <div className="name-col">
                   <div className="router-info">
                     <h3 className="router-name">{router.name}</h3>
                   </div>
+                </div>
+
+                <div className="affiliation-col">
+                  <span className="affiliation">{router.affiliation}</span>
                 </div>
 
                 <div className="type-col">
@@ -180,51 +213,32 @@ const LeaderboardPage: React.FC = () => {
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.arenaScore.toFixed(3)}</span>
-                    <div className="progress-bar">
-                      <div className="progress-fill" style={{ width: `${router.metrics.arenaScore * 100}%` }}></div>
-                    </div>
+                    <span className="score">{router.metrics.arenaScore.toFixed(2)}</span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.costRatioScore.toFixed(3)}</span>
-                    <div className="progress-bar">
-                      <div className="progress-fill" style={{ width: `${router.metrics.costRatioScore * 100}%` }}></div>
-                    </div>
+                    <span className="score">{router.metrics.costRatioScore.toFixed(2)}</span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.optimalAccScore.toFixed(3)}</span>
-                    <div className="progress-bar">
-                      <div className="progress-fill" style={{ width: `${router.metrics.optimalAccScore * 100}%` }}></div>
-                    </div>
+                    <span className="score">{router.metrics.optimalAccScore.toFixed(2)}</span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.latencyScore.toFixed(3)}</span>
-                    <div className="progress-bar">
-                      <div className="progress-fill" style={{ width: `${router.metrics.latencyScore * 100}%` }}></div>
-                    </div>
+                    <span className="score">{router.metrics.latencyScore.toFixed(2)}</span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.robustnessScore.toFixed(3)}</span>
-                    <div className="progress-bar">
-                      <div className="progress-fill" style={{ width: `${router.metrics.robustnessScore * 100}%` }}></div>
-                    </div>
+                    <span className="score">{router.metrics.robustnessScore.toFixed(2)}</span>
                   </div>
-                </div>
-
-                <div className="overall-col">
-                  <div className="overall-score">{router.metrics.overallRank}</div>
                 </div>
               </div>
             ))}
@@ -272,23 +286,42 @@ const LeaderboardPage: React.FC = () => {
           <div className="metrics-grid">
             <div className="metric-card">
               <h3>Arena Score</h3>
-              <p>Overall performance combining accuracy and cost efficiency</p>
+              <p>
+                A composite measure balancing accuracy and cost using a weighted harmonic mean.
+                Higher scores indicate routers that achieve the best accuracy–cost trade-off.
+              </p>
             </div>
+
             <div className="metric-card">
               <h3>Cost Ratio Score</h3>
-              <p>Efficiency in cost optimization relative to optimal routing</p>
+              <p>
+                Evaluates routing efficiency relative to an oracle.
+                Routers with higher scores achieve comparable accuracy at lower inference cost.
+              </p>
             </div>
+
             <div className="metric-card">
               <h3>Optimality Score</h3>
-              <p>Frequency of selecting the most efficient model for each query</p>
+              <p>
+                Measures how often a router selects the cheapest correct model.
+                Higher values reflect closer alignment to cost-optimal routing behavior.
+              </p>
             </div>
+
             <div className="metric-card">
               <h3>Latency Score</h3>
-              <p>Router overhead and response time performance</p>
+              <p>
+                Quantifies additional delay introduced by routing.
+                Higher scores correspond to lower routing overhead and faster responses.
+              </p>
             </div>
+
             <div className="metric-card">
               <h3>Robustness Score</h3>
-              <p>Stability against query perturbations and noise</p>
+              <p>
+                Captures routing consistency under noisy or perturbed inputs.
+                High robustness indicates stable model selection across variations.
+              </p>
             </div>
           </div>
         </div>

@@ -162,9 +162,13 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+:root {
+  --lb-grid: 60px minmax(140px, 1.4fr) minmax(120px, 1fr) 0.8fr repeat(5, minmax(90px, 1fr));
+}
+
 .leaderboard-header {
   display: grid;
-  grid-template-columns: 60px minmax(140px, 1.4fr) 0.8fr repeat(5, minmax(90px, 1fr)) 0.7fr; /* responsive fractions that fit container */
+  grid-template-columns: var(--lb-grid);
   gap: 0.75rem;
   padding: 1rem 1.5rem;
   background: #f8fafc;
@@ -183,7 +187,7 @@
 
 .leaderboard-row {
   display: grid;
-  grid-template-columns: 60px minmax(140px, 1.4fr) 0.8fr repeat(5, minmax(90px, 1fr)) 0.7fr; /* match header */
+  grid-template-columns: var(--lb-grid);
   gap: 0.5rem;
   padding: 0.5rem 0.75rem; /* shorter rows */
   border-bottom: 1px solid #e5e7eb;
@@ -222,42 +226,83 @@
 
 .rank-col {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  min-width: 60px;
 }
+
 
 .rank-badge {
-  padding: 0.5rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 18px;       /* bigger number text */
   font-weight: 700;
-  text-align: center;
-  min-width: 40px;
+  color: #1f2937;
 }
 
-.rank-badge.rank-1 {
-  background: #fbbf24;
-  color: #0f172a;
+.rank-badge.gold {
+  background: linear-gradient(135deg, #facc15, #ffd209);
+  box-shadow: 0 0 10px rgba(180, 134, 9, 0.5);
 }
 
-.rank-badge.rank-2 {
-  background: #9ca3af;
-  color: white;
+.rank-badge.silver {
+  background: linear-gradient(135deg, #d1d5db, #9ca3af);
+  box-shadow: 0 0 10px rgba(156, 163, 175, 0.4);
 }
 
-.rank-badge.rank-3 {
-  background: #f59e0b;
-  color: white;
+.rank-badge.bronze {
+  background: linear-gradient(135deg, #f59e0b, #b45309);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
 }
 
 .rank-badge.rank-other {
-  background: #e5e7eb;
-  color: #6b7280;
+  background-color: #e5e7eb;
+  color: #111827;
+  font-size: 20px;      /* rank numbers larger too */
+}
+
+
+
+
+.rank-badge.rank-1 {
+  background: var(--rank-1-bg);
+  color: var(--rank-1-text);
+}
+
+.rank-badge.rank-2 {
+  background: var(--rank-2-bg);
+  color: var(--rank-2-text);
+}
+
+.rank-badge.rank-3 {
+  background: var(--rank-3-bg);
+  color: var(--rank-3-text);
+}
+
+.rank-badge.rank-other {
+  background: var(--rank-other-bg);
+  color: var(--rank-other-text);
 }
 
 .name-col {
   display: flex;
   align-items: center;
+}
+
+.affiliation-col {
+  display: flex;
+  align-items: center;
+  min-width: 120px;
+}
+
+.affiliation {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
 }
 
 .router-info {
@@ -506,9 +551,12 @@
   .leaderboard-container {
     min-width: 1000px;
   }
+  :root {
+    --lb-grid: 70px 250px 120px 100px repeat(5, 120px);
+  }
+  
   .leaderboard-header,
   .leaderboard-row {
-    grid-template-columns: 70px 250px 100px repeat(5, 120px) 90px;
     gap: 0.75rem;
   }
   

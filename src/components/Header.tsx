@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Trophy, Home, Send, Users, Github } from 'lucide-react';
 import './Header.css';
+import { contactInfo } from '../data/mockData';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ const Header: React.FC = () => {
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'Leaderboard', href: '/leaderboard', icon: Trophy },
-    { name: 'GitHub', href: 'https://github.com/RouteWorks', icon: Github, isExternal: true },
+    { name: 'GitHub', href: contactInfo.github, icon: Github, isExternal: true },
     { name: 'Contact', href: '#contact', icon: Users, isScroll: true },
   ];
 
