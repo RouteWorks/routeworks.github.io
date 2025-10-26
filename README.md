@@ -1,12 +1,6 @@
-
 # Project Overview
 
-RouterArena is the first open platform enabling comprehensive evaluation and comparison of LLM routers. The platform features:
-
-- **Principled Dataset**: 8,400 queries across 9 domains and 44 categories using Dewey Decimal Classification and Bloom's taxonomy
-- **Multi-Dimensional Metrics**: Arena Score, Cost Ratio, Optimality, Latency, and Robustness evaluation
-- **Automated Framework**: Support for both academic and commercial routers with real-time leaderboard updates
-- **Fair Comparison**: Unified evaluation protocol for transparent and reproducible results
+RouterArena is the first open platform enabling comprehensive evaluation and comparison of LLM routers. Check out the [website](https://routeworks.github.io) for more details.
 
 ## Research Team
 
@@ -20,33 +14,7 @@ RouterArena is the first open platform enabling comprehensive evaluation and com
 - Hongyi Liu (hl87@rice.edu)
 - Jiarong Xing (jxing@rice.edu)
 
-## Website Features
-
-### 🏠 Home Page
-- Project overview and key features
-- Dataset statistics and difficulty levels
-- Contact information and collaboration details
-- Interactive leaderboard preview
-
-### 🏆 Leaderboard Page
-- Comprehensive router rankings across multiple metrics
-- Search and filter functionality
-- Detailed performance metrics for each router
-- Links to papers and source code
-
-### 📝 Submit Page
-- Router submission form for evaluation
-- Clear guidelines for academic and commercial routers
-- Evaluation process explanation
-- Contact information for collaboration
-
-### ℹ️ About Page
-- Detailed project methodology
-- Research team information
-- Citation information
-- Contact and collaboration details
-
-## Technology Stack
+## Web Stack
 
 - **Frontend**: React 19.2.0 with TypeScript
 - **Routing**: React Router DOM 6.8.1
@@ -55,7 +23,7 @@ RouterArena is the first open platform enabling comprehensive evaluation and com
 - **Styling**: CSS3 with modern features
 - **Build Tool**: Create React App
 
-## Getting Started
+## For Developers
 
 ### Prerequisites
 
@@ -136,14 +104,6 @@ interface Router {
   githubUrl?: string;
 }
 ```
-
-### Evaluation Metrics
-
-1. **Arena Score**: Overall performance combining accuracy and cost efficiency
-2. **Cost Ratio Score**: Efficiency in cost optimization relative to optimal routing
-3. **Optimality Score**: Frequency of selecting the most efficient model for each query
-4. **Latency Score**: Router overhead and response time performance
-5. **Robustness Score**: Stability against query perturbations and noise
 
 ## Contributing
 
