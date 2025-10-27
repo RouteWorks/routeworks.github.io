@@ -288,7 +288,7 @@ const LeaderboardPage: React.FC = () => {
               <h3>Arena Score</h3>
               <p>
                 A composite measure balancing accuracy and cost using a weighted harmonic mean.
-                Higher scores indicate routers that achieve the best accuracy–cost trade-off.
+                Higher scores indicate routers that achieve the best accuracy-cost trade-off.
               </p>
             </div>
 
