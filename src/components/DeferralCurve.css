@@ -89,14 +89,13 @@
     min-width: auto;
     justify-content: center;
   }
-  
+
   .legend-section h4 {
     text-align: center;
   }
-  
+
   .legend-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 }
-

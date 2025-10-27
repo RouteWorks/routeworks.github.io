@@ -37,6 +37,9 @@ const HomePage: React.FC = () => {
             <p className="hero-subtitle-short">
               Diverse dataset, extensive metrics, and live leaderboard
             </p>
+            <p className="hero-subtitle-short">
+              Diverse dataset, extensive metrics, and live leaderboard
+            </p>
             <div className="hero-actions">
               <Link to="/leaderboard" className="btn btn-primary">
                 <Trophy className="btn-icon" />
@@ -58,14 +61,16 @@ const HomePage: React.FC = () => {
                         <span className="rank">{index + 1}</span>
                         <span className="name">{router.name}</span>
                         <span className="affiliation">{router.affiliation}</span>
+                        <span className="affiliation">{router.affiliation}</span>
                       </div>
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="cta-card">
                   <h3 className="cta-heading">Want to see your router on the leaderboard?</h3>
                   <p className="cta-description">
+                  Open a GitHub issue on our RouterArena platform.
                   Open a GitHub issue on our RouterArena platform.
                   </p>
                   <a href="#contact" className="btn btn-primary">
@@ -82,31 +87,32 @@ const HomePage: React.FC = () => {
       <section className="features">
         <div className="container">
           <h2 className="section-title">Key Features</h2>
-          
+
           {/* Tab Navigation */}
           <div className="tab-navigation">
-            <button 
+            <button
               className={`tab-button ${activeTab === 'dataset' ? 'active' : ''}`}
               onClick={() => setActiveTab('dataset')}
             >
               <BookOpen className="tab-icon" />
               Diverse Dataset
+              Diverse Dataset
             </button>
-            <button 
+            <button
               className={`tab-button ${activeTab === 'metrics' ? 'active' : ''}`}
               onClick={() => setActiveTab('metrics')}
             >
               <BarChart3 className="tab-icon" />
               Extensive Metrics
             </button>
-            <button 
+            <button
               className={`tab-button ${activeTab === 'framework' ? 'active' : ''}`}
               onClick={() => setActiveTab('framework')}
             >
               <Zap className="tab-icon" />
               Automated Framework
             </button>
-            <button 
+            <button
               className={`tab-button ${activeTab === 'comparison' ? 'active' : ''}`}
               onClick={() => setActiveTab('comparison')}
             >
@@ -125,9 +131,10 @@ const HomePage: React.FC = () => {
                   </div>
                   <div>
                     <h3>Diverse Dataset</h3>
+                    <h3>Diverse Dataset</h3>
                     <p className="tab-subtitle">
-                      {datasetInfo.totalQueries.toLocaleString()} queries across {datasetInfo.domains} domains 
-                      and {datasetInfo.categories} categories, designed using Dewey Decimal Classification 
+                      {datasetInfo.totalQueries.toLocaleString()} queries across {datasetInfo.domains} domains
+                      and {datasetInfo.categories} categories, designed using Dewey Decimal Classification
                       and Bloom's taxonomy for comprehensive evaluation.
                     </p>
                   </div>
@@ -154,7 +161,7 @@ const HomePage: React.FC = () => {
                   <div>
                     <h3>Extensive Metrics</h3>
                     <p className="tab-subtitle">
-                      Multi-dimensional evaluation including accuracy, cost, optimality, 
+                      Multi-dimensional evaluation including accuracy, cost, optimality,
                       robustness, and latency to provide comprehensive router comparison.
                     </p>
                   </div>
@@ -181,7 +188,7 @@ const HomePage: React.FC = () => {
                   <div>
                     <h3>Automated Framework</h3>
                     <p className="tab-subtitle">
-                      Automated evaluation pipeline supporting both open-source and commercial 
+                      Automated evaluation pipeline supporting both open-source and commercial
                       routers with real-time leaderboard updates.
                     </p>
                   </div>
@@ -208,7 +215,7 @@ const HomePage: React.FC = () => {
                   <div>
                     <h3>Fair Comparison</h3>
                     <p className="tab-subtitle">
-                      Unified evaluation protocol enabling fair comparison between academic 
+                      Unified evaluation protocol enabling fair comparison between academic
                       and commercial routers under consistent conditions.
                     </p>
                   </div>
@@ -244,7 +251,7 @@ const HomePage: React.FC = () => {
           <p className="contact-description">
             Contact us or submit a GitHub issue to evaluate your router with RouterArena 
           </p>
-          
+
           {/* Action Buttons */}
           <div className="action-buttons">
             <a href={contactInfo.paper} className="btn btn-primary" target="_blank" rel="noopener noreferrer">

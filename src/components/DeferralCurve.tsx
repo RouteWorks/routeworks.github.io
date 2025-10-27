@@ -11,29 +11,29 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
   const allPoints = [...Object.values(academicPoints), ...Object.values(commercialPoints)];
   const accuracyValues = allPoints.map(p => p.accuracy);
   const costValues = allPoints.map(p => p.cost_per_1k);
-  
+
   const minAccuracy = Math.min(...accuracyValues);
   const maxAccuracy = Math.max(...accuracyValues);
   const minCost = Math.min(...costValues);
   const maxCost = Math.max(...costValues);
-  
+
   // Add some padding to the ranges, but ensure oracle accuracy (0.9089) is visible
   const accuracyRange = maxAccuracy - minAccuracy;
   const costRange = maxCost - minCost;
   const accuracyMin = Math.max(0, minAccuracy - accuracyRange * 0.1);
   const accuracyMax = Math.max(0.95, maxAccuracy + accuracyRange * 0.1); // Ensure oracle accuracy is visible
-  
+
   // Zoom in on X-axis to spread out the data points better
   const costMin = Math.max(0.01, minCost * 0.5); // Start closer to minimum
   const costMax = maxCost * 1.2; // Extend a bit beyond maximum
-  
+
   // Chart dimensions
   const chartWidth = 500;
   const chartHeight = 400;
   const margin = { top: 20, right: 20, bottom: 60, left: 80 };
   const plotWidth = chartWidth - margin.left - margin.right;
   const plotHeight = chartHeight - margin.top - margin.bottom;
-  
+
   // Scale functions
   const scaleX = (cost: number) => {
     const logMin = Math.log10(costMin);
@@ -41,11 +41,11 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
     const logValue = Math.log10(cost);
     return margin.left + ((logValue - logMin) / (logMax - logMin)) * plotWidth;
   };
-  
+
   const scaleY = (accuracy: number) => {
     return margin.top + (1 - (accuracy - accuracyMin) / (accuracyMax - accuracyMin)) * plotHeight;
   };
-  
+
   // Router colors and shapes
   const routerColors = [
     '#3b82f6', // Blue
@@ -150,13 +150,13 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
         );
     }
   };
-  
+
   // Generate powers of 10 for x-axis (0.1, 1, 10, etc.)
   const generatePowersOf10 = (min: number, max: number) => {
     const ticks = [];
     const minLog = Math.floor(Math.log10(min));
     const maxLog = Math.ceil(Math.log10(max));
-    
+
     for (let i = minLog; i <= maxLog; i++) {
       const baseValue = Math.pow(10, i);
       if (baseValue >= min && baseValue <= max) {
@@ -165,10 +165,10 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
     }
     return ticks;
   };
-  
+
   const costTicks = generatePowersOf10(costMin, costMax);
-  
-  
+
+
   return (
     <div className="deferral-curve-container">
       <div className="deferral-curve-wrapper">
@@ -188,7 +188,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
               />
             );
           })}
-          
+
           {[0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9].map(tick => {
             if (tick >= accuracyMin && tick <= accuracyMax) {
               const y = scaleY(tick);
@@ -206,25 +206,25 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
             }
             return null;
           })}
-          
+
           {/* Academic routers */}
           {Object.entries(academicPoints).map(([name, point], index) => {
             const x = scaleX(point.cost_per_1k);
             const y = scaleY(point.accuracy);
             const color = routerColors[index % routerColors.length];
-            
+
             return renderShape(x, y, 'circle', color, `academic-${name}`);
           })}
-          
+
           {/* Commercial routers */}
           {Object.entries(commercialPoints).map(([name, point], index) => {
             const x = scaleX(point.cost_per_1k);
             const y = scaleY(point.accuracy);
             const color = routerColors[(index + Object.keys(academicPoints).length) % routerColors.length];
-            
+
             return renderShape(x, y, 'triangle', color, `commercial-${name}`);
           })}
-          
+
           {/* Oracle accuracy line */}
           <line
             x1={margin.left}
@@ -245,7 +245,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
           >
             Oracle Accuracy
           </text>
-          
+
           {/* Axes */}
           <line
             x1={margin.left}
@@ -263,7 +263,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
             stroke="#374151"
             strokeWidth="2"
           />
-          
+
           {/* X-axis labels - powers of 10 only */}
           {costTicks.map(tick => {
             const x = scaleX(tick);
@@ -289,7 +289,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
               </g>
             );
           })}
-          
+
           {/* Y-axis labels */}
           {[0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9].map(tick => {
             if (tick >= accuracyMin && tick <= accuracyMax) {
@@ -318,7 +318,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
             }
             return null;
           })}
-          
+
           {/* Axis titles */}
           <text
             x={margin.left + plotWidth / 2}
@@ -342,7 +342,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
             Accuracy
           </text>
         </svg>
-        
+
         {/* Legend */}
         <div className="deferral-legend-side">
           <div className="legend-section">
@@ -361,7 +361,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
               })}
             </div>
           </div>
-          
+
           <div className="legend-section">
             <h4>Commercial</h4>
             <div className="legend-items">
@@ -385,4 +385,3 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
 };
 
 export default DeferralCurve;
-

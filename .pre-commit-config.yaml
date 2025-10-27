@@ -1,0 +1,36 @@
+repos:
+  # --- Basic hygiene ---
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: '\\.svg$'
+        exclude_types: [svg]
+      - id: end-of-file-fixer
+        exclude: '\\.svg$'
+        exclude_types: [svg]
+      - id: check-json
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ["--maxkb=2048"]
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: detect-private-key
+      - id: mixed-line-ending
+
+  # --- JS/HTML formatting and linting ---
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        args: [--check]
+        additional_dependencies: [prettier@3.2.5]
+        files: '\\.(js|jsx|ts|tsx|json|css|scss|md|markdown|yml|yaml|html)$'
+
+  # --- Optional: spell check or link check ---
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.6
+    hooks:
+      - id: codespell
+        args: ["--ignore-words-list=teh,fo"]
+        exclude: '^package-lock\.json$'

@@ -53,19 +53,19 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
   };
 
   // Calculate adaptive axis scaling to show more variation
-  const allValues = topRouters.flatMap(router => 
+  const allValues = topRouters.flatMap(router =>
     metrics.map(metric => router.metrics[metric.key])
   );
   const minValue = Math.min(...allValues);
   const maxValue = Math.max(...allValues);
   const valueRange = maxValue - minValue;
-  
+
   // Set axis range to show more variation
   // If values are clustered (e.g., 0.8-0.9), show axis with 25% padding above and below
   const axisMin = Math.max(0, minValue - valueRange * 0.25);
   const axisMax = Math.min(1, maxValue + valueRange * 0.25);
   const axisRange = axisMax - axisMin;
-  
+
   const chartRadius = 180;
   const centerX = 225;
   const centerY = 225;
@@ -113,7 +113,7 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
             const angle = (index * 2 * Math.PI) / metrics.length - Math.PI / 2;
             const endX = centerX + Math.cos(angle) * chartRadius;
             const endY = centerY + Math.sin(angle) * chartRadius;
-            
+
             return (
               <line
                 key={metric.key}
@@ -132,7 +132,7 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
             const angle = (index * 2 * Math.PI) / metrics.length - Math.PI / 2;
             const labelX = centerX + Math.cos(angle) * (chartRadius + 40);
             const labelY = centerY + Math.sin(angle) * (chartRadius + 40);
-            
+
             return (
               <g key={metric.key}>
                 <text
@@ -155,7 +155,7 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
           {topRouters.map((router, routerIndex) => {
             const path = getRouterPath(router, chartRadius);
             const color = routerColors[routerIndex % routerColors.length];
-            
+
             return (
               <g key={router.id}>
                 {/* Fill area */}
@@ -176,7 +176,7 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
                 {metrics.map((metric, metricIndex) => {
                   const value = router.metrics[metric.key];
                   const pos = getMetricPosition(metricIndex, value, chartRadius);
-                  
+
                   return (
                     <circle
                       key={`${router.id}-${metric.key}`}
@@ -201,8 +201,8 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
           const color = routerColors[index % routerColors.length];
           return (
             <div key={router.id} className="legend-item">
-              <div 
-                className="legend-color" 
+              <div
+                className="legend-color"
                 style={{ backgroundColor: color }}
               />
               <span className="legend-label">{router.name}</span>
