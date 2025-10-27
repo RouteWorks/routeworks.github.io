@@ -70,8 +70,7 @@ const HomePage: React.FC = () => {
                 <div className="cta-card">
                   <h3 className="cta-heading">Want to see your router on the leaderboard?</h3>
                   <p className="cta-description">
-                  Open a GitHub issue on our RouterArena platform.
-                  Open a GitHub issue on our RouterArena platform.
+                  Email us or open a GitHub issue on RouterArena.
                   </p>
                   <a href="#contact" className="btn btn-primary">
                     Get Started →
@@ -249,7 +248,7 @@ const HomePage: React.FC = () => {
         <div className="container">
           <h2 className="section-title">Research Team</h2>
           <p className="contact-description">
-            Contact us or submit a GitHub issue to evaluate your router with RouterArena 
+            Contact us or submit a GitHub issue to evaluate your router with RouterArena
           </p>
 
           {/* Action Buttons */}

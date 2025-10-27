@@ -335,11 +335,11 @@ const DatasetCompositionChart: React.FC = () => {
               // Adaptive label radius: farther for sides, closer for top/bottom
               const baseOffset = 60;   // baseline distance beyond pie edge
               const sideBoost = 40;    // extra distance for left/right labels
-              const angleFactor = Math.abs(Math.sin(midAngle * RADIAN)); 
+              const angleFactor = Math.abs(Math.sin(midAngle * RADIAN));
               // 0 for top/bottom, 1 for sides
 
               const radius = CHART_DIMENSIONS.outerRadius + baseOffset + sideBoost * angleFactor;
-                          
+
               // Use exact center coordinates matching Recharts
               const centerX = 400; // Exact center of 800x800 viewBox
               const centerY = 400; // Exact center of 800x800 viewBox

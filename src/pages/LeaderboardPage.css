@@ -558,7 +558,7 @@
   :root {
     --lb-grid: 70px 250px 120px 100px repeat(5, 120px);
   }
-  
+
   .leaderboard-header,
   .leaderboard-row {
     gap: 0.75rem;
