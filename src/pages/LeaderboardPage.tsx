@@ -288,14 +288,14 @@ const LeaderboardPage: React.FC = () => {
               <h3>Arena Score</h3>
               <p>
                 A composite measure balancing accuracy and cost using a weighted harmonic mean.
-                Higher scores indicate routers that achieve the best accuracy–cost trade-off.
+                Higher scores indicate routers that achieve the best accuracy-cost trade-off.
               </p>
             </div>
 
             <div className="metric-card">
               <h3>Cost Ratio Score</h3>
               <p>
-                Evaluates routing efficiency relative to an oracle.
+                Evaluates the cost of the router's choices relative to an oracle that always selects the cheapest correct model.
                 Routers with higher scores achieve comparable accuracy at lower inference cost.
               </p>
             </div>
@@ -303,7 +303,7 @@ const LeaderboardPage: React.FC = () => {
             <div className="metric-card">
               <h3>Optimality Score</h3>
               <p>
-                Measures how often a router selects the cheapest correct model.
+                Measures how often a router selects the optimal model (i.e., the model answers the question correctly with the lowest cost).
                 Higher values reflect closer alignment to cost-optimal routing behavior.
               </p>
             </div>
