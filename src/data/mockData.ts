@@ -84,7 +84,7 @@ export const routers: Router[] = [
     name: 'MIRT-BERT',
     type: 'academic',
     description: 'Multi-item response theory with BERT embeddings',
-    affiliation: 'Unknown',
+    affiliation: 'USTC',
     metrics: {
       arenaScore: 0.78,
       costRatioScore: 0.75,
@@ -102,7 +102,7 @@ export const routers: Router[] = [
     name: 'NIRT-BERT',
     type: 'academic',
     description: 'Neural item response theory with BERT-based routing',
-    affiliation: 'Unknown',
+    affiliation: 'USTC',
     metrics: {
       arenaScore: 0.76,
       costRatioScore: 0.70,
