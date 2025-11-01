@@ -37,6 +37,9 @@ const HomePage: React.FC = () => {
             <p className="hero-subtitle-short">
               Diverse dataset, extensive metrics, and live leaderboard
             </p>
+            <p className="hero-subtitle-short">
+              Diverse dataset, extensive metrics, and live leaderboard
+            </p>
             <div className="hero-actions">
               <Link to="/leaderboard" className="btn btn-primary">
                 <Trophy className="btn-icon" />
@@ -58,6 +61,7 @@ const HomePage: React.FC = () => {
                         <span className="rank">{index + 1}</span>
                         <span className="name">{router.name}</span>
                         <span className="affiliation">{router.affiliation}</span>
+                        <span className="affiliation">{router.affiliation}</span>
                       </div>
                     ))}
                   </div>
@@ -66,7 +70,7 @@ const HomePage: React.FC = () => {
                 <div className="cta-card">
                   <h3 className="cta-heading">Want to see your router on the leaderboard?</h3>
                   <p className="cta-description">
-                  Open a GitHub issue on our RouterArena platform.
+                  Email us or open a GitHub issue on RouterArena.
                   </p>
                   <a href="#contact" className="btn btn-primary">
                     Get Started →
@@ -90,6 +94,7 @@ const HomePage: React.FC = () => {
               onClick={() => setActiveTab('dataset')}
             >
               <BookOpen className="tab-icon" />
+              Diverse Dataset
               Diverse Dataset
             </button>
             <button
@@ -124,6 +129,7 @@ const HomePage: React.FC = () => {
                     <BookOpen />
                   </div>
                   <div>
+                    <h3>Diverse Dataset</h3>
                     <h3>Diverse Dataset</h3>
                     <p className="tab-subtitle">
                       {datasetInfo.totalQueries.toLocaleString()} queries across {datasetInfo.domains} domains
@@ -242,7 +248,7 @@ const HomePage: React.FC = () => {
         <div className="container">
           <h2 className="section-title">Research Team</h2>
           <p className="contact-description">
-            Contact us or open a GitHub issue to evaluate your router with RouterArena
+            Contact us or submit a GitHub issue to evaluate your router with RouterArena
           </p>
 
           {/* Action Buttons */}

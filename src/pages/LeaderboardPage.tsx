@@ -295,16 +295,16 @@ const LeaderboardPage: React.FC = () => {
             <div className="metric-card">
               <h3>Cost Ratio Score</h3>
               <p>
-                Evaluates the cost of the router's choices relative to an oracle that always selects the cheapest correct model.
-                Routers with higher scores achieve comparable accuracy at lower inference cost.
+              Measures the performance a router achieves per unit of cost compared to the benchmarked routers.
+              A high score means it maintains strong accuracy while spending less on average across all queries.
               </p>
             </div>
 
             <div className="metric-card">
               <h3>Optimality Score</h3>
               <p>
-                Measures how often a router selects the optimal model (i.e., the model answers the question correctly with the lowest cost).
-                Higher values reflect closer alignment to cost-optimal routing behavior.
+              Captures how the router's ability to select the cheapest model that still produces a correct response.
+              High values indicate decisions that closely match ideal, cost-minimizing routing behavior.
               </p>
             </div>
 
