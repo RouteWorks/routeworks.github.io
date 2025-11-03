@@ -488,6 +488,13 @@
   z-index: 0;
 }
 
+.metrics-explanation {
+  margin-bottom: 15rem; /* give plenty of space at bottom */
+  position: relative;
+  overflow: visible; /* ensure expanded cards aren’t clipped */
+
+}
+
 .metric-card {
   position: relative;
   overflow: visible; /* ✅ prevents clipping */
@@ -509,6 +516,7 @@
   z-index: 10; /* ✅ bring above neighbors */
   box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
   border-left-color: transparent; /* hide border when overlay shows */
+
 }
 
 /* Summary always visible */
