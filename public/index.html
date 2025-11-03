@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script type="text/javascript">
+      // If we came here via the redirect above, rewrite the URL back
+      // to the original path so React Router can pick it up.
+      (function() {
+        const params = new URLSearchParams(window.location.search);
+        const redirectPath = params.get('p');
+        if (redirectPath) {
+          window.history.replaceState({}, '', redirectPath);
+        }
+      })();
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
