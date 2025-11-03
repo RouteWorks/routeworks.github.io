@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=./" />
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // Redirect all paths (like /leaderboard) back to index.html,
+      // but preserve the original path for React Router.
+      const redirectTo = window.location.protocol + '//' + window.location.host + '/?' +
+        'p=' + window.location.pathname + window.location.search + window.location.hash;
+      window.location.replace(redirectTo);
+    </script>
   </head>
-  <body></body>
+  <body>
+  </body>
 </html>
