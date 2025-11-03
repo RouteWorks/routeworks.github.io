@@ -332,7 +332,7 @@ const LeaderboardPage: React.FC = () => {
               </div>
 
               <div className="metric-details">
-                <h4>Definition (Sec 5.1)</h4>
+                <h4>Definition</h4>
                 <p>
                   For each router <InlineMath math="r" />, let <InlineMath math="A_r" /> denote the
                   average correctness of the selected models' answers over the dataset queries.
