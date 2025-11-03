@@ -12,7 +12,7 @@ repos:
       - id: check-json
       - id: check-yaml
       - id: check-added-large-files
-        args: ["--maxkb=2048"]
+        args: ['--maxkb=2048']
       - id: check-merge-conflict
       - id: check-case-conflict
       - id: detect-private-key
@@ -32,5 +32,5 @@ repos:
     rev: v2.2.6
     hooks:
       - id: codespell
-        args: ["--ignore-words-list=teh,fo"]
+        args: ['--ignore-words-list=teh,fo']
         exclude: '^package-lock\.json$'

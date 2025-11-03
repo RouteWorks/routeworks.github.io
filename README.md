@@ -24,17 +24,20 @@ RouterArena is the first open platform enabling comprehensive evaluation and com
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/rice-university/routerarena.git
 cd routerarena
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm start
 ```
@@ -104,6 +107,7 @@ src/
 ```
 
 ### Router Data Structure
+
 ```typescript
 interface Router {
   id: string;

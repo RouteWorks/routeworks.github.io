@@ -11,9 +11,7 @@ const HomePage: React.FC = () => {
 
   // Get top 3 routers sorted by arena score (highest first)
   const topRouters = useMemo(() => {
-    return routers
-      .sort((a, b) => b.metrics.arenaScore - a.metrics.arenaScore)
-      .slice(0, 3);
+    return routers.sort((a, b) => b.metrics.arenaScore - a.metrics.arenaScore).slice(0, 3);
   }, []);
 
   useEffect(() => {
@@ -66,9 +64,7 @@ const HomePage: React.FC = () => {
 
                 <div className="cta-card">
                   <h3 className="cta-heading">Want to see your router on the leaderboard?</h3>
-                  <p className="cta-description">
-                  Email us or open a GitHub issue on RouterArena.
-                  </p>
+                  <p className="cta-description">Email us or open a GitHub issue on RouterArena.</p>
                   <a href="#contact" className="btn btn-primary">
                     Get Started →
                   </a>
@@ -125,22 +121,37 @@ const HomePage: React.FC = () => {
                     <BookOpen />
                   </div>
                   <div>
-                     <h3>Diverse Dataset</h3>
+                    <h3>Diverse Dataset</h3>
                     <p className="tab-subtitle">
-                      {datasetInfo.totalQueries.toLocaleString()} queries across {datasetInfo.domains} domains
-                      and {datasetInfo.categories} categories, designed using Dewey Decimal Classification
-                      and Bloom's taxonomy for comprehensive evaluation.
+                      {datasetInfo.totalQueries.toLocaleString()} queries across{' '}
+                      {datasetInfo.domains} domains and {datasetInfo.categories} categories,
+                      designed using Dewey Decimal Classification and Bloom's taxonomy for
+                      comprehensive evaluation.
                     </p>
                   </div>
                 </div>
                 <div className="tab-details">
                   <h4>Dataset Composition</h4>
                   <ul>
-                    <li><strong>8,000+ queries</strong> across 9 Dewey Decimal Classification domains</li>
-                    <li><strong>44 categories</strong> covering all major knowledge areas except religion</li>
-                    <li><strong>Bloom's Taxonomy levels:</strong> Remember, Understand, Apply, Analyze, Evaluate, Create</li>
-                    <li><strong>Balanced distribution</strong> ensuring fair evaluation across difficulty levels</li>
-                    <li><strong>Multi-source integration</strong> from academic and specialized datasets</li>
+                    <li>
+                      <strong>8,000+ queries</strong> across 9 Dewey Decimal Classification domains
+                    </li>
+                    <li>
+                      <strong>44 categories</strong> covering all major knowledge areas except
+                      religion
+                    </li>
+                    <li>
+                      <strong>Bloom's Taxonomy levels:</strong> Remember, Understand, Apply,
+                      Analyze, Evaluate, Create
+                    </li>
+                    <li>
+                      <strong>Balanced distribution</strong> ensuring fair evaluation across
+                      difficulty levels
+                    </li>
+                    <li>
+                      <strong>Multi-source integration</strong> from academic and specialized
+                      datasets
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -155,19 +166,38 @@ const HomePage: React.FC = () => {
                   <div>
                     <h3>Extensive Metrics</h3>
                     <p className="tab-subtitle">
-                      Multi-dimensional evaluation including arena score, optimal selection, cost, accuracy, robustness, and latency to provide comprehensive router comparison.
+                      Multi-dimensional evaluation including arena score, optimal selection, cost,
+                      accuracy, robustness, and latency to provide comprehensive router comparison.
                     </p>
                   </div>
                 </div>
                 <div className="tab-details">
                   <h4>Evaluation Dimensions</h4>
                   <ul>
-                    <li><strong>Arena Score:</strong> Weighted harmonic mean capturing the trade-off between accuracy and cost efficiency</li>
-                    <li><strong>Optimal Selection Score:</strong> Fraction of router selections that match the optimal model</li>
-                    <li><strong>Optimal Cost Score:</strong> Inverse cost ratio relative to the query's optimal model</li>
-                    <li><strong>Optimal Accuracy Score:</strong> Accuracy achieved relative to the maximum possible accuracy across models</li>
-                    <li><strong>Robustness Score:</strong> Consistency of routing under input perturbations and noise</li>
-                    <li><strong>Latency Score:</strong> Inverse measure of routing overhead relative to base latency</li>
+                    <li>
+                      <strong>Arena Score:</strong> Weighted harmonic mean capturing the trade-off
+                      between accuracy and cost efficiency
+                    </li>
+                    <li>
+                      <strong>Optimal Selection Score:</strong> Fraction of router selections that
+                      match the optimal model
+                    </li>
+                    <li>
+                      <strong>Optimal Cost Score:</strong> Inverse cost ratio relative to the
+                      query's optimal model
+                    </li>
+                    <li>
+                      <strong>Optimal Accuracy Score:</strong> Accuracy achieved relative to the
+                      maximum possible accuracy across models
+                    </li>
+                    <li>
+                      <strong>Robustness Score:</strong> Consistency of routing under input
+                      perturbations and noise
+                    </li>
+                    <li>
+                      <strong>Latency Score:</strong> Inverse measure of routing overhead relative
+                      to base latency
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -190,11 +220,26 @@ const HomePage: React.FC = () => {
                 <div className="tab-details">
                   <h4>Framework Features</h4>
                   <ul>
-                    <li><strong>Unified Protocol:</strong> Consistent evaluation across all router types</li>
-                    <li><strong>Prefix Caching:</strong> Optimized inference efficiency for faster evaluation</li>
-                    <li><strong>Live Updates:</strong> Real-time leaderboard updates as new routers are added</li>
-                    <li><strong>Multi-Platform:</strong> Support for both academic and commercial routers</li>
-                    <li><strong>Reproducible Results:</strong> Transparent and standardized evaluation process</li>
+                    <li>
+                      <strong>Unified Protocol:</strong> Consistent evaluation across all router
+                      types
+                    </li>
+                    <li>
+                      <strong>Prefix Caching:</strong> Optimized inference efficiency for faster
+                      evaluation
+                    </li>
+                    <li>
+                      <strong>Live Updates:</strong> Real-time leaderboard updates as new routers
+                      are added
+                    </li>
+                    <li>
+                      <strong>Multi-Platform:</strong> Support for both academic and commercial
+                      routers
+                    </li>
+                    <li>
+                      <strong>Reproducible Results:</strong> Transparent and standardized evaluation
+                      process
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -209,19 +254,34 @@ const HomePage: React.FC = () => {
                   <div>
                     <h3>Fair Comparison</h3>
                     <p className="tab-subtitle">
-                      Unified evaluation protocol enabling fair comparison between academic
-                      and commercial routers under consistent conditions.
+                      Unified evaluation protocol enabling fair comparison between academic and
+                      commercial routers under consistent conditions.
                     </p>
                   </div>
                 </div>
                 <div className="tab-details">
                   <h4>Comparison Standards</h4>
                   <ul>
-                    <li><strong>Consistent Evaluation:</strong> Same dataset and metrics for all routers</li>
-                    <li><strong>Transparent Methodology:</strong> Open evaluation framework and protocols</li>
-                    <li><strong>Academic & Commercial:</strong> Fair comparison across different router types</li>
-                    <li><strong>Standardized Metrics:</strong> Unified scoring system for objective ranking</li>
-                    <li><strong>Community Driven:</strong> Open platform for ongoing evaluation and improvement</li>
+                    <li>
+                      <strong>Consistent Evaluation:</strong> Same dataset and metrics for all
+                      routers
+                    </li>
+                    <li>
+                      <strong>Transparent Methodology:</strong> Open evaluation framework and
+                      protocols
+                    </li>
+                    <li>
+                      <strong>Academic & Commercial:</strong> Fair comparison across different
+                      router types
+                    </li>
+                    <li>
+                      <strong>Standardized Metrics:</strong> Unified scoring system for objective
+                      ranking
+                    </li>
+                    <li>
+                      <strong>Community Driven:</strong> Open platform for ongoing evaluation and
+                      improvement
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -230,13 +290,13 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-        {/* Dataset Overview */}
-        <section className="dataset-overview">
-          <div className="container">
-            <h2 className="section-title">Dataset Overview</h2>
-            <DatasetCompositionChart />
-          </div>
-        </section>
+      {/* Dataset Overview */}
+      <section className="dataset-overview">
+        <div className="container">
+          <h2 className="section-title">Dataset Overview</h2>
+          <DatasetCompositionChart />
+        </div>
+      </section>
 
       {/* Research Team Section */}
       <section id="contact" className="team">
@@ -248,11 +308,21 @@ const HomePage: React.FC = () => {
 
           {/* Action Buttons */}
           <div className="action-buttons">
-            <a href={contactInfo.paper} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <a
+              href={contactInfo.paper}
+              className="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <BookOpen className="btn-icon" />
               Read Paper
             </a>
-            <a href={contactInfo.github} className="btn btn-outline" target="_blank" rel="noopener noreferrer">
+            <a
+              href={contactInfo.github}
+              className="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Github className="btn-icon" />
               View Code
             </a>
@@ -277,7 +347,6 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };
