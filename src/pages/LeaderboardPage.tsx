@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Trophy, Search, Medal} from 'lucide-react';
+import { Trophy, Search, Medal } from 'lucide-react';
 import { Router } from '../types';
 import { routers } from '../data/mockData';
 import SpiderChart from '../components/SpiderChart';
@@ -353,43 +353,99 @@ const LeaderboardPage: React.FC = () => {
           <h2>Evaluation Metrics</h2>
           <div className="metrics-grid">
             <div className="metric-card">
-              <h3>Arena Score</h3>
-              <p>
-                A composite measure balancing accuracy and cost using a weighted harmonic mean.
-                Higher scores indicate routers that achieve the best accuracy-cost trade-off.
-              </p>
+              <div className="metric-summary">
+                <h3>Arena Score</h3>
+                <p>Balances accuracy and cost efficiency.</p>
+              </div>
+              <div className="metric-details">
+                <h4>Definition</h4>
+                <p>
+                  Weighted harmonic mean between accuracy (<code>A</code>) and inverse cost (<code>1/C</code>).
+                </p>
+                <h4>Formula</h4>
+                <p><code>Score = 2 × (A × (1/C)) / (A + 1/C)</code></p>
+                <p><strong>Range:</strong> [0, 1]</p>
+              </div>
             </div>
 
             <div className="metric-card">
-              <h3>Cost Ratio Score</h3>
-              <p>
-              Measures the performance a router achieves per unit of cost compared to the benchmarked routers.
-              A high score means it maintains strong accuracy while spending less on average across all queries.
-              </p>
+              <div className="metric-summary">
+                <h3>Optimal Selection Score</h3>
+                <p>Measures selection of the cheapest correct model.</p>
+              </div>
+              <div className="metric-details">
+                <h4>Definition</h4>
+                <p>
+                  Measures the router's ability to select the optimal model (cheapest model that produces a correct response).
+                </p>
+                <h4>Calculation</h4>
+                <p>Ratio of optimal selections to total queries</p>
+                <p><strong>Range:</strong> [0, 1]</p>
+              </div>
             </div>
 
             <div className="metric-card">
-              <h3>Optimality Score</h3>
-              <p>
-              Captures how the router's ability to select the cheapest model that still produces a correct response.
-              High values indicate decisions that closely match ideal, cost-minimizing routing behavior.
-              </p>
+              <div className="metric-summary">
+                <h3>Optimal Cost Score</h3>
+                <p>Measures cost efficiency relative to optimal routing.</p>
+              </div>
+              <div className="metric-details">
+                <h4>Definition</h4>
+                <p>
+                  Measures the router's cost efficiency relative to the optimal cost for each query.
+                </p>
+                <h4>Formula</h4>
+                <p><code>1 - (actual_cost - optimal_cost) / optimal_cost</code></p>
+                <p><strong>Range:</strong> [0, 1]</p>
+              </div>
             </div>
 
             <div className="metric-card">
-              <h3>Latency Score</h3>
-              <p>
-                Quantifies additional delay introduced by routing.
-                Higher scores correspond to lower routing overhead and faster responses.
-              </p>
+              <div className="metric-summary">
+                <h3>Optimal Acc Score</h3>
+                <p>Measures accuracy relative to maximum possible.</p>
+              </div>
+              <div className="metric-details">
+                <h4>Definition</h4>
+                <p>
+                  Measures accuracy achieved by the router relative to the maximum possible accuracy.
+                </p>
+                <h4>Calculation</h4>
+                <p>Ratio of correct responses to total queries</p>
+                <p><strong>Range:</strong> [0, 1]</p>
+              </div>
             </div>
 
             <div className="metric-card">
-              <h3>Robustness Score</h3>
-              <p>
-                Captures routing consistency under noisy or perturbed inputs.
-                High robustness indicates stable model selection across variations.
-              </p>
+              <div className="metric-summary">
+                <h3>Latency Score</h3>
+                <p>Quantifies additional delay from routing.</p>
+              </div>
+              <div className="metric-details">
+                <h4>Definition</h4>
+                <p>
+                  Quantifies the additional delay introduced by routing decisions.
+                </p>
+                <h4>Formula</h4>
+                <p><code>1 / (1 + routing_latency / base_latency)</code></p>
+                <p><strong>Range:</strong> [0, 1]</p>
+              </div>
+            </div>
+
+            <div className="metric-card">
+              <div className="metric-summary">
+                <h3>Robustness Score</h3>
+                <p>Captures routing consistency under input variations.</p>
+              </div>
+              <div className="metric-details">
+                <h4>Definition</h4>
+                <p>
+                  Captures routing consistency under noisy or perturbed inputs.
+                </p>
+                <h4>Measurement</h4>
+                <p>Stability of model selection when inputs are slightly modified</p>
+                <p><strong>Range:</strong> [0, 1]</p>
+              </div>
             </div>
           </div>
         </div>
