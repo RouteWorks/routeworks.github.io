@@ -163,19 +163,10 @@
 }
 
 :root {
-  --lb-grid:
-    0.6fr   /* Rank */
-    1fr   /* Name */
-    0.9fr   /* Affiliation */
-    1.2fr     /* Type */
-    0.8fr   /* Arena */
-    0.8fr   /* Opt. Select */
-    0.8fr   /* Opt. Cost */
-    0.8fr   /* Opt. Acc */
-    0.8fr   /* Latency */
-    0.8fr;  /* Robust */
+  --lb-grid: 0.6fr /* Rank */ 1fr /* Name */ 0.9fr /* Affiliation */ 1.2fr /* Type */ 0.8fr
+    /* Arena */ 0.8fr /* Opt. Select */ 0.8fr /* Opt. Cost */ 0.8fr /* Opt. Acc */ 0.8fr
+    /* Latency */ 0.8fr; /* Robust */
 }
-
 
 .leaderboard-header {
   display: grid;
@@ -269,7 +260,6 @@
   min-width: 60px;
 }
 
-
 .rank-badge {
   display: flex;
   align-items: center;
@@ -277,7 +267,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  font-size: 18px;       /* bigger number text */
+  font-size: 18px; /* bigger number text */
   font-weight: 700;
   color: #1f2937;
 }
@@ -300,11 +290,8 @@
 .rank-badge.rank-other {
   background-color: #e5e7eb;
   color: #111827;
-  font-size: 20px;      /* rank numbers larger too */
+  font-size: 20px; /* rank numbers larger too */
 }
-
-
-
 
 .rank-badge.rank-1 {
   background: var(--rank-1-bg);
@@ -379,13 +366,13 @@
 
 .type-badge {
   display: inline-block;
-  width: auto;          /* grows with text */
+  width: auto; /* grows with text */
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  white-space: normal;  /* ✅ allows wrapping */
+  white-space: normal; /* ✅ allows wrapping */
   text-align: center;
 }
 
@@ -497,14 +484,17 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   position: relative; /* allows absolute stacking */
-  overflow: visible;  /* ✅ allows cards to expand beyond grid bounds */
+  overflow: visible; /* ✅ allows cards to expand beyond grid bounds */
   z-index: 0;
 }
 
 .metric-card {
   position: relative;
   overflow: visible; /* ✅ prevents clipping */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    z-index 0.3s ease;
   cursor: pointer;
   background: white;
   border-radius: 8px;
@@ -597,7 +587,6 @@
   color: #2563eb;
 }
 
-
 /* Visualizations Section with Tabs */
 .visualizations-section {
   margin-bottom: 2rem;
@@ -666,14 +655,11 @@
   width: 100%;
 }
 
-
-
 /* Responsive Design */
 @media (max-width: 1400px) {
   .leaderboard-container {
     min-width: 1000px;
   }
-
 
   .leaderboard-header,
   .leaderboard-row {
@@ -767,12 +753,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 0 0 auto;       /* ✅ prevents stretching */
+  flex: 0 0 auto; /* ✅ prevents stretching */
 }
 
 .type-badge {
   display: inline-block;
-  width: 110px;          /* ✅ fixed width */
+  width: 110px; /* ✅ fixed width */
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
@@ -802,6 +788,6 @@
 
 /* let the grid control the width; don't force a fixed width here */
 .type-col {
-  flex: 0 0 auto;      /* prevent flex growth */
+  flex: 0 0 auto; /* prevent flex growth */
   width: auto !important;
 }

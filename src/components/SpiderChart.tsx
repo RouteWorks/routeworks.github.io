@@ -16,11 +16,15 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
   // Define the 6 metrics and their corresponding data keys
   const metrics = [
     { key: 'arenaScore', label: 'Arena', color: '#3b82f6' },
-    { key: 'optimalSelectionScore', label: 'Opt. Select', color: '#10b981' },
+    {
+      key: 'optimalSelectionScore',
+      label: 'Opt. Select',
+      color: '#10b981',
+    },
     { key: 'optimalCostScore', label: 'Opt. Cost', color: '#f59e0b' },
     { key: 'optimalAccScore', label: 'Opt. Acc', color: '#ef4444' },
     { key: 'latencyScore', label: 'Latency', color: '#8b5cf6' },
-    { key: 'robustnessScore', label: 'Robust', color: '#ec4899' }
+    { key: 'robustnessScore', label: 'Robust', color: '#ec4899' },
   ] as const;
 
   // Router colors for the chart
@@ -29,7 +33,7 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
     '#10b981', // Green
     '#f59e0b', // Orange
     '#ef4444', // Red
-    '#8b5cf6'  // Purple
+    '#8b5cf6', // Purple
   ];
 
   // Calculate positions for each metric point with axis scaling
@@ -63,7 +67,8 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
   // Calculate adaptive axis scaling to show more variation
   // Filter out null values
   const allValues = topRouters.flatMap(router =>
-    metrics.map(metric => router.metrics[metric.key as keyof typeof router.metrics])
+    metrics
+      .map(metric => router.metrics[metric.key as keyof typeof router.metrics])
       .filter((val): val is number => val !== null)
   );
   const minValue = Math.min(...allValues);
@@ -85,7 +90,7 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
       <div className="spider-chart">
         <svg width="450" height="450" viewBox="0 0 450 450">
           {/* Grid circles drawn at real 0.1 score increments */}
-          {Array.from({ length: 11 }, (_, i) => (i * 0.2))
+          {Array.from({ length: 11 }, (_, i) => i * 0.2)
             .filter(v => v >= axisMin && v <= axisMax)
             .map((value, index) => {
               // Map true axis value -> 0–1 visual radius fraction
@@ -116,7 +121,6 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
                 </g>
               );
             })}
-
 
           {/* Grid lines (axes) */}
           {metrics.map((metric, index) => {
@@ -169,19 +173,9 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
             return (
               <g key={router.id}>
                 {/* Fill area */}
-                <path
-                  d={path}
-                  fill={color}
-                  fillOpacity="0.1"
-                  stroke="none"
-                />
+                <path d={path} fill={color} fillOpacity="0.1" stroke="none" />
                 {/* Border line */}
-                <path
-                  d={path}
-                  fill="none"
-                  stroke={color}
-                  strokeWidth="2"
-                />
+                <path d={path} fill="none" stroke={color} strokeWidth="2" />
                 {/* Data points */}
                 {metrics.map((metric, metricIndex) => {
                   const value = router.metrics[metric.key as keyof typeof router.metrics];
@@ -213,10 +207,7 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
           const color = routerColors[index % routerColors.length];
           return (
             <div key={router.id} className="legend-item">
-              <div
-                className="legend-color"
-                style={{ backgroundColor: color }}
-              />
+              <div className="legend-color" style={{ backgroundColor: color }} />
               <span className="legend-label">{router.name}</span>
             </div>
           );

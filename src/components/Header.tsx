@@ -11,7 +11,12 @@ const Header: React.FC = () => {
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'Leaderboard', href: '/leaderboard', icon: Trophy },
-    { name: 'GitHub', href: contactInfo.github, icon: Github, isExternal: true },
+    {
+      name: 'GitHub',
+      href: contactInfo.github,
+      icon: Github,
+      isExternal: true,
+    },
     { name: 'Contact', href: '#contact', icon: Users, isScroll: true },
   ];
 
@@ -25,7 +30,7 @@ const Header: React.FC = () => {
 
         <nav className="nav">
           <div className="nav-desktop">
-            {navigation.map((item) => {
+            {navigation.map(item => {
               const Icon = item.icon;
               if (item.isScroll) {
                 return (
@@ -35,7 +40,9 @@ const Header: React.FC = () => {
                       if (location.pathname !== '/') {
                         window.location.href = '/#contact';
                       } else {
-                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                        document.getElementById('contact')?.scrollIntoView({
+                          behavior: 'smooth',
+                        });
                       }
                     }}
                     className="nav-link nav-button"
@@ -83,7 +90,7 @@ const Header: React.FC = () => {
 
         {isMenuOpen && (
           <div className="nav-mobile">
-            {navigation.map((item) => {
+            {navigation.map(item => {
               const Icon = item.icon;
               if (item.isScroll) {
                 return (
@@ -94,7 +101,9 @@ const Header: React.FC = () => {
                       if (location.pathname !== '/') {
                         window.location.href = '/#contact';
                       } else {
-                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                        document.getElementById('contact')?.scrollIntoView({
+                          behavior: 'smooth',
+                        });
                       }
                     }}
                     className="nav-link nav-button"

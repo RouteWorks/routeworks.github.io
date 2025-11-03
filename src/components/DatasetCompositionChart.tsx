@@ -24,52 +24,52 @@ interface SubcategoryData {
 }
 
 const categoryData: CategoryData = {
-  "Computer Science, information science, and general works": {
-    "Computer science, knowledge, and systems": 1004,
-    "Library and information science": 396
+  'Computer Science, information science, and general works': {
+    'Computer science, knowledge, and systems': 1004,
+    'Library and information science': 396,
   },
-  "Philosophy and psychology": {
-    "Philosophy": 122,
-    "Psychology": 187,
-    "Philosophical logic": 108,
-    "Ethics": 283
+  'Philosophy and psychology': {
+    Philosophy: 122,
+    Psychology: 187,
+    'Philosophical logic': 108,
+    Ethics: 283,
   },
-  "Social Science": {
-    "Social sciences, sociology and anthropology": 55,
-    "Economics": 426,
-    "Law": 158,
-    "Social problems": 61
+  'Social Science': {
+    'Social sciences, sociology and anthropology': 55,
+    Economics: 426,
+    Law: 158,
+    'Social problems': 61,
   },
-  "Language": {
-    "Language": 700
+  Language: {
+    Language: 700,
   },
-  "Science": {
-    "Science": 114,
-    "Mathematics": 601,
-    "Physics": 97,
-    "Chemistry": 90,
-    "Earth sciences and geology": 330,
-    "Biology": 143,
-    "Animals (Zoology)": 25
+  Science: {
+    Science: 114,
+    Mathematics: 601,
+    Physics: 97,
+    Chemistry: 90,
+    'Earth sciences and geology': 330,
+    Biology: 143,
+    'Animals (Zoology)': 25,
   },
-  "Technology": {
-    "Medicine and health": 992,
-    "Engineering": 335,
-    "Management and public relations": 73
+  Technology: {
+    'Medicine and health': 992,
+    Engineering: 335,
+    'Management and public relations': 73,
   },
-  "Arts & recreation": {
-    "Arts": 154,
-    "Music": 240,
-    "Sports, games and entertainment": 306
+  'Arts & recreation': {
+    Arts: 154,
+    Music: 240,
+    'Sports, games and entertainment': 306,
   },
-  "Literature": {
-    "Literature, rhetoric and criticism": 700
+  Literature: {
+    'Literature, rhetoric and criticism': 700,
   },
-  "History": {
-    "History": 498,
-    "Geography": 150,
-    "Biography and genealogy": 52
-  }
+  History: {
+    History: 498,
+    Geography: 150,
+    'Biography and genealogy': 52,
+  },
 };
 
 // Color palette for categories
@@ -87,9 +87,9 @@ const categoryColors = [
 
 // Difficulty level colors
 const difficultyColors = {
-  'Easy': '#22C55E',
-  'Medium': '#F59E0B',
-  'Hard': '#EF4444'
+  Easy: '#22C55E',
+  Medium: '#F59E0B',
+  Hard: '#EF4444',
 };
 
 // Helper function to get a lighter shade of a color
@@ -110,7 +110,7 @@ const DatasetCompositionChart: React.FC = () => {
     innerRadius: 100,
     outerRadius: 250,
     labelRadius: 330, // Distance from center to labels
-    chartSize: 800 // Container height
+    chartSize: 800, // Container height
   };
 
   // Prepare data for the main pie chart (outer ring)
@@ -124,7 +124,7 @@ const DatasetCompositionChart: React.FC = () => {
         name,
         value,
         color: getLighterColor(categoryColors[colorIndex % categoryColors.length]),
-        parentCategory: category
+        parentCategory: category,
       }));
 
       data.push({
@@ -132,7 +132,7 @@ const DatasetCompositionChart: React.FC = () => {
         value: totalValue,
         category: category,
         color: categoryColors[colorIndex % categoryColors.length],
-        subcategories: subcategoryData
+        subcategories: subcategoryData,
       });
       colorIndex++;
     });
@@ -151,7 +151,7 @@ const DatasetCompositionChart: React.FC = () => {
           name,
           value,
           color: getLighterColor(categoryColors[colorIndex % categoryColors.length]),
-          parentCategory: category
+          parentCategory: category,
         });
       });
       colorIndex++;
@@ -169,53 +169,55 @@ const DatasetCompositionChart: React.FC = () => {
 
       // Get subcategory descriptions
       const getSubcategoryDescription = (name: string, parent: string) => {
-        const descriptions: { [key: string]: { [key: string]: string } } = {
+        const descriptions: {
+          [key: string]: { [key: string]: string };
+        } = {
           'Computer Science, information science, and general works': {
             'Computer science, knowledge, and systems': 'Core CS concepts & systems',
-            'Library and information science': 'Information management & retrieval'
+            'Library and information science': 'Information management & retrieval',
           },
           'Philosophy and psychology': {
-            'Philosophy': 'Fundamental questions & reasoning',
-            'Psychology': 'Human behavior & cognition',
+            Philosophy: 'Fundamental questions & reasoning',
+            Psychology: 'Human behavior & cognition',
             'Philosophical logic': 'Logical reasoning & argumentation',
-            'Ethics': 'Moral principles & values'
+            Ethics: 'Moral principles & values',
           },
           'Social Science': {
             'Social sciences, sociology, and anthropology': 'Human societies & cultures',
-            'Economics': 'Resource allocation & markets',
-            'Law': 'Legal systems & regulations',
-            'Social problems': 'Contemporary social issues'
+            Economics: 'Resource allocation & markets',
+            Law: 'Legal systems & regulations',
+            'Social problems': 'Contemporary social issues',
           },
-          'Language': {
-            'Language': 'Linguistics & communication'
+          Language: {
+            Language: 'Linguistics & communication',
           },
-          'Science': {
-            'Science': 'General scientific principles',
-            'Mathematics': 'Mathematical concepts & proofs',
-            'Physics': 'Physical laws & phenomena',
-            'Chemistry': 'Chemical reactions & compounds',
+          Science: {
+            Science: 'General scientific principles',
+            Mathematics: 'Mathematical concepts & proofs',
+            Physics: 'Physical laws & phenomena',
+            Chemistry: 'Chemical reactions & compounds',
             'Earth sciences and geology': 'Earth processes & materials',
-            'Biology': 'Living organisms & life processes',
-            'Animals (Zoology)': 'Animal behavior & classification'
+            Biology: 'Living organisms & life processes',
+            'Animals (Zoology)': 'Animal behavior & classification',
           },
-          'Technology': {
+          Technology: {
             'Medicine and health': 'Medical knowledge & healthcare',
-            'Engineering': 'Applied science & design',
-            'Management and public relations': 'Business & organizational skills'
+            Engineering: 'Applied science & design',
+            'Management and public relations': 'Business & organizational skills',
           },
           'Arts & recreation': {
-            'Arts': 'Creative expression & aesthetics',
-            'Music': 'Musical theory & performance',
-            'Sports, games and entertainment': 'Recreation & leisure activities'
+            Arts: 'Creative expression & aesthetics',
+            Music: 'Musical theory & performance',
+            'Sports, games and entertainment': 'Recreation & leisure activities',
           },
-          'Literature': {
-            'Literature, rhetoric and criticism': 'Written works & analysis'
+          Literature: {
+            'Literature, rhetoric and criticism': 'Written works & analysis',
           },
-          'History': {
-            'History': 'Past events & developments',
-            'Geography': 'Earth\'s features & locations',
-            'Biography and genealogy': 'Personal histories & lineages'
-          }
+          History: {
+            History: 'Past events & developments',
+            Geography: "Earth's features & locations",
+            'Biography and genealogy': 'Personal histories & lineages',
+          },
         };
 
         return descriptions[parent]?.[name] || name;
@@ -226,14 +228,15 @@ const DatasetCompositionChart: React.FC = () => {
           <p className="tooltip-title">{data.name}</p>
           <p className="tooltip-value">{data.value.toLocaleString()} queries</p>
           {data.parentCategory && (
-            <p className="tooltip-category">{getSubcategoryDescription(data.name, data.parentCategory)}</p>
+            <p className="tooltip-category">
+              {getSubcategoryDescription(data.name, data.parentCategory)}
+            </p>
           )}
         </div>
       );
     }
     return null;
   };
-
 
   return (
     <div className="dataset-composition-chart">
@@ -253,7 +256,7 @@ const DatasetCompositionChart: React.FC = () => {
                 dataKey="value"
                 animationBegin={0}
                 animationDuration={0}
-                onMouseEnter={(data) => setHoveredSubcategory(data.name)}
+                onMouseEnter={data => setHoveredSubcategory(data.name)}
                 onMouseLeave={() => setHoveredSubcategory(null)}
               >
                 {subcategoryData.map((entry, index) => (
@@ -263,8 +266,11 @@ const DatasetCompositionChart: React.FC = () => {
                     stroke={hoveredSubcategory === entry.name ? '#d1d5db' : '#fff'}
                     strokeWidth={hoveredSubcategory === entry.name ? 2 : 1}
                     style={{
-                      filter: hoveredSubcategory === entry.name ? 'brightness(1.1) saturate(1.1)' : 'none',
-                      transition: 'all 0.2s ease'
+                      filter:
+                        hoveredSubcategory === entry.name
+                          ? 'brightness(1.1) saturate(1.1)'
+                          : 'none',
+                      transition: 'all 0.2s ease',
                     }}
                   />
                 ))}
@@ -282,7 +288,7 @@ const DatasetCompositionChart: React.FC = () => {
                 labelLine={false}
                 animationBegin={0}
                 animationDuration={0}
-                onMouseEnter={(data) => setHoveredCategory(data.category)}
+                onMouseEnter={data => setHoveredCategory(data.category)}
                 onMouseLeave={() => setHoveredCategory(null)}
               >
                 {mainChartData.map((entry, index) => (
@@ -292,16 +298,16 @@ const DatasetCompositionChart: React.FC = () => {
                     stroke={hoveredCategory === entry.category ? '#9ca3af' : '#fff'}
                     strokeWidth={hoveredCategory === entry.category ? 2 : 1}
                     style={{
-                      filter: hoveredCategory === entry.category ? 'brightness(1.12) saturate(1.15)' : 'none',
-                      transition: 'all 0.2s ease'
+                      filter:
+                        hoveredCategory === entry.category
+                          ? 'brightness(1.12) saturate(1.15)'
+                          : 'none',
+                      transition: 'all 0.2s ease',
                     }}
                   />
                 ))}
               </Pie>
-              <Tooltip
-                content={<CustomTooltip />}
-                wrapperStyle={{ zIndex: 9999 }}
-              />
+              <Tooltip content={<CustomTooltip />} wrapperStyle={{ zIndex: 9999 }} />
             </PieChart>
           </ResponsiveContainer>
 
@@ -315,7 +321,7 @@ const DatasetCompositionChart: React.FC = () => {
               width: '100%',
               height: '100%',
               pointerEvents: 'none',
-              zIndex: 0
+              zIndex: 0,
             }}
             viewBox="0 0 800 800"
           >
@@ -333,8 +339,8 @@ const DatasetCompositionChart: React.FC = () => {
 
               const RADIAN = Math.PI / 180;
               // Adaptive label radius: farther for sides, closer for top/bottom
-              const baseOffset = 60;   // baseline distance beyond pie edge
-              const sideBoost = 40;    // extra distance for left/right labels
+              const baseOffset = 60; // baseline distance beyond pie edge
+              const sideBoost = 40; // extra distance for left/right labels
               const angleFactor = Math.abs(Math.sin(midAngle * RADIAN));
               // 0 for top/bottom, 1 for sides
 
@@ -352,12 +358,12 @@ const DatasetCompositionChart: React.FC = () => {
                   'Computer Science, information science, and general works': 'Computer Science',
                   'Philosophy and psychology': 'Philosophy',
                   'Social Science': 'Social Science',
-                  'Language': 'Language',
-                  'Science': 'Science',
-                  'Technology': 'Technology',
+                  Language: 'Language',
+                  Science: 'Science',
+                  Technology: 'Technology',
                   'Arts & recreation': 'Arts',
-                  'Literature': 'Literature',
-                  'History': 'History'
+                  Literature: 'Literature',
+                  History: 'History',
                 };
                 return shortNames[name] || name;
               };
@@ -391,7 +397,6 @@ const DatasetCompositionChart: React.FC = () => {
             })}
           </svg>
         </div>
-
       </div>
     </div>
   );

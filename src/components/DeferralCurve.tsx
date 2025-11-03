@@ -2,8 +2,12 @@ import React from 'react';
 import './DeferralCurve.css';
 
 interface DeferralCurveProps {
-  academicPoints: { [key: string]: { accuracy: number; cost_per_1k: number } };
-  commercialPoints: { [key: string]: { accuracy: number; cost_per_1k: number } };
+  academicPoints: {
+    [key: string]: { accuracy: number; cost_per_1k: number };
+  };
+  commercialPoints: {
+    [key: string]: { accuracy: number; cost_per_1k: number };
+  };
 }
 
 const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercialPoints }) => {
@@ -59,7 +63,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
     '#ec4899', // Pink
     '#6366f1', // Indigo
     '#14b8a6', // Teal
-    '#a855f7'  // Violet
+    '#a855f7', // Violet
   ];
 
   // Function to render different shapes
@@ -102,10 +106,10 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
       case 'star':
         const starPoints = [];
         for (let i = 0; i < 5; i++) {
-          const angle = (i * 144 - 90) * Math.PI / 180;
+          const angle = ((i * 144 - 90) * Math.PI) / 180;
           const outerX = x + Math.cos(angle) * size;
           const outerY = y + Math.sin(angle) * size;
-          const innerAngle = ((i + 0.5) * 144 - 90) * Math.PI / 180;
+          const innerAngle = (((i + 0.5) * 144 - 90) * Math.PI) / 180;
           const innerX = x + Math.cos(innerAngle) * (size * 0.4);
           const innerY = y + Math.sin(innerAngle) * (size * 0.4);
           starPoints.push(`${outerX},${outerY} ${innerX},${innerY}`);
@@ -122,7 +126,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
       case 'hexagon':
         const hexPoints = [];
         for (let i = 0; i < 6; i++) {
-          const angle = (i * 60 - 30) * Math.PI / 180;
+          const angle = ((i * 60 - 30) * Math.PI) / 180;
           const hexX = x + Math.cos(angle) * size;
           const hexY = y + Math.sin(angle) * size;
           hexPoints.push(`${hexX},${hexY}`);
@@ -138,15 +142,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
         );
       default: // circle
         return (
-          <circle
-            key={key}
-            cx={x}
-            cy={y}
-            r={size}
-            fill={color}
-            stroke="white"
-            strokeWidth="2"
-          />
+          <circle key={key} cx={x} cy={y} r={size} fill={color} stroke="white" strokeWidth="2" />
         );
     }
   };
@@ -167,7 +163,6 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
   };
 
   const costTicks = generatePowersOf10(costMin, costMax);
-
 
   return (
     <div className="deferral-curve-container">
@@ -220,7 +215,8 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
           {Object.entries(commercialPoints).map(([name, point], index) => {
             const x = scaleX(point.cost_per_1k);
             const y = scaleY(point.accuracy);
-            const color = routerColors[(index + Object.keys(academicPoints).length) % routerColors.length];
+            const color =
+              routerColors[(index + Object.keys(academicPoints).length) % routerColors.length];
 
             return renderShape(x, y, 'triangle', color, `commercial-${name}`);
           })}
@@ -366,7 +362,8 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
             <h4>Commercial</h4>
             <div className="legend-items">
               {Object.entries(commercialPoints).map(([name, point], index) => {
-                const color = routerColors[(index + Object.keys(academicPoints).length) % routerColors.length];
+                const color =
+                  routerColors[(index + Object.keys(academicPoints).length) % routerColors.length];
                 return (
                   <div key={name} className="legend-item">
                     <svg className="legend-shape" width="16" height="16">

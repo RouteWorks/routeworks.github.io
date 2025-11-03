@@ -12,7 +12,7 @@ const SubmitPromptPage: React.FC = () => {
     paperUrl: '',
     githubUrl: '',
     modelPool: '',
-    additionalInfo: ''
+    additionalInfo: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -21,7 +21,7 @@ const SubmitPromptPage: React.FC = () => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -42,7 +42,7 @@ const SubmitPromptPage: React.FC = () => {
         paperUrl: '',
         githubUrl: '',
         modelPool: '',
-        additionalInfo: ''
+        additionalInfo: '',
       });
     } catch (error) {
       setSubmitStatus('error');
@@ -259,7 +259,9 @@ const SubmitPromptPage: React.FC = () => {
               {submitStatus === 'success' && (
                 <div className="status-message success">
                   <CheckCircle className="status-icon" />
-                  <span>Submission successful! We'll review your router and get back to you soon.</span>
+                  <span>
+                    Submission successful! We'll review your router and get back to you soon.
+                  </span>
                 </div>
               )}
 
@@ -270,11 +272,7 @@ const SubmitPromptPage: React.FC = () => {
                 </div>
               )}
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="submit-button"
-              >
+              <button type="submit" disabled={isSubmitting} className="submit-button">
                 {isSubmitting ? (
                   <>
                     <div className="spinner"></div>
