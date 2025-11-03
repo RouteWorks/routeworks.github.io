@@ -5,11 +5,14 @@ import { routers } from '../data/mockData';
 import SpiderChart from '../components/SpiderChart';
 import DeferralCurve from '../components/DeferralCurve';
 import './LeaderboardPage.css';
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+
 
 const LeaderboardPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'academic' | 'commercial'>('all');
-  const [activeMetric, setActiveMetric] = useState<'overall' | 'arena' | 'optimalSelection' | 'optimalCost' | 'optimalAcc' | 'latency' | 'robustness'>('overall');
+  const [activeMetric, setActiveMetric] = useState<'arena' | 'average' | 'optimalSelection' | 'optimalCost' | 'optimalAcc' | 'latency' | 'robustness'>('arena');
   const [activeTab, setActiveTab] = useState<'spider' | 'deferral'>('spider');
 
   // Deferral curve data
@@ -59,7 +62,7 @@ const LeaderboardPage: React.FC = () => {
       return matchesSearch && matchesFilter;
     });
 
-    if (activeMetric === 'overall') {
+    if (activeMetric === 'average') {
       // Sort by average of all available metrics
       return filtered.sort((a, b) => {
         const avgA = calculateAverageScore(a.metrics);
@@ -134,17 +137,12 @@ const LeaderboardPage: React.FC = () => {
         {/* Metric Filter Buttons */}
         <div className="metric-filters">
           <button
-            className={`metric-filter-btn ${activeMetric === 'overall' ? 'active' : ''}`}
-            onClick={() => setActiveMetric('overall')}
-          >
-            Overall Ranking
-          </button>
-          <button
             className={`metric-filter-btn ${activeMetric === 'arena' ? 'active' : ''}`}
             onClick={() => setActiveMetric('arena')}
           >
             Arena Score
           </button>
+
           <button
             className={`metric-filter-btn ${activeMetric === 'optimalSelection' ? 'active' : ''}`}
             onClick={() => setActiveMetric('optimalSelection')}
@@ -174,6 +172,12 @@ const LeaderboardPage: React.FC = () => {
             onClick={() => setActiveMetric('robustness')}
           >
             Robustness
+          </button>
+          <button
+            className={`metric-filter-btn ${activeMetric === 'average' ? 'active' : ''}`}
+            onClick={() => setActiveMetric('average')}
+          >
+            Average
           </button>
         </div>
 
@@ -350,105 +354,155 @@ const LeaderboardPage: React.FC = () => {
 
         {/* Metrics Explanation */}
         <div className="metrics-explanation">
-          <h2>Evaluation Metrics</h2>
-          <div className="metrics-grid">
-            <div className="metric-card">
-              <div className="metric-summary">
-                <h3>Arena Score</h3>
-                <p>Balances accuracy and cost efficiency.</p>
-              </div>
-              <div className="metric-details">
-                <h4>Definition</h4>
-                <p>
-                  Weighted harmonic mean between accuracy (<code>A</code>) and inverse cost (<code>1/C</code>).
-                </p>
-                <h4>Formula</h4>
-                <p><code>Score = 2 × (A × (1/C)) / (A + 1/C)</code></p>
-                <p><strong>Range:</strong> [0, 1]</p>
-              </div>
-            </div>
+  <h2>Evaluation Metrics</h2>
+  <div className="metrics-grid">
 
-            <div className="metric-card">
-              <div className="metric-summary">
-                <h3>Optimal Selection Score</h3>
-                <p>Measures selection of the cheapest correct model.</p>
-              </div>
-              <div className="metric-details">
-                <h4>Definition</h4>
-                <p>
-                  Measures the router's ability to select the optimal model (cheapest model that produces a correct response).
-                </p>
-                <h4>Calculation</h4>
-                <p>Ratio of optimal selections to total queries</p>
-                <p><strong>Range:</strong> [0, 1]</p>
-              </div>
-            </div>
+    {/* 1️⃣ Arena Score */}
+    <div className="metric-card">
+      <div className="metric-summary">
+        <h3>Arena Score</h3>
+        <p>Weighted harmonic mean capturing the trade-off between accuracy and cost efficiency.</p>
+      </div>
 
-            <div className="metric-card">
-              <div className="metric-summary">
-                <h3>Optimal Cost Score</h3>
-                <p>Measures cost efficiency relative to optimal routing.</p>
-              </div>
-              <div className="metric-details">
-                <h4>Definition</h4>
-                <p>
-                  Measures the router's cost efficiency relative to the optimal cost for each query.
-                </p>
-                <h4>Formula</h4>
-                <p><code>1 - (actual_cost - optimal_cost) / optimal_cost</code></p>
-                <p><strong>Range:</strong> [0, 1]</p>
-              </div>
-            </div>
+      <div className="metric-details">
+        <h4>Definition (Sec 5.1)</h4>
+        <p>
+          For each query <InlineMath math="i" />, let  <InlineMath math="A_i" /> be the normalized accuracy of the selected model and <InlineMath math="C_i" /> its normalized inverse cost.
+          The Arena Score combines these with a weighted harmonic mean to balance accuracy and efficiency.
+        </p>
 
-            <div className="metric-card">
-              <div className="metric-summary">
-                <h3>Optimal Acc Score</h3>
-                <p>Measures accuracy relative to maximum possible.</p>
-              </div>
-              <div className="metric-details">
-                <h4>Definition</h4>
-                <p>
-                  Measures accuracy achieved by the router relative to the maximum possible accuracy.
-                </p>
-                <h4>Calculation</h4>
-                <p>Ratio of correct responses to total queries</p>
-                <p><strong>Range:</strong> [0, 1]</p>
-              </div>
-            </div>
+        <h4>Normalization</h4>
+        <BlockMath math="C_i = \frac{\log_2(c_{\max}) - \log_2(c_i)}{\log_2(c_{\max}) - \log_2(c_{\min})}" />
+        <p>
+          where <InlineMath math="c_i" /> is the raw inference cost (e.g., token cost per query),
+          and <InlineMath math="c_{\min},c_{\max}" /> denote the minimum / maximum costs across all models.
+        </p>
 
-            <div className="metric-card">
-              <div className="metric-summary">
-                <h3>Latency Score</h3>
-                <p>Quantifies additional delay from routing.</p>
-              </div>
-              <div className="metric-details">
-                <h4>Definition</h4>
-                <p>
-                  Quantifies the additional delay introduced by routing decisions.
-                </p>
-                <h4>Formula</h4>
-                <p><code>1 / (1 + routing_latency / base_latency)</code></p>
-                <p><strong>Range:</strong> [0, 1]</p>
-              </div>
-            </div>
+        <h4>Final Formula</h4>
+        <BlockMath math="S_{i,\beta} = \frac{(1+\beta)A_iC_i}{\beta A_i + C_i},\quad \beta = 0.1" />
+        <p>
+          The parameter <InlineMath math="\beta" /> controls the weight toward cost (<InlineMath math="\beta<1" /> favors cheaper routers).
+          Scores are averaged across all queries.
+        </p>
+        <p><strong>Range:</strong> [0, 1]</p>
+      </div>
+    </div>
 
-            <div className="metric-card">
-              <div className="metric-summary">
-                <h3>Robustness Score</h3>
-                <p>Captures routing consistency under input variations.</p>
-              </div>
-              <div className="metric-details">
-                <h4>Definition</h4>
-                <p>
-                  Captures routing consistency under noisy or perturbed inputs.
-                </p>
-                <h4>Measurement</h4>
-                <p>Stability of model selection when inputs are slightly modified</p>
-                <p><strong>Range:</strong> [0, 1]</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    {/* 2️⃣ Optimal Selection Score */}
+    <div className="metric-card">
+      <div className="metric-summary">
+        <h3>Optimal Selection Score</h3>
+        <p>Percentage of queries where the router chose the cheapest correct model.</p>
+      </div>
+
+      <div className="metric-details">
+        <h4>Definition</h4>
+        <p>
+          For each query <InlineMath math="i" />, define the <em>optimal model</em> as the cheapest model that produces a correct response.
+          If no such model exists, the query is excluded.
+          The score is the fraction of remaining queries where the router selected this optimal model.
+        </p>
+        <BlockMath math="\text{Score} = \frac{\#\text{optimal selections}}{\#\text{queries with optimal model}}" />
+        <p>
+          <strong>Range:</strong> [0, 1] — higher means the router selects the best-cost correct model more often.
+        </p>
+      </div>
+    </div>
+
+    {/* 3️⃣ Optimal Cost Score */}
+    <div className="metric-card">
+      <div className="metric-summary">
+        <h3>Optimal Cost Score</h3>
+        <p>Inverse cost ratio relative to the query’s optimal model.</p>
+      </div>
+
+      <div className="metric-details">
+        <h4>Definition</h4>
+        <p>
+        For each query <InlineMath math="i" />, define the <em>optimal model</em> as the cheapest model that produces a correct response.
+        If no such model exists, the query is excluded.
+        For queries with an optimal model, we define the optimal cost score as
+        </p>
+        <BlockMath math="Score_i = \frac{cost_{\text{opt}}}{cost_{\text{actual}}}" />
+        <p>
+          Averaged across all queries that have an optimal model.
+          Values close to 1 indicate near-minimal cost decisions.
+        </p>
+        <p><strong>Range:</strong> [0, 1]</p>
+      </div>
+    </div>
+
+    {/* 4️⃣ Optimal Accuracy Score */}
+    <div className="metric-card">
+      <div className="metric-summary">
+        <h3>Optimal Accuracy Score</h3>
+        <p>Accuracy achieved relative to the maximum possible accuracy across models.</p>
+      </div>
+
+      <div className="metric-details">
+        <h4>Definition</h4>
+        <p>
+          Unlike the Optimal Selection and Cost scores which are computed only over queries with a defined optimal model,
+          this metric is computed over <em>all queries</em>.
+          For each query <InlineMath math="i" />, let <InlineMath math="a_{\text{achieved},i}" /> be
+          the accuracy of the chosen model and <InlineMath math="a_{\text{max},i}" /> the
+          maximum accuracy achievable among all models.
+        </p>
+        <BlockMath math="Score_i = \frac{a_{\text{achieved},i}}{a_{\text{max},i}}" />
+        <p>
+          Intuitively, it captures how close the router’s decision is to the best possible accuracy, independent of cost.
+        </p>
+        <p><strong>Range:</strong> [0, 1]</p>
+      </div>
+    </div>
+
+    {/* 5️⃣ Robustness Score */}
+    <div className="metric-card">
+      <div className="metric-summary">
+        <h3>Robustness Score</h3>
+        <p>Consistency of routing under input perturbations and noise.</p>
+      </div>
+
+      <div className="metric-details">
+        <h4>Definition</h4>
+        <p>
+          This metric evaluates the router’s robustness against noisy inputs.
+          We generate perturbed variants of each query (through paraphrasing, grammatical changes, synonyms, and typos)
+          and measure how often the router selects the same model as for the original query.
+        </p>
+        <BlockMath math="Score = \frac{\#\text{consistent selections}}{\#\text{noisy variants}}" />
+        <p>
+          Higher values indicate greater stability under realistic input noise, reflecting robust model selection.
+        </p>
+        <p><strong>Range:</strong> [0, 1]</p>
+      </div>
+    </div>
+
+    {/* 6️⃣ Latency Score */}
+    <div className="metric-card">
+      <div className="metric-summary">
+        <h3>Latency Score</h3>
+        <p>Inverse measure of routing overhead relative to base latency.</p>
+      </div>
+
+      <div className="metric-details">
+        <h4>Definition</h4>
+        <p>
+          Quantifies the additional delay introduced by the router’s decision process.
+          If <InlineMath math="L_{\text{router}}" /> is the observed latency and a 10 ms baseline overhead is assumed,
+          the score is defined as:
+        </p>
+        <BlockMath math="Score = \frac{1}{L_{\text{router}} - 10}" />
+        <p>
+          Higher scores correspond to lower latency overhead and faster inference.
+        </p>
+        <p><strong>Range:</strong> [0, 1]</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
       </div>
     </div>
   );
