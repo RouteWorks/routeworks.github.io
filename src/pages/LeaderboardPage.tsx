@@ -488,8 +488,9 @@ const LeaderboardPage: React.FC = () => {
       <div className="metric-details">
         <h4>Definition</h4>
         <p>
-          Quantifies the additional delay introduced by the router’s decision process.
-          If <InlineMath math="L_{\text{router}}" /> is the observed latency and a 10 ms baseline overhead is assumed,
+          Quantifies the delay introduced by the router’s decision process.
+          If <InlineMath math="L_{\text{router}}" /> is the average duration (ms) from when a request is received to the output of router decision
+          and a 10 ms baseline overhead is assumed,
           the score is defined as:
         </p>
         <BlockMath math="Score = \frac{1}{L_{\text{router}} - 10}" />
