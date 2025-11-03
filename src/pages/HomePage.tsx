@@ -4,7 +4,6 @@ import { Trophy, BarChart3, Users, BookOpen, ArrowRight, Zap, Shield, Github } f
 import { contactInfo, datasetInfo, routers } from '../data/mockData';
 import Figure from '../components/Figure';
 import DatasetCompositionChart from '../components/DatasetCompositionChart';
-import PageStats from '../components/PageStats';
 import './HomePage.css';
 
 const HomePage: React.FC = () => {
@@ -281,8 +280,6 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Page Statistics */}
-      <PageStats />
     </div>
   );
 };

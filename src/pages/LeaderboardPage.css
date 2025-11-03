@@ -173,8 +173,7 @@
     0.8fr   /* Opt. Cost */
     0.8fr   /* Opt. Acc */
     0.8fr   /* Latency */
-    0.8fr   /* Robust */
-    0.9fr;  /* Average */
+    0.8fr;  /* Robust */
 }
 
 

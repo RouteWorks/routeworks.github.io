@@ -12,7 +12,7 @@ import { InlineMath, BlockMath } from 'react-katex';
 const LeaderboardPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'academic' | 'commercial'>('all');
-  const [activeMetric, setActiveMetric] = useState<'arena' | 'average' | 'optimalSelection' | 'optimalCost' | 'optimalAcc' | 'latency' | 'robustness'>('arena');
+  const [activeMetric, setActiveMetric] = useState<'arena' | 'optimalSelection' | 'optimalCost' | 'optimalAcc' | 'latency' | 'robustness'>('arena');
   const [activeTab, setActiveTab] = useState<'spider' | 'deferral'>('spider');
 
   // Deferral curve data
@@ -61,15 +61,6 @@ const LeaderboardPage: React.FC = () => {
       const matchesFilter = filterType === 'all' || router.type === filterType;
       return matchesSearch && matchesFilter;
     });
-
-    if (activeMetric === 'average') {
-      // Sort by average of all available metrics
-      return filtered.sort((a, b) => {
-        const avgA = calculateAverageScore(a.metrics);
-        const avgB = calculateAverageScore(b.metrics);
-        return avgB - avgA;
-      });
-    }
 
     const key = metricKeyMap[activeMetric];
     return filtered.sort((a, b) => {
@@ -173,12 +164,6 @@ const LeaderboardPage: React.FC = () => {
           >
             Robustness
           </button>
-          <button
-            className={`metric-filter-btn ${activeMetric === 'average' ? 'active' : ''}`}
-            onClick={() => setActiveMetric('average')}
-          >
-            Average
-          </button>
         </div>
 
         {/* Filters and Search */}
@@ -222,7 +207,6 @@ const LeaderboardPage: React.FC = () => {
             <div className="metrics-col">Opt. Acc</div>
             <div className="metrics-col">Latency</div>
             <div className="metrics-col">Robust</div>
-            <div className="metrics-col overall-col">Average</div>
           </div>
 
           <div className="leaderboard-body">
@@ -301,14 +285,6 @@ const LeaderboardPage: React.FC = () => {
                       {router.metrics.robustnessScore !== null
                         ? router.metrics.robustnessScore.toFixed(4)
                         : '—'}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="metrics-col overall-col">
-                  <div className="metric-value">
-                    <span className="score overall-score">
-                      {calculateAverageScore(router.metrics).toFixed(4)}
                     </span>
                   </div>
                 </div>

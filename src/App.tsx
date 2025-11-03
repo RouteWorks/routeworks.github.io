@@ -5,11 +5,13 @@ import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import LeaderboardPage from './pages/LeaderboardPage';
 import SubmitPromptPage from './pages/SubmitPromptPage';
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 const App: React.FC = () => {
   return (
     <Router>
       <div className="App">
+        <GoogleAnalytics />
         <Header />
         <main className="main-content">
           <Routes>
