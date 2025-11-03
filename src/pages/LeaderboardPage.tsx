@@ -1,14 +1,18 @@
 import React, { useState, useMemo } from 'react';
-import { Trophy, Search, Medal} from 'lucide-react';
+import { Trophy, Search, Medal } from 'lucide-react';
+import { Router } from '../types';
 import { routers } from '../data/mockData';
 import SpiderChart from '../components/SpiderChart';
 import DeferralCurve from '../components/DeferralCurve';
 import './LeaderboardPage.css';
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+
 
 const LeaderboardPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'academic' | 'commercial'>('all');
-  const [activeMetric, setActiveMetric] = useState<'overall' | 'arena' | 'cost' | 'optimal' | 'latency' | 'robustness'>('overall');
+  const [activeMetric, setActiveMetric] = useState<'arena' | 'optimalSelection' | 'optimalCost' | 'optimalAcc' | 'latency' | 'robustness'>('arena');
   const [activeTab, setActiveTab] = useState<'spider' | 'deferral'>('spider');
 
   // Deferral curve data
@@ -30,11 +34,23 @@ const LeaderboardPage: React.FC = () => {
     "vLLM-SR":    {"accuracy": 0.6665, "cost_per_1k": 1.613930},
   };
 
+  // Helper function to calculate average score for overall ranking
+  const calculateAverageScore = (metrics: Router['metrics']): number => {
+    const scores: number[] = [metrics.arenaScore];
+    if (metrics.optimalSelectionScore !== null) scores.push(metrics.optimalSelectionScore);
+    if (metrics.optimalCostScore !== null) scores.push(metrics.optimalCostScore);
+    if (metrics.optimalAccScore !== null) scores.push(metrics.optimalAccScore);
+    if (metrics.robustnessScore !== null) scores.push(metrics.robustnessScore);
+    if (metrics.latencyScore !== null) scores.push(metrics.latencyScore);
+    return scores.reduce((sum, score) => sum + score, 0) / scores.length;
+  };
+
   const filteredAndSortedRouters = useMemo(() => {
     const metricKeyMap = {
       arena: 'arenaScore',
-      cost: 'costRatioScore',
-      optimal: 'optimalAccScore',
+      optimalSelection: 'optimalSelectionScore',
+      optimalCost: 'optimalCostScore',
+      optimalAcc: 'optimalAccScore',
       latency: 'latencyScore',
       robustness: 'robustnessScore',
     } as const;
@@ -46,12 +62,16 @@ const LeaderboardPage: React.FC = () => {
       return matchesSearch && matchesFilter;
     });
 
-    if (activeMetric === 'overall') {
-      return filtered.sort((a, b) => a.metrics.overallRank - b.metrics.overallRank);
-    }
-
     const key = metricKeyMap[activeMetric];
-    return filtered.sort((a, b) => b.metrics[key] - a.metrics[key]);
+    return filtered.sort((a, b) => {
+      const scoreA = a.metrics[key];
+      const scoreB = b.metrics[key];
+      // Handle null values - put them at the end
+      if (scoreA === null && scoreB === null) return 0;
+      if (scoreA === null) return 1;
+      if (scoreB === null) return -1;
+      return scoreB - scoreA;
+    });
   }, [searchTerm, filterType, activeMetric]);
 
   // const getRankBadge = (rank: number) => {
@@ -108,40 +128,41 @@ const LeaderboardPage: React.FC = () => {
         {/* Metric Filter Buttons */}
         <div className="metric-filters">
           <button
-            className={`metric-filter-btn ${activeMetric === 'overall' ? 'active' : ''}`}
-            onClick={() => setActiveMetric('overall')}
-          >
-            Overall Ranking
-          </button>
-          <button
             className={`metric-filter-btn ${activeMetric === 'arena' ? 'active' : ''}`}
             onClick={() => setActiveMetric('arena')}
           >
-            Avg Arena Score
+            Arena Score
+          </button>
+
+          <button
+            className={`metric-filter-btn ${activeMetric === 'optimalSelection' ? 'active' : ''}`}
+            onClick={() => setActiveMetric('optimalSelection')}
+          >
+            Optimal Selection
           </button>
           <button
-            className={`metric-filter-btn ${activeMetric === 'cost' ? 'active' : ''}`}
-            onClick={() => setActiveMetric('cost')}
+            className={`metric-filter-btn ${activeMetric === 'optimalCost' ? 'active' : ''}`}
+            onClick={() => setActiveMetric('optimalCost')}
           >
-            Avg Cost Ratio
+            Optimal Cost
           </button>
           <button
-            className={`metric-filter-btn ${activeMetric === 'optimal' ? 'active' : ''}`}
-            onClick={() => setActiveMetric('optimal')}
+            className={`metric-filter-btn ${activeMetric === 'optimalAcc' ? 'active' : ''}`}
+            onClick={() => setActiveMetric('optimalAcc')}
           >
-            Avg Optimality
+            Optimal Acc
           </button>
           <button
             className={`metric-filter-btn ${activeMetric === 'latency' ? 'active' : ''}`}
             onClick={() => setActiveMetric('latency')}
           >
-            Avg Latency
+            Latency
           </button>
           <button
             className={`metric-filter-btn ${activeMetric === 'robustness' ? 'active' : ''}`}
             onClick={() => setActiveMetric('robustness')}
           >
-            Avg Robustness
+            Robustness
           </button>
         </div>
 
@@ -181,8 +202,9 @@ const LeaderboardPage: React.FC = () => {
             <div className="affiliation-col">Affiliation</div>
             <div className="type-col">Type</div>
             <div className="metrics-col">Arena</div>
-            <div className="metrics-col">Cost</div>
-            <div className="metrics-col">Optimal</div>
+            <div className="metrics-col">Opt. Select</div>
+            <div className="metrics-col">Opt. Cost</div>
+            <div className="metrics-col">Opt. Acc</div>
             <div className="metrics-col">Latency</div>
             <div className="metrics-col">Robust</div>
           </div>
@@ -213,31 +235,57 @@ const LeaderboardPage: React.FC = () => {
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.arenaScore.toFixed(2)}</span>
+                    <span className="score">{router.metrics.arenaScore.toFixed(4)}</span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.costRatioScore.toFixed(2)}</span>
+                    <span className="score">
+                      {router.metrics.optimalSelectionScore !== null
+                        ? router.metrics.optimalSelectionScore.toFixed(4)
+                        : '—'}
+                    </span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.optimalAccScore.toFixed(2)}</span>
+                    <span className="score">
+                      {router.metrics.optimalCostScore !== null
+                        ? router.metrics.optimalCostScore.toFixed(4)
+                        : '—'}
+                    </span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.latencyScore.toFixed(2)}</span>
+                    <span className="score">
+                      {router.metrics.optimalAccScore !== null
+                        ? router.metrics.optimalAccScore.toFixed(4)
+                        : '—'}
+                    </span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.robustnessScore.toFixed(2)}</span>
+                    <span className="score">
+                      {router.metrics.latencyScore !== null
+                        ? router.metrics.latencyScore.toFixed(4)
+                        : '—'}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="metrics-col">
+                  <div className="metric-value">
+                    <span className="score">
+                      {router.metrics.robustnessScore !== null
+                        ? router.metrics.robustnessScore.toFixed(4)
+                        : '—'}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -282,49 +330,156 @@ const LeaderboardPage: React.FC = () => {
 
         {/* Metrics Explanation */}
         <div className="metrics-explanation">
-          <h2>Evaluation Metrics</h2>
-          <div className="metrics-grid">
-            <div className="metric-card">
-              <h3>Arena Score</h3>
-              <p>
-                A composite measure balancing accuracy and cost using a weighted harmonic mean.
-                Higher scores indicate routers that achieve the best accuracy-cost trade-off.
-              </p>
-            </div>
+  <h2>Evaluation Metrics</h2>
+  <div className="metrics-grid">
 
-            <div className="metric-card">
-              <h3>Cost Ratio Score</h3>
-              <p>
-              Measures the performance a router achieves per unit of cost compared to the benchmarked routers.
-              A high score means it maintains strong accuracy while spending less on average across all queries.
-              </p>
-            </div>
+    {/* 1️⃣ Arena Score */}
+    <div className="metric-card">
+      <div className="metric-summary">
+        <h3>Arena Score</h3>
+        <p>Weighted harmonic mean capturing the trade-off between accuracy and cost efficiency.</p>
+      </div>
 
-            <div className="metric-card">
-              <h3>Optimality Score</h3>
-              <p>
-              Captures how the router's ability to select the cheapest model that still produces a correct response.
-              High values indicate decisions that closely match ideal, cost-minimizing routing behavior.
-              </p>
-            </div>
+      <div className="metric-details">
+        <h4>Definition (Sec 5.1)</h4>
+        <p>
+          For each query <InlineMath math="i" />, let  <InlineMath math="A_i" /> be the normalized accuracy of the selected model and <InlineMath math="C_i" /> its normalized inverse cost.
+          The Arena Score combines these with a weighted harmonic mean to balance accuracy and efficiency.
+        </p>
 
-            <div className="metric-card">
-              <h3>Latency Score</h3>
-              <p>
-                Quantifies additional delay introduced by routing.
-                Higher scores correspond to lower routing overhead and faster responses.
-              </p>
-            </div>
+        <h4>Normalization</h4>
+        <BlockMath math="C_i = \frac{\log_2(c_{\max}) - \log_2(c_i)}{\log_2(c_{\max}) - \log_2(c_{\min})}" />
+        <p>
+          where <InlineMath math="c_i" /> is the raw inference cost (e.g., token cost per query),
+          and <InlineMath math="c_{\min},c_{\max}" /> denote the minimum / maximum costs across all models.
+        </p>
 
-            <div className="metric-card">
-              <h3>Robustness Score</h3>
-              <p>
-                Captures routing consistency under noisy or perturbed inputs.
-                High robustness indicates stable model selection across variations.
-              </p>
-            </div>
-          </div>
-        </div>
+        <h4>Final Formula</h4>
+        <BlockMath math="S_{i,\beta} = \frac{(1+\beta)A_iC_i}{\beta A_i + C_i},\quad \beta = 0.1" />
+        <p>
+          The parameter <InlineMath math="\beta" /> controls the weight toward cost.
+          Scores are averaged across all queries.
+        </p>
+        <p><strong>Range:</strong> [0, 1]</p>
+      </div>
+    </div>
+
+   {/* 2️⃣ Optimal Selection Score */}
+   <div className="metric-card">
+  <div className="metric-summary">
+    <h3>Optimal Selection Score</h3>
+    <p>Fraction of router selections that match the optimal model.</p>
+  </div>
+
+  <div className="metric-details">
+    <h4>Definition</h4>
+    <p>
+    For each query <InlineMath math="i" />, define the <em>optimal model</em> as the cheapest model that produces a correct response.
+    If no such model exists, the query is excluded.
+      The score is the proportion of selections that match this optimal choice.
+    </p>
+    <BlockMath math="\text{Score} = \frac{N_{\text{optimal selections}}}{N_{\text{selections}}}" />
+    <p><strong>Range:</strong> [0, 1]</p>
+  </div>
+</div>
+
+
+
+    {/* 3️⃣ Optimal Cost Score */}
+    <div className="metric-card">
+      <div className="metric-summary">
+        <h3>Optimal Cost Score</h3>
+        <p>Cost ratio of the optimal model cost relative to the actual cost.</p>
+      </div>
+
+      <div className="metric-details">
+        <h4>Definition</h4>
+        <p>
+        For each query <InlineMath math="i" />, define the <em>optimal model</em> as the cheapest model that produces a correct response.
+        If no such model exists, the query is excluded.
+        For queries with an optimal model, we define the optimal cost score as
+        </p>
+        <BlockMath math="Score_i = \frac{cost_{\text{opt}}}{cost_{\text{actual}}}" />
+        <p>
+          Averaged across all queries that have an optimal model.
+          Values close to 1 indicate near-optimal cost decisions.
+        </p>
+        <p><strong>Range:</strong> [0, 1]</p>
+      </div>
+    </div>
+
+{/* 4️⃣ Optimal Accuracy Score */}
+<div className="metric-card">
+  <div className="metric-summary">
+    <h3>Optimal Accuracy Score</h3>
+    <p>Achieved accuracy relative to the best possible accuracy across model pool.</p>
+  </div>
+
+  <div className="metric-details">
+    <h4>Definition</h4>
+    <p>
+      Unlike the Optimal Selection and Cost scores, which are computed only over queries with a defined
+      optimal model, this metric is computed over <em>all queries</em>.
+      Let <InlineMath math="a_{\text{achieved}}" /> denote
+      the averaged accuracy of the selected model and <InlineMath math="a_{\text{max}}" /> the
+      maximum achievable accuracy among all models in the router's model pool.
+    </p>
+    <BlockMath math="\text{Score} = \frac{a_{\text{achieved}}}{a_{\text{max}}}" />
+    <p>
+      Reflects how close the router’s predictions are to the best achievable accuracy, independent of cost.
+    </p>
+    <p><strong>Range:</strong> [0, 1]</p>
+  </div>
+</div>
+
+    {/* 5️⃣ Robustness Score */}
+    <div className="metric-card">
+      <div className="metric-summary">
+        <h3>Robustness Score</h3>
+        <p>Consistency of routing under input perturbations and noise.</p>
+      </div>
+
+      <div className="metric-details">
+        <h4>Definition</h4>
+        <p>
+          This metric evaluates the router’s robustness against noisy inputs.
+          We generate perturbed variants of each query (through paraphrasing, grammatical changes, synonyms, and typos)
+          and measure how often the router selects the same model as for the original query.
+        </p>
+        <BlockMath math="Score = \frac{\#\text{consistent selections}}{\#\text{noisy variants}}" />
+        <p>
+          Higher values indicate greater stability under realistic input noise, reflecting robust model selection.
+        </p>
+        <p><strong>Range:</strong> [0, 1]</p>
+      </div>
+    </div>
+
+    {/* 6️⃣ Latency Score */}
+    <div className="metric-card">
+      <div className="metric-summary">
+        <h3>Latency Score</h3>
+        <p>Inverse measure of routing overhead relative to base latency.</p>
+      </div>
+
+      <div className="metric-details">
+        <h4>Definition</h4>
+        <p>
+          Quantifies the delay introduced by the router’s decision process.
+          If <InlineMath math="L_{\text{router}}" /> is the average duration (ms) from when a request is received to the output of router decision
+          and a 10 ms baseline overhead is assumed,
+          the score is defined as:
+        </p>
+        <BlockMath math="Score = \frac{1}{L_{\text{router}} - 10}" />
+        <p>
+          Higher scores correspond to lower latency overhead and faster inference.
+        </p>
+        <p><strong>Range:</strong> [0, 1]</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
       </div>
     </div>
   );

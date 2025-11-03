@@ -9,10 +9,10 @@ import './HomePage.css';
 const HomePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('dataset');
 
-  // Get top 3 routers from the same data source as leaderboard
+  // Get top 3 routers sorted by arena score (highest first)
   const topRouters = useMemo(() => {
     return routers
-      .sort((a, b) => a.metrics.overallRank - b.metrics.overallRank)
+      .sort((a, b) => b.metrics.arenaScore - a.metrics.arenaScore)
       .slice(0, 3);
   }, []);
 
@@ -34,9 +34,7 @@ const HomePage: React.FC = () => {
               RouterArena: An Open Platform for
               <span className="highlight"> Comprehensive Comparison</span> of LLM Routers
             </h1>
-            <p className="hero-subtitle-short">
-              Diverse dataset, extensive metrics, and live leaderboard
-            </p>
+
             <p className="hero-subtitle-short">
               Diverse dataset, extensive metrics, and live leaderboard
             </p>
@@ -60,7 +58,6 @@ const HomePage: React.FC = () => {
                       <div key={router.id} className={`rank-item rank-${index + 1}`}>
                         <span className="rank">{index + 1}</span>
                         <span className="name">{router.name}</span>
-                        <span className="affiliation">{router.affiliation}</span>
                         <span className="affiliation">{router.affiliation}</span>
                       </div>
                     ))}
@@ -95,7 +92,6 @@ const HomePage: React.FC = () => {
             >
               <BookOpen className="tab-icon" />
               Diverse Dataset
-              Diverse Dataset
             </button>
             <button
               className={`tab-button ${activeTab === 'metrics' ? 'active' : ''}`}
@@ -129,8 +125,7 @@ const HomePage: React.FC = () => {
                     <BookOpen />
                   </div>
                   <div>
-                    <h3>Diverse Dataset</h3>
-                    <h3>Diverse Dataset</h3>
+                     <h3>Diverse Dataset</h3>
                     <p className="tab-subtitle">
                       {datasetInfo.totalQueries.toLocaleString()} queries across {datasetInfo.domains} domains
                       and {datasetInfo.categories} categories, designed using Dewey Decimal Classification
@@ -160,19 +155,19 @@ const HomePage: React.FC = () => {
                   <div>
                     <h3>Extensive Metrics</h3>
                     <p className="tab-subtitle">
-                      Multi-dimensional evaluation including accuracy, cost, optimality,
-                      robustness, and latency to provide comprehensive router comparison.
+                      Multi-dimensional evaluation including arena score, optimal selection, cost, accuracy, robustness, and latency to provide comprehensive router comparison.
                     </p>
                   </div>
                 </div>
                 <div className="tab-details">
                   <h4>Evaluation Dimensions</h4>
                   <ul>
-                    <li><strong>Arena Score:</strong> Overall performance combining accuracy and cost efficiency</li>
-                    <li><strong>Cost Ratio Score:</strong> Efficiency relative to optimal routing decisions</li>
-                    <li><strong>Optimality Score:</strong> Frequency of selecting the most efficient model</li>
-                    <li><strong>Robustness Score:</strong> Stability against query perturbations and noise</li>
-                    <li><strong>Latency Score:</strong> Router overhead and response time performance</li>
+                    <li><strong>Arena Score:</strong> Weighted harmonic mean capturing the trade-off between accuracy and cost efficiency</li>
+                    <li><strong>Optimal Selection Score:</strong> Fraction of router selections that match the optimal model</li>
+                    <li><strong>Optimal Cost Score:</strong> Inverse cost ratio relative to the query's optimal model</li>
+                    <li><strong>Optimal Accuracy Score:</strong> Accuracy achieved relative to the maximum possible accuracy across models</li>
+                    <li><strong>Robustness Score:</strong> Consistency of routing under input perturbations and noise</li>
+                    <li><strong>Latency Score:</strong> Inverse measure of routing overhead relative to base latency</li>
                   </ul>
                 </div>
               </div>
@@ -282,6 +277,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+
     </div>
   );
 };
