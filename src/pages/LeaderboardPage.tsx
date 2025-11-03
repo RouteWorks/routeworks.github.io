@@ -381,39 +381,39 @@ const LeaderboardPage: React.FC = () => {
         <h4>Final Formula</h4>
         <BlockMath math="S_{i,\beta} = \frac{(1+\beta)A_iC_i}{\beta A_i + C_i},\quad \beta = 0.1" />
         <p>
-          The parameter <InlineMath math="\beta" /> controls the weight toward cost (<InlineMath math="\beta<1" /> favors cheaper routers).
+          The parameter <InlineMath math="\beta" /> controls the weight toward cost.
           Scores are averaged across all queries.
         </p>
         <p><strong>Range:</strong> [0, 1]</p>
       </div>
     </div>
 
-    {/* 2️⃣ Optimal Selection Score */}
-    <div className="metric-card">
-      <div className="metric-summary">
-        <h3>Optimal Selection Score</h3>
-        <p>Percentage of queries where the router chose the cheapest correct model.</p>
-      </div>
+   {/* 2️⃣ Optimal Selection Score */}
+   <div className="metric-card">
+  <div className="metric-summary">
+    <h3>Optimal Selection Score</h3>
+    <p>Fraction of router selections that match the optimal model.</p>
+  </div>
 
-      <div className="metric-details">
-        <h4>Definition</h4>
-        <p>
-          For each query <InlineMath math="i" />, define the <em>optimal model</em> as the cheapest model that produces a correct response.
-          If no such model exists, the query is excluded.
-          The score is the fraction of remaining queries where the router selected this optimal model.
-        </p>
-        <BlockMath math="\text{Score} = \frac{\#\text{optimal selections}}{\#\text{queries with optimal model}}" />
-        <p>
-          <strong>Range:</strong> [0, 1] — higher means the router selects the best-cost correct model more often.
-        </p>
-      </div>
-    </div>
+  <div className="metric-details">
+    <h4>Definition</h4>
+    <p>
+    For each query <InlineMath math="i" />, define the <em>optimal model</em> as the cheapest model that produces a correct response.
+    If no such model exists, the query is excluded.
+      The score is the proportion of selections that match this optimal choice.
+    </p>
+    <BlockMath math="\text{Score} = \frac{N_{\text{optimal selections}}}{N_{\text{selections}}}" />
+    <p><strong>Range:</strong> [0, 1]</p>
+  </div>
+</div>
+
+
 
     {/* 3️⃣ Optimal Cost Score */}
     <div className="metric-card">
       <div className="metric-summary">
         <h3>Optimal Cost Score</h3>
-        <p>Inverse cost ratio relative to the query’s optimal model.</p>
+        <p>Cost ratio of the optimal model cost relative to the actual cost.</p>
       </div>
 
       <div className="metric-details">
@@ -426,35 +426,35 @@ const LeaderboardPage: React.FC = () => {
         <BlockMath math="Score_i = \frac{cost_{\text{opt}}}{cost_{\text{actual}}}" />
         <p>
           Averaged across all queries that have an optimal model.
-          Values close to 1 indicate near-minimal cost decisions.
+          Values close to 1 indicate near-optimal cost decisions.
         </p>
         <p><strong>Range:</strong> [0, 1]</p>
       </div>
     </div>
 
-    {/* 4️⃣ Optimal Accuracy Score */}
-    <div className="metric-card">
-      <div className="metric-summary">
-        <h3>Optimal Accuracy Score</h3>
-        <p>Accuracy achieved relative to the maximum possible accuracy across models.</p>
-      </div>
+{/* 4️⃣ Optimal Accuracy Score */}
+<div className="metric-card">
+  <div className="metric-summary">
+    <h3>Optimal Accuracy Score</h3>
+    <p>Achieved accuracy relative to the best possible accuracy across model pool.</p>
+  </div>
 
-      <div className="metric-details">
-        <h4>Definition</h4>
-        <p>
-          Unlike the Optimal Selection and Cost scores which are computed only over queries with a defined optimal model,
-          this metric is computed over <em>all queries</em>.
-          For each query <InlineMath math="i" />, let <InlineMath math="a_{\text{achieved},i}" /> be
-          the accuracy of the chosen model and <InlineMath math="a_{\text{max},i}" /> the
-          maximum accuracy achievable among all models.
-        </p>
-        <BlockMath math="Score_i = \frac{a_{\text{achieved},i}}{a_{\text{max},i}}" />
-        <p>
-          Intuitively, it captures how close the router’s decision is to the best possible accuracy, independent of cost.
-        </p>
-        <p><strong>Range:</strong> [0, 1]</p>
-      </div>
-    </div>
+  <div className="metric-details">
+    <h4>Definition</h4>
+    <p>
+      Unlike the Optimal Selection and Cost scores, which are computed only over queries with a defined
+      optimal model, this metric is computed over <em>all queries</em>.
+      Let <InlineMath math="a_{\text{achieved}}" /> denote
+      the averaged accuracy of the selected model and <InlineMath math="a_{\text{max}}" /> the
+      maximum achievable accuracy among all models in the router's model pool.
+    </p>
+    <BlockMath math="\text{Score} = \frac{a_{\text{achieved}}}{a_{\text{max}}}" />
+    <p>
+      Reflects how close the router’s predictions are to the best achievable accuracy, independent of cost.
+    </p>
+    <p><strong>Range:</strong> [0, 1]</p>
+  </div>
+</div>
 
     {/* 5️⃣ Robustness Score */}
     <div className="metric-card">
