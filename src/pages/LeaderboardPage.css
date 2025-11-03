@@ -163,12 +163,20 @@
 }
 
 :root {
-  --lb-grid: 60px minmax(140px, 1.4fr) minmax(120px, 1fr) 0.8fr repeat(5, minmax(90px, 1fr));
+  --lb-grid:
+    0.6fr   /* Rank */
+    1fr   /* Name */
+    0.9fr   /* Affiliation */
+    1.2fr     /* Type */
+    0.8fr   /* Arena */
+    0.8fr   /* Opt. Select */
+    0.8fr   /* Opt. Cost */
+    0.8fr   /* Opt. Acc */
+    0.8fr   /* Latency */
+    0.8fr   /* Robust */
+    0.9fr;  /* Average */
 }
 
-:root {
-  --lb-grid: 60px minmax(140px, 1.4fr) minmax(120px, 1fr) 0.8fr repeat(5, minmax(90px, 1fr));
-}
 
 .leaderboard-header {
   display: grid;
@@ -181,7 +189,21 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 2px solid #ddd;
+  align-items: center;
+}
+
+.leaderboard-header > div {
+  padding: 8px 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.leaderboard-header .name-col,
+.leaderboard-header .affiliation-col {
+  text-align: left;
 }
 
 .leaderboard-body {
@@ -193,11 +215,24 @@
   display: grid;
   grid-template-columns: var(--lb-grid);
   gap: 0.5rem;
-  padding: 0.5rem 0.75rem; /* shorter rows */
-  border-bottom: 1px solid #e5e7eb;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #eee;
   transition: all 0.2s ease;
   align-items: center;
   background: white;
+}
+
+.leaderboard-row > div {
+  padding: 8px 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.leaderboard-row .name-col,
+.leaderboard-row .affiliation-col {
+  text-align: left;
 }
 
 .leaderboard-row:hover {
@@ -295,12 +330,15 @@
 .name-col {
   display: flex;
   align-items: center;
+  text-align: left;
+  justify-content: flex-start;
 }
 
 .affiliation-col {
   display: flex;
   align-items: center;
-  min-width: 120px;
+  text-align: left;
+  justify-content: flex-start;
 }
 
 .affiliation {
@@ -336,14 +374,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 120px;
+  flex-shrink: 0;
 }
 
 .type-badge {
+  display: inline-block;
+  width: auto;          /* grows with text */
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
+  white-space: normal;  /* ✅ allows wrapping */
+  text-align: center;
 }
 
 .type-badge.academic {
@@ -394,15 +438,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 600;
 }
 
 .overall-score {
-  background: #2563eb;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 1rem;
+  color: #1f2937;
+  font-weight: 600;
 }
 
 .links-col {
@@ -555,9 +596,7 @@
   .leaderboard-container {
     min-width: 1000px;
   }
-  :root {
-    --lb-grid: 70px 250px 120px 100px repeat(5, 120px);
-  }
+
 
   .leaderboard-header,
   .leaderboard-row {
@@ -620,4 +659,72 @@
     padding: 1.5rem;
     min-height: 400px;
   }
+}
+
+/* === Leaderboard Grid Alignment Fix === */
+.leaderboard-header,
+.leaderboard-row {
+  display: grid !important;
+  grid-template-columns: var(--lb-grid) !important;
+  align-items: center;
+}
+
+/* Prevent content like "commercial" or long affiliations from stretching columns */
+.leaderboard-header > div,
+.leaderboard-row > div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Preserve left alignment for name and affiliation columns */
+.leaderboard-header .name-col,
+.leaderboard-header .affiliation-col,
+.leaderboard-row .name-col,
+.leaderboard-row .affiliation-col {
+  text-align: left;
+}
+
+/* Fix type badge and prevent flex growth */
+.type-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;       /* ✅ prevents stretching */
+}
+
+.type-badge {
+  display: inline-block;
+  width: 110px;          /* ✅ fixed width */
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* === Normalize header/row spacing so columns align perfectly === */
+.leaderboard-header,
+.leaderboard-row {
+  /* same grid + same gap + no outer padding */
+  grid-template-columns: var(--lb-grid) !important;
+  gap: 0.5rem !important;
+  padding: 0 !important;
+  width: 100%;
+  box-sizing: border-box;
+  column-gap: 0.5rem !important;
+  justify-items: stretch;
+}
+
+/* put padding on cells (same for header and rows) */
+.leaderboard-header > div,
+.leaderboard-row > div {
+  padding: 0.75rem 0.75rem !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* let the grid control the width; don't force a fixed width here */
+.type-col {
+  flex: 0 0 auto;      /* prevent flex growth */
+  width: auto !important;
 }

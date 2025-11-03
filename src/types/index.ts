@@ -6,10 +6,11 @@ export interface Router {
   affiliation: string;
   metrics: {
     arenaScore: number;
-    costRatioScore: number;
-    optimalAccScore: number;
-    latencyScore: number;
-    robustnessScore: number;
+    optimalSelectionScore: number | null;
+    optimalCostScore: number | null;
+    optimalAccScore: number | null;
+    robustnessScore: number | null;
+    latencyScore: number | null;
     overallRank: number;
   };
   modelPool: string[];

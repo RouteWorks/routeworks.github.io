@@ -13,13 +13,14 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
     .sort((a, b) => a.metrics.overallRank - b.metrics.overallRank)
     .slice(0, maxRouters);
 
-  // Define the 5 metrics and their corresponding data keys
+  // Define the 6 metrics and their corresponding data keys
   const metrics = [
     { key: 'arenaScore', label: 'Arena', color: '#3b82f6' },
-    { key: 'costRatioScore', label: 'Cost', color: '#10b981' },
-    { key: 'optimalAccScore', label: 'Optimal', color: '#f59e0b' },
-    { key: 'latencyScore', label: 'Latency', color: '#ef4444' },
-    { key: 'robustnessScore', label: 'Robust', color: '#8b5cf6' }
+    { key: 'optimalSelectionScore', label: 'Opt. Select', color: '#10b981' },
+    { key: 'optimalCostScore', label: 'Opt. Cost', color: '#f59e0b' },
+    { key: 'optimalAccScore', label: 'Opt. Acc', color: '#ef4444' },
+    { key: 'latencyScore', label: 'Latency', color: '#8b5cf6' },
+    { key: 'robustnessScore', label: 'Robust', color: '#ec4899' }
   ] as const;
 
   // Router colors for the chart
@@ -45,7 +46,14 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
   // Generate path for a router's performance line
   const getRouterPath = (router: Router, radius: number) => {
     const points = metrics.map((metric, index) => {
-      const value = router.metrics[metric.key];
+      const value = router.metrics[metric.key as keyof typeof router.metrics];
+      // Handle null values by using 0 (will be at center)
+      if (value === null) {
+        const angle = (index * 2 * Math.PI) / metrics.length - Math.PI / 2;
+        const x = centerX + Math.cos(angle) * 0;
+        const y = centerY + Math.sin(angle) * 0;
+        return `${index === 0 ? 'M' : 'L'} ${x} ${y}`;
+      }
       const pos = getMetricPosition(index, value, radius);
       return `${index === 0 ? 'M' : 'L'} ${pos.x} ${pos.y}`;
     });
@@ -53,8 +61,10 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
   };
 
   // Calculate adaptive axis scaling to show more variation
+  // Filter out null values
   const allValues = topRouters.flatMap(router =>
-    metrics.map(metric => router.metrics[metric.key])
+    metrics.map(metric => router.metrics[metric.key as keyof typeof router.metrics])
+      .filter((val): val is number => val !== null)
   );
   const minValue = Math.min(...allValues);
   const maxValue = Math.max(...allValues);
@@ -75,7 +85,7 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
       <div className="spider-chart">
         <svg width="450" height="450" viewBox="0 0 450 450">
           {/* Grid circles drawn at real 0.1 score increments */}
-          {Array.from({ length: 11 }, (_, i) => (i * 0.1))
+          {Array.from({ length: 11 }, (_, i) => (i * 0.2))
             .filter(v => v >= axisMin && v <= axisMax)
             .map((value, index) => {
               // Map true axis value -> 0–1 visual radius fraction
@@ -174,7 +184,9 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
                 />
                 {/* Data points */}
                 {metrics.map((metric, metricIndex) => {
-                  const value = router.metrics[metric.key];
+                  const value = router.metrics[metric.key as keyof typeof router.metrics];
+                  // Skip rendering if value is null
+                  if (value === null) return null;
                   const pos = getMetricPosition(metricIndex, value, chartRadius);
 
                   return (

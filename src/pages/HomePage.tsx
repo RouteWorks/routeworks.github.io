@@ -61,7 +61,6 @@ const HomePage: React.FC = () => {
                         <span className="rank">{index + 1}</span>
                         <span className="name">{router.name}</span>
                         <span className="affiliation">{router.affiliation}</span>
-                        <span className="affiliation">{router.affiliation}</span>
                       </div>
                     ))}
                   </div>

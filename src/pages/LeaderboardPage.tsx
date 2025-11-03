@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Trophy, Search, Medal} from 'lucide-react';
+import { Router } from '../types';
 import { routers } from '../data/mockData';
 import SpiderChart from '../components/SpiderChart';
 import DeferralCurve from '../components/DeferralCurve';
@@ -8,7 +9,7 @@ import './LeaderboardPage.css';
 const LeaderboardPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'academic' | 'commercial'>('all');
-  const [activeMetric, setActiveMetric] = useState<'overall' | 'arena' | 'cost' | 'optimal' | 'latency' | 'robustness'>('overall');
+  const [activeMetric, setActiveMetric] = useState<'overall' | 'arena' | 'optimalSelection' | 'optimalCost' | 'optimalAcc' | 'latency' | 'robustness'>('overall');
   const [activeTab, setActiveTab] = useState<'spider' | 'deferral'>('spider');
 
   // Deferral curve data
@@ -30,11 +31,23 @@ const LeaderboardPage: React.FC = () => {
     "vLLM-SR":    {"accuracy": 0.6665, "cost_per_1k": 1.613930},
   };
 
+  // Helper function to calculate average score for overall ranking
+  const calculateAverageScore = (metrics: Router['metrics']): number => {
+    const scores: number[] = [metrics.arenaScore];
+    if (metrics.optimalSelectionScore !== null) scores.push(metrics.optimalSelectionScore);
+    if (metrics.optimalCostScore !== null) scores.push(metrics.optimalCostScore);
+    if (metrics.optimalAccScore !== null) scores.push(metrics.optimalAccScore);
+    if (metrics.robustnessScore !== null) scores.push(metrics.robustnessScore);
+    if (metrics.latencyScore !== null) scores.push(metrics.latencyScore);
+    return scores.reduce((sum, score) => sum + score, 0) / scores.length;
+  };
+
   const filteredAndSortedRouters = useMemo(() => {
     const metricKeyMap = {
       arena: 'arenaScore',
-      cost: 'costRatioScore',
-      optimal: 'optimalAccScore',
+      optimalSelection: 'optimalSelectionScore',
+      optimalCost: 'optimalCostScore',
+      optimalAcc: 'optimalAccScore',
       latency: 'latencyScore',
       robustness: 'robustnessScore',
     } as const;
@@ -47,11 +60,24 @@ const LeaderboardPage: React.FC = () => {
     });
 
     if (activeMetric === 'overall') {
-      return filtered.sort((a, b) => a.metrics.overallRank - b.metrics.overallRank);
+      // Sort by average of all available metrics
+      return filtered.sort((a, b) => {
+        const avgA = calculateAverageScore(a.metrics);
+        const avgB = calculateAverageScore(b.metrics);
+        return avgB - avgA;
+      });
     }
 
     const key = metricKeyMap[activeMetric];
-    return filtered.sort((a, b) => b.metrics[key] - a.metrics[key]);
+    return filtered.sort((a, b) => {
+      const scoreA = a.metrics[key];
+      const scoreB = b.metrics[key];
+      // Handle null values - put them at the end
+      if (scoreA === null && scoreB === null) return 0;
+      if (scoreA === null) return 1;
+      if (scoreB === null) return -1;
+      return scoreB - scoreA;
+    });
   }, [searchTerm, filterType, activeMetric]);
 
   // const getRankBadge = (rank: number) => {
@@ -117,31 +143,37 @@ const LeaderboardPage: React.FC = () => {
             className={`metric-filter-btn ${activeMetric === 'arena' ? 'active' : ''}`}
             onClick={() => setActiveMetric('arena')}
           >
-            Avg Arena Score
+            Arena Score
           </button>
           <button
-            className={`metric-filter-btn ${activeMetric === 'cost' ? 'active' : ''}`}
-            onClick={() => setActiveMetric('cost')}
+            className={`metric-filter-btn ${activeMetric === 'optimalSelection' ? 'active' : ''}`}
+            onClick={() => setActiveMetric('optimalSelection')}
           >
-            Avg Cost Ratio
+            Optimal Selection
           </button>
           <button
-            className={`metric-filter-btn ${activeMetric === 'optimal' ? 'active' : ''}`}
-            onClick={() => setActiveMetric('optimal')}
+            className={`metric-filter-btn ${activeMetric === 'optimalCost' ? 'active' : ''}`}
+            onClick={() => setActiveMetric('optimalCost')}
           >
-            Avg Optimality
+            Optimal Cost
+          </button>
+          <button
+            className={`metric-filter-btn ${activeMetric === 'optimalAcc' ? 'active' : ''}`}
+            onClick={() => setActiveMetric('optimalAcc')}
+          >
+            Optimal Acc
           </button>
           <button
             className={`metric-filter-btn ${activeMetric === 'latency' ? 'active' : ''}`}
             onClick={() => setActiveMetric('latency')}
           >
-            Avg Latency
+            Latency
           </button>
           <button
             className={`metric-filter-btn ${activeMetric === 'robustness' ? 'active' : ''}`}
             onClick={() => setActiveMetric('robustness')}
           >
-            Avg Robustness
+            Robustness
           </button>
         </div>
 
@@ -181,10 +213,12 @@ const LeaderboardPage: React.FC = () => {
             <div className="affiliation-col">Affiliation</div>
             <div className="type-col">Type</div>
             <div className="metrics-col">Arena</div>
-            <div className="metrics-col">Cost</div>
-            <div className="metrics-col">Optimal</div>
+            <div className="metrics-col">Opt. Select</div>
+            <div className="metrics-col">Opt. Cost</div>
+            <div className="metrics-col">Opt. Acc</div>
             <div className="metrics-col">Latency</div>
             <div className="metrics-col">Robust</div>
+            <div className="metrics-col overall-col">Average</div>
           </div>
 
           <div className="leaderboard-body">
@@ -213,31 +247,65 @@ const LeaderboardPage: React.FC = () => {
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.arenaScore.toFixed(2)}</span>
+                    <span className="score">{router.metrics.arenaScore.toFixed(4)}</span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.costRatioScore.toFixed(2)}</span>
+                    <span className="score">
+                      {router.metrics.optimalSelectionScore !== null
+                        ? router.metrics.optimalSelectionScore.toFixed(4)
+                        : '—'}
+                    </span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.optimalAccScore.toFixed(2)}</span>
+                    <span className="score">
+                      {router.metrics.optimalCostScore !== null
+                        ? router.metrics.optimalCostScore.toFixed(4)
+                        : '—'}
+                    </span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.latencyScore.toFixed(2)}</span>
+                    <span className="score">
+                      {router.metrics.optimalAccScore !== null
+                        ? router.metrics.optimalAccScore.toFixed(4)
+                        : '—'}
+                    </span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.robustnessScore.toFixed(2)}</span>
+                    <span className="score">
+                      {router.metrics.latencyScore !== null
+                        ? router.metrics.latencyScore.toFixed(4)
+                        : '—'}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="metrics-col">
+                  <div className="metric-value">
+                    <span className="score">
+                      {router.metrics.robustnessScore !== null
+                        ? router.metrics.robustnessScore.toFixed(4)
+                        : '—'}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="metrics-col overall-col">
+                  <div className="metric-value">
+                    <span className="score overall-score">
+                      {calculateAverageScore(router.metrics).toFixed(4)}
+                    </span>
                   </div>
                 </div>
               </div>
