@@ -9,10 +9,10 @@ import './HomePage.css';
 const HomePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('dataset');
 
-  // Get top 3 routers from the same data source as leaderboard
+  // Get top 3 routers sorted by arena score (highest first)
   const topRouters = useMemo(() => {
     return routers
-      .sort((a, b) => a.metrics.overallRank - b.metrics.overallRank)
+      .sort((a, b) => b.metrics.arenaScore - a.metrics.arenaScore)
       .slice(0, 3);
   }, []);
 
