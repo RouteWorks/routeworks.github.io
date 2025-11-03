@@ -92,7 +92,6 @@ const HomePage: React.FC = () => {
             >
               <BookOpen className="tab-icon" />
               Diverse Dataset
-              Diverse Dataset
             </button>
             <button
               className={`tab-button ${activeTab === 'metrics' ? 'active' : ''}`}
@@ -126,8 +125,7 @@ const HomePage: React.FC = () => {
                     <BookOpen />
                   </div>
                   <div>
-                    <h3>Diverse Dataset</h3>
-                    <h3>Diverse Dataset</h3>
+                     <h3>Diverse Dataset</h3>
                     <p className="tab-subtitle">
                       {datasetInfo.totalQueries.toLocaleString()} queries across {datasetInfo.domains} domains
                       and {datasetInfo.categories} categories, designed using Dewey Decimal Classification
