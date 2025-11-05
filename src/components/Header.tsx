@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Trophy, Home, Send, Users, Github } from 'lucide-react';
+import { Menu, X, Trophy, Home, Send, Users, Github, FileText} from 'lucide-react';
 import './Header.css';
 import { contactInfo } from '../data/mockData';
 
@@ -17,6 +17,8 @@ const Header: React.FC = () => {
       icon: Github,
       isExternal: true,
     },
+    // add a paper link
+    { name: 'Paper', href: contactInfo.paper, icon: FileText, isExternal: true },
     { name: 'Contact', href: '#contact', icon: Users, isScroll: true },
   ];
 
