@@ -33,13 +33,13 @@
 }
 
 .hero-subtitle-short {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
   line-height: 1.5;
   margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
   padding-right: 4rem;
   margin-left: 2rem;
-  font-weight: 400;
 }
 
 .highlight {
@@ -69,7 +69,7 @@
 }
 
 .cta-heading {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
   margin: 0 0 0.5rem 0;
@@ -77,8 +77,8 @@
 }
 
 .cta-description {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.35rem;
+  color: rgba(234, 234, 234, 0.964);
   margin: 0 0 1rem 0;
   line-height: 1.4;
   font-weight: 400;
@@ -89,7 +89,7 @@
   color: white;
   font-weight: 500;
   padding: 0.5rem 1.25rem;
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   border: none;
   border-radius: 6px;
   transition: all 0.2s ease;
@@ -124,6 +124,7 @@
   background: #2563eb;
   color: white;
   font-weight: 600;
+  font-size: 1.3rem;
   border: none;
 }
 
@@ -318,6 +319,7 @@
   border-radius: 12px;
   color: #6b7280;
   font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   min-width: 200px;
