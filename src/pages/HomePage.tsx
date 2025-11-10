@@ -64,7 +64,7 @@ const HomePage: React.FC = () => {
 
                 <div className="cta-card">
                   <h3 className="cta-heading">Want to see your router on the leaderboard?</h3>
-                  <p className="cta-description">Email us or open a GitHub issue on RouterArena.</p>
+                  <p className="cta-description">Head to our GitHub to submit or evaluate your router on RouterArena.</p>
                   <a href="#contact" className="btn btn-primary">
                     Get Started →
                   </a>
@@ -303,7 +303,8 @@ const HomePage: React.FC = () => {
         <div className="container">
           <h2 className="section-title">Research Team</h2>
           <p className="contact-description">
-            Contact us or submit a GitHub issue to evaluate your router with RouterArena
+            To evaluate your router with RouterArena, please visit our GitHub repository and follow the instructions provided in the README.<br />
+            For inquiries or support, contact us at {contactInfo.email} or submit an issue on GitHub.
           </p>
 
           {/* Action Buttons */}
@@ -324,7 +325,7 @@ const HomePage: React.FC = () => {
               rel="noopener noreferrer"
             >
               <Github className="btn-icon" />
-              View Code
+              View GitHub
             </a>
           </div>
 
