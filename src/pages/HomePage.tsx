@@ -308,8 +308,10 @@ const HomePage: React.FC = () => {
         <div className="container">
           <h2 className="section-title">Research Team</h2>
           <p className="contact-description">
-            To evaluate your router with RouterArena, please visit our GitHub repository and follow the instructions provided in the README.<br />
-            For inquiries or support, contact us at {contactInfo.email} or submit an issue on GitHub.
+            To evaluate your router with RouterArena,
+            visit our GitHub repository and follow the instructions in the README.<br />
+
+            For inquiries or support, contact us at {contactInfo.email} or submit a GitHub issue.
           </p>
 
           {/* Action Buttons */}
