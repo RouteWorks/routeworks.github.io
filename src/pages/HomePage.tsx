@@ -34,7 +34,7 @@ const HomePage: React.FC = () => {
             </h1>
 
             <p className="hero-subtitle-short">
-              Diverse dataset, extensive metrics, and live leaderboard
+              Diverse dataset, extensive metrics, and <br /> live leaderboard
             </p>
             <div className="hero-actions">
               <Link to="/leaderboard" className="btn btn-primary">
