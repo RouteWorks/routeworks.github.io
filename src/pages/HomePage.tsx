@@ -30,7 +30,7 @@ const HomePage: React.FC = () => {
           <div className="hero-left">
             <h1 className="hero-title">
               RouterArena: An Open Platform for
-              <span className="highlight"> Comprehensive Comparison</span> of LLM Routers
+              <span className="highlight"> Comprehensive Comparison</span> of <br /> LLM Routers
             </h1>
 
             <p className="hero-subtitle-short">
@@ -64,8 +64,13 @@ const HomePage: React.FC = () => {
 
                 <div className="cta-card">
                   <h3 className="cta-heading">Want to see your router on the leaderboard?</h3>
-                  <p className="cta-description">Head to our GitHub to submit or evaluate your router on RouterArena.</p>
-                  <a href="#contact" className="btn btn-primary">
+                  <p className="cta-description">Head to our GitHub to submit your router.</p>
+                  <a href={contactInfo.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  className="btn btn-primary"
+
+                  >
                     Get Started →
                   </a>
                 </div>
@@ -311,7 +316,7 @@ const HomePage: React.FC = () => {
           <div className="action-buttons">
             <a
               href={contactInfo.paper}
-              className="btn btn-primary"
+              className="btn btn-outline"
               target="_blank"
               rel="noopener noreferrer"
             >
