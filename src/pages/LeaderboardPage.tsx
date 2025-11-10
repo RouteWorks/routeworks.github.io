@@ -227,7 +227,7 @@ const LeaderboardPage: React.FC = () => {
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.arenaScore.toFixed(4)}</span>
+                    <span className="score">{router.metrics.arenaScore.toFixed(1)}</span>
                   </div>
                 </div>
 
@@ -235,7 +235,7 @@ const LeaderboardPage: React.FC = () => {
                   <div className="metric-value">
                     <span className="score">
                       {router.metrics.optimalSelectionScore !== null
-                        ? router.metrics.optimalSelectionScore.toFixed(4)
+                        ? router.metrics.optimalSelectionScore.toFixed(1)
                         : '—'}
                     </span>
                   </div>
@@ -245,7 +245,7 @@ const LeaderboardPage: React.FC = () => {
                   <div className="metric-value">
                     <span className="score">
                       {router.metrics.optimalCostScore !== null
-                        ? router.metrics.optimalCostScore.toFixed(4)
+                        ? router.metrics.optimalCostScore.toFixed(1)
                         : '—'}
                     </span>
                   </div>
@@ -255,7 +255,7 @@ const LeaderboardPage: React.FC = () => {
                   <div className="metric-value">
                     <span className="score">
                       {router.metrics.optimalAccScore !== null
-                        ? router.metrics.optimalAccScore.toFixed(4)
+                        ? router.metrics.optimalAccScore.toFixed(1)
                         : '—'}
                     </span>
                   </div>
@@ -265,7 +265,7 @@ const LeaderboardPage: React.FC = () => {
                   <div className="metric-value">
                     <span className="score">
                       {router.metrics.latencyScore !== null
-                        ? router.metrics.latencyScore.toFixed(4)
+                        ? router.metrics.latencyScore.toFixed(1)
                         : '—'}
                     </span>
                   </div>
@@ -275,7 +275,7 @@ const LeaderboardPage: React.FC = () => {
                   <div className="metric-value">
                     <span className="score">
                       {router.metrics.robustnessScore !== null
-                        ? router.metrics.robustnessScore.toFixed(4)
+                        ? router.metrics.robustnessScore.toFixed(1)
                         : '—'}
                     </span>
                   </div>
