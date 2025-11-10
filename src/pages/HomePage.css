@@ -40,6 +40,7 @@
   color: rgba(255, 255, 255, 0.9);
   padding-right: 4rem;
   margin-left: 2rem;
+  max-width: 400rem;
 }
 
 .highlight {
@@ -65,7 +66,7 @@
   border: none;
   padding: 0;
   text-align: left;
-  max-width: 320px;
+  max-width: 500px;
 }
 
 .cta-heading {
@@ -188,7 +189,7 @@
   padding: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid #e5e7eb;
-  max-width: 400px;
+  max-width: 350px;
   width: 100%;
 }
 

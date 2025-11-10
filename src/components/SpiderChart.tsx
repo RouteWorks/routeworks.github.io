@@ -66,19 +66,9 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
 
   // Calculate adaptive axis scaling to show more variation
   // Filter out null values
-  const allValues = topRouters.flatMap(router =>
-    metrics
-      .map(metric => router.metrics[metric.key as keyof typeof router.metrics])
-      .filter((val): val is number => val !== null)
-  );
-  const minValue = Math.min(...allValues);
-  const maxValue = Math.max(...allValues);
-  const valueRange = maxValue - minValue;
-
-  // Set axis range to show more variation
-  // If values are clustered (e.g., 0.8-0.9), show axis with 25% padding above and below
-  const axisMin = Math.max(0, minValue - valueRange * 0.25);
-  const axisMax = Math.min(1, maxValue + valueRange * 0.25);
+  const gridTicks = [0, 20, 40, 60, 80, 100];
+  const axisMin = 0;
+  const axisMax = 100;
   const axisRange = axisMax - axisMin;
 
   const chartRadius = 180;
@@ -89,38 +79,35 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
     <div className="spider-chart-container">
       <div className="spider-chart">
         <svg width="450" height="450" viewBox="0 0 450 450">
-          {/* Grid circles drawn at real 0.1 score increments */}
-          {Array.from({ length: 11 }, (_, i) => i * 0.2)
-            .filter(v => v >= axisMin && v <= axisMax)
-            .map((value, index) => {
-              // Map true axis value -> 0–1 visual radius fraction
-              const scale = (value - axisMin) / axisRange;
-              const r = chartRadius * scale;
+          {/* Grid circles drawn at fixed 0-100 scale */}
+          {gridTicks.map((value, index) => {
+            const scale = (value - axisMin) / axisRange;
+            const r = chartRadius * scale;
 
-              return (
-                <g key={index}>
-                  <circle
-                    cx={centerX}
-                    cy={centerY}
-                    r={r}
-                    fill="none"
-                    stroke="#e5e7eb"
-                    strokeWidth="1"
-                  />
-                  <text
-                    x={centerX + r + 8}
-                    y={centerY}
-                    textAnchor="start"
-                    dominantBaseline="middle"
-                    className="grid-label"
-                    fill="#9ca3af"
-                    fontSize="22"
-                  >
-                    {value.toFixed(1)}
-                  </text>
-                </g>
-              );
-            })}
+            return (
+              <g key={index}>
+                <circle
+                  cx={centerX}
+                  cy={centerY}
+                  r={r}
+                  fill="none"
+                  stroke="#e5e7eb"
+                  strokeWidth="1"
+                />
+                <text
+                  x={centerX + r + 8}
+                  y={centerY}
+                  textAnchor="start"
+                  dominantBaseline="middle"
+                  className="grid-label"
+                  fill="#9ca3af"
+                  fontSize="22"
+                >
+                  {value.toString()}
+                </text>
+              </g>
+            );
+          })}
 
           {/* Grid lines (axes) */}
           {metrics.map((metric, index) => {
