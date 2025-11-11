@@ -359,7 +359,7 @@ const LeaderboardPage: React.FC = () => {
                 </p>
 
                 <p>
-                  <strong>Range:</strong> [0, 1]
+                  <strong>Range:</strong> [0, 100]
                 </p>
               </div>
             </div>
@@ -381,7 +381,7 @@ const LeaderboardPage: React.FC = () => {
                 </p>
                 <BlockMath math="\text{Score} = \frac{N_{\text{optimal selections}}}{N_{\text{selections}}}" />
                 <p>
-                  <strong>Range:</strong> [0, 1]
+                  <strong>Range:</strong> [0, 100]
                 </p>
               </div>
             </div>
@@ -407,7 +407,7 @@ const LeaderboardPage: React.FC = () => {
                   near-optimal cost decisions.
                 </p>
                 <p>
-                  <strong>Range:</strong> [0, 1]
+                  <strong>Range:</strong> [0, 100]
                 </p>
               </div>
             </div>
@@ -434,7 +434,7 @@ const LeaderboardPage: React.FC = () => {
                   independent of cost.
                 </p>
                 <p>
-                  <strong>Range:</strong> [0, 1]
+                  <strong>Range:</strong> [0, 100]
                 </p>
               </div>
             </div>
@@ -460,7 +460,7 @@ const LeaderboardPage: React.FC = () => {
                   robust model selection.
                 </p>
                 <p>
-                  <strong>Range:</strong> [0, 1]
+                  <strong>Range:</strong> [0, 100]
                 </p>
               </div>
             </div>
@@ -483,7 +483,7 @@ const LeaderboardPage: React.FC = () => {
                 <BlockMath math="Score = \frac{1}{L_{\text{router}} - 10}" />
                 <p>Higher scores correspond to lower latency overhead and faster inference.</p>
                 <p>
-                  <strong>Range:</strong> [0, 1]
+                  <strong>Range:</strong> [0, 100]
                 </p>
               </div>
             </div>
