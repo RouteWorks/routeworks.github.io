@@ -183,6 +183,15 @@ const rawRouterData = [
     'Robustness Score': 100.0,
     'Latency Score': 0.1863,
   },
+  {
+    'Router Name': 'chayan',
+    'Arena Score': 63.83,
+    'Optimal Selection Score': 43.03,
+    'Optimal Cost Score': 43.75,
+    'Optimal Acc. Score': 88.74,
+    'Robustness Score': null,
+    'Latency Score': null,
+  }
 ];
 
 // Router metadata mapping
@@ -190,7 +199,7 @@ const routerMetadata: Record<
   string,
   {
     name: string;
-    type: 'academic' | 'commercial';
+    type: 'open-source' | 'closed-source';
     description: string;
     affiliation: string;
     modelPool: string[];
@@ -200,7 +209,7 @@ const routerMetadata: Record<
 > = {
   RouterDC: {
     name: 'RouterDC',
-    type: 'academic',
+    type: 'open-source',
     description: 'Dual contrastive learning-based router with cost optimization',
     affiliation: 'SUSTech',
     modelPool: ['GPT-3.5', 'Claude-2', 'Gemini-Pro', 'Llama-2-13B'],
@@ -209,7 +218,7 @@ const routerMetadata: Record<
   },
   azure: {
     name: 'Azure',
-    type: 'commercial',
+    type: 'closed-source',
     description: "Microsoft Azure's model routing service",
     affiliation: 'Microsoft',
     modelPool: ['GPT-4', 'GPT-3.5', 'GPT-4-Turbo'],
@@ -218,7 +227,7 @@ const routerMetadata: Record<
   },
   carrot: {
     name: 'CARROT',
-    type: 'academic',
+    type: 'open-source',
     description: 'Cost-aware routing with dual contrastive learning approach',
     affiliation: 'UMich',
     modelPool: ['GPT-4', 'Claude-3', 'Gemini-Pro', 'Llama-2-70B'],
@@ -227,7 +236,7 @@ const routerMetadata: Record<
   },
   gpt5: {
     name: 'GPT-5',
-    type: 'commercial',
+    type: 'closed-source',
     description: "OpenAI's internal routing system for GPT model family",
     affiliation: 'OpenAI',
     modelPool: ['GPT-5', 'GPT-4', 'GPT-3.5'],
@@ -236,7 +245,7 @@ const routerMetadata: Record<
   },
   graphrouter: {
     name: 'GraphRouter',
-    type: 'academic',
+    type: 'open-source',
     description: 'Graph neural network-based routing with semantic understanding',
     affiliation: 'UIUC',
     modelPool: ['GPT-4', 'Claude-3', 'Gemini-Pro', 'Llama-2-70B', 'Mixtral-8x7B'],
@@ -245,7 +254,7 @@ const routerMetadata: Record<
   },
   mirt_bert: {
     name: 'MIRT-BERT',
-    type: 'academic',
+    type: 'open-source',
     description: 'Multi-item response theory with BERT embeddings',
     affiliation: 'USTC',
     modelPool: ['GPT-4', 'Claude-3', 'Gemini-Pro', 'Llama-2-70B'],
@@ -254,7 +263,7 @@ const routerMetadata: Record<
   },
   nirt_bert: {
     name: 'NIRT-BERT',
-    type: 'academic',
+    type: 'open-source',
     description: 'Neural item response theory with BERT-based routing',
     affiliation: 'USTC',
     modelPool: ['GPT-4', 'Claude-3', 'Gemini-Pro', 'Llama-2-70B'],
@@ -263,8 +272,8 @@ const routerMetadata: Record<
   },
   notdiamond: {
     name: 'NotDiamond',
-    type: 'commercial',
-    description: 'Commercial routing service with access to 60+ models',
+    type: 'closed-source',
+    description: 'Closed-source routing service with access to 60+ models',
     affiliation: 'NotDiamond',
     modelPool: ['GPT-4', 'Claude-3', 'Gemini-Pro', 'Llama-2-70B', 'Mixtral-8x7B', 'Qwen-72B'],
     paperUrl: 'https://notdiamond.ai',
@@ -272,7 +281,7 @@ const routerMetadata: Record<
   },
   routellm: {
     name: 'RouteLLM',
-    type: 'academic',
+    type: 'open-source',
     description: 'Binary selection between strong and weak models',
     affiliation: 'Berkeley',
     modelPool: ['GPT-4', 'GPT-3.5'],
@@ -280,32 +289,41 @@ const routerMetadata: Record<
     githubUrl: 'https://github.com/example/routellm',
   },
   routerbench_knn: {
-    name: 'KNN',
-    type: 'academic',
+    name: 'RouterBench-KNN',
+    type: 'open-source',
     description: 'K-Nearest Neighbors-based router benchmark',
-    affiliation: 'Academic',
+    affiliation: 'Martian',
     modelPool: ['GPT-4', 'GPT-3.5', 'Claude-3'],
-    paperUrl: 'https://arxiv.org/abs/2024.xxxxx',
-    githubUrl: 'https://github.com/example/routerbench-knn',
+    paperUrl: 'https://arxiv.org/pdf/2403.12031',
+    githubUrl: 'https://github.com/withmartian/routerbench',
   },
   routerbench_mlp: {
-    name: 'MLP',
-    type: 'academic',
+    name: 'RouterBench-MLP',
+    type: 'open-source',
     description: 'Multi-Layer Perceptron-based router benchmark',
-    affiliation: 'Academic',
+    affiliation: 'Martian',
     modelPool: ['GPT-4', 'GPT-3.5', 'Claude-3'],
     paperUrl: 'https://arxiv.org/abs/2024.xxxxx',
     githubUrl: 'https://github.com/example/routerbench-mlp',
   },
   vllm: {
     name: 'vLLM-SR',
-    type: 'commercial',
+    type: 'open-source',
     description: 'vLLM-based routing service',
-    affiliation: 'vLLM',
+    affiliation: 'vLLM SR Team',
     modelPool: ['GPT-4', 'GPT-3.5'],
     paperUrl: 'https://vllm.ai',
-    githubUrl: undefined,
+    githubUrl: 'https://github.com/vllm-project/semantic-router',
   },
+  chayan: {
+    name: 'Chayan',
+    type: 'open-source',
+    description: 'Chayan-based routing service',
+    affiliation: 'Adaptive Classifier',
+    modelPool: ['GPT-4', 'GPT-3.5'],
+    paperUrl: 'https://arxiv.org/abs/2024.xxxxx',
+    githubUrl: 'https://huggingface.co/adaptive-classifier/chayan',
+  }
 };
 
 // Convert raw data to Router format and calculate overall ranks
@@ -313,7 +331,7 @@ const routersWithRanks = rawRouterData.map(router => {
   const id = router['Router Name'].toLowerCase().replace(/[_\s]/g, '-');
   const metadata = routerMetadata[router['Router Name']] || {
     name: router['Router Name'],
-    type: 'academic' as const,
+    type: 'open-source' as const,
     description: `Router: ${router['Router Name']}`,
     affiliation: 'Unknown',
     modelPool: [],

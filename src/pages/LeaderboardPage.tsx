@@ -10,14 +10,14 @@ import { InlineMath, BlockMath } from 'react-katex';
 
 const LeaderboardPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterType, setFilterType] = useState<'all' | 'academic' | 'commercial'>('all');
+  const [filterType, setFilterType] = useState<'all' | 'open-source' | 'closed-source'>('all');
   const [activeMetric, setActiveMetric] = useState<
     'arena' | 'optimalSelection' | 'optimalCost' | 'optimalAcc' | 'latency' | 'robustness'
   >('arena');
   const [activeTab, setActiveTab] = useState<'spider' | 'deferral'>('spider');
 
   // Deferral curve data
-  const academicPoints = {
+  const openSourcePoints = {
     CARROT: { accuracy: 0.672, cost_per_1k: 2.060741 },
     RouterDC: { accuracy: 0.3344, cost_per_1k: 0.063751 },
     GraphRouter: { accuracy: 0.6072, cost_per_1k: 0.363695 },
@@ -28,7 +28,7 @@ const LeaderboardPage: React.FC = () => {
     'NIRT-BERT': { accuracy: 0.6159, cost_per_1k: 0.600228 },
   };
 
-  const commercialPoints = {
+  const closedSourcePoints = {
     NotDiamond: { accuracy: 0.6651, cost_per_1k: 9.330411 },
     Azure: { accuracy: 0.6798, cost_per_1k: 0.619866 },
     'GPT-5': { accuracy: 0.7428, cost_per_1k: 14.407096 },
@@ -180,12 +180,12 @@ const LeaderboardPage: React.FC = () => {
             <div className="filter-group">
               <select
                 value={filterType}
-                onChange={e => setFilterType(e.target.value as 'all' | 'academic' | 'commercial')}
+                onChange={e => setFilterType(e.target.value as 'all' | 'open-source' | 'closed-source')}
                 className="filter-select"
               >
                 <option value="all">All Routers</option>
-                <option value="academic">Academic</option>
-                <option value="commercial">Commercial</option>
+                <option value="open-source">Open-Source</option>
+                <option value="closed-source">Closed-Source</option>
               </select>
             </div>
           </div>
@@ -312,8 +312,8 @@ const LeaderboardPage: React.FC = () => {
             {activeTab === 'deferral' && (
               <div className="deferral-curve-section">
                 <DeferralCurve
-                  academicPoints={academicPoints}
-                  commercialPoints={commercialPoints}
+                  openSourcePoints={openSourcePoints}
+                  closedSourcePoints={closedSourcePoints}
                 />
               </div>
             )}

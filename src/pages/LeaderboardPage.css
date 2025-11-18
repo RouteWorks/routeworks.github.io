@@ -163,7 +163,7 @@
 }
 
 :root {
-  --lb-grid: 0.6fr /* Rank */ 1fr /* Name */ 0.9fr /* Affiliation */ 1.2fr /* Type */ 0.8fr
+  --lb-grid: 0.6fr /* Rank */ 1.5fr /* Name */ 1.2fr /* Affiliation */ 1.2fr /* Type */ 0.8fr
     /* Arena */ 0.8fr /* Opt. Select */ 0.8fr /* Opt. Cost */ 0.8fr /* Opt. Acc */ 0.8fr
     /* Latency */ 0.8fr; /* Robust */
 }
@@ -215,7 +215,7 @@
 .leaderboard-row > div {
   padding: 8px 12px;
   overflow: hidden;
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
   white-space: nowrap;
   text-align: center;
 }
@@ -318,19 +318,24 @@
   align-items: center;
   text-align: left;
   justify-content: flex-start;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
 }
 
 .affiliation-col {
-  display: flex;
-  align-items: center;
-  text-align: left;
-  justify-content: flex-start;
+  scrollbar-width: thin;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+
 }
 
+
 .affiliation {
-  font-size: 0.9rem;
-  color: #6b7280;
-  font-weight: 500;
+  display: inline-block;
+  min-width: max-content; /* content defines its own width */
+  padding-bottom: 4px;
+
+
 }
 
 .router-info {
@@ -376,12 +381,12 @@
   text-align: center;
 }
 
-.type-badge.academic {
+.type-badge.open-source {
   background: #3b82f6;
   color: white;
 }
 
-.type-badge.commercial {
+.type-badge.closed-source {
   background: #10b981;
   color: white;
 }
@@ -740,11 +745,11 @@
   align-items: center;
 }
 
-/* Prevent content like "commercial" or long affiliations from stretching columns */
+/* Prevent content like "closed-source" or long affiliations from stretching columns */
 .leaderboard-header > div,
 .leaderboard-row > div {
   overflow: hidden;
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
   white-space: nowrap;
 }
 
@@ -766,9 +771,9 @@
 
 .type-badge {
   display: inline-block;
-  width: 110px; /* ✅ fixed width */
+  width: 200px; /* ✅ fixed width */
   text-align: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   white-space: nowrap;
 }
 
@@ -790,7 +795,7 @@
 .leaderboard-row > div {
   padding: 0.75rem 0.75rem !important;
   overflow: hidden;
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
   white-space: nowrap;
 }
 

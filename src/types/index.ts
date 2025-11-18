@@ -1,7 +1,7 @@
 export interface Router {
   id: string;
   name: string;
-  type: 'academic' | 'commercial';
+  type: 'open-source' | 'closed-source';
   description: string;
   affiliation: string;
   metrics: {

@@ -217,7 +217,7 @@ const HomePage: React.FC = () => {
                   <div>
                     <h3>Automated Framework</h3>
                     <p className="tab-subtitle">
-                      Automated evaluation pipeline supporting both open-source and commercial
+                      Automated evaluation pipeline supporting both open-source and closed-source
                       routers with real-time leaderboard updates.
                     </p>
                   </div>
@@ -238,7 +238,7 @@ const HomePage: React.FC = () => {
                       are added
                     </li>
                     <li>
-                      <strong>Multi-Platform:</strong> Support for both academic and commercial
+                      <strong>Multi-Platform:</strong> Support for both open-source and closed-source
                       routers
                     </li>
                     <li>
@@ -259,8 +259,8 @@ const HomePage: React.FC = () => {
                   <div>
                     <h3>Fair Comparison</h3>
                     <p className="tab-subtitle">
-                      Unified evaluation protocol enabling fair comparison between academic and
-                      commercial routers under consistent conditions.
+                      Unified evaluation protocol enabling fair comparison between open-source and
+                      closed-source routers under consistent conditions.
                     </p>
                   </div>
                 </div>
@@ -276,7 +276,7 @@ const HomePage: React.FC = () => {
                       protocols
                     </li>
                     <li>
-                      <strong>Academic & Commercial:</strong> Fair comparison across different
+                      <strong>Open-Source & Closed-Source:</strong> Fair comparison across different
                       router types
                     </li>
                     <li>
