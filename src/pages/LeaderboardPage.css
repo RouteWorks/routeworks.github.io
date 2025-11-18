@@ -318,12 +318,14 @@
   align-items: center;
   text-align: left;
   justify-content: flex-start;
+  min-width: 0 !important;
   overflow-x: auto !important;
   white-space: nowrap !important;
 }
 
 .affiliation-col {
   scrollbar-width: thin;
+  min-width: 0 !important;
   overflow-x: auto !important;
   white-space: nowrap !important;
 
