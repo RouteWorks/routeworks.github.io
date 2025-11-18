@@ -310,7 +310,7 @@ const routerMetadata: Record<
     name: 'vLLM-SR',
     type: 'open-source',
     description: 'vLLM-based routing service',
-    affiliation: 'vLLM',
+    affiliation: 'vLLM SR Team',
     modelPool: ['GPT-4', 'GPT-3.5'],
     paperUrl: 'https://vllm.ai',
     githubUrl: 'https://github.com/vllm-project/semantic-router',
