@@ -319,7 +319,7 @@ const routerMetadata: Record<
     name: 'Chayan',
     type: 'open-source',
     description: 'Chayan-based routing service',
-    affiliation: 'Adaptive Classifier',
+    affiliation: 'Adaptive Classifier ',
     modelPool: ['GPT-4', 'GPT-3.5'],
     paperUrl: 'https://arxiv.org/abs/2024.xxxxx',
     githubUrl: 'https://huggingface.co/adaptive-classifier/chayan',
