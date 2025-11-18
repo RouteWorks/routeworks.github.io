@@ -215,7 +215,7 @@
 .leaderboard-row > div {
   padding: 8px 12px;
   overflow: hidden;
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
   white-space: nowrap;
   text-align: center;
 }
@@ -321,16 +321,18 @@
 }
 
 .affiliation-col {
-  display: flex;
-  align-items: center;
-  text-align: left;
-  justify-content: flex-start;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+  scrollbar-width: thin;
 }
 
+
 .affiliation {
-  font-size: 0.9rem;
-  color: #6b7280;
-  font-weight: 500;
+  display: inline-block;
+  min-width: max-content; /* content defines its own width */
+  padding-bottom: 4px;
+
+
 }
 
 .router-info {
@@ -376,12 +378,12 @@
   text-align: center;
 }
 
-.type-badge.academic {
+.type-badge.open-source {
   background: #3b82f6;
   color: white;
 }
 
-.type-badge.commercial {
+.type-badge.closed-source {
   background: #10b981;
   color: white;
 }
@@ -740,11 +742,11 @@
   align-items: center;
 }
 
-/* Prevent content like "commercial" or long affiliations from stretching columns */
+/* Prevent content like "closed-source" or long affiliations from stretching columns */
 .leaderboard-header > div,
 .leaderboard-row > div {
   overflow: hidden;
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
   white-space: nowrap;
 }
 
@@ -766,9 +768,9 @@
 
 .type-badge {
   display: inline-block;
-  width: 110px; /* ✅ fixed width */
+  width: 200px; /* ✅ fixed width */
   text-align: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   white-space: nowrap;
 }
 
@@ -790,7 +792,7 @@
 .leaderboard-row > div {
   padding: 0.75rem 0.75rem !important;
   overflow: hidden;
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
   white-space: nowrap;
 }
 

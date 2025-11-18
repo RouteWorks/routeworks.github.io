@@ -71,14 +71,14 @@ const SubmitPromptPage: React.FC = () => {
               <div className="guideline-item">
                 <CheckCircle className="guideline-icon" />
                 <div>
-                  <h3>Academic Routers</h3>
+                  <h3>Open-Source Routers</h3>
                   <p>Provide GitHub repository with training code and model weights</p>
                 </div>
               </div>
               <div className="guideline-item">
                 <CheckCircle className="guideline-icon" />
                 <div>
-                  <h3>Commercial Routers</h3>
+                  <h3>Closed-Source Routers</h3>
                   <p>Provide API access or detailed technical specifications</p>
                 </div>
               </div>

@@ -2,17 +2,17 @@ import React from 'react';
 import './DeferralCurve.css';
 
 interface DeferralCurveProps {
-  academicPoints: {
+  openSourcePoints: {
     [key: string]: { accuracy: number; cost_per_1k: number };
   };
-  commercialPoints: {
+  closedSourcePoints: {
     [key: string]: { accuracy: number; cost_per_1k: number };
   };
 }
 
-const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercialPoints }) => {
+const DeferralCurve: React.FC<DeferralCurveProps> = ({ openSourcePoints, closedSourcePoints }) => {
   // Extract all accuracy and cost values
-  const allPoints = [...Object.values(academicPoints), ...Object.values(commercialPoints)];
+  const allPoints = [...Object.values(openSourcePoints), ...Object.values(closedSourcePoints)];
   const accuracyValues = allPoints.map(p => p.accuracy);
   const costValues = allPoints.map(p => p.cost_per_1k);
 
@@ -202,23 +202,23 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
             return null;
           })}
 
-          {/* Academic routers */}
-          {Object.entries(academicPoints).map(([name, point], index) => {
+          {/* Open-source routers */}
+          {Object.entries(openSourcePoints).map(([name, point], index) => {
             const x = scaleX(point.cost_per_1k);
             const y = scaleY(point.accuracy);
             const color = routerColors[index % routerColors.length];
 
-            return renderShape(x, y, 'circle', color, `academic-${name}`);
+            return renderShape(x, y, 'circle', color, `open-source-${name}`);
           })}
 
-          {/* Commercial routers */}
-          {Object.entries(commercialPoints).map(([name, point], index) => {
+          {/* Closed-source routers */}
+          {Object.entries(closedSourcePoints).map(([name, point], index) => {
             const x = scaleX(point.cost_per_1k);
             const y = scaleY(point.accuracy);
             const color =
-              routerColors[(index + Object.keys(academicPoints).length) % routerColors.length];
+              routerColors[(index + Object.keys(openSourcePoints).length) % routerColors.length];
 
-            return renderShape(x, y, 'triangle', color, `commercial-${name}`);
+            return renderShape(x, y, 'triangle', color, `closed-source-${name}`);
           })}
 
           {/* Oracle accuracy line */}
@@ -342,9 +342,9 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
         {/* Legend */}
         <div className="deferral-legend-side">
           <div className="legend-section">
-            <h4>Academic</h4>
+            <h4>Open-Source</h4>
             <div className="legend-items">
-              {Object.entries(academicPoints).map(([name, point], index) => {
+              {Object.entries(openSourcePoints).map(([name, point], index) => {
                 const color = routerColors[index % routerColors.length];
                 return (
                   <div key={name} className="legend-item">
@@ -359,11 +359,11 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ academicPoints, commercia
           </div>
 
           <div className="legend-section">
-            <h4>Commercial</h4>
+            <h4>Closed-Source</h4>
             <div className="legend-items">
-              {Object.entries(commercialPoints).map(([name, point], index) => {
+              {Object.entries(closedSourcePoints).map(([name, point], index) => {
                 const color =
-                  routerColors[(index + Object.keys(academicPoints).length) % routerColors.length];
+                  routerColors[(index + Object.keys(openSourcePoints).length) % routerColors.length];
                 return (
                   <div key={name} className="legend-item">
                     <svg className="legend-shape" width="16" height="16">
