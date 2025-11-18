@@ -5,7 +5,7 @@
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 2000px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -165,16 +165,18 @@
 
 :root {
   --lb-grid:
-    minmax(0, 0.6fr)   /* Rank */
+    minmax(0, 0.7fr)   /* Rank */
     minmax(0, 1.5fr)   /* Name */
-    minmax(0, 1.4fr)   /* Affiliation */
-    minmax(0, 1.1fr)   /* Type */
-    minmax(0, 0.8fr)
-    minmax(0, 0.8fr)
-    minmax(0, 0.8fr)
-    minmax(0, 0.8fr)
-    minmax(0, 0.8fr)
-    minmax(0, 0.8fr);
+    minmax(0, 1.3fr)   /* Affiliation */
+    minmax(0, 1.6fr)   /* Type */
+    minmax(0, 0.9fr)   /* Arena */
+    minmax(0, 1fr)   /* Accuracy */
+    minmax(0, 0.9fr)  /* Cost/1k */
+    minmax(0, 1.1fr)   /* Opt. Select */
+    minmax(0, 0.9fr)   /* Opt. Cost */
+    minmax(0, 0.9fr)   /* Opt. Acc */
+    minmax(0, 0.9fr)   /* Latency */
+    minmax(0, 0.9fr)   /* Robust */
 }
 
 
@@ -667,22 +669,7 @@
   width: 100%;
 }
 
-/* Responsive Design */
-@media (max-width: 1400px) {
-  .leaderboard-container {
-    min-width: 1000px;
-  }
 
-  .leaderboard-header,
-  .leaderboard-row {
-    gap: 0.75rem;
-  }
-
-  .viz-tab {
-    font-size: 0.9rem;
-    padding: 0.875rem 1.5rem;
-  }
-}
 
 @media (max-width: 768px) {
   .leaderboard-header,
@@ -785,7 +772,6 @@
   grid-template-columns: var(--lb-grid) !important;
   gap: 0.5rem !important;
   padding: 0 !important;
-  width: 100%;
   box-sizing: border-box;
   column-gap: 0.5rem !important;
   justify-items: stretch;
