@@ -219,7 +219,7 @@ const LeaderboardPage: React.FC = () => {
             <div className="type-col">Type</div>
             <div className="metrics-col">Arena</div>
             <div className="metrics-col">Accuracy</div>
-            <div className="metrics-col">Cost/1k</div>
+            <div className="metrics-col">Cost/1K</div>
             <div className="metrics-col">Opt. Select</div>
             <div className="metrics-col">Opt. Cost</div>
             <div className="metrics-col">Opt. Acc</div>
@@ -419,7 +419,7 @@ const LeaderboardPage: React.FC = () => {
 
             <div className="metric-card">
               <div className="metric-summary">
-                <h3>Cost/1k Queries</h3>
+                <h3>Cost/1K Queries</h3>
                 <p>Measures the cost incurred by a router’s routing decisions per 1000 queries.</p>
               </div>
 
