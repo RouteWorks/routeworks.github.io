@@ -163,7 +163,7 @@
 }
 
 :root {
-  --lb-grid: 0.6fr /* Rank */ 1fr /* Name */ 0.9fr /* Affiliation */ 1.2fr /* Type */ 0.8fr
+  --lb-grid: 0.6fr /* Rank */ 1.5fr /* Name */ 1.2fr /* Affiliation */ 1.2fr /* Type */ 0.8fr
     /* Arena */ 0.8fr /* Opt. Select */ 0.8fr /* Opt. Cost */ 0.8fr /* Opt. Acc */ 0.8fr
     /* Latency */ 0.8fr; /* Robust */
 }
@@ -318,12 +318,15 @@
   align-items: center;
   text-align: left;
   justify-content: flex-start;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
 }
 
 .affiliation-col {
+  scrollbar-width: thin;
   overflow-x: auto !important;
   white-space: nowrap !important;
-  scrollbar-width: thin;
+
 }
 
 
