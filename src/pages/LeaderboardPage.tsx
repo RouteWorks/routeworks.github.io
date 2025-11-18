@@ -12,7 +12,7 @@ const LeaderboardPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'open-source' | 'closed-source'>('all');
   const [activeMetric, setActiveMetric] = useState<
-    'arena' | 'optimalSelection' | 'optimalCost' | 'optimalAcc' | 'latency' | 'robustness'
+    'arena' | 'accuracy' | 'cost' | 'optimalSelection' | 'optimalCost' | 'optimalAcc' | 'latency' | 'robustness'
   >('arena');
   const [activeTab, setActiveTab] = useState<'spider' | 'deferral'>('spider');
 
@@ -54,6 +54,8 @@ const LeaderboardPage: React.FC = () => {
       optimalAcc: 'optimalAccScore',
       latency: 'latencyScore',
       robustness: 'robustnessScore',
+      accuracy: 'accuracy',
+      cost: 'costPer1k',
     } as const;
 
     let filtered = routers.filter(router => {
@@ -72,7 +74,12 @@ const LeaderboardPage: React.FC = () => {
       if (scoreA === null && scoreB === null) return 0;
       if (scoreA === null) return 1;
       if (scoreB === null) return -1;
-      return scoreB - scoreA;
+      // For cost, lower is better, so sort ascending
+      if (activeMetric === 'cost') {
+        return (scoreA as number) - (scoreB as number);
+      }
+      // For all other metrics, higher is better, so sort descending
+      return (scoreB as number) - (scoreA as number);
     });
   }, [searchTerm, filterType, activeMetric]);
 
@@ -132,22 +139,34 @@ const LeaderboardPage: React.FC = () => {
           </button>
 
           <button
+            className={`metric-filter-btn ${activeMetric === 'accuracy' ? 'active' : ''}`}
+            onClick={() => setActiveMetric('accuracy')}
+          >
+            Accuracy
+          </button>
+          <button
+            className={`metric-filter-btn ${activeMetric === 'cost' ? 'active' : ''}`}
+            onClick={() => setActiveMetric('cost')}
+          >
+            Cost/1k Queries
+          </button>
+          <button
             className={`metric-filter-btn ${activeMetric === 'optimalSelection' ? 'active' : ''}`}
             onClick={() => setActiveMetric('optimalSelection')}
           >
-            Optimal Selection
+            Opt. Selection
           </button>
           <button
             className={`metric-filter-btn ${activeMetric === 'optimalCost' ? 'active' : ''}`}
             onClick={() => setActiveMetric('optimalCost')}
           >
-            Optimal Cost
+            Opt. Cost
           </button>
           <button
             className={`metric-filter-btn ${activeMetric === 'optimalAcc' ? 'active' : ''}`}
             onClick={() => setActiveMetric('optimalAcc')}
           >
-            Optimal Acc
+            Opt. Acc
           </button>
           <button
             className={`metric-filter-btn ${activeMetric === 'latency' ? 'active' : ''}`}
@@ -199,6 +218,8 @@ const LeaderboardPage: React.FC = () => {
             <div className="affiliation-col">Affiliation</div>
             <div className="type-col">Type</div>
             <div className="metrics-col">Arena</div>
+            <div className="metrics-col">Accuracy</div>
+            <div className="metrics-col">Cost/1k</div>
             <div className="metrics-col">Opt. Select</div>
             <div className="metrics-col">Opt. Cost</div>
             <div className="metrics-col">Opt. Acc</div>
@@ -228,6 +249,18 @@ const LeaderboardPage: React.FC = () => {
                 <div className="metrics-col">
                   <div className="metric-value">
                     <span className="score">{router.metrics.arenaScore.toFixed(1)}</span>
+                  </div>
+                </div>
+
+                <div className="metrics-col">
+                  <div className="metric-value">
+                    <span className="score">{router.metrics.accuracy.toFixed(1)}</span>
+                  </div>
+                </div>
+
+                <div className="metrics-col">
+                  <div className="metric-value">
+                    <span className="score">${router.metrics.costPer1k.toFixed(2)}</span>
                   </div>
                 </div>
 
@@ -280,6 +313,7 @@ const LeaderboardPage: React.FC = () => {
                     </span>
                   </div>
                 </div>
+
               </div>
             ))}
           </div>

@@ -11,6 +11,8 @@ export interface Router {
     optimalAccScore: number | null;
     robustnessScore: number | null;
     latencyScore: number | null;
+    accuracy: number;
+    costPer1k: number;
     overallRank: number;
   };
   modelPool: string[];
