@@ -231,6 +231,8 @@ const routerMetadata: Record<
     modelPool: string[];
     paperUrl?: string;
     githubUrl?: string;
+    websiteUrl?: string;
+    huggingfaceUrl?: string;
   }
 > = {
   RouterDC: {
@@ -239,16 +241,18 @@ const routerMetadata: Record<
     description: 'Dual contrastive learning-based router with cost optimization',
     affiliation: 'SUSTech',
     modelPool: ['GPT-3.5', 'Claude-2', 'Gemini-Pro', 'Llama-2-13B'],
-    paperUrl: 'https://arxiv.org/abs/2024.xxxxx',
-    githubUrl: 'https://github.com/example/routerdc',
+    paperUrl: 'https://arxiv.org/abs/2409.19886',
+    websiteUrl: 'https://arxiv.org/abs/2409.19886',
+    githubUrl: 'https://github.com/shuhao02/RouterDC',
   },
   azure: {
-    name: 'Azure',
+    name: 'Azure-Router',
     type: 'closed-source',
     description: "Microsoft Azure's model routing service",
     affiliation: 'Microsoft',
     modelPool: ['GPT-4', 'GPT-3.5', 'GPT-4-Turbo'],
-    paperUrl: 'https://azure.microsoft.com/en-us/products/ai-services/openai-service',
+    paperUrl: 'https://learn.microsoft.com/en-us/azure/ai-foundry/openai/concepts/model-router',
+    websiteUrl: 'https://ai.azure.com/catalog/models/model-router',
     githubUrl: undefined,
   },
   carrot: {
@@ -257,8 +261,10 @@ const routerMetadata: Record<
     description: 'Cost-aware routing with dual contrastive learning approach',
     affiliation: 'UMich',
     modelPool: ['GPT-4', 'Claude-3', 'Gemini-Pro', 'Llama-2-70B'],
-    paperUrl: 'https://arxiv.org/abs/2024.xxxxx',
-    githubUrl: 'https://github.com/example/carrot',
+    paperUrl: 'https://arxiv.org/abs/2502.03261',
+    websiteUrl: 'https://arxiv.org/abs/2502.03261',
+    githubUrl: 'https://github.com/somerstep/CARROT',
+    huggingfaceUrl: 'https://huggingface.co/CARROT-LLM-Routing',
   },
   gpt5: {
     name: 'GPT-5',
@@ -266,7 +272,8 @@ const routerMetadata: Record<
     description: "OpenAI's internal routing system for GPT model family",
     affiliation: 'OpenAI',
     modelPool: ['GPT-5', 'GPT-4', 'GPT-3.5'],
-    paperUrl: 'https://openai.com/research/gpt-5',
+    paperUrl: 'https://openai.com/index/introducing-gpt-5/',
+    websiteUrl: 'https://openai.com/index/introducing-gpt-5/',
     githubUrl: undefined,
   },
   graphrouter: {
@@ -275,8 +282,9 @@ const routerMetadata: Record<
     description: 'Graph neural network-based routing with semantic understanding',
     affiliation: 'UIUC',
     modelPool: ['GPT-4', 'Claude-3', 'Gemini-Pro', 'Llama-2-70B', 'Mixtral-8x7B'],
-    paperUrl: 'https://arxiv.org/abs/2024.xxxxx',
-    githubUrl: 'https://github.com/example/graphrouter',
+    paperUrl: 'https://arxiv.org/abs/2410.03834',
+    websiteUrl: 'https://arxiv.org/abs/2410.03834',
+    githubUrl: 'https://github.com/ulab-uiuc/GraphRouter',
   },
   mirt_bert: {
     name: 'MIRT-BERT',
@@ -284,8 +292,9 @@ const routerMetadata: Record<
     description: 'Multi-item response theory with BERT embeddings',
     affiliation: 'USTC',
     modelPool: ['GPT-4', 'Claude-3', 'Gemini-Pro', 'Llama-2-70B'],
-    paperUrl: 'https://arxiv.org/abs/2024.xxxxx',
-    githubUrl: 'https://github.com/example/mirt-bert',
+    paperUrl: 'https://arxiv.org/pdf/2506.01048',
+    websiteUrl: 'https://arxiv.org/pdf/2506.01048',
+    githubUrl: 'https://github.com/Mercidaiha/IRT-Router',
   },
   nirt_bert: {
     name: 'NIRT-BERT',
@@ -293,8 +302,9 @@ const routerMetadata: Record<
     description: 'Neural item response theory with BERT-based routing',
     affiliation: 'USTC',
     modelPool: ['GPT-4', 'Claude-3', 'Gemini-Pro', 'Llama-2-70B'],
-    paperUrl: 'https://arxiv.org/abs/2024.xxxxx',
-    githubUrl: 'https://github.com/example/nirt-bert',
+    paperUrl: 'https://arxiv.org/pdf/2506.01048',
+    websiteUrl: 'https://arxiv.org/pdf/2506.01048',
+    githubUrl: 'https://github.com/Mercidaiha/IRT-Router',
   },
   notdiamond: {
     name: 'NotDiamond',
@@ -302,7 +312,8 @@ const routerMetadata: Record<
     description: 'Closed-source routing service with access to 60+ models',
     affiliation: 'NotDiamond',
     modelPool: ['GPT-4', 'Claude-3', 'Gemini-Pro', 'Llama-2-70B', 'Mixtral-8x7B', 'Qwen-72B'],
-    paperUrl: 'https://notdiamond.ai',
+    paperUrl: 'https://www.notdiamond.ai/',
+    websiteUrl: 'https://www.notdiamond.ai/',
     githubUrl: undefined,
   },
   routellm: {
@@ -311,8 +322,10 @@ const routerMetadata: Record<
     description: 'Binary selection between strong and weak models',
     affiliation: 'Berkeley',
     modelPool: ['GPT-4', 'GPT-3.5'],
-    paperUrl: 'https://arxiv.org/abs/2024.xxxxx',
-    githubUrl: 'https://github.com/example/routellm',
+    paperUrl: 'https://arxiv.org/abs/2406.18665',
+    websiteUrl: 'https://arxiv.org/abs/2406.18665',
+    githubUrl: 'https://github.com/lm-sys/RouteLLM',
+    huggingfaceUrl: 'https://huggingface.co/routellm',
   },
   routerbench_knn: {
     name: 'RouterBench-KNN',
@@ -321,7 +334,9 @@ const routerMetadata: Record<
     affiliation: 'Martian',
     modelPool: ['GPT-4', 'GPT-3.5', 'Claude-3'],
     paperUrl: 'https://arxiv.org/pdf/2403.12031',
+    websiteUrl: 'https://arxiv.org/pdf/2403.12031',
     githubUrl: 'https://github.com/withmartian/routerbench',
+    huggingfaceUrl: 'https://huggingface.co/datasets/withmartian/routerbench',
   },
   routerbench_mlp: {
     name: 'RouterBench-MLP',
@@ -329,8 +344,10 @@ const routerMetadata: Record<
     description: 'Multi-Layer Perceptron-based router benchmark',
     affiliation: 'Martian',
     modelPool: ['GPT-4', 'GPT-3.5', 'Claude-3'],
-    paperUrl: 'https://arxiv.org/abs/2024.xxxxx',
-    githubUrl: 'https://github.com/example/routerbench-mlp',
+    paperUrl: 'https://arxiv.org/pdf/2403.12031',
+    websiteUrl: 'https://arxiv.org/pdf/2403.12031',
+    githubUrl: 'https://github.com/withmartian/routerbench',
+    huggingfaceUrl: 'https://huggingface.co/datasets/withmartian/routerbench',
   },
   vllm: {
     name: 'vLLM-SR',
@@ -338,17 +355,21 @@ const routerMetadata: Record<
     description: 'vLLM-based routing service',
     affiliation: 'vLLM SR Team',
     modelPool: ['GPT-4', 'GPT-3.5'],
-    paperUrl: 'https://vllm.ai',
+    paperUrl: 'https://vllm-semantic-router.com/',
+    websiteUrl: 'https://vllm-semantic-router.com/',
     githubUrl: 'https://github.com/vllm-project/semantic-router',
+    huggingfaceUrl: 'https://huggingface.co/llm-semantic-router',
   },
   chayan: {
     name: 'Chayan',
     type: 'open-source',
     description: 'Chayan-based routing service',
-    affiliation: 'Adaptive Classifier ',
+    affiliation: 'Adaptive Classifier',
     modelPool: ['GPT-4', 'GPT-3.5'],
-    paperUrl: 'https://arxiv.org/abs/2024.xxxxx',
-    githubUrl: 'https://huggingface.co/adaptive-classifier/chayan',
+    paperUrl: 'https://huggingface.co/adaptive-classifier/chayan',
+    websiteUrl: 'https://huggingface.co/adaptive-classifier/chayan',
+    githubUrl: undefined,
+    huggingfaceUrl: 'https://huggingface.co/adaptive-classifier/chayan',
   }
 };
 

@@ -36,7 +36,7 @@
 .leaderboard-page .page-subtitle {
   font-size: 1.2rem;
   color: #666;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   text-shadow: none;
 }
@@ -327,7 +327,7 @@
 /* Actual text wrapping */
 .router-name,
 .affiliation {
-  white-space: normal !important;
+  white-space: normal;
   overflow-wrap: break-word;
   word-break: break-word;
 }
@@ -345,11 +345,94 @@
   gap: 0.25rem;
 }
 
+.router-link-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.router-link-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 24px;
+  padding: 0;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #1f2937;
+  background: #e5e7eb;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.router-link-pill.github {
+  background: rgba(15, 23, 42, 0.08);
+  color: #111827;
+}
+
+.router-link-pill.huggingface {
+  background: rgba(250, 204, 21, 0.3);
+  color: #92400e;
+}
+
+.router-link-pill:hover {
+  background: #2563eb;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.router-link-pill .hf-logo {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
 .router-name {
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
   color: #1f2937;
+}
+
+.router-name-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.router-name-link:hover {
+  color: #2563eb;
+}
+
+.router-name-link .router-name {
+  margin: 0;
+  transition: color 0.2s ease;
+  display: inline;
+  text-decoration: none;
+  position: relative;
+}
+
+.router-name-link .router-name::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 100%;
+  height: 2px;
+  background: #2563eb;
+  opacity: 0;
+  transform: scaleX(0.85);
+  transform-origin: left;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.router-name-link:hover .router-name {
+  color: #1d4ed8;
+}
+
+.router-name-link:hover .router-name::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .router-description {

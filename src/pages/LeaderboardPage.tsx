@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Trophy, Search, Medal } from 'lucide-react';
+import { Trophy, Search, Medal, Github } from 'lucide-react';
 import { Router } from '../types';
 import { routers } from '../data/mockData';
 import SpiderChart from '../components/SpiderChart';
@@ -7,6 +7,7 @@ import DeferralCurve from '../components/DeferralCurve';
 import './LeaderboardPage.css';
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
+import huggingFaceLogo from '../assets/images/hf-logo.svg';
 
 const LeaderboardPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -228,13 +229,52 @@ const LeaderboardPage: React.FC = () => {
           </div>
 
           <div className="leaderboard-body">
-            {filteredAndSortedRouters.map((router, index) => (
-              <div key={router.id} className="leaderboard-row">
+            {filteredAndSortedRouters.map((router, index) => {
+              const primaryLink = router.websiteUrl || router.paperUrl || router.githubUrl;
+              return (
+                <div key={router.id} className="leaderboard-row">
                 <div className="rank-col">{renderRankBadge(index + 1)}</div>
 
                 <div className="name-col">
                   <div className="router-info">
-                    <h3 className="router-name">{router.name}</h3>
+                    {primaryLink ? (
+                      <a
+                        href={primaryLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="router-name-link"
+                      >
+                        <h3 className="router-name">{router.name}</h3>
+                      </a>
+                    ) : (
+                      <h3 className="router-name">{router.name}</h3>
+                    )}
+                    {(router.githubUrl || router.huggingfaceUrl) && (
+                      <div className="router-link-badges">
+                        {router.githubUrl && (
+                          <a
+                            href={router.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="router-link-pill github"
+                            aria-label={`${router.name} GitHub repository`}
+                          >
+                            <Github size={14} />
+                          </a>
+                        )}
+                        {router.huggingfaceUrl && (
+                          <a
+                            href={router.huggingfaceUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="router-link-pill huggingface"
+                            aria-label={`${router.name} Hugging Face card`}
+                          >
+                            <img src={huggingFaceLogo} alt="Hugging Face logo" className="hf-logo" />
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -314,8 +354,9 @@ const LeaderboardPage: React.FC = () => {
                   </div>
                 </div>
 
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
 
