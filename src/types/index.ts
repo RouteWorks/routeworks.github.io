@@ -18,6 +18,8 @@ export interface Router {
   modelPool: string[];
   paperUrl?: string;
   githubUrl?: string;
+  websiteUrl?: string;
+  huggingfaceUrl?: string;
 }
 
 export interface DatasetInfo {
