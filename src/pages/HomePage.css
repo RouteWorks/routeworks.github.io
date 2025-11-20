@@ -621,12 +621,44 @@
   .hero-content {
     grid-template-columns: 1fr;
     gap: 2rem;
-    text-align: center;
+    text-align: left;
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.8rem;
+    text-align: left;
   }
+
+  .hero-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-right-content {
+    float: none;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-cards-container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .hero-card,
+  .cta-card {
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+  }
+
+
 
   .hero-actions {
     justify-content: center;
@@ -662,17 +694,8 @@
     max-width: 100%;
   }
 
-  .cta-card {
-    max-width: 300px;
-  }
 
-  .cta-heading {
-    font-size: 1.1rem;
-  }
 
-  .cta-description {
-    font-size: 1.1rem;
-  }
 }
 
 /* Responsive styles for tabs */

@@ -19,6 +19,8 @@
 .deferral-curve-wrapper svg {
   overflow: visible;
   flex-shrink: 0;
+  height: auto;
+  max-width: 500px;
 }
 
 .deferral-legend-side {
@@ -97,5 +99,17 @@
   .legend-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .deferral-legend-side {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .legend-items {
+    grid-template-columns: 1fr;
   }
 }

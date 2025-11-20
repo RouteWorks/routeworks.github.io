@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Router } from '../types';
 import './SpiderChart.css';
 
@@ -8,6 +8,27 @@ interface SpiderChartProps {
 }
 
 const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) => {
+  const [viewportWidth, setViewportWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth : 1200
+  );
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleResize = () => setViewportWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const chartLayout = useMemo(() => {
+    if (viewportWidth <= 480) {
+      return { size: 300, radius: 120, labelOffset: 28, fontScale: 0.8 };
+    }
+    if (viewportWidth <= 768) {
+      return { size: 360, radius: 150, labelOffset: 35, fontScale: 0.9 };
+    }
+    return { size: 450, radius: 180, labelOffset: 40, fontScale: 1 };
+  }, [viewportWidth]);
+
   // Get top N routers by overall rank
   const topRouters = routers
     .sort((a, b) => a.metrics.overallRank - b.metrics.overallRank)
@@ -71,14 +92,18 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
   const axisMax = 100;
   const axisRange = axisMax - axisMin;
 
-  const chartRadius = 180;
-  const centerX = 225;
-  const centerY = 225;
+  const chartRadius = chartLayout.radius;
+  const centerX = chartLayout.size / 2;
+  const centerY = chartLayout.size / 2;
 
   return (
     <div className="spider-chart-container">
       <div className="spider-chart">
-        <svg width="450" height="450" viewBox="0 0 450 450">
+        <svg
+          width={chartLayout.size}
+          height={chartLayout.size}
+          viewBox={`0 0 ${chartLayout.size} ${chartLayout.size}`}
+        >
           {/* Grid circles drawn at fixed 0-100 scale */}
           {gridTicks.map((value, index) => {
             const scale = (value - axisMin) / axisRange;
@@ -101,7 +126,7 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
                   dominantBaseline="middle"
                   className="grid-label"
                   fill="#9ca3af"
-                  fontSize="22"
+                  fontSize={22 * chartLayout.fontScale}
                 >
                   {value.toString()}
                 </text>
@@ -131,8 +156,8 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
           {/* Metric labels */}
           {metrics.map((metric, index) => {
             const angle = (index * 2 * Math.PI) / metrics.length - Math.PI / 2;
-            const labelX = centerX + Math.cos(angle) * (chartRadius + 40);
-            const labelY = centerY + Math.sin(angle) * (chartRadius + 40);
+            const labelX = centerX + Math.cos(angle) * (chartRadius + chartLayout.labelOffset);
+            const labelY = centerY + Math.sin(angle) * (chartRadius + chartLayout.labelOffset);
 
             return (
               <g key={metric.key}>
@@ -143,7 +168,7 @@ const SpiderChart: React.FC<SpiderChartProps> = ({ routers, maxRouters = 5 }) =>
                   dominantBaseline="middle"
                   className="metric-label"
                   fill="#1f2937"
-                  fontSize="16"
+                  fontSize={16 * chartLayout.fontScale}
                   fontWeight="600"
                 >
                   {metric.label}

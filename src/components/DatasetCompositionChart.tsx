@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, LabelList } from 'recharts';
 import './DatasetCompositionChart.css';
 
@@ -105,13 +105,49 @@ const DatasetCompositionChart: React.FC = () => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
   const [hoveredSubcategory, setHoveredSubcategory] = useState<string | null>(null);
 
-  // Define chart dimensions as constants for easy adjustment
-  const CHART_DIMENSIONS = {
-    innerRadius: 100,
-    outerRadius: 250,
-    labelRadius: 330, // Distance from center to labels
-    chartSize: 800, // Container height
-  };
+  const [viewportWidth, setViewportWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth : 1200
+  );
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleResize = () => setViewportWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const CHART_DIMENSIONS = useMemo(() => {
+    if (viewportWidth <= 480) {
+      return {
+        innerRadius: 50,
+        outerRadius: 125,
+        labelRadius: 185,
+        chartSize: 320,
+      };
+    }
+    if (viewportWidth <= 768) {
+      return {
+        innerRadius: 70,
+        outerRadius: 170,
+        labelRadius: 240,
+        chartSize: 460,
+      };
+    }
+    if (viewportWidth <= 1024) {
+      return {
+        innerRadius: 90,
+        outerRadius: 210,
+        labelRadius: 290,
+        chartSize: 620,
+      };
+    }
+    return {
+      innerRadius: 100,
+      outerRadius: 250,
+      labelRadius: 330,
+      chartSize: 800,
+    };
+  }, [viewportWidth]);
 
   // Prepare data for the main pie chart (outer ring)
   const prepareMainChartData = (): ChartData[] => {
@@ -323,7 +359,7 @@ const DatasetCompositionChart: React.FC = () => {
               pointerEvents: 'none',
               zIndex: 0,
             }}
-            viewBox="0 0 800 800"
+            viewBox={`0 0 ${CHART_DIMENSIONS.chartSize} ${CHART_DIMENSIONS.chartSize}`}
           >
             {mainChartData.map((entry, index) => {
               const totalValue = mainChartData.reduce((sum, item) => sum + item.value, 0);
@@ -347,8 +383,8 @@ const DatasetCompositionChart: React.FC = () => {
               const radius = CHART_DIMENSIONS.outerRadius + baseOffset + sideBoost * angleFactor;
 
               // Use exact center coordinates matching Recharts
-              const centerX = 400; // Exact center of 800x800 viewBox
-              const centerY = 400; // Exact center of 800x800 viewBox
+              const centerX = CHART_DIMENSIONS.chartSize / 2;
+              const centerY = CHART_DIMENSIONS.chartSize / 2;
               const x = centerX - radius * Math.sin(midAngle * RADIAN);
               const y = centerY - radius * Math.cos(midAngle * RADIAN);
 
