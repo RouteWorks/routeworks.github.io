@@ -9,6 +9,28 @@ import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
 import huggingFaceLogo from '../assets/images/hf-logo.svg';
 
+type RouterWithDynamicArena = Router & { dynamicArena: number };
+
+const COST_MIN = 0.0044;
+const COST_MAX = 200;
+
+const computeNormalizedCost = (costPer1k: number): number => {
+  // const safeCost = Math.max(costPer1k, COST_MIN);
+  const numerator = Math.log2(COST_MAX) - Math.log2(costPer1k);
+  const denominator = Math.log2(COST_MAX) - Math.log2(COST_MIN);
+  if (denominator === 0) return 0;
+  const normalized = numerator / denominator;
+  return Math.min(Math.max(normalized, 0), 1);
+};
+
+const computeArenaScore = (router: Router, beta: number): number => {
+  const accuracy = router.metrics.accuracy / 100;
+  const normalizedCost = computeNormalizedCost(router.metrics.costPer1k);
+  const denominator = beta * accuracy + normalizedCost;
+  if (denominator === 0) return 0;
+  return (((1 + beta) * accuracy * normalizedCost) / denominator) * 100;
+};
+
 const LeaderboardPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'open-source' | 'closed-source'>('all');
@@ -16,6 +38,7 @@ const LeaderboardPage: React.FC = () => {
     'arena' | 'accuracy' | 'cost' | 'optimalSelection' | 'optimalCost' | 'optimalAcc' | 'latency' | 'robustness'
   >('arena');
   const [activeTab, setActiveTab] = useState<'spider' | 'deferral'>('spider');
+  const [beta, setBeta] = useState(0.1);
 
   // Deferral curve data
   const openSourcePoints = {
@@ -47,7 +70,7 @@ const LeaderboardPage: React.FC = () => {
     return scores.reduce((sum, score) => sum + score, 0) / scores.length;
   };
 
-  const filteredAndSortedRouters = useMemo(() => {
+  const filteredAndSortedRouters = useMemo<RouterWithDynamicArena[]>(() => {
     const metricKeyMap = {
       arena: 'arenaScore',
       optimalSelection: 'optimalSelectionScore',
@@ -59,7 +82,12 @@ const LeaderboardPage: React.FC = () => {
       cost: 'costPer1k',
     } as const;
 
-    let filtered = routers.filter(router => {
+    const withDynamicArena: RouterWithDynamicArena[] = routers.map(router => ({
+      ...router,
+      dynamicArena: computeArenaScore(router, beta),
+    }));
+
+    let filtered = withDynamicArena.filter(router => {
       const matchesSearch =
         router.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         router.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -69,8 +97,8 @@ const LeaderboardPage: React.FC = () => {
 
     const key = metricKeyMap[activeMetric];
     return filtered.sort((a, b) => {
-      const scoreA = a.metrics[key];
-      const scoreB = b.metrics[key];
+      const scoreA = activeMetric === 'arena' ? a.dynamicArena : a.metrics[key];
+      const scoreB = activeMetric === 'arena' ? b.dynamicArena : b.metrics[key];
       // Handle null values - put them at the end
       if (scoreA === null && scoreB === null) return 0;
       if (scoreA === null) return 1;
@@ -82,7 +110,7 @@ const LeaderboardPage: React.FC = () => {
       // For all other metrics, higher is better, so sort descending
       return (scoreB as number) - (scoreA as number);
     });
-  }, [searchTerm, filterType, activeMetric]);
+  }, [searchTerm, filterType, activeMetric, beta]);
 
   // const getRankBadge = (rank: number) => {
   //   if (rank === 1) return 'rank-1';
@@ -209,6 +237,27 @@ const LeaderboardPage: React.FC = () => {
               </select>
             </div>
           </div>
+
+          <div className="beta-control">
+            <div className="beta-label">
+              <span>Arena β</span>
+              <span className="beta-value">{beta.toFixed(2)}</span>
+            </div>
+            <input
+              type="range"
+              id="beta-slider"
+              min={0.01}
+              max={0.1}
+              step={0.001}
+              value={beta}
+              onChange={event => setBeta(parseFloat(event.target.value))}
+              className="beta-slider"
+            />
+            <div className="beta-hints">
+              <span>Accuracy-first</span>
+              <span>Cost-first</span>
+            </div>
+          </div>
         </div>
 
         {/* Leaderboard Table */}
@@ -288,7 +337,7 @@ const LeaderboardPage: React.FC = () => {
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.metrics.arenaScore.toFixed(1)}</span>
+                    <span className="score">{router.dynamicArena.toFixed(1)}</span>
                   </div>
                 </div>
 

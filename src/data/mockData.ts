@@ -391,8 +391,8 @@ const routersWithRanks = rawRouterData.map(router => {
     optimalAccScore: roundNullableToOneDecimal(router['Optimal Acc. Score']),
     robustnessScore: roundNullableToOneDecimal(router['Robustness Score']),
     latencyScore: roundNullableToOneDecimal(router['Latency Score']),
-    accuracy: roundToOneDecimal(router['Accuracy']),
-    costPer1k: roundToOneDecimal(router['Cost per 1k']),
+    accuracy: router['Accuracy'],
+    costPer1k: router['Cost per 1k'],
     overallRank: 0, // Will be calculated below
   };
 

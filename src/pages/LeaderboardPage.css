@@ -124,6 +124,38 @@
   flex-wrap: wrap;
 }
 
+.beta-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 200px;
+}
+
+.beta-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.beta-value {
+  font-variant-numeric: tabular-nums;
+  color: #2563eb;
+}
+
+.beta-slider {
+  width: 100%;
+  accent-color: #2563eb;
+}
+
+.beta-hints {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
 .filter-group {
   display: flex;
   flex-direction: column;
