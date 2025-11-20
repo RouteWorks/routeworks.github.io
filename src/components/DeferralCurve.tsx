@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import './DeferralCurve.css';
 
 interface DeferralCurveProps {
@@ -11,6 +11,44 @@ interface DeferralCurveProps {
 }
 
 const DeferralCurve: React.FC<DeferralCurveProps> = ({ openSourcePoints, closedSourcePoints }) => {
+  const [viewportWidth, setViewportWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth : 1200
+  );
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleResize = () => setViewportWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const chartLayout = useMemo(() => {
+    if (viewportWidth <= 480) {
+      return {
+        width: 320,
+        height: 260,
+        margin: { top: 15, right: 10, bottom: 50, left: 60 },
+        pointSize: 5,
+        fontScale: 0.78,
+      };
+    }
+    if (viewportWidth <= 768) {
+      return {
+        width: 400,
+        height: 320,
+        margin: { top: 20, right: 15, bottom: 55, left: 70 },
+        pointSize: 6,
+        fontScale: 0.9,
+      };
+    }
+    return {
+      width: 500,
+      height: 400,
+      margin: { top: 20, right: 20, bottom: 60, left: 80 },
+      pointSize: 6.5,
+      fontScale: 1,
+    };
+  }, [viewportWidth]);
   // Extract all accuracy and cost values
   const allPoints = [...Object.values(openSourcePoints), ...Object.values(closedSourcePoints)];
   const accuracyValues = allPoints.map(p => p.accuracy);
@@ -32,9 +70,9 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ openSourcePoints, closedS
   const costMax = maxCost * 1.2; // Extend a bit beyond maximum
 
   // Chart dimensions
-  const chartWidth = 500;
-  const chartHeight = 400;
-  const margin = { top: 20, right: 20, bottom: 60, left: 80 };
+  const chartWidth = chartLayout.width;
+  const chartHeight = chartLayout.height;
+  const margin = chartLayout.margin;
   const plotWidth = chartWidth - margin.left - margin.right;
   const plotHeight = chartHeight - margin.top - margin.bottom;
 
@@ -67,8 +105,14 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ openSourcePoints, closedS
   ];
 
   // Function to render different shapes
-  const renderShape = (x: number, y: number, shape: string, color: string, key: string) => {
-    const size = 6;
+  const renderShape = (
+    x: number,
+    y: number,
+    shape: string,
+    color: string,
+    key: string,
+    size: number = chartLayout.pointSize
+  ) => {
     switch (shape) {
       case 'square':
         return (
@@ -163,6 +207,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ openSourcePoints, closedS
   };
 
   const costTicks = generatePowersOf10(costMin, costMax);
+  const scaledFont = (size: number) => size * chartLayout.fontScale;
 
   return (
     <div className="deferral-curve-container">
@@ -234,7 +279,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ openSourcePoints, closedS
           <text
             x={margin.left + plotWidth - 5}
             y={scaleY(0.9089) - 8}
-            fontSize="1.15rem"
+            fontSize={scaledFont(18)}
             fill="#22c55e"
             textAnchor="end"
             fontWeight="600"
@@ -276,7 +321,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ openSourcePoints, closedS
                 <text
                   x={x}
                   y={margin.top + plotHeight + 20}
-                  fontSize="1.1rem"
+                  fontSize={scaledFont(17)}
                   fill="#374151"
                   textAnchor="middle"
                 >
@@ -303,7 +348,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ openSourcePoints, closedS
                   <text
                     x={margin.left - 10}
                     y={y + 4}
-                    fontSize="1.1rem"
+                    fontSize={scaledFont(17)}
                     fill="#374151"
                     textAnchor="end"
                   >
@@ -319,7 +364,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ openSourcePoints, closedS
           <text
             x={margin.left + plotWidth / 2}
             y={chartHeight - 10}
-            fontSize="16"
+            fontSize={scaledFont(16)}
             fill="#374151"
             textAnchor="middle"
             fontWeight="500"
@@ -329,7 +374,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ openSourcePoints, closedS
           <text
             x={20}
             y={margin.top + plotHeight / 2}
-            fontSize="16"
+            fontSize={scaledFont(16)}
             fill="#374151"
             textAnchor="middle"
             fontWeight="500"
@@ -349,7 +394,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ openSourcePoints, closedS
                 return (
                   <div key={name} className="legend-item">
                     <svg className="legend-shape" width="16" height="16">
-                      {renderShape(8, 8, 'circle', color, `legend-${name}`)}
+                      {renderShape(8, 8, 'circle', color, `legend-${name}`, 5)}
                     </svg>
                     <span className="legend-label">{name}</span>
                   </div>
@@ -367,7 +412,7 @@ const DeferralCurve: React.FC<DeferralCurveProps> = ({ openSourcePoints, closedS
                 return (
                   <div key={name} className="legend-item">
                     <svg className="legend-shape" width="16" height="16">
-                      {renderShape(8, 8, 'triangle', color, `legend-${name}`)}
+                      {renderShape(8, 8, 'triangle', color, `legend-${name}`, 5)}
                     </svg>
                     <span className="legend-label">{name}</span>
                   </div>

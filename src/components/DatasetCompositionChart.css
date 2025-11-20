@@ -92,6 +92,7 @@
 
   .pie-chart-container {
     margin: 1rem 0;
+    min-height: 420px;
   }
 }
 
@@ -102,5 +103,9 @@
 
   .chart-title {
     font-size: 1.1rem;
+  }
+
+  .pie-chart-container {
+    min-height: 300px;
   }
 }

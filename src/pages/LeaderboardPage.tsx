@@ -262,23 +262,24 @@ const LeaderboardPage: React.FC = () => {
 
         {/* Leaderboard Table */}
         <div className="leaderboard-container">
-          <div className="leaderboard-header">
-            <div className="rank-col">Rank</div>
-            <div className="name-col">Router</div>
-            <div className="affiliation-col">Affiliation</div>
-            <div className="type-col">Type</div>
-            <div className="metrics-col">Arena</div>
-            <div className="metrics-col">Accuracy</div>
-            <div className="metrics-col">Cost/1K</div>
-            <div className="metrics-col">Opt. Select</div>
-            <div className="metrics-col">Opt. Cost</div>
-            <div className="metrics-col">Opt. Acc</div>
-            <div className="metrics-col">Latency</div>
-            <div className="metrics-col">Robust</div>
-          </div>
+          <div className="leaderboard-scroll">
+            <div className="leaderboard-header">
+              <div className="rank-col">Rank</div>
+              <div className="name-col">Router</div>
+              <div className="affiliation-col">Affiliation</div>
+              <div className="type-col">Type</div>
+              <div className="metrics-col">Arena</div>
+              <div className="metrics-col">Accuracy</div>
+              <div className="metrics-col">Cost/1K</div>
+              <div className="metrics-col">Opt. Select</div>
+              <div className="metrics-col">Opt. Cost</div>
+              <div className="metrics-col">Opt. Acc</div>
+              <div className="metrics-col">Latency</div>
+              <div className="metrics-col">Robust</div>
+            </div>
 
-          <div className="leaderboard-body">
-            {filteredAndSortedRouters.map((router, index) => {
+            <div className="leaderboard-body">
+              {filteredAndSortedRouters.map((router, index) => {
               const primaryLink = router.websiteUrl || router.paperUrl || router.githubUrl;
               return (
                 <div key={router.id} className="leaderboard-row">
@@ -403,9 +404,10 @@ const LeaderboardPage: React.FC = () => {
                   </div>
                 </div>
 
-                </div>
-              );
-            })}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
 
