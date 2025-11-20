@@ -28,8 +28,10 @@
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
-  padding-right: 4rem;
-  margin-left: 2rem;
+  padding-right: 0rem;
+  margin-left: 0;
+  width: 100%;
+
 }
 
 .hero-subtitle-short {
@@ -39,7 +41,7 @@
   margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
   padding-right: 4rem;
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
   max-width: 400rem;
 }
 
@@ -67,6 +69,7 @@
   padding: 0;
   text-align: left;
   max-width: 500px;
+  width: 100%;
 }
 
 .cta-heading {
@@ -75,6 +78,8 @@
   color: rgba(255, 255, 255, 0.9);
   margin: 0 0 0.5rem 0;
   letter-spacing: -0.01em;
+  width: auto;
+  text-wrap: wrap;
 }
 
 .cta-description {
@@ -86,19 +91,20 @@
 }
 
 .cta-card .btn {
-  background: linear-gradient(135deg, #fa961c 0%, #ffaa00 100%);
+  /* background: linear-gradient(135deg, #fa961c 0%, #ffaa00 100%); */
+  background: rgb(156, 163, 175);
   color: white;
   font-weight: 500;
   padding: 0.5rem 1.25rem;
   font-size: 1.1rem;
-  border: none;
+  border: 2px solid #4d4d4dd6;
   border-radius: 6px;
   transition: all 0.2s ease;
   letter-spacing: 0.01em;
 }
 
 .cta-card .btn:hover {
-  background: linear-gradient(135deg, #ff9012 0%, #ff8809 100%);
+  background:  #555555d6;
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
 }
@@ -122,7 +128,7 @@
 }
 
 .btn-primary {
-  background: #2563eb;
+  background: #fa961c;
   color: white;
   font-weight: 600;
   font-size: 1.3rem;
@@ -130,7 +136,7 @@
 }
 
 .btn-primary:hover {
-  background: #1d4ed8;
+  background: #dd7e09;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
@@ -178,8 +184,8 @@
   gap: 1.5rem;
   align-items: left;
   justify-content: left;
-  margin-left: 2rem;
-  margin-right: -2rem;
+  /* margin-left: 2rem;
+  margin-right: -2rem; */
 }
 
 .hero-card {
