@@ -92,19 +92,19 @@
 
 .cta-card .btn {
   /* background: linear-gradient(135deg, #fa961c 0%, #ffaa00 100%); */
-  background: rgb(108, 112, 119);
+  background: #e3aa19;
   color: white;
   font-weight: 500;
   padding: 0.5rem 1.25rem;
   font-size: 1.1rem;
-  border: 2px solid #4d4d4dd6;
+  /* border: 2px solid #4d4d4dd6; */
   border-radius: 6px;
   transition: all 0.2s ease;
   letter-spacing: 0.01em;
 }
 
 .cta-card .btn:hover {
-  background:  #555555d6;
+  background:  #d89b00;
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
 }
