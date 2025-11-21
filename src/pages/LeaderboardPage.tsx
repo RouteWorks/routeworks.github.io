@@ -31,6 +31,9 @@ const computeArenaScore = (router: Router, beta: number): number => {
   return (((1 + beta) * accuracy * normalizedCost) / denominator) * 100;
 };
 
+const DEFAULT_BETA = 0.1;
+const defaultCostWeight = DEFAULT_BETA / (1 + DEFAULT_BETA);
+
 const LeaderboardPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'open-source' | 'closed-source'>('all');
@@ -38,7 +41,10 @@ const LeaderboardPage: React.FC = () => {
     'arena' | 'accuracy' | 'cost' | 'optimalSelection' | 'optimalCost' | 'optimalAcc' | 'latency' | 'robustness'
   >('arena');
   const [activeTab, setActiveTab] = useState<'spider' | 'deferral'>('spider');
-  const [beta, setBeta] = useState(0.1);
+  const [costWeight, setCostWeight] = useState(defaultCostWeight);
+
+  const beta = costWeight / (1 - costWeight);
+  const accuracyWeight = 1 - costWeight;
 
   // Deferral curve data
   const openSourcePoints = {
@@ -239,23 +245,38 @@ const LeaderboardPage: React.FC = () => {
           </div>
 
           <div className="beta-control">
-            <div className="beta-label">
-              <span>Arena β</span>
-              <span className="beta-value">{beta.toFixed(2)}</span>
-            </div>
+            <button
+              type="button"
+              className="beta-label-link"
+              onClick={() =>
+                document.getElementById('metrics-explanation')?.scrollIntoView({ behavior: 'smooth' })
+              }
+            >
+              <span className="beta-label-text">Weighted Arena Score</span>
+            </button>
             <input
               type="range"
               id="beta-slider"
-              min={0.01}
-              max={0.1}
-              step={0.001}
-              value={beta}
-              onChange={event => setBeta(parseFloat(event.target.value))}
+              min={0.05}
+              max={0.95}
+              step={0.01}
+              value={costWeight}
+              onChange={event => {
+                const value = parseFloat(event.target.value);
+                const clamped = Math.min(0.95, Math.max(0.05, value));
+                setCostWeight(clamped);
+              }}
               className="beta-slider"
             />
             <div className="beta-hints">
-              <span>Accuracy-first</span>
-              <span>Cost-first</span>
+              <span>{(costWeight * 100).toFixed(0)}% Cost Weight</span>
+              <span> Accuracy Weight {(accuracyWeight * 100).toFixed(0)}%</span>
+            </div>
+            <div className="beta-weights">
+
+              <div className="beta-weight-pill">
+                β = cost weight&nbsp;: accuracy weight&nbsp;= {beta.toFixed(2)}
+              </div>
             </div>
           </div>
         </div>
@@ -447,11 +468,11 @@ const LeaderboardPage: React.FC = () => {
         </div>
 
         {/* Metrics Explanation */}
-        <div className="metrics-explanation">
+        <div className="metrics-explanation" id="metrics-explanation">
           <h2>Evaluation Metrics</h2>
           <div className="metrics-grid">
             {/* 1️⃣ Arena Score */}
-            <div className="metric-card">
+            <div className="metric-card" >
               <div className="metric-summary">
                 <h3>Arena Score</h3>
                 <p>Weighted harmonic mean capturing the trade-off between accuracy and cost.</p>
