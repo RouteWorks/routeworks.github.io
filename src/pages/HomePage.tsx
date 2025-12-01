@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Trophy, BarChart3, Users, BookOpen, ArrowRight, Zap, Shield, Github } from 'lucide-react';
-import { contactInfo, datasetInfo, routers } from '../data/mockData';
+import { contactInfo, datasetInfo, routers } from '../data/routerData';
 import Figure from '../components/Figure';
 import DatasetCompositionChart from '../components/DatasetCompositionChart';
 import './HomePage.css';

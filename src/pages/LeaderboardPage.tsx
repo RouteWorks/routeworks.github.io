@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Trophy, Search, Medal, Github } from 'lucide-react';
 import { Router } from '../types';
-import { routers } from '../data/mockData';
+import { routers } from '../data/routerData';
 import SpiderChart from '../components/SpiderChart';
 import DeferralCurve from '../components/DeferralCurve';
 import './LeaderboardPage.css';
