@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Trophy, Search, Medal, Github, Layers, Link as LinkIcon } from 'lucide-react';
+import { Trophy, Search, Medal, Github, Layers, Link as LinkIcon, Unlock, Lock } from 'lucide-react';
 import { Router } from '../types';
 import { routers } from '../data/routerData';
 import SpiderChart from '../components/SpiderChart';
@@ -310,7 +310,6 @@ const LeaderboardPage: React.FC = () => {
               <div className="rank-col">Rank</div>
               <div className="name-col">Router</div>
               <div className="affiliation-col">Affiliation</div>
-              <div className="type-col">Type</div>
               <div className="metrics-col">Arena</div>
               <div className="metrics-col">Accuracy</div>
               <div className="metrics-col">Cost/1K</div>
@@ -326,6 +325,10 @@ const LeaderboardPage: React.FC = () => {
               {filteredAndSortedRouters.map((router, index) => {
               const isSelectedForCompare = selectedCompareIds.includes(router.id);
               const primaryLink = router.websiteUrl || router.paperUrl || router.githubUrl;
+              const TypeIcon = router.type === 'open-source' ? Unlock : Lock;
+              const typeLabel = router.type === 'open-source' ? 'Open' : 'Closed';
+              const typeDescription =
+                router.type === 'open-source' ? 'Open-source router' : 'Closed-source router';
               return (
                 <div key={router.id} className="leaderboard-row">
                 <div className="select-col">
@@ -341,13 +344,25 @@ const LeaderboardPage: React.FC = () => {
 
                 <div className="name-col">
                   <div className="router-info">
-                    <button
-                      type="button"
-                      className="router-name-link"
-                      onClick={() => setModelCardRouter(router)}
-                    >
-                      <h3 className="router-name">{router.name}</h3>
-                    </button>
+                    <div className="router-name-row">
+
+                      <button
+                        type="button"
+                        className="router-name-link"
+                        onClick={() => setModelCardRouter(router)}
+                      >
+                        <h3 className="router-name">{router.name}</h3>
+                      </button>
+
+                      <span
+                        className={`router-type-indicator ${router.type}`}
+                        title= {`${typeDescription}`}
+                        aria-label={`${typeDescription}`}
+                      >
+                        <TypeIcon size={12} aria-hidden="true" />
+                      </span>
+
+                    </div>
                     {(primaryLink || router.githubUrl || router.huggingfaceUrl) && (
                       <div className="router-link-badges">
                         {primaryLink && (
@@ -390,10 +405,6 @@ const LeaderboardPage: React.FC = () => {
 
                 <div className="affiliation-col">
                   <span className="affiliation">{router.affiliation}</span>
-                </div>
-
-                <div className="type-col">
-                  <span className={`type-badge ${router.type}`}>{router.type}</span>
                 </div>
 
                 <div className="metrics-col">

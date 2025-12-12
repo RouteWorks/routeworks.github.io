@@ -339,17 +339,16 @@
   --lb-grid:
     minmax(0, 0.5fr)   /* Select */
     minmax(0, 0.7fr)   /* Rank */
-    minmax(0, 1.5fr)   /* Name */
-    minmax(0, 1.1fr)   /* Affiliation */
-    minmax(0, 1.5fr)   /* Type */
+    minmax(0, 2.0fr)   /* Name */
+    minmax(0, 0.9fr)   /* Affiliation */
     minmax(0, 0.9fr)   /* Arena */
-    minmax(0, 1fr)   /* Accuracy */
-    minmax(0, 0.9fr)  /* Cost/1k */
+    minmax(0, 1fr)     /* Accuracy */
+    minmax(0, 0.9fr)   /* Cost/1k */
     minmax(0, 1.1fr)   /* Opt. Select */
     minmax(0, 0.9fr)   /* Opt. Cost */
     minmax(0, 0.9fr)   /* Opt. Acc */
     minmax(0, 0.9fr)   /* Latency */
-    minmax(0, 0.9fr)   /* Robust */
+    minmax(0, 0.9fr);  /* Robust */
 }
 
 
@@ -1053,8 +1052,7 @@
 }
 
 .metrics-col,
-.rank-col,
-.type-col {
+.rank-col {
   white-space: nowrap;
 }
 
@@ -1161,34 +1159,42 @@
   overflow-wrap: break-word;
 }
 
-.type-col {
+.router-name-row {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 120px;
-  flex-shrink: 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.type-badge {
-  display: inline-block;
-  width: auto; /* grows with text */
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.75rem;
+.router-type-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  white-space: normal; /* ✅ allows wrapping */
-  text-align: center;
+  letter-spacing: 0.04em;
 }
 
-.type-badge.open-source {
-  background: #3b82f6;
-  color: white;
+.router-type-indicator svg {
+  width: 12px;
+  height: 12px;
 }
 
-.type-badge.closed-source {
-  background: #10b981;
-  color: white;
+.router-type-indicator.open-source {
+  background: rgba(59, 130, 246, 0.15);
+  color: #1d4ed8;
+}
+
+.router-type-indicator.closed-source {
+  background: rgba(16, 185, 129, 0.18);
+  color: #047857;
+}
+
+.router-type-text {
+  line-height: 1;
 }
 
 .metrics-col {
