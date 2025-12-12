@@ -50,4 +50,5 @@ export interface ContactInfo {
   email: string;
   github: string;
   paper: string;
+  huggingface: string;
 }

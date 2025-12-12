@@ -11,5 +11,6 @@
   "institution": "Rice University",
   "email": "yifan.lu@rice.edu",
   "github": "https://github.com/RouteWorks/RouterArena",
-  "paper": "https://www.arxiv.org/abs/2510.00202"
+  "paper": "https://www.arxiv.org/abs/2510.00202",
+  "huggingface": "https://huggingface.co/datasets/RouteWorks/RouterArena"
 }
