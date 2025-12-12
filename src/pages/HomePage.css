@@ -3,6 +3,11 @@
   background: #f8fafc;
 }
 
+.hf-logo {
+  width: 30px;
+  height: 30px;
+}
+
 /* Hero Section */
 .hero {
   background: #2563eb;
@@ -119,7 +124,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
@@ -293,11 +298,7 @@
   background: white;
 }
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+
 
 .section-title {
   text-align: center;
@@ -559,7 +560,10 @@
 }
 
 .action-buttons .btn {
-  min-width: 150px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  justify-content: center;
+  min-width: 200px;
 }
 
 .team-content {
