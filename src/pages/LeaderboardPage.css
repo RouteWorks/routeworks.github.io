@@ -1096,8 +1096,8 @@
 }
 
 .router-link-pill.primary {
-  background: #1d4ed8;
-  color: #fff;
+  background: rgba(15, 23, 42, 0.08);
+  color: #111827;
 }
 
 .router-link-pill:hover {

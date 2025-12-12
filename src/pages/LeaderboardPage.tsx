@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Trophy, Search, Medal, Github, Layers, ExternalLink } from 'lucide-react';
+import { Trophy, Search, Medal, Github, Layers, Link as LinkIcon } from 'lucide-react';
 import { Router } from '../types';
 import { routers } from '../data/routerData';
 import SpiderChart from '../components/SpiderChart';
@@ -358,7 +358,7 @@ const LeaderboardPage: React.FC = () => {
                             className="router-link-pill primary"
                             aria-label={`${router.name} resource`}
                           >
-                            <ExternalLink size={14} />
+                            <LinkIcon size={14} />
                           </a>
                         )}
                         {router.githubUrl && (
