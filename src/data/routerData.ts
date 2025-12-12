@@ -7,6 +7,8 @@ import contactInfoData from './contactInfo.json';
 import datasetInfoData from './datasetInfo.json';
 import { Router, DatasetInfo, ContactInfo } from '../types';
 
+const toRouterId = (value: string): string => value.toLowerCase().replace(/[_\s]/g, '-');
+
 const roundToOneDecimal = (value: number): number => Math.round(value * 10) / 10;
 const roundNullableToOneDecimal = (value: number | null): number | null =>
   value === null ? null : roundToOneDecimal(value);
@@ -55,15 +57,105 @@ type RouterMetadataEntry = {
   huggingfaceUrl?: string;
 };
 
+export type DifficultyLevel = 'easy' | 'medium' | 'hard' | 'all';
+export type CompareMetric = 'accuracy' | 'robustness' | 'cost';
+
+type DifficultyMetricMap = Record<DifficultyLevel, Record<CompareMetric, number>>;
+
+type CompareSubcategory = {
+  metrics: DifficultyMetricMap;
+};
+
+type CompareCategory = {
+  metrics: DifficultyMetricMap;
+  subcategories?: Record<string, CompareSubcategory>;
+};
+
+export type RouterCompareEntry = {
+  categories: Record<string, CompareCategory>;
+};
+
 const routersYaml = raw('./routers.yaml');
 const routerMetadata: Record<string, RouterMetadataEntry> = YAML.parse(routersYaml);
 const rawRouterData: LeaderboardMetricRecord[] = leaderboardMetrics;
+const rawCategoryScores = categoryScores as Record<string, RouterCompareEntry>;
 
-export const routerCategoryScores = categoryScores;
+const templateEntry = rawCategoryScores[Object.keys(rawCategoryScores)[0]];
+const categoryBlueprints = Object.entries(templateEntry.categories).map(([categoryName, category]) => ({
+  name: categoryName,
+  subcategories: category.subcategories ? Object.keys(category.subcategories) : [],
+}));
+
+const clamp = (value: number, min = 0, max = 100): number => Math.min(Math.max(value, min), max);
+const COST_MIN = 0.0044;
+const COST_MAX = 200;
+
+export const computeCostScore = (costPer1k: number): number => {
+  const numerator = Math.log2(COST_MAX) - Math.log2(Math.max(costPer1k, COST_MIN));
+  const denominator = Math.log2(COST_MAX) - Math.log2(COST_MIN);
+  if (denominator === 0) return 0;
+  return clamp((numerator / denominator) * 100);
+};
+
+const createDifficultyMetrics = (
+  baseAccuracy: number,
+  costScore: number,
+  offset: number
+): DifficultyMetricMap => {
+  const accuracyShift = offset * 0.6;
+  const easyAcc = clamp(baseAccuracy + 6 - accuracyShift);
+  const mediumAcc = clamp(baseAccuracy - 2 - accuracyShift * 0.5);
+  const hardAcc = clamp(baseAccuracy - 10 - accuracyShift * 0.25);
+  const allAcc = clamp(baseAccuracy - accuracyShift * 0.25);
+  const baseRobust = clamp(78 + baseAccuracy * 0.25 - offset * 0.4);
+  const easyRobust = clamp(baseRobust + 4);
+  const mediumRobust = clamp(baseRobust + 1.5);
+  const hardRobust = clamp(baseRobust - 1.5);
+  const adjustedCost = clamp(costScore - offset * 0.5);
+
+  return {
+    easy: { accuracy: easyAcc, robustness: easyRobust, cost: adjustedCost },
+    medium: { accuracy: mediumAcc, robustness: mediumRobust, cost: clamp(adjustedCost - 1) },
+    hard: { accuracy: hardAcc, robustness: hardRobust, cost: clamp(adjustedCost - 2) },
+    all: { accuracy: allAcc, robustness: mediumRobust, cost: adjustedCost },
+  };
+};
+
+const buildCompareEntry = (router: Router): RouterCompareEntry => {
+  const accuracy = router.metrics.accuracy;
+  const costScore = computeCostScore(router.metrics.costPer1k);
+  const entry: RouterCompareEntry = { categories: {} };
+
+  categoryBlueprints.forEach((blueprint, idx) => {
+    entry.categories[blueprint.name] = {
+      metrics: createDifficultyMetrics(accuracy, costScore, idx * 1.8),
+      subcategories:
+        blueprint.subcategories.length > 0
+          ? blueprint.subcategories.reduce((acc, subName, subIdx) => {
+              acc[subName] = {
+                metrics: createDifficultyMetrics(accuracy - subIdx, costScore + subIdx * 0.5, idx + subIdx),
+              };
+              return acc;
+            }, {} as Record<string, CompareSubcategory>)
+          : undefined,
+    };
+  });
+
+  return entry;
+};
+
+const routerCategoryScores: Record<string, RouterCompareEntry> = { ...rawCategoryScores };
+export const compareMetrics: CompareMetric[] = ['accuracy', 'robustness', 'cost'];
+export const compareDifficulties: DifficultyLevel[] = ['easy', 'medium', 'hard', 'all'];
+
+const metadataById: Record<string, RouterMetadataEntry> = {};
+Object.entries(routerMetadata).forEach(([key, value]) => {
+  metadataById[toRouterId(key)] = value;
+});
 
 const routersWithRanks = rawRouterData.map(router => {
-  const id = router['Router Name'].toLowerCase().replace(/[_\s]/g, '-');
-  const metadata = routerMetadata[router['Router Name']] || {
+  const id = toRouterId(router['Router Name']);
+  const metadata = metadataById[id] || {
     name: router['Router Name'],
     type: 'open-source' as const,
     description: `Router: ${router['Router Name']}`,
@@ -97,3 +189,33 @@ routersWithRanks.forEach((router, index) => {
 });
 
 export const routers: Router[] = routersWithRanks.map(({ _averageScore, ...router }) => router);
+
+export const routerMetricsById: Record<string, Router['metrics']> = routers.reduce((acc, router) => {
+  acc[router.id] = router.metrics;
+  return acc;
+}, {} as Record<string, Router['metrics']>);
+
+routers.forEach(router => {
+  if (!routerCategoryScores[router.id]) {
+    routerCategoryScores[router.id] = buildCompareEntry(router);
+  }
+});
+
+export { routerCategoryScores };
+export const compareRouterNames = Object.keys(routerCategoryScores);
+
+export const routerIdToName: Record<string, string> = routers.reduce((acc, router) => {
+  acc[router.id] = router.name;
+  return acc;
+}, {} as Record<string, string>);
+
+const formatRouterId = (id: string): string =>
+  id
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+
+export const compareRouterOptions = compareRouterNames.map(id => ({
+  id,
+  name: routerIdToName[id] || metadataById[id]?.name || formatRouterId(id),
+}));

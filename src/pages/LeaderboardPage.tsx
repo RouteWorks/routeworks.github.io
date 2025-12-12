@@ -1,9 +1,11 @@
 import React, { useState, useMemo } from 'react';
-import { Trophy, Search, Medal, Github } from 'lucide-react';
+import { Trophy, Search, Medal, Github, Layers, ExternalLink } from 'lucide-react';
 import { Router } from '../types';
 import { routers } from '../data/routerData';
 import SpiderChart from '../components/SpiderChart';
 import DeferralCurve from '../components/DeferralCurve';
+import RouterModelCard from '../components/RouterModelCard';
+import CompareModal from '../components/CompareModal';
 import './LeaderboardPage.css';
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
@@ -43,8 +45,13 @@ const LeaderboardPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'spider' | 'deferral'>('spider');
   const [costWeight, setCostWeight] = useState(defaultCostWeight);
 
+  const [selectedCompareIds, setSelectedCompareIds] = useState<string[]>([]);
+  const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
   const beta = costWeight / (1 - costWeight);
   const accuracyWeight = 1 - costWeight;
+  const MAX_COMPARE = 3;
+  const maxCompareReached = selectedCompareIds.length >= MAX_COMPARE;
+  const [modelCardRouter, setModelCardRouter] = useState<Router | null>(null);
 
   // Deferral curve data
   const openSourcePoints = {
@@ -63,17 +70,6 @@ const LeaderboardPage: React.FC = () => {
     Azure: { accuracy: 0.6798, cost_per_1k: 0.619866 },
     'GPT-5': { accuracy: 0.7428, cost_per_1k: 14.407096 },
     'vLLM-SR': { accuracy: 0.6665, cost_per_1k: 1.61393 },
-  };
-
-  // Helper function to calculate average score for overall ranking
-  const calculateAverageScore = (metrics: Router['metrics']): number => {
-    const scores: number[] = [metrics.arenaScore];
-    if (metrics.optimalSelectionScore !== null) scores.push(metrics.optimalSelectionScore);
-    if (metrics.optimalCostScore !== null) scores.push(metrics.optimalCostScore);
-    if (metrics.optimalAccScore !== null) scores.push(metrics.optimalAccScore);
-    if (metrics.robustnessScore !== null) scores.push(metrics.robustnessScore);
-    if (metrics.latencyScore !== null) scores.push(metrics.latencyScore);
-    return scores.reduce((sum, score) => sum + score, 0) / scores.length;
   };
 
   const filteredAndSortedRouters = useMemo<RouterWithDynamicArena[]>(() => {
@@ -149,6 +145,28 @@ const LeaderboardPage: React.FC = () => {
       default:
         return <span className={`${baseClass} rank-other`}>{rank}</span>;
     }
+  };
+
+  const toggleCompareSelection = (routerId: string) => {
+    setSelectedCompareIds(prev => {
+      if (prev.includes(routerId)) {
+        return prev.filter(id => id !== routerId);
+      }
+      if (prev.length >= MAX_COMPARE) {
+        return prev;
+      }
+      return [...prev, routerId];
+    });
+  };
+
+  const handleRemoveFromCompare = (routerId: string) => {
+    setSelectedCompareIds(prev => {
+      const updated = prev.filter(id => id !== routerId);
+      if (!updated.length) {
+        setIsCompareModalOpen(false);
+      }
+      return updated;
+    });
   };
 
   return (
@@ -282,9 +300,13 @@ const LeaderboardPage: React.FC = () => {
         </div>
 
         {/* Leaderboard Table */}
+        <div className="leaderboard-full-bleed">
         <div className="leaderboard-container">
           <div className="leaderboard-scroll">
             <div className="leaderboard-header">
+              <div className="select-col">
+                <Layers size={16} aria-label="Compare" />
+              </div>
               <div className="rank-col">Rank</div>
               <div className="name-col">Router</div>
               <div className="affiliation-col">Affiliation</div>
@@ -299,29 +321,46 @@ const LeaderboardPage: React.FC = () => {
               <div className="metrics-col">Robust</div>
             </div>
 
+
             <div className="leaderboard-body">
               {filteredAndSortedRouters.map((router, index) => {
+              const isSelectedForCompare = selectedCompareIds.includes(router.id);
               const primaryLink = router.websiteUrl || router.paperUrl || router.githubUrl;
               return (
                 <div key={router.id} className="leaderboard-row">
+                <div className="select-col">
+                  <input
+                    type="checkbox"
+                    checked={isSelectedForCompare}
+                    onChange={() => toggleCompareSelection(router.id)}
+                    disabled={!isSelectedForCompare && maxCompareReached}
+                    aria-label={`Select ${router.name} for comparison`}
+                  />
+                </div>
                 <div className="rank-col">{renderRankBadge(index + 1)}</div>
 
                 <div className="name-col">
                   <div className="router-info">
-                    {primaryLink ? (
-                      <a
-                        href={primaryLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="router-name-link"
-                      >
-                        <h3 className="router-name">{router.name}</h3>
-                      </a>
-                    ) : (
+                    <button
+                      type="button"
+                      className="router-name-link"
+                      onClick={() => setModelCardRouter(router)}
+                    >
                       <h3 className="router-name">{router.name}</h3>
-                    )}
-                    {(router.githubUrl || router.huggingfaceUrl) && (
+                    </button>
+                    {(primaryLink || router.githubUrl || router.huggingfaceUrl) && (
                       <div className="router-link-badges">
+                        {primaryLink && (
+                          <a
+                            href={primaryLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="router-link-pill primary"
+                            aria-label={`${router.name} resource`}
+                          >
+                            <ExternalLink size={14} />
+                          </a>
+                        )}
                         {router.githubUrl && (
                           <a
                             href={router.githubUrl}
@@ -425,12 +464,45 @@ const LeaderboardPage: React.FC = () => {
                   </div>
                 </div>
 
-                  </div>
+                </div>
                 );
               })}
             </div>
           </div>
         </div>
+        </div>
+      {modelCardRouter && (
+        <div className="model-card-modal-overlay" onClick={() => setModelCardRouter(null)}>
+          <div className="model-card-modal" onClick={event => event.stopPropagation()}>
+            <div className="model-card-modal-header">
+              <h3>{modelCardRouter.name}</h3>
+              <button type="button" className="link-button" onClick={() => setModelCardRouter(null)}>
+                Close
+              </button>
+            </div>
+            <RouterModelCard
+              router={modelCardRouter}
+              isSelected={selectedCompareIds.includes(modelCardRouter.id)}
+              maxSelectedReached={maxCompareReached}
+              onToggleCompare={toggleCompareSelection}
+            />
+          </div>
+        </div>
+      )}
+      {selectedCompareIds.length > 0 && (
+        <button className="compare-fab" onClick={() => setIsCompareModalOpen(true)}>
+          Compare ({selectedCompareIds.length})
+        </button>
+      )}
+      {isCompareModalOpen && selectedCompareIds.length > 0 && (
+        <CompareModal
+          routerIds={selectedCompareIds}
+          onClose={() => setIsCompareModalOpen(false)}
+          onAdd={toggleCompareSelection}
+          onRemove={handleRemoveFromCompare}
+          maxSelected={MAX_COMPARE}
+        />
+      )}
 
         {/* Visualizations Section with Tabs */}
         <div className="visualizations-section">
@@ -676,6 +748,7 @@ platforms.
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );

@@ -1,15 +1,595 @@
 {
   "routerdc": {
     "categories": {
-      "math": {
-        "easy": { "accuracy": 41.2, "robustness": 98.1 },
-        "medium": { "accuracy": 33.5, "robustness": 94.0 },
-        "hard": { "accuracy": 21.0, "robustness": 90.3 }
+      "Math": {
+        "metrics": {
+          "easy": { "accuracy": 48.2, "robustness": 88.4, "cost": 72.0 },
+          "medium": { "accuracy": 39.3, "robustness": 84.1, "cost": 70.5 },
+          "hard": { "accuracy": 28.6, "robustness": 80.2, "cost": 69.0 },
+          "all": { "accuracy": 38.7, "robustness": 84.2, "cost": 70.4 }
+        },
+        "subcategories": {
+          "Algebra": {
+            "metrics": {
+              "easy": { "accuracy": 50.1, "robustness": 90.2, "cost": 74.0 },
+              "medium": { "accuracy": 41.2, "robustness": 85.0, "cost": 71.3 },
+              "hard": { "accuracy": 30.0, "robustness": 81.5, "cost": 70.0 },
+              "all": { "accuracy": 40.4, "robustness": 85.6, "cost": 71.8 }
+            }
+          },
+          "Geometry": {
+            "metrics": {
+              "easy": { "accuracy": 46.0, "robustness": 87.5, "cost": 70.1 },
+              "medium": { "accuracy": 36.4, "robustness": 83.3, "cost": 69.8 },
+              "hard": { "accuracy": 27.2, "robustness": 79.1, "cost": 68.2 },
+              "all": { "accuracy": 36.5, "robustness": 83.3, "cost": 69.4 }
+            }
+          },
+          "Statistics": {
+            "metrics": {
+              "easy": { "accuracy": 49.0, "robustness": 88.8, "cost": 71.2 },
+              "medium": { "accuracy": 40.5, "robustness": 84.5, "cost": 70.6 },
+              "hard": { "accuracy": 30.1, "robustness": 80.4, "cost": 69.1 },
+              "all": { "accuracy": 39.9, "robustness": 84.6, "cost": 70.3 }
+            }
+          },
+          "Calculus": {
+            "metrics": {
+              "easy": { "accuracy": 45.7, "robustness": 87.0, "cost": 70.5 },
+              "medium": { "accuracy": 37.9, "robustness": 83.0, "cost": 69.9 },
+              "hard": { "accuracy": 26.8, "robustness": 78.4, "cost": 68.8 },
+              "all": { "accuracy": 36.8, "robustness": 82.8, "cost": 69.7 }
+            }
+          }
+        }
       },
-      "coding": {
-        "easy": { "accuracy": 55.0, "robustness": 99.0 },
-        "medium": { "accuracy": 43.3, "robustness": 95.0 },
-        "hard": { "accuracy": 27.1, "robustness": 92.4 }
+      "Coding": {
+        "metrics": {
+          "easy": { "accuracy": 62.5, "robustness": 91.0, "cost": 65.0 },
+          "medium": { "accuracy": 51.4, "robustness": 89.1, "cost": 63.5 },
+          "hard": { "accuracy": 37.8, "robustness": 85.3, "cost": 62.1 },
+          "all": { "accuracy": 50.6, "robustness": 88.5, "cost": 63.5 }
+        },
+        "subcategories": {
+          "APIs": {
+            "metrics": {
+              "easy": { "accuracy": 64.0, "robustness": 92.3, "cost": 66.5 },
+              "medium": { "accuracy": 53.1, "robustness": 90.2, "cost": 64.0 },
+              "hard": { "accuracy": 39.5, "robustness": 86.0, "cost": 62.4 },
+              "all": { "accuracy": 52.2, "robustness": 89.5, "cost": 64.3 }
+            }
+          },
+          "Data Structures": {
+            "metrics": {
+              "easy": { "accuracy": 61.0, "robustness": 90.2, "cost": 63.6 },
+              "medium": { "accuracy": 49.7, "robustness": 88.0, "cost": 63.0 },
+              "hard": { "accuracy": 36.1, "robustness": 84.4, "cost": 61.8 },
+              "all": { "accuracy": 49.1, "robustness": 87.5, "cost": 62.8 }
+            }
+          },
+          "Algorithms": {
+            "metrics": {
+              "easy": { "accuracy": 58.4, "robustness": 89.5, "cost": 64.1 },
+              "medium": { "accuracy": 46.7, "robustness": 87.3, "cost": 63.4 },
+              "hard": { "accuracy": 34.2, "robustness": 83.5, "cost": 62.0 },
+              "all": { "accuracy": 46.4, "robustness": 87.0, "cost": 63.2 }
+            }
+          },
+          "Systems": {
+            "metrics": {
+              "easy": { "accuracy": 60.2, "robustness": 90.8, "cost": 64.5 },
+              "medium": { "accuracy": 48.9, "robustness": 88.4, "cost": 63.7 },
+              "hard": { "accuracy": 35.6, "robustness": 84.7, "cost": 62.3 },
+              "all": { "accuracy": 48.2, "robustness": 88.0, "cost": 63.5 }
+            }
+          }
+        }
+      },
+      "Reasoning": {
+        "metrics": {
+          "easy": { "accuracy": 54.3, "robustness": 89.5, "cost": 68.2 },
+          "medium": { "accuracy": 43.5, "robustness": 86.4, "cost": 67.0 },
+          "hard": { "accuracy": 33.1, "robustness": 83.2, "cost": 65.7 },
+          "all": { "accuracy": 43.6, "robustness": 86.4, "cost": 67.0 }
+        },
+        "subcategories": {
+          "Logic": {
+            "metrics": {
+              "easy": { "accuracy": 56.0, "robustness": 90.1, "cost": 69.0 },
+              "medium": { "accuracy": 45.0, "robustness": 87.5, "cost": 67.4 },
+              "hard": { "accuracy": 34.5, "robustness": 84.2, "cost": 66.1 },
+              "all": { "accuracy": 45.2, "robustness": 87.3, "cost": 67.5 }
+            }
+          },
+          "Planning": {
+            "metrics": {
+              "easy": { "accuracy": 52.1, "robustness": 88.9, "cost": 67.2 },
+              "medium": { "accuracy": 42.0, "robustness": 85.4, "cost": 66.6 },
+              "hard": { "accuracy": 31.8, "robustness": 82.1, "cost": 65.3 },
+              "all": { "accuracy": 41.9, "robustness": 85.5, "cost": 66.4 }
+            }
+          },
+          "Commonsense": {
+            "metrics": {
+              "easy": { "accuracy": 55.3, "robustness": 89.7, "cost": 67.5 },
+              "medium": { "accuracy": 44.1, "robustness": 86.2, "cost": 66.7 },
+              "hard": { "accuracy": 33.0, "robustness": 82.9, "cost": 65.5 },
+              "all": { "accuracy": 44.0, "robustness": 86.3, "cost": 66.6 }
+            }
+          },
+          "Causal Reasoning": {
+            "metrics": {
+              "easy": { "accuracy": 51.0, "robustness": 88.3, "cost": 66.8 },
+              "medium": { "accuracy": 41.2, "robustness": 85.0, "cost": 66.2 },
+              "hard": { "accuracy": 30.4, "robustness": 81.7, "cost": 65.0 },
+              "all": { "accuracy": 40.9, "robustness": 85.0, "cost": 66.0 }
+            }
+          }
+        }
+      },
+      "Language": {
+        "metrics": {
+          "easy": { "accuracy": 58.0, "robustness": 91.3, "cost": 66.0 },
+          "medium": { "accuracy": 46.2, "robustness": 88.7, "cost": 65.1 },
+          "hard": { "accuracy": 34.6, "robustness": 85.4, "cost": 64.2 },
+          "all": { "accuracy": 46.3, "robustness": 88.5, "cost": 65.1 }
+        },
+        "subcategories": {
+          "Grammar": {
+            "metrics": {
+              "easy": { "accuracy": 59.7, "robustness": 92.1, "cost": 66.4 },
+              "medium": { "accuracy": 47.5, "robustness": 89.2, "cost": 65.3 },
+              "hard": { "accuracy": 35.5, "robustness": 86.2, "cost": 64.7 },
+              "all": { "accuracy": 47.6, "robustness": 89.2, "cost": 65.5 }
+            }
+          },
+          "Translation": {
+            "metrics": {
+              "easy": { "accuracy": 56.4, "robustness": 90.5, "cost": 65.7 },
+              "medium": { "accuracy": 44.8, "robustness": 88.0, "cost": 64.9 },
+              "hard": { "accuracy": 33.8, "robustness": 84.5, "cost": 63.7 },
+              "all": { "accuracy": 44.9, "robustness": 87.9, "cost": 64.8 }
+            }
+          }
+        }
+      },
+      "Science": {
+        "metrics": {
+          "easy": { "accuracy": 52.4, "robustness": 86.5, "cost": 69.5 },
+          "medium": { "accuracy": 41.1, "robustness": 83.8, "cost": 68.6 },
+          "hard": { "accuracy": 29.3, "robustness": 80.0, "cost": 67.4 },
+          "all": { "accuracy": 40.9, "robustness": 83.4, "cost": 68.5 }
+        },
+        "subcategories": {
+          "Physics": {
+            "metrics": {
+              "easy": { "accuracy": 53.8, "robustness": 87.2, "cost": 69.9 },
+              "medium": { "accuracy": 42.5, "robustness": 84.6, "cost": 68.9 },
+              "hard": { "accuracy": 30.7, "robustness": 81.1, "cost": 67.7 },
+              "all": { "accuracy": 42.3, "robustness": 84.3, "cost": 68.8 }
+            }
+          },
+          "Biology": {
+            "metrics": {
+              "easy": { "accuracy": 51.0, "robustness": 85.7, "cost": 69.0 },
+              "medium": { "accuracy": 39.8, "robustness": 83.0, "cost": 68.2 },
+              "hard": { "accuracy": 27.9, "robustness": 78.9, "cost": 67.0 },
+              "all": { "accuracy": 39.5, "robustness": 82.6, "cost": 68.1 }
+            }
+          }
+        }
+      }
+    }
+  },
+  "graphrouter": {
+    "categories": {
+      "Math": {
+        "metrics": {
+          "easy": { "accuracy": 58.0, "robustness": 92.2, "cost": 55.0 },
+          "medium": { "accuracy": 49.6, "robustness": 89.4, "cost": 54.1 },
+          "hard": { "accuracy": 37.9, "robustness": 86.0, "cost": 53.5 },
+          "all": { "accuracy": 48.5, "robustness": 89.2, "cost": 54.2 }
+        },
+        "subcategories": {
+          "Algebra": {
+            "metrics": {
+              "easy": { "accuracy": 59.2, "robustness": 93.4, "cost": 56.1 },
+              "medium": { "accuracy": 51.2, "robustness": 90.5, "cost": 55.0 },
+              "hard": { "accuracy": 39.4, "robustness": 87.2, "cost": 53.8 },
+              "all": { "accuracy": 49.9, "robustness": 90.4, "cost": 55.0 }
+            }
+          },
+          "Geometry": {
+            "metrics": {
+              "easy": { "accuracy": 56.7, "robustness": 91.0, "cost": 54.1 },
+              "medium": { "accuracy": 48.0, "robustness": 88.2, "cost": 53.1 },
+              "hard": { "accuracy": 36.5, "robustness": 84.6, "cost": 53.0 },
+              "all": { "accuracy": 47.2, "robustness": 87.9, "cost": 53.4 }
+            }
+          },
+          "Statistics": {
+            "metrics": {
+              "easy": { "accuracy": 57.9, "robustness": 91.8, "cost": 54.6 },
+              "medium": { "accuracy": 49.5, "robustness": 89.1, "cost": 53.7 },
+              "hard": { "accuracy": 37.8, "robustness": 85.6, "cost": 53.3 },
+              "all": { "accuracy": 48.8, "robustness": 88.8, "cost": 53.8 }
+            }
+          },
+          "Calculus": {
+            "metrics": {
+              "easy": { "accuracy": 55.1, "robustness": 90.5, "cost": 53.8 },
+              "medium": { "accuracy": 46.8, "robustness": 87.4, "cost": 52.9 },
+              "hard": { "accuracy": 35.0, "robustness": 83.8, "cost": 52.5 },
+              "all": { "accuracy": 45.9, "robustness": 87.2, "cost": 53.1 }
+            }
+          }
+        }
+      },
+      "Coding": {
+        "metrics": {
+          "easy": { "accuracy": 66.5, "robustness": 94.1, "cost": 50.5 },
+          "medium": { "accuracy": 57.3, "robustness": 92.0, "cost": 49.7 },
+          "hard": { "accuracy": 45.0, "robustness": 89.0, "cost": 48.3 },
+          "all": { "accuracy": 56.3, "robustness": 91.7, "cost": 49.5 }
+        },
+        "subcategories": {
+          "APIs": {
+            "metrics": {
+              "easy": { "accuracy": 68.1, "robustness": 95.0, "cost": 51.0 },
+              "medium": { "accuracy": 58.6, "robustness": 92.6, "cost": 50.1 },
+              "hard": { "accuracy": 46.2, "robustness": 89.4, "cost": 48.9 },
+              "all": { "accuracy": 57.6, "robustness": 92.3, "cost": 50.0 }
+            }
+          },
+          "Data Structures": {
+            "metrics": {
+              "easy": { "accuracy": 64.8, "robustness": 93.2, "cost": 50.0 },
+              "medium": { "accuracy": 55.9, "robustness": 91.4, "cost": 49.4 },
+              "hard": { "accuracy": 43.8, "robustness": 88.6, "cost": 47.7 },
+              "all": { "accuracy": 55.1, "robustness": 91.1, "cost": 49.0 }
+            }
+          },
+          "Algorithms": {
+            "metrics": {
+              "easy": { "accuracy": 63.0, "robustness": 92.4, "cost": 50.6 },
+              "medium": { "accuracy": 54.1, "robustness": 90.6, "cost": 49.8 },
+              "hard": { "accuracy": 42.1, "robustness": 88.0, "cost": 48.4 },
+              "all": { "accuracy": 53.4, "robustness": 90.3, "cost": 49.6 }
+            }
+          },
+          "Systems": {
+            "metrics": {
+              "easy": { "accuracy": 65.4, "robustness": 93.6, "cost": 51.1 },
+              "medium": { "accuracy": 56.5, "robustness": 91.8, "cost": 50.2 },
+              "hard": { "accuracy": 44.2, "robustness": 89.2, "cost": 48.9 },
+              "all": { "accuracy": 55.7, "robustness": 91.5, "cost": 50.0 }
+            }
+          }
+        }
+      },
+      "Reasoning": {
+        "metrics": {
+          "easy": { "accuracy": 60.4, "robustness": 93.5, "cost": 53.4 },
+          "medium": { "accuracy": 50.7, "robustness": 90.7, "cost": 52.2 },
+          "hard": { "accuracy": 40.2, "robustness": 87.1, "cost": 51.0 },
+          "all": { "accuracy": 50.4, "robustness": 90.4, "cost": 52.2 }
+        },
+        "subcategories": {
+          "Logic": {
+            "metrics": {
+              "easy": { "accuracy": 62.0, "robustness": 94.2, "cost": 54.0 },
+              "medium": { "accuracy": 51.9, "robustness": 91.6, "cost": 52.8 },
+              "hard": { "accuracy": 41.5, "robustness": 88.3, "cost": 51.7 },
+              "all": { "accuracy": 51.8, "robustness": 91.4, "cost": 52.8 }
+            }
+          },
+          "Planning": {
+            "metrics": {
+              "easy": { "accuracy": 58.9, "robustness": 92.8, "cost": 52.7 },
+              "medium": { "accuracy": 49.4, "robustness": 89.8, "cost": 51.6 },
+              "hard": { "accuracy": 38.9, "robustness": 85.9, "cost": 50.4 },
+              "all": { "accuracy": 49.0, "robustness": 89.5, "cost": 51.6 }
+            }
+          },
+          "Commonsense": {
+            "metrics": {
+              "easy": { "accuracy": 59.8, "robustness": 93.3, "cost": 53.0 },
+              "medium": { "accuracy": 50.6, "robustness": 90.4, "cost": 51.9 },
+              "hard": { "accuracy": 39.6, "robustness": 86.6, "cost": 50.7 },
+              "all": { "accuracy": 50.3, "robustness": 90.1, "cost": 51.9 }
+            }
+          },
+          "Causal Reasoning": {
+            "metrics": {
+              "easy": { "accuracy": 57.2, "robustness": 92.5, "cost": 52.4 },
+              "medium": { "accuracy": 48.5, "robustness": 89.4, "cost": 51.2 },
+              "hard": { "accuracy": 37.5, "robustness": 85.4, "cost": 50.0 },
+              "all": { "accuracy": 47.7, "robustness": 89.1, "cost": 51.0 }
+            }
+          }
+        }
+      },
+      "Language": {
+        "metrics": {
+          "easy": { "accuracy": 66.8, "robustness": 95.4, "cost": 50.8 },
+          "medium": { "accuracy": 57.6, "robustness": 93.0, "cost": 49.9 },
+          "hard": { "accuracy": 45.9, "robustness": 90.1, "cost": 48.7 },
+          "all": { "accuracy": 56.8, "robustness": 92.8, "cost": 49.8 }
+        },
+        "subcategories": {
+          "Grammar": {
+            "metrics": {
+              "easy": { "accuracy": 68.4, "robustness": 96.2, "cost": 51.3 },
+              "medium": { "accuracy": 59.0, "robustness": 93.8, "cost": 50.4 },
+              "hard": { "accuracy": 47.1, "robustness": 91.1, "cost": 49.1 },
+              "all": { "accuracy": 58.9, "robustness": 93.7, "cost": 50.3 }
+            }
+          },
+          "Translation": {
+            "metrics": {
+              "easy": { "accuracy": 65.1, "robustness": 94.7, "cost": 50.2 },
+              "medium": { "accuracy": 56.2, "robustness": 92.1, "cost": 49.3 },
+              "hard": { "accuracy": 44.6, "robustness": 89.2, "cost": 48.4 },
+              "all": { "accuracy": 54.8, "robustness": 92.0, "cost": 49.3 }
+            }
+          },
+          "Reading Comprehension": {
+            "metrics": {
+              "easy": { "accuracy": 64.2, "robustness": 94.0, "cost": 50.0 },
+              "medium": { "accuracy": 55.0, "robustness": 91.6, "cost": 49.1 },
+              "hard": { "accuracy": 42.9, "robustness": 88.7, "cost": 48.1 },
+              "all": { "accuracy": 54.0, "robustness": 91.4, "cost": 49.0 }
+            }
+          },
+          "Conversation": {
+            "metrics": {
+              "easy": { "accuracy": 66.3, "robustness": 95.1, "cost": 50.7 },
+              "medium": { "accuracy": 57.7, "robustness": 93.0, "cost": 49.8 },
+              "hard": { "accuracy": 46.0, "robustness": 90.2, "cost": 48.8 },
+              "all": { "accuracy": 56.7, "robustness": 92.9, "cost": 49.7 }
+            }
+          }
+        }
+      },
+      "Science": {
+        "metrics": {
+          "easy": { "accuracy": 62.2, "robustness": 92.7, "cost": 52.1 },
+          "medium": { "accuracy": 52.3, "robustness": 90.0, "cost": 51.0 },
+          "hard": { "accuracy": 41.0, "robustness": 87.0, "cost": 49.9 },
+          "all": { "accuracy": 51.8, "robustness": 89.9, "cost": 50.9 }
+        },
+        "subcategories": {
+          "Physics": {
+            "metrics": {
+              "easy": { "accuracy": 63.5, "robustness": 93.2, "cost": 52.8 },
+              "medium": { "accuracy": 53.9, "robustness": 90.7, "cost": 51.6 },
+              "hard": { "accuracy": 42.6, "robustness": 88.1, "cost": 50.4 },
+              "all": { "accuracy": 53.3, "robustness": 90.7, "cost": 51.6 }
+            }
+          },
+          "Biology": {
+            "metrics": {
+              "easy": { "accuracy": 60.9, "robustness": 92.1, "cost": 51.5 },
+              "medium": { "accuracy": 50.7, "robustness": 89.3, "cost": 50.4 },
+              "hard": { "accuracy": 39.5, "robustness": 85.9, "cost": 49.4 },
+              "all": { "accuracy": 50.3, "robustness": 89.1, "cost": 50.3 }
+            }
+          }
+        }
+      }
+    }
+  },
+  "carrot": {
+    "categories": {
+      "Math": {
+        "metrics": {
+          "easy": { "accuracy": 64.0, "robustness": 95.0, "cost": 35.0 },
+          "medium": { "accuracy": 56.8, "robustness": 92.4, "cost": 34.0 },
+          "hard": { "accuracy": 45.5, "robustness": 89.0, "cost": 33.5 },
+          "all": { "accuracy": 55.4, "robustness": 92.1, "cost": 34.2 }
+        },
+        "subcategories": {
+          "Algebra": {
+            "metrics": {
+              "easy": { "accuracy": 65.2, "robustness": 95.8, "cost": 35.4 },
+              "medium": { "accuracy": 58.3, "robustness": 93.4, "cost": 34.5 },
+              "hard": { "accuracy": 46.9, "robustness": 90.1, "cost": 33.8 },
+              "all": { "accuracy": 56.8, "robustness": 93.1, "cost": 34.6 }
+            }
+          },
+          "Geometry": {
+            "metrics": {
+              "easy": { "accuracy": 62.9, "robustness": 94.3, "cost": 34.6 },
+              "medium": { "accuracy": 55.3, "robustness": 91.5, "cost": 33.6 },
+              "hard": { "accuracy": 44.1, "robustness": 87.9, "cost": 33.1 },
+              "all": { "accuracy": 54.0, "robustness": 91.2, "cost": 33.8 }
+            }
+          },
+          "Statistics": {
+            "metrics": {
+              "easy": { "accuracy": 64.5, "robustness": 95.1, "cost": 34.8 },
+              "medium": { "accuracy": 57.2, "robustness": 92.7, "cost": 33.8 },
+              "hard": { "accuracy": 45.8, "robustness": 88.9, "cost": 33.3 },
+              "all": { "accuracy": 55.8, "robustness": 92.4, "cost": 34.0 }
+            }
+          },
+          "Calculus": {
+            "metrics": {
+              "easy": { "accuracy": 63.1, "robustness": 94.6, "cost": 34.4 },
+              "medium": { "accuracy": 55.7, "robustness": 92.0, "cost": 33.5 },
+              "hard": { "accuracy": 44.5, "robustness": 88.3, "cost": 33.0 },
+              "all": { "accuracy": 54.4, "robustness": 91.8, "cost": 33.6 }
+            }
+          }
+        }
+      },
+      "Coding": {
+        "metrics": {
+          "easy": { "accuracy": 70.2, "robustness": 96.2, "cost": 32.1 },
+          "medium": { "accuracy": 63.0, "robustness": 94.0, "cost": 31.4 },
+          "hard": { "accuracy": 52.4, "robustness": 91.3, "cost": 30.8 },
+          "all": { "accuracy": 61.8, "robustness": 93.8, "cost": 31.4 }
+        },
+        "subcategories": {
+          "APIs": {
+            "metrics": {
+              "easy": { "accuracy": 71.6, "robustness": 96.9, "cost": 32.4 },
+              "medium": { "accuracy": 64.8, "robustness": 94.8, "cost": 31.6 },
+              "hard": { "accuracy": 53.9, "robustness": 92.2, "cost": 31.0 },
+              "all": { "accuracy": 63.4, "robustness": 94.6, "cost": 31.7 }
+            }
+          },
+          "Data Structures": {
+            "metrics": {
+              "easy": { "accuracy": 68.8, "robustness": 95.5, "cost": 31.8 },
+              "medium": { "accuracy": 61.1, "robustness": 93.3, "cost": 31.1 },
+              "hard": { "accuracy": 50.7, "robustness": 90.5, "cost": 30.5 },
+              "all": { "accuracy": 60.2, "robustness": 93.2, "cost": 31.0 }
+            }
+          },
+          "Algorithms": {
+            "metrics": {
+              "easy": { "accuracy": 69.5, "robustness": 95.8, "cost": 32.0 },
+              "medium": { "accuracy": 62.0, "robustness": 93.6, "cost": 31.3 },
+              "hard": { "accuracy": 51.5, "robustness": 90.9, "cost": 30.9 },
+              "all": { "accuracy": 61.0, "robustness": 93.4, "cost": 31.4 }
+            }
+          },
+          "Systems": {
+            "metrics": {
+              "easy": { "accuracy": 70.8, "robustness": 96.4, "cost": 32.3 },
+              "medium": { "accuracy": 63.6, "robustness": 94.4, "cost": 31.5 },
+              "hard": { "accuracy": 52.6, "robustness": 91.7, "cost": 30.9 },
+              "all": { "accuracy": 62.3, "robustness": 94.2, "cost": 31.5 }
+            }
+          }
+        }
+      },
+      "Reasoning": {
+        "metrics": {
+          "easy": { "accuracy": 67.5, "robustness": 95.6, "cost": 33.4 },
+          "medium": { "accuracy": 58.9, "robustness": 93.1, "cost": 32.4 },
+          "hard": { "accuracy": 48.3, "robustness": 90.0, "cost": 31.8 },
+          "all": { "accuracy": 58.2, "robustness": 93.0, "cost": 32.4 }
+        },
+        "subcategories": {
+          "Logic": {
+            "metrics": {
+              "easy": { "accuracy": 69.0, "robustness": 96.1, "cost": 33.8 },
+              "medium": { "accuracy": 60.4, "robustness": 93.9, "cost": 32.8 },
+              "hard": { "accuracy": 50.1, "robustness": 90.8, "cost": 32.0 },
+              "all": { "accuracy": 59.8, "robustness": 93.6, "cost": 32.9 }
+            }
+          },
+          "Planning": {
+            "metrics": {
+              "easy": { "accuracy": 66.0, "robustness": 95.0, "cost": 33.0 },
+              "medium": { "accuracy": 57.5, "robustness": 92.3, "cost": 32.0 },
+              "hard": { "accuracy": 46.3, "robustness": 89.1, "cost": 31.5 },
+              "all": { "accuracy": 56.7, "robustness": 92.1, "cost": 32.1 }
+            }
+          },
+          "Commonsense": {
+            "metrics": {
+              "easy": { "accuracy": 68.2, "robustness": 95.8, "cost": 33.3 },
+              "medium": { "accuracy": 59.0, "robustness": 93.1, "cost": 32.3 },
+              "hard": { "accuracy": 48.1, "robustness": 89.8, "cost": 31.8 },
+              "all": { "accuracy": 58.4, "robustness": 93.0, "cost": 32.3 }
+            }
+          },
+          "Causal Reasoning": {
+            "metrics": {
+              "easy": { "accuracy": 64.7, "robustness": 94.7, "cost": 32.7 },
+              "medium": { "accuracy": 55.9, "robustness": 92.0, "cost": 31.9 },
+              "hard": { "accuracy": 45.0, "robustness": 89.0, "cost": 31.4 },
+              "all": { "accuracy": 55.2, "robustness": 91.8, "cost": 31.9 }
+            }
+          }
+        }
+      },
+      "Language": {
+        "metrics": {
+          "easy": { "accuracy": 72.2, "robustness": 96.8, "cost": 32.0 },
+          "medium": { "accuracy": 63.8, "robustness": 94.6, "cost": 31.4 },
+          "hard": { "accuracy": 53.0, "robustness": 92.0, "cost": 30.7 },
+          "all": { "accuracy": 63.0, "robustness": 94.4, "cost": 31.4 }
+        },
+        "subcategories": {
+          "Grammar": {
+            "metrics": {
+              "easy": { "accuracy": 73.5, "robustness": 97.4, "cost": 32.3 },
+              "medium": { "accuracy": 65.1, "robustness": 95.2, "cost": 31.8 },
+              "hard": { "accuracy": 54.3, "robustness": 92.6, "cost": 30.9 },
+              "all": { "accuracy": 64.7, "robustness": 95.1, "cost": 31.7 }
+            }
+          },
+          "Translation": {
+            "metrics": {
+              "easy": { "accuracy": 70.9, "robustness": 96.1, "cost": 31.8 },
+              "medium": { "accuracy": 62.5, "robustness": 94.0, "cost": 31.1 },
+              "hard": { "accuracy": 51.8, "robustness": 91.4, "cost": 30.5 },
+              "all": { "accuracy": 61.4, "robustness": 93.8, "cost": 31.1 }
+            }
+          },
+          "Reading Comprehension": {
+            "metrics": {
+              "easy": { "accuracy": 69.0, "robustness": 95.5, "cost": 31.6 },
+              "medium": { "accuracy": 61.0, "robustness": 93.4, "cost": 30.9 },
+              "hard": { "accuracy": 50.2, "robustness": 90.7, "cost": 30.3 },
+              "all": { "accuracy": 60.1, "robustness": 93.2, "cost": 30.9 }
+            }
+          },
+          "Conversation": {
+            "metrics": {
+              "easy": { "accuracy": 72.8, "robustness": 96.7, "cost": 32.1 },
+              "medium": { "accuracy": 64.2, "robustness": 94.6, "cost": 31.4 },
+              "hard": { "accuracy": 53.4, "robustness": 91.8, "cost": 30.8 },
+              "all": { "accuracy": 63.4, "robustness": 94.5, "cost": 31.3 }
+            }
+          }
+        }
+      },
+      "Science": {
+        "metrics": {
+          "easy": { "accuracy": 69.1, "robustness": 95.1, "cost": 33.2 },
+          "medium": { "accuracy": 60.4, "robustness": 92.7, "cost": 32.2 },
+          "hard": { "accuracy": 49.9, "robustness": 90.2, "cost": 31.7 },
+          "all": { "accuracy": 59.8, "robustness": 92.7, "cost": 32.3 }
+        },
+        "subcategories": {
+          "Physics": {
+            "metrics": {
+              "easy": { "accuracy": 70.2, "robustness": 95.6, "cost": 33.6 },
+              "medium": { "accuracy": 61.7, "robustness": 93.4, "cost": 32.6 },
+              "hard": { "accuracy": 51.3, "robustness": 91.0, "cost": 32.0 },
+              "all": { "accuracy": 61.0, "robustness": 93.3, "cost": 32.7 }
+            }
+          },
+          "Biology": {
+            "metrics": {
+              "easy": { "accuracy": 68.0, "robustness": 94.6, "cost": 32.8 },
+              "medium": { "accuracy": 59.1, "robustness": 92.0, "cost": 31.9 },
+              "hard": { "accuracy": 48.6, "robustness": 89.4, "cost": 31.4 },
+              "all": { "accuracy": 58.6, "robustness": 91.8, "cost": 31.9 }
+            }
+          },
+          "Chemistry": {
+            "metrics": {
+              "easy": { "accuracy": 67.1, "robustness": 94.0, "cost": 32.4 },
+              "medium": { "accuracy": 58.1, "robustness": 91.2, "cost": 31.6 },
+              "hard": { "accuracy": 47.5, "robustness": 88.6, "cost": 31.1 },
+              "all": { "accuracy": 57.5, "robustness": 91.0, "cost": 31.6 }
+            }
+          },
+          "Earth Science": {
+            "metrics": {
+              "easy": { "accuracy": 65.2, "robustness": 93.2, "cost": 32.0 },
+              "medium": { "accuracy": 56.0, "robustness": 90.6, "cost": 31.2 },
+              "hard": { "accuracy": 45.4, "robustness": 88.0, "cost": 30.8 },
+              "all": { "accuracy": 55.4, "robustness": 90.4, "cost": 31.1 }
+            }
+          }
+        }
       }
     }
   }
