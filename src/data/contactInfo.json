@@ -1,0 +1,16 @@
+{
+  "authors": [
+    { "name": "Yifan Lu", "email": "yifan.lu@rice.edu", "affiliation": "Rice University" },
+    { "name": "Rixin Liu", "email": "rixin.liu@rice.edu", "affiliation": "Rice University" },
+    { "name": "Jiayi Yuan", "email": "jy101@rice.edu", "affiliation": "Rice University" },
+    { "name": "Xingqi Cui", "email": "xc66@rice.edu", "affiliation": "Rice University" },
+    { "name": "Shenrun Zhang", "email": "sz81@rice.edu", "affiliation": "Rice University" },
+    { "name": "Hongyi Liu", "email": "hl87@rice.edu", "affiliation": "Rice University" },
+    { "name": "Jiarong Xing", "email": "jxing@rice.edu", "affiliation": "Rice University" }
+  ],
+  "institution": "Rice University",
+  "email": "yifan.lu@rice.edu",
+  "github": "https://github.com/RouteWorks/RouterArena",
+  "paper": "https://www.arxiv.org/abs/2510.00202",
+  "huggingface": "https://huggingface.co/datasets/RouteWorks/RouterArena"
+}

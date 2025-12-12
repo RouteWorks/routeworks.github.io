@@ -1,0 +1,16 @@
+{
+  "routerdc": {
+    "categories": {
+      "math": {
+        "easy": { "accuracy": 41.2, "robustness": 98.1 },
+        "medium": { "accuracy": 33.5, "robustness": 94.0 },
+        "hard": { "accuracy": 21.0, "robustness": 90.3 }
+      },
+      "coding": {
+        "easy": { "accuracy": 55.0, "robustness": 99.0 },
+        "medium": { "accuracy": 43.3, "robustness": 95.0 },
+        "hard": { "accuracy": 27.1, "robustness": 92.4 }
+      }
+    }
+  }
+}

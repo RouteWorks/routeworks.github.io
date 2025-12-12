@@ -1,0 +1,7 @@
+{
+  "totalQueries": 8400,
+  "domains": 9,
+  "categories": 44,
+  "difficultyLevels": ["Easy", "Medium", "Hard"],
+  "sources": ["23 source datasets"]
+}

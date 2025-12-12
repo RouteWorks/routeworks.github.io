@@ -1,10 +1,12 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Trophy, BarChart3, Users, BookOpen, ArrowRight, Zap, Shield, Github } from 'lucide-react';
-import { contactInfo, datasetInfo, routers } from '../data/mockData';
+import { contactInfo, datasetInfo, routers } from '../data/routerData';
 import Figure from '../components/Figure';
 import DatasetCompositionChart from '../components/DatasetCompositionChart';
 import './HomePage.css';
+import huggingFaceLogo from '../assets/images/hf-logo.svg';
+
 
 const HomePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('dataset');
@@ -333,6 +335,15 @@ const HomePage: React.FC = () => {
             >
               <Github className="btn-icon" />
               View GitHub
+            </a>
+            <a
+              href={contactInfo.huggingface}
+              className="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={huggingFaceLogo} alt="Hugging Face logo" className="hf-logo" />
+              Hugging Face
             </a>
           </div>
 

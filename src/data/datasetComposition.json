@@ -1,0 +1,98 @@
+{
+  "categoryValues": {
+    "Computer Science, information science, and general works": {
+      "Computer science, knowledge, and systems": 1004,
+      "Library and information science": 396
+    },
+    "Philosophy and psychology": {
+      "Philosophy": 122,
+      "Psychology": 187,
+      "Philosophical logic": 108,
+      "Ethics": 283
+    },
+    "Social Science": {
+      "Social sciences, sociology and anthropology": 55,
+      "Economics": 426,
+      "Law": 158,
+      "Social problems": 61
+    },
+    "Language": {
+      "Language": 700
+    },
+    "Science": {
+      "Science": 114,
+      "Mathematics": 601,
+      "Physics": 97,
+      "Chemistry": 90,
+      "Earth sciences and geology": 330,
+      "Biology": 143,
+      "Animals (Zoology)": 25
+    },
+    "Technology": {
+      "Medicine and health": 992,
+      "Engineering": 335,
+      "Management and public relations": 73
+    },
+    "Arts & recreation": {
+      "Arts": 154,
+      "Music": 240,
+      "Sports, games and entertainment": 306
+    },
+    "Literature": {
+      "Literature, rhetoric and criticism": 700
+    },
+    "History": {
+      "History": 498,
+      "Geography": 150,
+      "Biography and genealogy": 52
+    }
+  },
+  "subcategoryDescriptions": {
+    "Computer Science, information science, and general works": {
+      "Computer science, knowledge, and systems": "Core CS concepts & systems",
+      "Library and information science": "Information management & retrieval"
+    },
+    "Philosophy and psychology": {
+      "Philosophy": "Fundamental questions & reasoning",
+      "Psychology": "Human behavior & cognition",
+      "Philosophical logic": "Logical reasoning & argumentation",
+      "Ethics": "Moral principles & values"
+    },
+    "Social Science": {
+      "Social sciences, sociology and anthropology": "Human societies & cultures",
+      "Economics": "Resource allocation & markets",
+      "Law": "Legal systems & regulations",
+      "Social problems": "Contemporary social issues"
+    },
+    "Language": {
+      "Language": "Linguistics & communication"
+    },
+    "Science": {
+      "Science": "General scientific principles",
+      "Mathematics": "Mathematical concepts & proofs",
+      "Physics": "Physical laws & phenomena",
+      "Chemistry": "Chemical reactions & compounds",
+      "Earth sciences and geology": "Earth processes & materials",
+      "Biology": "Living organisms & life processes",
+      "Animals (Zoology)": "Animal behavior & classification"
+    },
+    "Technology": {
+      "Medicine and health": "Medical knowledge & healthcare",
+      "Engineering": "Applied science & design",
+      "Management and public relations": "Business & organizational skills"
+    },
+    "Arts & recreation": {
+      "Arts": "Creative expression & aesthetics",
+      "Music": "Musical theory & performance",
+      "Sports, games and entertainment": "Recreation & leisure activities"
+    },
+    "Literature": {
+      "Literature, rhetoric and criticism": "Written works & analysis"
+    },
+    "History": {
+      "History": "Past events & developments",
+      "Geography": "Earth's features & locations",
+      "Biography and genealogy": "Personal histories & lineages"
+    }
+  }
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Trophy, Home, Send, Users, Github, FileText} from 'lucide-react';
 import './Header.css';
-import { contactInfo } from '../data/mockData';
+import { contactInfo } from '../data/routerData';
 import whiteLogo from '../assets/images/entire_logo_white.png';
 
 const Header: React.FC = () => {

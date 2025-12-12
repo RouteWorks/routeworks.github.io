@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, LabelList } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import datasetComposition from '../data/datasetComposition.json';
 import './DatasetCompositionChart.css';
 
 interface CategoryData {
@@ -23,54 +24,20 @@ interface SubcategoryData {
   parentCategory: string;
 }
 
-const categoryData: CategoryData = {
-  'Computer Science, information science, and general works': {
-    'Computer science, knowledge, and systems': 1004,
-    'Library and information science': 396,
-  },
-  'Philosophy and psychology': {
-    Philosophy: 122,
-    Psychology: 187,
-    'Philosophical logic': 108,
-    Ethics: 283,
-  },
-  'Social Science': {
-    'Social sciences, sociology and anthropology': 55,
-    Economics: 426,
-    Law: 158,
-    'Social problems': 61,
-  },
-  Language: {
-    Language: 700,
-  },
-  Science: {
-    Science: 114,
-    Mathematics: 601,
-    Physics: 97,
-    Chemistry: 90,
-    'Earth sciences and geology': 330,
-    Biology: 143,
-    'Animals (Zoology)': 25,
-  },
-  Technology: {
-    'Medicine and health': 992,
-    Engineering: 335,
-    'Management and public relations': 73,
-  },
-  'Arts & recreation': {
-    Arts: 154,
-    Music: 240,
-    'Sports, games and entertainment': 306,
-  },
-  Literature: {
-    'Literature, rhetoric and criticism': 700,
-  },
-  History: {
-    History: 498,
-    Geography: 150,
-    'Biography and genealogy': 52,
-  },
+interface SubcategoryDescriptions {
+  [category: string]: {
+    [subcategory: string]: string;
+  };
+}
+
+type DatasetCompositionSchema = {
+  categoryValues: CategoryData;
+  subcategoryDescriptions: SubcategoryDescriptions;
 };
+
+const datasetCompositionData = datasetComposition as DatasetCompositionSchema;
+const categoryData: CategoryData = datasetCompositionData.categoryValues;
+const subcategoryDescriptions: SubcategoryDescriptions = datasetCompositionData.subcategoryDescriptions;
 
 // Color palette for categories
 const categoryColors = [
@@ -84,13 +51,6 @@ const categoryColors = [
   '#6B7280', // Gray
   '#FBBF24', // Yellow
 ];
-
-// Difficulty level colors
-const difficultyColors = {
-  Easy: '#22C55E',
-  Medium: '#F59E0B',
-  Hard: '#EF4444',
-};
 
 // Helper function to get a lighter shade of a color
 const getLighterColor = (color: string, opacity: number = 0.7) => {
@@ -203,69 +163,13 @@ const DatasetCompositionChart: React.FC = () => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
 
-      // Get subcategory descriptions
-      const getSubcategoryDescription = (name: string, parent: string) => {
-        const descriptions: {
-          [key: string]: { [key: string]: string };
-        } = {
-          'Computer Science, information science, and general works': {
-            'Computer science, knowledge, and systems': 'Core CS concepts & systems',
-            'Library and information science': 'Information management & retrieval',
-          },
-          'Philosophy and psychology': {
-            Philosophy: 'Fundamental questions & reasoning',
-            Psychology: 'Human behavior & cognition',
-            'Philosophical logic': 'Logical reasoning & argumentation',
-            Ethics: 'Moral principles & values',
-          },
-          'Social Science': {
-            'Social sciences, sociology, and anthropology': 'Human societies & cultures',
-            Economics: 'Resource allocation & markets',
-            Law: 'Legal systems & regulations',
-            'Social problems': 'Contemporary social issues',
-          },
-          Language: {
-            Language: 'Linguistics & communication',
-          },
-          Science: {
-            Science: 'General scientific principles',
-            Mathematics: 'Mathematical concepts & proofs',
-            Physics: 'Physical laws & phenomena',
-            Chemistry: 'Chemical reactions & compounds',
-            'Earth sciences and geology': 'Earth processes & materials',
-            Biology: 'Living organisms & life processes',
-            'Animals (Zoology)': 'Animal behavior & classification',
-          },
-          Technology: {
-            'Medicine and health': 'Medical knowledge & healthcare',
-            Engineering: 'Applied science & design',
-            'Management and public relations': 'Business & organizational skills',
-          },
-          'Arts & recreation': {
-            Arts: 'Creative expression & aesthetics',
-            Music: 'Musical theory & performance',
-            'Sports, games and entertainment': 'Recreation & leisure activities',
-          },
-          Literature: {
-            'Literature, rhetoric and criticism': 'Written works & analysis',
-          },
-          History: {
-            History: 'Past events & developments',
-            Geography: "Earth's features & locations",
-            'Biography and genealogy': 'Personal histories & lineages',
-          },
-        };
-
-        return descriptions[parent]?.[name] || name;
-      };
-
       return (
         <div className="chart-tooltip">
           <p className="tooltip-title">{data.name}</p>
           <p className="tooltip-value">{data.value.toLocaleString()} queries</p>
           {data.parentCategory && (
             <p className="tooltip-category">
-              {getSubcategoryDescription(data.name, data.parentCategory)}
+              {subcategoryDescriptions[data.parentCategory]?.[data.name] || data.name}
             </p>
           )}
         </div>
