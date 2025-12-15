@@ -354,7 +354,7 @@ const LeaderboardPage: React.FC = () => {
                 // Clamp first
                 value = Math.min(0.95, Math.max(0.05, value));
 
-                // 🔥 Snap to default if close enough
+                // Snap to default if close enough
                 if (Math.abs(value - SNAP_TARGET) < SNAP_THRESHOLD) {
                   value = SNAP_TARGET;
                 }
