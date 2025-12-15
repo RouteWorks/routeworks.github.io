@@ -7,6 +7,7 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  LabelList,
 } from 'recharts';
 import { CompareMetric } from '../data/routerData';
 
@@ -15,6 +16,7 @@ interface CompareDeferralChartProps {
   backgroundPoints: ScatterPoint[];
   metric: CompareMetric;
   contextLabel?: string;
+  height?: number;
 }
 
 type ScatterPoint = {
@@ -53,6 +55,7 @@ const CompareDeferralChart: React.FC<CompareDeferralChartProps> = ({
   backgroundPoints,
   metric,
   contextLabel,
+  height = 320,
 }) => {
   const combinedPoints = useMemo(
     () => [...backgroundPoints, ...selectedPoints],
@@ -124,7 +127,7 @@ const CompareDeferralChart: React.FC<CompareDeferralChartProps> = ({
         </div>
       </div>
 
-      <ResponsiveContainer width="100%" height={320}>
+      <ResponsiveContainer width="100%" height={height}>
         <ScatterChart margin={{ top: 10, right: 20, bottom: 40, left: 60 }}>
           <CartesianGrid stroke="#e2e8f0" strokeDasharray="3 3" />
           <XAxis
@@ -178,7 +181,37 @@ const CompareDeferralChart: React.FC<CompareDeferralChartProps> = ({
               fill={point.color}
               shape="circle"
               legendType="circle"
-            />
+              isAnimationActive={false}
+            >
+              <LabelList
+                dataKey="metricValue"
+                content={props => {
+                  const rawX = props.x;
+                  const rawY = props.y;
+                  const x =
+                    typeof rawX === 'number' ? rawX : typeof rawX === 'string' ? Number(rawX) : NaN;
+                  const y =
+                    typeof rawY === 'number' ? rawY : typeof rawY === 'string' ? Number(rawY) : NaN;
+                  if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+                  return (
+                    <text
+                      x={x + 8}
+                      y={y - 10}
+                      fill="#0f172a"
+                      fontSize={12}
+                      fontWeight={600}
+                      paintOrder="stroke"
+                      stroke="#ffffff"
+                      strokeWidth={3}
+                      strokeLinejoin="round"
+                      strokeLinecap="round"
+                    >
+                      {point.routerName}
+                    </text>
+                  );
+                }}
+              />
+            </Scatter>
           ))}
         </ScatterChart>
       </ResponsiveContainer>

@@ -1,10 +1,8 @@
-import YAML from 'yaml';
-import raw from 'raw.macro';
-
 import leaderboardMetrics from './routerMetrics/leaderboard.json';
 import categoryScores from './routerMetrics/category_scores.json';
 import contactInfoData from './contactInfo.json';
 import datasetInfoData from './datasetInfo.json';
+import routersMetadataJson from './routers.json';
 import { Router, DatasetInfo, ContactInfo } from '../types';
 
 const toRouterId = (value: string): string => value.toLowerCase().replace(/[_\s]/g, '-');
@@ -72,13 +70,23 @@ type CompareCategory = {
 };
 
 export type RouterCompareEntry = {
+  metrics: DifficultyMetricMap;
   categories: Record<string, CompareCategory>;
 };
 
-const routersYaml = raw('./routers.yaml');
-const routerMetadata: Record<string, RouterMetadataEntry> = YAML.parse(routersYaml);
+const routerMetadata: Record<string, RouterMetadataEntry> = routersMetadataJson as Record<
+  string,
+  RouterMetadataEntry
+>;
 const rawRouterData: LeaderboardMetricRecord[] = leaderboardMetrics;
 const rawCategoryScores = categoryScores as Record<string, RouterCompareEntry>;
+const normalizedCategoryScores = Object.entries(rawCategoryScores).reduce<Record<string, RouterCompareEntry>>(
+  (acc, [key, value]) => {
+    acc[toRouterId(key)] = value;
+    return acc;
+  },
+  {}
+);
 
 const templateEntry = rawCategoryScores[Object.keys(rawCategoryScores)[0]];
 const categoryBlueprints = Object.entries(templateEntry.categories).map(([categoryName, category]) => ({
@@ -124,7 +132,10 @@ const createDifficultyMetrics = (
 const buildCompareEntry = (router: Router): RouterCompareEntry => {
   const accuracy = router.metrics.accuracy;
   const costScore = computeCostScore(router.metrics.costPer1k);
-  const entry: RouterCompareEntry = { categories: {} };
+  const entry: RouterCompareEntry = {
+    metrics: createDifficultyMetrics(accuracy, costScore, 0),
+    categories: {},
+  };
 
   categoryBlueprints.forEach((blueprint, idx) => {
     entry.categories[blueprint.name] = {
@@ -144,7 +155,7 @@ const buildCompareEntry = (router: Router): RouterCompareEntry => {
   return entry;
 };
 
-const routerCategoryScores: Record<string, RouterCompareEntry> = { ...rawCategoryScores };
+const routerCategoryScores: Record<string, RouterCompareEntry> = { ...normalizedCategoryScores };
 export const compareMetrics: CompareMetric[] = ['accuracy', 'robustness', 'cost'];
 export const compareDifficulties: DifficultyLevel[] = ['easy', 'medium', 'hard', 'all'];
 

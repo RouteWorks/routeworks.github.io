@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import {
   Radar,
   RadarChart,
@@ -6,6 +7,14 @@ import {
   PolarAngleAxis,
   PolarRadiusAxis,
   ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  LabelList,
 } from 'recharts';
 import {
   routerCategoryScores,
@@ -43,6 +52,7 @@ const BACKGROUND_POINT_COLOR = '#c7cdd8';
 const OVERALL_SCOPE_VALUE = 'overall';
 
 const buildCategoryScopeValue = (category: string) => `category|${encodeURIComponent(category)}`;
+const PRIORITY_AXIS_LABEL = 'Computer science, information, and general works';
 
 const parseScopeSelectValue = (value: string): ScopeSelectValue => {
   if (value === OVERALL_SCOPE_VALUE) {
@@ -81,6 +91,9 @@ const CompareModal: React.FC<CompareModalProps> = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [activeBarAxis, setActiveBarAxis] = useState<string>('');
   const [activeChartView, setActiveChartView] = useState<'spider' | 'bars' | 'deferral'>('spider');
+  const [isScopeDropdownOpen, setIsScopeDropdownOpen] = useState(false);
+  const [isCompactLayout, setIsCompactLayout] = useState(false);
+  const scopeDropdownRef = useRef<HTMLDivElement | null>(null);
 
   const filteredRouterOptions = useMemo(() => {
     const lowerTerm = searchTerm.toLowerCase();
@@ -90,7 +103,33 @@ const CompareModal: React.FC<CompareModalProps> = ({
       .slice(0, 6);
   }, [searchTerm, routerIds]);
 
+  const spiderChartHeight = isCompactLayout ? 420 : 520;
+  const spiderOuterRadius = isCompactLayout ? '65%' : '80%';
+  const spiderChartMargin = isCompactLayout
+    ? { top: 32, right: 32, bottom: 32, left: 32 }
+    : { top: 16, right: 48, bottom: 16, left: 48 };
+  const secondaryChartHeight = isCompactLayout ? 260 : 320;
+  const deferralChartHeight = isCompactLayout ? 280 : 320;
+  const isDeferralDisabled = activeMetric === 'cost';
+
   const canSelectMore = routerIds.length < maxSelected;
+
+  useEffect(() => {
+    const updateLayout = () => {
+      if (typeof window === 'undefined') return;
+      setIsCompactLayout(window.innerWidth <= 768);
+    };
+
+    updateLayout();
+    window.addEventListener('resize', updateLayout);
+    return () => window.removeEventListener('resize', updateLayout);
+  }, []);
+
+useEffect(() => {
+  if (isDeferralDisabled && activeChartView === 'deferral') {
+    setActiveChartView('spider');
+  }
+}, [isDeferralDisabled, activeChartView]);
 
   const scopeOptions = useMemo(() => {
     const categoriesMap = new Map<string, Set<string>>();
@@ -131,8 +170,19 @@ const CompareModal: React.FC<CompareModalProps> = ({
         Object.keys(data.categories).forEach(label => axes.add(label));
       }
     });
-    return Array.from(axes);
+    const axisList = Array.from(axes);
+    axisList.sort((a, b) => {
+      const aIsPriority = a === PRIORITY_AXIS_LABEL;
+      const bIsPriority = b === PRIORITY_AXIS_LABEL;
+      if (aIsPriority && bIsPriority) return 0;
+      if (aIsPriority) return -1;
+      if (bIsPriority) return 1;
+      return a.localeCompare(b);
+    });
+    return axisList;
   }, [routerIds, activeCategory]);
+
+  const canShowSpider = currentAxes.length >= 3;
 
   const getMetricValue = useCallback(
     (routerId: string, axisLabel: string): number => {
@@ -163,6 +213,53 @@ const CompareModal: React.FC<CompareModalProps> = ({
     });
   }, [currentAxes, routerIds, getMetricValue]);
 
+  const routerAxisAverages = useMemo(() => {
+    const axisAverages: Record<string, number> = {};
+    chartData.forEach(row => {
+      const axis = row.axis as string;
+      const values = routerIds
+        .map(id => Number(row[id]))
+        .filter(value => Number.isFinite(value)) as number[];
+      if (values.length) {
+        axisAverages[axis] = values.reduce((sum, value) => sum + value, 0) / values.length;
+      }
+    });
+    return axisAverages;
+  }, [chartData, routerIds]);
+
+  const spiderValueDomain = useMemo<[number, number]>(() => {
+    if (activeMetric !== 'cost') return [0, 100];
+    if (!Object.keys(routerAxisAverages).length) return [0, 100];
+
+    let min = Infinity;
+    let max = -Infinity;
+
+    Object.values(routerAxisAverages).forEach(value => {
+      min = Math.min(min, value);
+      max = Math.max(max, value);
+    });
+
+    if (!Number.isFinite(min) || !Number.isFinite(max)) {
+      return [0, 100];
+    }
+
+    if (min === max) {
+      const padding = Math.max(Math.abs(min) * 0.3, 0.00005);
+      const domainMin = Math.max(0, min - padding);
+      const domainMax = min + padding;
+      return [domainMin, Math.max(domainMin + padding * 0.5, domainMax)];
+    }
+
+    const range = max - min;
+    const padding = Math.max(range * 0.2, max * 0.1, 0.00005);
+    const domainMin = Math.max(0, min - padding);
+    const domainMax = max + padding;
+    return [domainMin, Math.max(domainMin + padding * 0.5, domainMax)];
+  }, [activeMetric, routerAxisAverages]);
+
+  const spiderChartDomain: [number, number] =
+    activeMetric === 'cost' ? spiderValueDomain : [0, 100];
+
   useEffect(() => {
     if (activeBarAxis && !currentAxes.includes(activeBarAxis)) {
       setActiveBarAxis('');
@@ -192,8 +289,10 @@ const CompareModal: React.FC<CompareModalProps> = ({
     return buildCategoryScopeValue(activeCategory);
   }, [activeCategory]);
 
-  const handleScopeSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const nextScope = parseScopeSelectValue(event.target.value);
+  const scopeDisplayLabel = useMemo(() => (activeCategory ? activeCategory : 'All categories'), [activeCategory]);
+
+  const applyScopeValue = useCallback((value: string) => {
+    const nextScope = parseScopeSelectValue(value);
 
     if (nextScope.type === 'overall') {
       setActiveCategory(null);
@@ -203,7 +302,15 @@ const CompareModal: React.FC<CompareModalProps> = ({
 
     setActiveCategory(nextScope.category);
     setActiveBarAxis('');
-  };
+  }, []);
+
+  const handleScopeOptionClick = useCallback(
+    (value: string) => {
+      applyScopeValue(value);
+      setIsScopeDropdownOpen(false);
+    },
+    [applyScopeValue]
+  );
 
   const difficultyBarData = useMemo(() => {
     if (!routerIds.length) return [];
@@ -225,29 +332,16 @@ const CompareModal: React.FC<CompareModalProps> = ({
         }
 
         if (!activeBarAxis) {
-          // 🔥 NEW: if we're inside a category, average its subcategories
           if (activeCategory) {
-            const subcategories =
-              routerData.categories[activeCategory]?.subcategories;
+            const categoryMetric =
+              routerData.categories[activeCategory]?.metrics?.[difficulty]?.[activeMetric];
+            entry[id] = typeof categoryMetric === 'number' ? categoryMetric : 0;
+            return;
+          }
 
-            if (!subcategories) {
-              entry[id] = 0;
-              return;
-            }
-
-            const subs = Object.values(subcategories);
-            if (!subs.length) {
-              entry[id] = 0;
-              return;
-            }
-
-            const average =
-              subs.reduce((sum, sub) => {
-                const metricValue = sub.metrics?.[difficulty]?.[activeMetric] ?? 0;
-                return sum + metricValue;
-              }, 0) / subs.length;
-
-            entry[id] = average;
+          const routerLevelMetric = routerData.metrics?.[difficulty]?.[activeMetric];
+          if (typeof routerLevelMetric === 'number') {
+            entry[id] = routerLevelMetric;
             return;
           }
 
@@ -278,7 +372,7 @@ const CompareModal: React.FC<CompareModalProps> = ({
 
       return entry;
     });
-  }, [routerIds, activeBarAxis, activeMetric, activeCategory]);
+  }, [routerIds, activeBarAxis, activeMetric, activeCategory, activeDifficulty]);
 
   const barContextLabel = useMemo(() => {
     const metricLabel = METRIC_LABELS[activeMetric];
@@ -302,16 +396,43 @@ const CompareModal: React.FC<CompareModalProps> = ({
     }, {});
   }, [routerIds]);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (scopeDropdownRef.current && !scopeDropdownRef.current.contains(event.target as Node)) {
+        setIsScopeDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsScopeDropdownOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const getDeferralMetricValue = useCallback(
     (routerId: string): number | null => {
+      const routerData = routerCategoryScores[routerId];
+      if (!routerData) return null;
+
       if (activeCategory) {
-        const category = routerCategoryScores[routerId]?.categories[activeCategory];
+        const category = routerData.categories[activeCategory];
         const metrics = category?.metrics?.[activeDifficulty];
         return metrics?.[activeMetric] ?? null;
       }
 
-      const routerData = routerCategoryScores[routerId];
-      if (!routerData) return null;
+      if (activeMetric !== 'cost') {
+        const routerLevelMetric = routerData.metrics?.[activeDifficulty]?.[activeMetric];
+        if (typeof routerLevelMetric === 'number') {
+          return routerLevelMetric;
+        }
+      }
 
       const categories = Object.values(routerData.categories);
       if (!categories.length) return null;
@@ -438,8 +559,21 @@ const CompareModal: React.FC<CompareModalProps> = ({
             <div className="control-section">
               <label>Selected routers</label>
               <div className="selected-router-chips">
-                {routerIds.map(id => (
-                  <button key={id} className="router-chip" onClick={() => onRemove(id)}>
+                {routerIds.map((id, index) => (
+                  <button
+                    key={id}
+                    className="router-chip"
+                    onClick={() => onRemove(id)}
+                    style={{
+                      background: `${ROUTER_COLORS[index % ROUTER_COLORS.length]}20`,
+                      borderColor: ROUTER_COLORS[index % ROUTER_COLORS.length],
+                      color: '#0f172a',
+                    }}
+                  >
+                    <span
+                      className="router-chip-dot"
+                      style={{ backgroundColor: ROUTER_COLORS[index % ROUTER_COLORS.length] }}
+                    />
                     {routerIdToName[id] ?? id}
                   </button>
                 ))}
@@ -484,20 +618,31 @@ const CompareModal: React.FC<CompareModalProps> = ({
           <div className="compare-toolbar">
               <div className="compare-toolbar-left">
                 <div className="view-toggle">
-                  {(['spider', 'bars', 'deferral'] as const).map(view => (
-                    <button
-                      key={view}
-                      type="button"
-                      className={`pill-button ${activeChartView === view ? 'active' : ''}`}
-                      onClick={() => setActiveChartView(view)}
-                    >
-                      {view === 'spider'
-                        ? 'Spider Graph'
-                        : view === 'bars'
-                          ? 'Difficulty Bars'
-                          : 'Deferral Curve'}
-                    </button>
-                  ))}
+                  {(['spider', 'bars', 'deferral'] as const).map(view => {
+                    const isDeferralView = view === 'deferral';
+                    const disabled = isDeferralView && activeMetric === 'cost';
+                    const title = disabled ? 'Deferral curve is unavailable for cost metric' : undefined;
+
+                    return (
+                      <button
+                        key={view}
+                        type="button"
+                        className={`pill-button ${activeChartView === view ? 'active' : ''}`}
+                        disabled={disabled}
+                        title={title}
+                        onClick={() => {
+                          if (disabled) return;
+                          setActiveChartView(view);
+                        }}
+                      >
+                        {view === 'spider'
+                          ? 'Spider Graph'
+                          : view === 'bars'
+                            ? 'Difficulty Bars'
+                            : 'Deferral Curve'}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -515,24 +660,41 @@ const CompareModal: React.FC<CompareModalProps> = ({
                   </button>
                 )}
 
-                <div className="control-section control-section--condensed">
-                  <div className="select-control">
-                    <select
-                      id="view-scope"
-                      value={scopeSelectValue}
-                      onChange={handleScopeSelectChange}
-                    >
-                      <option value={OVERALL_SCOPE_VALUE}>All categories</option>
-                      {scopeOptions.map(option => (
-                        <option
-                          key={option.category}
-                          value={buildCategoryScopeValue(option.category)}
-                        >
-                          {option.category}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                <div className="scope-dropdown" ref={scopeDropdownRef}>
+                  <button
+                    type="button"
+                    className={`scope-dropdown-toggle ${isScopeDropdownOpen ? 'open' : ''}`}
+                    onClick={() => setIsScopeDropdownOpen(prev => !prev)}
+                    aria-haspopup="listbox"
+                    aria-expanded={isScopeDropdownOpen}
+                  >
+                    <span className="scope-dropdown-label">{scopeDisplayLabel}</span>
+                    <ChevronDown size={16} aria-hidden="true" />
+                  </button>
+                  {isScopeDropdownOpen && (
+                    <div className="scope-dropdown-menu" role="listbox">
+                      <button
+                        type="button"
+                        className={`scope-dropdown-option ${scopeSelectValue === OVERALL_SCOPE_VALUE ? 'selected' : ''}`}
+                        onClick={() => handleScopeOptionClick(OVERALL_SCOPE_VALUE)}
+                      >
+                        All categories
+                      </button>
+                      {scopeOptions.map(option => {
+                        const value = buildCategoryScopeValue(option.category);
+                        return (
+                          <button
+                            type="button"
+                            key={option.category}
+                            className={`scope-dropdown-option ${scopeSelectValue === value ? 'selected' : ''}`}
+                            onClick={() => handleScopeOptionClick(value)}
+                          >
+                            {option.category}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
             </div>
 
@@ -544,38 +706,66 @@ const CompareModal: React.FC<CompareModalProps> = ({
             {activeChartView === 'spider' && (
               <div className="compare-modal-chart primary">
                 {routerIds.length && chartData.length ? (
-                  <ResponsiveContainer width="100%" height={480}>
-                    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartData}>
-                      <PolarGrid stroke="#e5e7eb" />
-                      <PolarAngleAxis
-                        dataKey="axis"
-                        tick={({ payload, x, y, textAnchor }) => (
-                          <text
-                            x={x}
-                            y={y}
-                            textAnchor={textAnchor}
-                            className={`axis-label ${!activeCategory ? 'axis-label--clickable' : ''}`}
-                            onClick={() => handleAxisClick(payload.value)}
-                          >
-                            {payload.value}
-                          </text>
-                        )}
-                      />
-                      <PolarRadiusAxis domain={[0, 100]} tickCount={5} />
-                      {routerIds.map((id, index) => (
-                        <Radar
-                          key={id}
-                          name={routerIdToName[id] ?? id}
-                          dataKey={id}
-                          stroke={ROUTER_COLORS[index % ROUTER_COLORS.length]}
-                          fill={ROUTER_COLORS[index % ROUTER_COLORS.length]}
-                          fillOpacity={0.18}
-                          strokeWidth={2.5}
-                          animationDuration={400}
+                  canShowSpider ? (
+                    <ResponsiveContainer width="100%" height={spiderChartHeight}>
+                      <RadarChart
+                        cx="50%"
+                        cy="50%"
+                        outerRadius={spiderOuterRadius}
+                        data={chartData}
+                        margin={spiderChartMargin}
+                      >
+                        <PolarGrid stroke="#e5e7eb" />
+                        <PolarAngleAxis
+                          dataKey="axis"
+                          tick={({ payload, x, y, textAnchor }) => (
+                            <text
+                              x={x}
+                              y={y}
+                              textAnchor={textAnchor ?? 'middle'}
+                              className={`axis-label ${!activeCategory ? 'axis-label--clickable' : ''}`}
+                              onClick={() => handleAxisClick(payload.value)}
+                            >
+                              <tspan>{payload.value}</tspan>
+                            </text>
+                          )}
                         />
-                      ))}
-                    </RadarChart>
-                  </ResponsiveContainer>
+                        <PolarRadiusAxis domain={spiderValueDomain} tickCount={5} />
+                        {routerIds.map((id, index) => (
+                          <Radar
+                            key={id}
+                            name={routerIdToName[id] ?? id}
+                            dataKey={id}
+                            stroke={ROUTER_COLORS[index % ROUTER_COLORS.length]}
+                            fill={ROUTER_COLORS[index % ROUTER_COLORS.length]}
+                            fillOpacity={0.18}
+                            strokeWidth={2.5}
+                            animationDuration={400}
+                          />
+                        ))}
+                      </RadarChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <DifficultyBarPanel
+                      data={chartData.map(row => {
+                        const transformed: Record<string, number | string> = {
+                          difficulty: row.axis as string,
+                        };
+                        routerIds.forEach(id => {
+                          const value = Number(row[id]);
+                          transformed[id] = Number.isFinite(value) ? value : 0;
+                        });
+                        return transformed;
+                      })}
+                      routerIds={routerIds}
+                      routerNames={selectedRouterNames}
+                      colors={ROUTER_COLORS}
+                      contextLabel={`Grouped view · ${activeCategory ?? 'All categories'} · ${METRIC_LABELS[activeMetric]}`}
+                      titleText="Grouped bar comparison"
+                      height={320}
+                      metricKey={activeMetric}
+                    />
+                  )
                 ) : (
                   <div className="empty-state">
                     <p>Select routers to compare</p>
@@ -591,15 +781,18 @@ const CompareModal: React.FC<CompareModalProps> = ({
                 routerNames={selectedRouterNames}
                 colors={ROUTER_COLORS}
                 contextLabel={barContextLabel}
+                height={secondaryChartHeight}
+                metricKey={activeMetric}
               />
             )}
 
-            {activeChartView === 'deferral' && (
+            {activeChartView === 'deferral' && activeMetric !== 'cost' && (
               <CompareDeferralChart
                 selectedPoints={deferralPoints}
                 backgroundPoints={backgroundDeferralPoints}
                 metric={activeMetric}
                 contextLabel={deferralPoints.length ? deferralContextLabel : undefined}
+                height={deferralChartHeight}
               />
             )}
           </div>

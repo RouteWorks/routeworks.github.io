@@ -16,6 +16,14 @@ type RouterWithDynamicArena = Router & { dynamicArena: number };
 const COST_MIN = 0.0044;
 const COST_MAX = 200;
 
+const DEFAULT_BETA = 0.1;
+const defaultCostWeight = DEFAULT_BETA / (1 + DEFAULT_BETA);
+
+// 👇 snapping behavior
+const SNAP_TARGET = defaultCostWeight; // ~0.0909
+const SNAP_THRESHOLD = 0.015;          // how close before snapping
+
+
 const computeNormalizedCost = (costPer1k: number): number => {
   // const safeCost = Math.max(costPer1k, COST_MIN);
   const numerator = Math.log2(COST_MAX) - Math.log2(costPer1k);
@@ -32,9 +40,6 @@ const computeArenaScore = (router: Router, beta: number): number => {
   if (denominator === 0) return 0;
   return (((1 + beta) * accuracy * normalizedCost) / denominator) * 100;
 };
-
-const DEFAULT_BETA = 0.1;
-const defaultCostWeight = DEFAULT_BETA / (1 + DEFAULT_BETA);
 
 const LeaderboardPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -114,6 +119,64 @@ const LeaderboardPage: React.FC = () => {
     });
   }, [searchTerm, filterType, activeMetric, beta]);
 
+  type MetricBestMap = {
+    dynamicArena: number | null;
+    accuracy: number | null;
+    costPer1k: number | null;
+    optimalSelectionScore: number | null;
+    optimalCostScore: number | null;
+    optimalAccScore: number | null;
+    latencyScore: number | null;
+    robustnessScore: number | null;
+  };
+
+  const bestMetricValues = useMemo<MetricBestMap>(() => {
+    const best: MetricBestMap = {
+      dynamicArena: null,
+      accuracy: null,
+      costPer1k: null,
+      optimalSelectionScore: null,
+      optimalCostScore: null,
+      optimalAccScore: null,
+      latencyScore: null,
+      robustnessScore: null,
+    };
+
+    const updateBest = (
+      key: keyof MetricBestMap,
+      value: number | null | undefined,
+      favorLower = false
+    ) => {
+      if (value === null || value === undefined) return;
+      const current = best[key];
+      if (current === null) {
+        best[key] = value;
+        return;
+      }
+      if ((!favorLower && value > current) || (favorLower && value < current)) {
+        best[key] = value;
+      }
+    };
+
+    filteredAndSortedRouters.forEach(router => {
+      updateBest('dynamicArena', router.dynamicArena);
+      updateBest('accuracy', router.metrics.accuracy);
+      updateBest('costPer1k', router.metrics.costPer1k, true);
+      updateBest('optimalSelectionScore', router.metrics.optimalSelectionScore);
+      updateBest('optimalCostScore', router.metrics.optimalCostScore);
+      updateBest('optimalAccScore', router.metrics.optimalAccScore);
+      updateBest('latencyScore', router.metrics.latencyScore);
+      updateBest('robustnessScore', router.metrics.robustnessScore);
+    });
+
+    return best;
+  }, [filteredAndSortedRouters]);
+
+  const isBestValue = (value: number | null | undefined, best: number | null) => {
+    if (value === null || value === undefined || best === null) return false;
+    return Math.abs(value - best) < 0.0001;
+  };
+
   // const getRankBadge = (rank: number) => {
   //   if (rank === 1) return 'rank-1';
   //   if (rank === 2) return 'rank-2';
@@ -157,6 +220,12 @@ const LeaderboardPage: React.FC = () => {
       }
       return [...prev, routerId];
     });
+  };
+
+  const handleSoloCompare = (routerId: string) => {
+    setSelectedCompareIds([routerId]);
+    setIsCompareModalOpen(true);
+    setModelCardRouter(null);
   };
 
   const handleRemoveFromCompare = (routerId: string) => {
@@ -280,10 +349,19 @@ const LeaderboardPage: React.FC = () => {
               step={0.01}
               value={costWeight}
               onChange={event => {
-                const value = parseFloat(event.target.value);
-                const clamped = Math.min(0.95, Math.max(0.05, value));
-                setCostWeight(clamped);
+                let value = parseFloat(event.target.value);
+
+                // Clamp first
+                value = Math.min(0.95, Math.max(0.05, value));
+
+                // 🔥 Snap to default if close enough
+                if (Math.abs(value - SNAP_TARGET) < SNAP_THRESHOLD) {
+                  value = SNAP_TARGET;
+                }
+
+                setCostWeight(value);
               }}
+
               className="beta-slider"
             />
             <div className="beta-hints">
@@ -409,69 +487,127 @@ const LeaderboardPage: React.FC = () => {
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">{router.dynamicArena.toFixed(1)}</span>
-                  </div>
-                </div>
-
-                <div className="metrics-col">
-                  <div className="metric-value">
-                    <span className="score">{router.metrics.accuracy.toFixed(1)}</span>
-                  </div>
-                </div>
-
-                <div className="metrics-col">
-                  <div className="metric-value">
-                    <span className="score">${router.metrics.costPer1k.toFixed(2)}</span>
-                  </div>
-                </div>
-
-                <div className="metrics-col">
-                  <div className="metric-value">
-                    <span className="score">
-                      {router.metrics.optimalSelectionScore !== null
-                        ? router.metrics.optimalSelectionScore.toFixed(1)
-                        : '—'}
+                    <span
+                      className={`score ${
+                        isBestValue(router.dynamicArena, bestMetricValues.dynamicArena) ? 'score--best' : ''
+                      }`}
+                    >
+                      {router.dynamicArena.toFixed(1)}
                     </span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">
-                      {router.metrics.optimalCostScore !== null
-                        ? router.metrics.optimalCostScore.toFixed(1)
-                        : '—'}
+                    <span
+                      className={`score ${
+                        isBestValue(router.metrics.accuracy, bestMetricValues.accuracy) ? 'score--best' : ''
+                      }`}
+                    >
+                      {router.metrics.accuracy.toFixed(1)}
                     </span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">
-                      {router.metrics.optimalAccScore !== null
-                        ? router.metrics.optimalAccScore.toFixed(1)
-                        : '—'}
+                    <span
+                      className={`score ${
+                        isBestValue(router.metrics.costPer1k, bestMetricValues.costPer1k)
+                          ? 'score--best score--best--invert'
+                          : ''
+                      }`}
+                    >
+                      ${router.metrics.costPer1k.toFixed(2)}
                     </span>
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">
-                      {router.metrics.latencyScore !== null
-                        ? router.metrics.latencyScore.toFixed(1)
-                        : '—'}
-                    </span>
+                    {router.metrics.optimalSelectionScore !== null ? (
+                      <span
+                        className={`score ${
+                          isBestValue(router.metrics.optimalSelectionScore, bestMetricValues.optimalSelectionScore)
+                            ? 'score--best'
+                            : ''
+                        }`}
+                      >
+                        {router.metrics.optimalSelectionScore.toFixed(1)}
+                      </span>
+                    ) : (
+                      <span className="score">—</span>
+                    )}
                   </div>
                 </div>
 
                 <div className="metrics-col">
                   <div className="metric-value">
-                    <span className="score">
-                      {router.metrics.robustnessScore !== null
-                        ? router.metrics.robustnessScore.toFixed(1)
-                        : '—'}
-                    </span>
+                    {router.metrics.optimalCostScore !== null ? (
+                      <span
+                        className={`score ${
+                          isBestValue(router.metrics.optimalCostScore, bestMetricValues.optimalCostScore)
+                            ? 'score--best'
+                            : ''
+                        }`}
+                      >
+                        {router.metrics.optimalCostScore.toFixed(1)}
+                      </span>
+                    ) : (
+                      <span className="score">—</span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="metrics-col">
+                  <div className="metric-value">
+                    {router.metrics.optimalAccScore !== null ? (
+                      <span
+                        className={`score ${
+                          isBestValue(router.metrics.optimalAccScore, bestMetricValues.optimalAccScore)
+                            ? 'score--best'
+                            : ''
+                        }`}
+                      >
+                        {router.metrics.optimalAccScore.toFixed(1)}
+                      </span>
+                    ) : (
+                      <span className="score">—</span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="metrics-col">
+                  <div className="metric-value">
+                    {router.metrics.latencyScore !== null ? (
+                      <span
+                        className={`score ${
+                          isBestValue(router.metrics.latencyScore, bestMetricValues.latencyScore) ? 'score--best' : ''
+                        }`}
+                      >
+                        {router.metrics.latencyScore.toFixed(1)}
+                      </span>
+                    ) : (
+                      <span className="score">—</span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="metrics-col">
+                  <div className="metric-value">
+                    {router.metrics.robustnessScore !== null ? (
+                      <span
+                        className={`score ${
+                          isBestValue(router.metrics.robustnessScore, bestMetricValues.robustnessScore)
+                            ? 'score--best'
+                            : ''
+                        }`}
+                      >
+                        {router.metrics.robustnessScore.toFixed(1)}
+                      </span>
+                    ) : (
+                      <span className="score">—</span>
+                    )}
                   </div>
                 </div>
 
@@ -496,6 +632,7 @@ const LeaderboardPage: React.FC = () => {
               isSelected={selectedCompareIds.includes(modelCardRouter.id)}
               maxSelectedReached={maxCompareReached}
               onToggleCompare={toggleCompareSelection}
+              onSoloCompare={handleSoloCompare}
             />
           </div>
         </div>
