@@ -106,7 +106,7 @@
   border: none;
   color: white;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.1rem;
   border-radius: 4px;
   transition: background 0.2s ease;
 }

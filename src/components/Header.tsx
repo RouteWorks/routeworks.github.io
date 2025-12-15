@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Trophy, Home, Users, Github, FileText } from 'lucide-react';
+import { Menu, X, Trophy, Home, Users, Github, Smile, FileText } from 'lucide-react';
 import './Header.css';
 import { contactInfo } from '../data/routerData';
 import whiteLogo from '../assets/images/entire_logo_white.png';
@@ -16,6 +16,12 @@ const Header: React.FC = () => {
       name: 'GitHub',
       href: contactInfo.github,
       icon: Github,
+      isExternal: true,
+    },
+    {
+      name: 'Hugging Face',
+      href: contactInfo.huggingface,
+      icon: Smile,
       isExternal: true,
     },
     // add a paper link
