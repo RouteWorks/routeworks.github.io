@@ -103,7 +103,7 @@ const CompareModal: React.FC<CompareModalProps> = ({
       .slice(0, 6);
   }, [searchTerm, routerIds]);
 
-  const spiderChartHeight = isCompactLayout ? 420 : 520;
+  const spiderChartHeight = isCompactLayout ? 360 : 460;
   const spiderOuterRadius = isCompactLayout ? '65%' : '80%';
   const spiderChartMargin = isCompactLayout
     ? { top: 32, right: 32, bottom: 32, left: 32 }
