@@ -103,7 +103,7 @@ const CompareModal: React.FC<CompareModalProps> = ({
       .slice(0, 6);
   }, [searchTerm, routerIds]);
 
-  const spiderChartHeight = isCompactLayout ? 420 : 520;
+  const spiderChartHeight = isCompactLayout ? 360 : 460;
   const spiderOuterRadius = isCompactLayout ? '65%' : '80%';
   const spiderChartMargin = isCompactLayout
     ? { top: 32, right: 32, bottom: 32, left: 32 }
@@ -259,6 +259,18 @@ useEffect(() => {
 
   const spiderChartDomain: [number, number] =
     activeMetric === 'cost' ? spiderValueDomain : [0, 100];
+
+  const formatSpiderTick = useCallback(
+    (value: number) => {
+      if (activeMetric === 'cost') {
+        if (!Number.isFinite(value)) return '$0';
+        const precise = value.toFixed(6).replace(/0+$/, '').replace(/\.$/, '.0');
+        return `$${precise}`;
+      }
+      return value.toFixed(0);
+    },
+    [activeMetric]
+  );
 
   useEffect(() => {
     if (activeBarAxis && !currentAxes.includes(activeBarAxis)) {
@@ -730,7 +742,7 @@ useEffect(() => {
                             </text>
                           )}
                         />
-                        <PolarRadiusAxis domain={spiderValueDomain} tickCount={5} />
+                        <PolarRadiusAxis domain={spiderValueDomain} tickCount={5} tickFormatter={formatSpiderTick} />
                         {routerIds.map((id, index) => (
                           <Radar
                             key={id}
