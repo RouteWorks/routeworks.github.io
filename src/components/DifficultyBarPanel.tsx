@@ -96,7 +96,8 @@ const DifficultyBarPanel: React.FC<DifficultyBarPanelProps> = ({
                 formatter={(value: number) => {
                   if (metricKey === 'cost') {
                     const safeValue = Number.isFinite(value) ? value : 0;
-                    return `$${safeValue.toFixed(5)}`;
+                    const precise = safeValue.toFixed(5).replace(/0+$/, '').replace(/\.$/, '.0');
+                    return `$${precise}`;
                   }
                   return Number.isFinite(value) ? value.toFixed(1) : '0.0';
                 }}

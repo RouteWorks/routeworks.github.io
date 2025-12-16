@@ -263,8 +263,9 @@ useEffect(() => {
   const formatSpiderTick = useCallback(
     (value: number) => {
       if (activeMetric === 'cost') {
-        if (!Number.isFinite(value)) return '$0.000000';
-        return `$${value.toFixed(6)}`;
+        if (!Number.isFinite(value)) return '$0';
+        const precise = value.toFixed(6).replace(/0+$/, '').replace(/\.$/, '.0');
+        return `$${precise}`;
       }
       return value.toFixed(0);
     },
