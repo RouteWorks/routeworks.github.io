@@ -378,7 +378,6 @@ const LeaderboardPage: React.FC = () => {
         </div>
 
         {/* Leaderboard Table */}
-        <div className="leaderboard-full-bleed">
         <div className="leaderboard-container">
           <div className="leaderboard-scroll">
             <div className="leaderboard-header">
@@ -616,7 +615,6 @@ const LeaderboardPage: React.FC = () => {
               })}
             </div>
           </div>
-        </div>
         </div>
       {modelCardRouter && (
         <div className="model-card-modal-overlay" onClick={() => setModelCardRouter(null)}>
