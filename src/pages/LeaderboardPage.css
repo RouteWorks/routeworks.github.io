@@ -1310,20 +1310,6 @@
   cursor: pointer;
 }
 
-.router-name-link .router-name::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -0.15rem;
-  width: 100%;
-  height: 2px;
-  background: #2563eb;
-  opacity: 0;
-  transform: scaleX(0.85);
-  transform-origin: left;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
 .router-name-link:hover .router-name {
   color: #1d4ed8;
 }
