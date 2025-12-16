@@ -22,7 +22,7 @@
 }
 
 .leaderboard-full-bleed .leaderboard-container {
-  width:90vw;
+  width:85vw;
   margin: 0 auto;
 }
 
@@ -339,8 +339,8 @@
   --lb-grid:
     minmax(0, 0.5fr)   /* Select */
     minmax(0, 0.7fr)   /* Rank */
-    minmax(0, 2.0fr)   /* Name */
-    minmax(0, 1.1fr)   /* Affiliation */
+    minmax(0, 1.8fr)   /* Name */
+    minmax(0, 0.7fr)   /* Affiliation */
     minmax(0, 0.9fr)   /* Arena */
     minmax(0, 0.9fr)     /* Accuracy */
     minmax(0, 0.9fr)   /* Cost/1k */
@@ -1407,7 +1407,7 @@
 .metrics-col {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: left;
 }
 
 .metric-value {
@@ -1781,13 +1781,6 @@
 
 }
 
-/* Preserve left alignment for name and affiliation columns */
-.leaderboard-header .name-col,
-.leaderboard-header .affiliation-col,
-.leaderboard-row .name-col,
-.leaderboard-row .affiliation-col {
-  text-align: left;
-}
 
 /* Fix type badge and prevent flex growth */
 .type-col {
@@ -1820,7 +1813,8 @@
 /* put padding on cells (same for header and rows) */
 .leaderboard-header > div,
 .leaderboard-row > div {
-  padding: 0.75rem 0.75rem !important;
+  padding: 0.75rem 0rem !important;
+  text-align: left;
   overflow: hidden;
   /* text-overflow: ellipsis; */
   white-space: nowrap;
