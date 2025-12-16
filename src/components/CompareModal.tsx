@@ -260,6 +260,17 @@ useEffect(() => {
   const spiderChartDomain: [number, number] =
     activeMetric === 'cost' ? spiderValueDomain : [0, 100];
 
+  const formatSpiderTick = useCallback(
+    (value: number) => {
+      if (activeMetric === 'cost') {
+        if (!Number.isFinite(value)) return '$0.000000';
+        return `$${value.toFixed(6)}`;
+      }
+      return value.toFixed(0);
+    },
+    [activeMetric]
+  );
+
   useEffect(() => {
     if (activeBarAxis && !currentAxes.includes(activeBarAxis)) {
       setActiveBarAxis('');
@@ -730,7 +741,7 @@ useEffect(() => {
                             </text>
                           )}
                         />
-                        <PolarRadiusAxis domain={spiderValueDomain} tickCount={5} />
+                        <PolarRadiusAxis domain={spiderValueDomain} tickCount={5} tickFormatter={formatSpiderTick} />
                         {routerIds.map((id, index) => (
                           <Radar
                             key={id}
