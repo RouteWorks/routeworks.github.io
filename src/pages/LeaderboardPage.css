@@ -11,21 +11,6 @@
 }
 
 
-.leaderboard-full-bleed {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  padding: 0 1rem;
-  margin-bottom: 2rem;
-}
-
-.leaderboard-full-bleed .leaderboard-container {
-  width:85vw;
-  margin: 0 auto;
-}
-
 .page-header {
   text-align: center;
   margin-bottom: 2rem;
@@ -367,14 +352,6 @@
   align-items: center;
 }
 
-.leaderboard-header > div,
-.leaderboard-row > div {
-  padding: 0.75rem 0.75rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 
 
 .leaderboard-body {
@@ -658,14 +635,17 @@
   border-radius: 24px;
   padding: 1.5rem;
   width: min(1200px, 100%);
-  height: 82vh;           /* 👈 FIXED height */
-  overflow: scroll;      /* 👈 prevent modal scrolling */
+  height: 82vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
 .compare-modal-body {
+  flex: 1;
   min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .compare-modal-header {
   display: flex;
@@ -704,6 +684,7 @@
     min-height: 100vh;
     border-radius: 0;
     padding: 1rem;
+    overflow-y: auto;
   }
 
   .compare-modal-body {
@@ -865,10 +846,10 @@
 
 
 
-
+/*
 .compare-modal-chart.primary {
   min-height: 480px;
-}
+} */
 
 @media (max-width: 768px) {
   .compare-modal-chart.primary {
@@ -1333,20 +1314,6 @@
   cursor: pointer;
 }
 
-.router-name-link .router-name::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -0.15rem;
-  width: 100%;
-  height: 2px;
-  background: #2563eb;
-  opacity: 0;
-  transform: scaleX(0.85);
-  transform-origin: left;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
 .router-name-link:hover .router-name {
   color: #1d4ed8;
 }
@@ -1772,14 +1739,6 @@
   align-items: center;
 }
 
-/* Prevent content like "closed-source" or long affiliations from stretching columns */
-.leaderboard-header > div,
-.leaderboard-row > div {
-  overflow: hidden;
-  /* text-overflow: ellipsis; */
-  white-space: nowrap;
-
-}
 
 
 /* Fix type badge and prevent flex growth */
@@ -1815,7 +1774,7 @@
 .leaderboard-row > div {
   padding: 0.75rem 0rem !important;
   text-align: left;
-  overflow: hidden;
+  overflow: visible;
   /* text-overflow: ellipsis; */
   white-space: nowrap;
 }
