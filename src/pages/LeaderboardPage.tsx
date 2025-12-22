@@ -859,7 +859,7 @@ platforms.
                   synonyms, and typos) and measure how often the router selects the same model as
                   for the original query.
                 </p>
-                <BlockMath math="Score = \frac{\#\text{consistent selections}}{\#\text{noisy variants}}" />
+                <BlockMath math="Score = 1 - \frac{\#\text{changed selections}}{\#\text{total selections}}" />
                 <p>
                   Higher values indicate greater stability under realistic input noise, reflecting
                   robust model selection.

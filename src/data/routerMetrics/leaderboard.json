@@ -5,7 +5,7 @@
     "Optimal Selection Score": 39.84,
     "Optimal Cost Score": 72.998,
     "Optimal Acc. Score": 49.05,
-    "Robustness Score": 97.6,
+    "Robustness Score": 85.24,
     "Latency Score": 10.7527,
     "Accuracy": 32.01,
     "Cost per 1k": 0.07
@@ -16,7 +16,7 @@
     "Optimal Selection Score": 22.52,
     "Optimal Cost Score": 46.322,
     "Optimal Acc. Score": 81.96,
-    "Robustness Score": null,
+    "Robustness Score": 54.07,
     "Latency Score": null,
     "Accuracy": 68.09,
     "Cost per 1k": 0.54
@@ -27,7 +27,7 @@
     "Optimal Selection Score": 2.68,
     "Optimal Cost Score": 6.7697,
     "Optimal Acc. Score": 78.63,
-    "Robustness Score": 93.6,
+    "Robustness Score": 89.05,
     "Latency Score": 1.4993,
     "Accuracy": 67.21,
     "Cost per 1k": 2.06
@@ -49,7 +49,7 @@
     "Optimal Selection Score": 4.73,
     "Optimal Cost Score": 38.3347,
     "Optimal Acc. Score": 74.25,
-    "Robustness Score": 97.5,
+    "Robustness Score": 94.29,
     "Latency Score": 2.6954,
     "Accuracy": 57.0,
     "Cost per 1k": 0.34
@@ -60,7 +60,7 @@
     "Optimal Selection Score": 3.44,
     "Optimal Cost Score": 19.6178,
     "Optimal Acc. Score": 78.18,
-    "Robustness Score": 94.5,
+    "Robustness Score": 61.19,
     "Latency Score": 27.027,
     "Accuracy": 66.88,
     "Cost per 1k": 0.15
@@ -71,7 +71,7 @@
     "Optimal Selection Score": 3.83,
     "Optimal Cost Score": 14.039,
     "Optimal Acc. Score": 77.88,
-    "Robustness Score": 44.5,
+    "Robustness Score": 49.29,
     "Latency Score": 10.4167,
     "Accuracy": 66.34,
     "Cost per 1k": 0.21
@@ -82,7 +82,7 @@
     "Optimal Selection Score": 1.55,
     "Optimal Cost Score": 2.1367,
     "Optimal Acc. Score": 76.81,
-    "Robustness Score": null,
+    "Robustness Score": 55.91,
     "Latency Score": null,
     "Accuracy": 60.83,
     "Cost per 1k": 4.1
@@ -93,7 +93,7 @@
     "Optimal Selection Score": 99.72,
     "Optimal Cost Score": 99.6314,
     "Optimal Acc. Score": 68.76,
-    "Robustness Score": 99.8,
+    "Robustness Score": 100.00,
     "Latency Score": 0.4016,
     "Accuracy": 47.04,
     "Cost per 1k": 0.27
@@ -104,7 +104,7 @@
     "Optimal Selection Score": 13.09,
     "Optimal Cost Score": 25.4887,
     "Optimal Acc. Score": 78.77,
-    "Robustness Score": 51.3,
+    "Robustness Score": 83.33,
     "Latency Score": 1.328,
     "Accuracy": 58.69,
     "Cost per 1k": 4.27
@@ -115,7 +115,7 @@
     "Optimal Selection Score": 13.39,
     "Optimal Cost Score": 24.4499,
     "Optimal Acc. Score": 83.32,
-    "Robustness Score": 96.9,
+    "Robustness Score": 80.00,
     "Latency Score": 90.9091,
     "Accuracy": 61.62,
     "Cost per 1k": 4.83
@@ -126,7 +126,7 @@
     "Optimal Selection Score": 4.79,
     "Optimal Cost Score": 12.5426,
     "Optimal Acc. Score": 79.33,
-    "Robustness Score": 100.0,
+    "Robustness Score": 35.00,
     "Latency Score": 0.1863,
     "Accuracy": 67.28,
     "Cost per 1k": 1.67
