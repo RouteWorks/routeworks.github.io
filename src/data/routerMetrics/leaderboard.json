@@ -122,14 +122,14 @@
   },
   {
     "Router Name": "vllm",
-    "Arena Score": 64.32,
-    "Optimal Selection Score": 4.79,
-    "Optimal Cost Score": 12.5426,
-    "Optimal Acc. Score": 79.33,
-    "Robustness Score": 35.00,
-    "Latency Score": 0.1863,
-    "Accuracy": 67.28,
-    "Cost per 1k": 1.67
+    "Arena Score": 67.23,
+    "Optimal Selection Score": 94.10,
+    "Optimal Cost Score": 90.12,
+    "Optimal Acc. Score": 100.00,
+    "Robustness Score": 90.95,
+    "Latency Score": null,
+    "Accuracy": 66.53,
+    "Cost per 1k": 0.06
   },
   {
     "Router Name": "chayan",
