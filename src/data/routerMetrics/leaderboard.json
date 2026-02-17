@@ -1,5 +1,16 @@
 [
   {
+    "Router Name": "R2-Router",
+    "Arena Score": 71.60,
+    "Optimal Selection Score": 32.38,
+    "Optimal Cost Score": 74.16,
+    "Optimal Acc. Score": 100.00,
+    "Robustness Score": 45.71,
+    "Latency Score": null,
+    "Accuracy": 71.23,
+    "Cost per 1k": 0.06
+  },
+  {
     "Router Name": "RouterDC",
     "Arena Score": 33.75,
     "Optimal Selection Score": 39.84,
