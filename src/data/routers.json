@@ -1,4 +1,21 @@
 {
+  "R2-Router": {
+    "name": "R2-Router",
+    "type": "open-source",
+    "description": "High-performance routing system with optimal accuracy",
+    "affiliation": "UCF",
+    "modelPool": [
+      "qwen/qwen3-235b-a22b-2507",
+      "qwen/qwen3-next-80b-a3b-instruct",
+      "qwen/qwen3-30b-a3b-instruct-2507",
+      "Qwen/Qwen3-Coder-Next",
+      "gemini-2.5-flash",
+      "claude-3-haiku-20240307"
+    ],
+    "paperUrl": "https://arxiv.org/abs/2602.02823",
+    "websiteUrl": "https://arxiv.org/abs/2602.02823",
+    "githubUrl": ""
+  },
   "RouterDC": {
     "name": "RouterDC",
     "type": "open-source",
