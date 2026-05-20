@@ -1,5 +1,16 @@
 [
   {
+    "Router Name": "Sqwish Router",
+    "Arena Score": 75.27,
+    "Optimal Selection Score": 14.92,
+    "Optimal Cost Score": 17.17,
+    "Optimal Acc. Score": 100.0,
+    "Robustness Score": 100.0,
+    "Latency Score": null,
+    "Accuracy": 76.4,
+    "Cost per 1k": 0.18
+  },
+  {
     "Router Name": "Weave Router",
     "Arena Score": 74.61,
     "Optimal Selection Score": 1.38,
