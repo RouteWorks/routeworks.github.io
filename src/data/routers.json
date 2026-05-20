@@ -15,21 +15,16 @@
   "Weave Router": {
     "name": "Weave Router",
     "type": "open-source",
-    "description": "Cluster-routing over a 12-model BYOK pool spanning Anthropic, OpenAI, Google, and OpenRouter providers. Embeds each prompt, scores against per-cluster model rankings, and selects the cost-quality optimum via an alpha-blended score.",
+    "description": "Cluster-routing (v0.62) over a 7-model BYOK pool spanning Anthropic, OpenAI, Google, and OpenRouter providers. Embeds each prompt with Jina v2 INT8 ONNX (768-dim), runs top-p=4 cluster sum against per-cluster rankings trained on the RouterArena full split with k=160 clusters, then selects the cost-quality optimum via an alpha-blended score (alpha=0.25).",
     "affiliation": "Weave",
     "modelPool": [
       "claude-opus-4-7",
-      "claude-sonnet-4-5",
-      "claude-haiku-4-5",
       "gpt-5.5",
-      "gpt-5.4-mini",
-      "gpt-4.1",
       "gemini-3.1-pro-preview",
       "gemini-3.1-flash-lite-preview",
       "deepseek/deepseek-v4-pro",
       "deepseek/deepseek-v4-flash",
-      "qwen/qwen3.5-flash-02-23",
-      "moonshotai/kimi-k2.5"
+      "qwen/qwen3-235b-a22b-2507"
     ],
     "websiteUrl": "https://weaverouter.com",
     "githubUrl": "https://github.com/workweave/router"
