@@ -1,10 +1,21 @@
 [
   {
+    "Router Name": "Sqwish Router",
+    "Arena Score": 75.27,
+    "Optimal Selection Score": 7.41,
+    "Optimal Cost Score": 25.1,
+    "Optimal Acc. Score": 90.47,
+    "Robustness Score": 100.0,
+    "Latency Score": null,
+    "Accuracy": 76.4,
+    "Cost per 1k": 0.18
+  },
+  {
     "Router Name": "Weave Router",
     "Arena Score": 74.61,
-    "Optimal Selection Score": 1.38,
-    "Optimal Cost Score": 12.27,
-    "Optimal Acc. Score": 100.00,
+    "Optimal Selection Score": 1.27,
+    "Optimal Cost Score": 12.1,
+    "Optimal Acc. Score": 89.56,
     "Robustness Score": 79.05,
     "Latency Score": null,
     "Accuracy": 78.43,
@@ -12,69 +23,36 @@
   },
   {
     "Router Name": "R2-Router",
-    "Arena Score": 71.60,
-    "Optimal Selection Score": 32.38,
-    "Optimal Cost Score": 74.16,
-    "Optimal Acc. Score": 100.00,
+    "Arena Score": 71.6,
+    "Optimal Selection Score": 24.51,
+    "Optimal Cost Score": 48.7,
+    "Optimal Acc. Score": 99.85,
     "Robustness Score": 45.71,
     "Latency Score": null,
     "Accuracy": 71.23,
     "Cost per 1k": 0.06
   },
   {
-    "Router Name": "RouterDC",
-    "Arena Score": 33.75,
-    "Optimal Selection Score": 39.84,
-    "Optimal Cost Score": 72.998,
-    "Optimal Acc. Score": 49.05,
-    "Robustness Score": 85.24,
-    "Latency Score": 10.7527,
-    "Accuracy": 32.01,
-    "Cost per 1k": 0.07
-  },
-  {
-    "Router Name": "azure",
-    "Arena Score": 66.66,
-    "Optimal Selection Score": 22.52,
-    "Optimal Cost Score": 46.322,
-    "Optimal Acc. Score": 81.96,
-    "Robustness Score": 54.07,
+    "Router Name": "Auto Router",
+    "Arena Score": 70.05,
+    "Optimal Selection Score": 37.58,
+    "Optimal Cost Score": 40.02,
+    "Optimal Acc. Score": 86.04,
+    "Robustness Score": 49.52,
     "Latency Score": null,
-    "Accuracy": 68.09,
-    "Cost per 1k": 0.54
+    "Accuracy": 70.17,
+    "Cost per 1k": 0.12
   },
   {
-    "Router Name": "carrot",
-    "Arena Score": 63.87,
-    "Optimal Selection Score": 2.68,
-    "Optimal Cost Score": 6.7697,
-    "Optimal Acc. Score": 78.63,
-    "Robustness Score": 89.05,
-    "Latency Score": 1.4993,
-    "Accuracy": 67.21,
-    "Cost per 1k": 2.06
-  },
-  {
-    "Router Name": "gpt5",
-    "Arena Score": 64.32,
-    "Optimal Selection Score": null,
-    "Optimal Cost Score": null,
-    "Optimal Acc. Score": null,
-    "Robustness Score": null,
+    "Router Name": "vllm",
+    "Arena Score": 67.23,
+    "Optimal Selection Score": 84.66,
+    "Optimal Cost Score": 90.71,
+    "Optimal Acc. Score": 89.24,
+    "Robustness Score": 90.95,
     "Latency Score": null,
-    "Accuracy": 73.96,
-    "Cost per 1k": 10.02
-  },
-  {
-    "Router Name": "graphrouter",
-    "Arena Score": 57.22,
-    "Optimal Selection Score": 4.73,
-    "Optimal Cost Score": 38.3347,
-    "Optimal Acc. Score": 74.25,
-    "Robustness Score": 94.29,
-    "Latency Score": 2.6954,
-    "Accuracy": 57.0,
-    "Cost per 1k": 0.34
+    "Accuracy": 66.53,
+    "Cost per 1k": 0.06
   },
   {
     "Router Name": "mirt_bert",
@@ -88,6 +66,17 @@
     "Cost per 1k": 0.15
   },
   {
+    "Router Name": "azure",
+    "Arena Score": 66.66,
+    "Optimal Selection Score": 22.52,
+    "Optimal Cost Score": 46.322,
+    "Optimal Acc. Score": 81.96,
+    "Robustness Score": 54.07,
+    "Latency Score": null,
+    "Accuracy": 68.09,
+    "Cost per 1k": 0.54
+  },
+  {
     "Router Name": "nirt_bert",
     "Arena Score": 66.12,
     "Optimal Selection Score": 3.83,
@@ -99,8 +88,52 @@
     "Cost per 1k": 0.21
   },
   {
+    "Router Name": "gpt5",
+    "Arena Score": 64.32,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": null,
+    "Latency Score": null,
+    "Accuracy": 73.96,
+    "Cost per 1k": 10.02
+  },
+  {
+    "Router Name": "carrot",
+    "Arena Score": 63.87,
+    "Optimal Selection Score": 2.68,
+    "Optimal Cost Score": 6.7697,
+    "Optimal Acc. Score": 78.63,
+    "Robustness Score": 89.05,
+    "Latency Score": 1.4993,
+    "Accuracy": 67.21,
+    "Cost per 1k": 2.06
+  },
+  {
+    "Router Name": "chayan",
+    "Arena Score": 63.83,
+    "Optimal Selection Score": 43.03,
+    "Optimal Cost Score": 43.75,
+    "Optimal Acc. Score": 88.74,
+    "Robustness Score": null,
+    "Latency Score": null,
+    "Accuracy": 64.89,
+    "Cost per 1k": 0.56
+  },
+  {
+    "Router Name": "routerbench_mlp",
+    "Arena Score": 57.56,
+    "Optimal Selection Score": 13.39,
+    "Optimal Cost Score": 24.4499,
+    "Optimal Acc. Score": 83.32,
+    "Robustness Score": 80.0,
+    "Latency Score": 90.9091,
+    "Accuracy": 61.62,
+    "Cost per 1k": 4.83
+  },
+  {
     "Router Name": "notdiamond",
-    "Arena Score": 63.0,
+    "Arena Score": 57.29,
     "Optimal Selection Score": 1.55,
     "Optimal Cost Score": 2.1367,
     "Optimal Acc. Score": 76.81,
@@ -110,15 +143,15 @@
     "Cost per 1k": 4.1
   },
   {
-    "Router Name": "routellm",
-    "Arena Score": 48.07,
-    "Optimal Selection Score": 99.72,
-    "Optimal Cost Score": 99.6314,
-    "Optimal Acc. Score": 68.76,
-    "Robustness Score": 100.00,
-    "Latency Score": 0.4016,
-    "Accuracy": 47.04,
-    "Cost per 1k": 0.27
+    "Router Name": "graphrouter",
+    "Arena Score": 57.22,
+    "Optimal Selection Score": 4.73,
+    "Optimal Cost Score": 38.3347,
+    "Optimal Acc. Score": 74.25,
+    "Robustness Score": 94.29,
+    "Latency Score": 2.6954,
+    "Accuracy": 57.0,
+    "Cost per 1k": 0.34
   },
   {
     "Router Name": "routerbench_knn",
@@ -132,36 +165,25 @@
     "Cost per 1k": 4.27
   },
   {
-    "Router Name": "routerbench_mlp",
-    "Arena Score": 57.56,
-    "Optimal Selection Score": 13.39,
-    "Optimal Cost Score": 24.4499,
-    "Optimal Acc. Score": 83.32,
-    "Robustness Score": 80.00,
-    "Latency Score": 90.9091,
-    "Accuracy": 61.62,
-    "Cost per 1k": 4.83
+    "Router Name": "routellm",
+    "Arena Score": 48.07,
+    "Optimal Selection Score": 99.72,
+    "Optimal Cost Score": 99.6314,
+    "Optimal Acc. Score": 68.76,
+    "Robustness Score": 100.0,
+    "Latency Score": 0.4016,
+    "Accuracy": 47.04,
+    "Cost per 1k": 0.27
   },
   {
-    "Router Name": "vllm",
-    "Arena Score": 67.23,
-    "Optimal Selection Score": 94.10,
-    "Optimal Cost Score": 90.12,
-    "Optimal Acc. Score": 100.00,
-    "Robustness Score": 90.95,
-    "Latency Score": null,
-    "Accuracy": 66.53,
-    "Cost per 1k": 0.06
-  },
-  {
-    "Router Name": "chayan",
-    "Arena Score": 63.83,
-    "Optimal Selection Score": 43.03,
-    "Optimal Cost Score": 43.75,
-    "Optimal Acc. Score": 88.74,
-    "Robustness Score": null,
-    "Latency Score": null,
-    "Accuracy": 64.89,
-    "Cost per 1k": 0.56
+    "Router Name": "RouterDC",
+    "Arena Score": 33.75,
+    "Optimal Selection Score": 39.84,
+    "Optimal Cost Score": 72.998,
+    "Optimal Acc. Score": 49.05,
+    "Robustness Score": 85.24,
+    "Latency Score": 10.7527,
+    "Accuracy": 32.01,
+    "Cost per 1k": 0.07
   }
 ]

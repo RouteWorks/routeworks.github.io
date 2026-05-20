@@ -12018,5 +12018,3733 @@
         }
       }
     }
+  },
+  "r2-router": {
+    "metrics": {
+      "easy": {
+        "accuracy": 95.8,
+        "cost": 0.0001,
+        "robustness": 47.0
+      },
+      "medium": {
+        "accuracy": 67.3,
+        "cost": 0.0001,
+        "robustness": 50.4
+      },
+      "hard": {
+        "accuracy": 26.2,
+        "cost": 0.0001,
+        "robustness": 38.5
+      },
+      "all": {
+        "accuracy": 71.2,
+        "cost": 0.0001,
+        "robustness": 45.7
+      }
+    },
+    "categories": {
+      "Computer science, information, and general works": {
+        "metrics": {
+          "easy": {
+            "accuracy": 97.3,
+            "cost": 0.0001,
+            "robustness": 42.3
+          },
+          "medium": {
+            "accuracy": 80.7,
+            "cost": 0.0001,
+            "robustness": 42.9
+          },
+          "hard": {
+            "accuracy": 32.2,
+            "cost": 0.0003,
+            "robustness": 53.3
+          },
+          "all": {
+            "accuracy": 80.4,
+            "cost": 0.0001,
+            "robustness": 45.2
+          }
+        },
+        "subcategories": {
+          "Library and information sciences": {
+            "metrics": {
+              "easy": {
+                "accuracy": 96.0,
+                "cost": 0.0,
+                "robustness": 38.5
+              },
+              "medium": {
+                "accuracy": 62.4,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "hard": {
+                "accuracy": 2.8,
+                "cost": 0.0,
+                "robustness": 50.0
+              },
+              "all": {
+                "accuracy": 80.3,
+                "cost": 0.0,
+                "robustness": 31.6
+              }
+            }
+          },
+          "Computer science, knowledge, and systems": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.1,
+                "cost": 0.0001,
+                "robustness": 46.2
+              },
+              "medium": {
+                "accuracy": 84.9,
+                "cost": 0.0001,
+                "robustness": 52.9
+              },
+              "hard": {
+                "accuracy": 37.3,
+                "cost": 0.0004,
+                "robustness": 53.8
+              },
+              "all": {
+                "accuracy": 80.5,
+                "cost": 0.0002,
+                "robustness": 51.2
+              }
+            }
+          }
+        }
+      },
+      "Philosophy and psychology": {
+        "metrics": {
+          "easy": {
+            "accuracy": 91.9,
+            "cost": 0.0,
+            "robustness": 22.2
+          },
+          "medium": {
+            "accuracy": 62.6,
+            "cost": 0.0001,
+            "robustness": 40.0
+          },
+          "hard": {
+            "accuracy": 13.6,
+            "cost": 0.0001,
+            "robustness": 42.9
+          },
+          "all": {
+            "accuracy": 74.0,
+            "cost": 0.0001,
+            "robustness": 29.5
+          }
+        },
+        "subcategories": {
+          "Ethics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 85.9,
+                "cost": 0.0,
+                "robustness": 21.4
+              },
+              "medium": {
+                "accuracy": 47.1,
+                "cost": 0.0001,
+                "robustness": 20.0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 70.3,
+                "cost": 0.0001,
+                "robustness": 28.6
+              }
+            }
+          },
+          "Philosophy": {
+            "metrics": {
+              "easy": {
+                "accuracy": 94.6,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "medium": {
+                "accuracy": 52.5,
+                "cost": 0.0001,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 13.3,
+                "cost": 0.0001,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 50.8,
+                "cost": 0.0001,
+                "robustness": 12.5
+              }
+            }
+          },
+          "Psychology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.5,
+                "cost": 0.0,
+                "robustness": 33.3
+              },
+              "medium": {
+                "accuracy": 81.2,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 11.1,
+                "cost": 0.0,
+                "robustness": 50.0
+              },
+              "all": {
+                "accuracy": 85.0,
+                "cost": 0.0,
+                "robustness": 37.5
+              }
+            }
+          },
+          "Philosophical logic": {
+            "metrics": {
+              "easy": {
+                "accuracy": 96.9,
+                "cost": 0.0001,
+                "robustness": 25.0
+              },
+              "medium": {
+                "accuracy": 84.2,
+                "cost": 0.0001,
+                "robustness": 66.7
+              },
+              "hard": {
+                "accuracy": 60.0,
+                "cost": 0.0003,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 90.7,
+                "cost": 0.0001,
+                "robustness": 42.9
+              }
+            }
+          }
+        }
+      },
+      "Social Science": {
+        "metrics": {
+          "easy": {
+            "accuracy": 95.3,
+            "cost": 0.0,
+            "robustness": 55.6
+          },
+          "medium": {
+            "accuracy": 60.5,
+            "cost": 0.0001,
+            "robustness": 83.3
+          },
+          "hard": {
+            "accuracy": 8.7,
+            "cost": 0.0001,
+            "robustness": 28.6
+          },
+          "all": {
+            "accuracy": 64.3,
+            "cost": 0.0001,
+            "robustness": 59.5
+          }
+        },
+        "subcategories": {
+          "Economics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.8,
+                "cost": 0.0,
+                "robustness": 66.7
+              },
+              "medium": {
+                "accuracy": 66.3,
+                "cost": 0.0001,
+                "robustness": 83.3
+              },
+              "hard": {
+                "accuracy": 12.5,
+                "cost": 0.0001,
+                "robustness": 66.7
+              },
+              "all": {
+                "accuracy": 69.7,
+                "cost": 0.0001,
+                "robustness": 71.4
+              }
+            }
+          },
+          "Law": {
+            "metrics": {
+              "easy": {
+                "accuracy": 87.7,
+                "cost": 0.0001,
+                "robustness": 66.7
+              },
+              "medium": {
+                "accuracy": 54.0,
+                "cost": 0.0001,
+                "robustness": 75.0
+              },
+              "hard": {
+                "accuracy": 6.7,
+                "cost": 0.0001,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 58.9,
+                "cost": 0.0001,
+                "robustness": 55.6
+              }
+            }
+          },
+          "Social sciences, sociology, and anthropology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "medium": {
+                "accuracy": 61.1,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 25.5,
+                "cost": 0.0,
+                "robustness": 66.7
+              }
+            }
+          },
+          "Social problems": {
+            "metrics": {
+              "easy": {
+                "accuracy": 95.7,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "medium": {
+                "accuracy": 0.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 20.0,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 75.4,
+                "cost": 0.0,
+                "robustness": 0.0
+              }
+            }
+          }
+        }
+      },
+      "Language": {
+        "metrics": {
+          "easy": {
+            "accuracy": 90.4,
+            "cost": 0.0,
+            "robustness": 0.0
+          },
+          "medium": {
+            "accuracy": 61.7,
+            "cost": 0.0001,
+            "robustness": 0.0
+          },
+          "hard": {
+            "accuracy": 58.0,
+            "cost": 0.0,
+            "robustness": 20.0
+          },
+          "all": {
+            "accuracy": 68.6,
+            "cost": 0.0,
+            "robustness": 11.1
+          }
+        },
+        "subcategories": {
+          "Language": {
+            "metrics": {
+              "easy": {
+                "accuracy": 90.4,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "medium": {
+                "accuracy": 61.7,
+                "cost": 0.0001,
+                "robustness": 0.0
+              },
+              "hard": {
+                "accuracy": 58.0,
+                "cost": 0.0,
+                "robustness": 20.0
+              },
+              "all": {
+                "accuracy": 68.6,
+                "cost": 0.0,
+                "robustness": 11.1
+              }
+            }
+          }
+        }
+      },
+      "Science": {
+        "metrics": {
+          "easy": {
+            "accuracy": 98.6,
+            "cost": 0.0,
+            "robustness": 61.5
+          },
+          "medium": {
+            "accuracy": 76.2,
+            "cost": 0.0001,
+            "robustness": 57.1
+          },
+          "hard": {
+            "accuracy": 11.3,
+            "cost": 0.0001,
+            "robustness": 44.4
+          },
+          "all": {
+            "accuracy": 79.6,
+            "cost": 0.0001,
+            "robustness": 58.0
+          }
+        },
+        "subcategories": {
+          "Mathematics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.1,
+                "cost": 0.0001,
+                "robustness": 72.7
+              },
+              "medium": {
+                "accuracy": 79.2,
+                "cost": 0.0001,
+                "robustness": 63.6
+              },
+              "hard": {
+                "accuracy": 12.4,
+                "cost": 0.0002,
+                "robustness": 80.0
+              },
+              "all": {
+                "accuracy": 77.5,
+                "cost": 0.0001,
+                "robustness": 70.4
+              }
+            }
+          },
+          "Earth sciences and geology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.1,
+                "cost": 0.0,
+                "robustness": 50.0
+              },
+              "medium": {
+                "accuracy": 72.9,
+                "cost": 0.0001,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 7.7,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 90.0,
+                "cost": 0.0,
+                "robustness": 46.7
+              }
+            }
+          },
+          "Biology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 99.1,
+                "cost": 0.0,
+                "robustness": 71.4
+              },
+              "medium": {
+                "accuracy": 64.7,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 11.1,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 89.5,
+                "cost": 0.0,
+                "robustness": 71.4
+              }
+            }
+          },
+          "Chemistry": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0001,
+                "robustness": 66.7
+              },
+              "medium": {
+                "accuracy": 79.4,
+                "cost": 0.0001,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 7.7,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 78.9,
+                "cost": 0.0001,
+                "robustness": 60.0
+              }
+            }
+          },
+          "Physics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 83.3,
+                "cost": 0.0001,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 27.3,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 84.5,
+                "cost": 0.0,
+                "robustness": 80.0
+              }
+            }
+          },
+          "Animals (Zoology)": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "medium": {
+                "accuracy": 80.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 0,
+                "cost": 0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 96.0,
+                "cost": 0.0,
+                "robustness": 0.0
+              }
+            }
+          },
+          "Science": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0,
+                "robustness": 40.0
+              },
+              "medium": {
+                "accuracy": 44.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 8.5,
+                "cost": 0.0001,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 40.4,
+                "cost": 0.0,
+                "robustness": 25.0
+              }
+            }
+          }
+        }
+      },
+      "Technology": {
+        "metrics": {
+          "easy": {
+            "accuracy": 94.7,
+            "cost": 0.0001,
+            "robustness": 55.8
+          },
+          "medium": {
+            "accuracy": 64.3,
+            "cost": 0.0001,
+            "robustness": 57.1
+          },
+          "hard": {
+            "accuracy": 13.4,
+            "cost": 0.0001,
+            "robustness": 71.4
+          },
+          "all": {
+            "accuracy": 76.4,
+            "cost": 0.0001,
+            "robustness": 57.7
+          }
+        },
+        "subcategories": {
+          "Engineering": {
+            "metrics": {
+              "easy": {
+                "accuracy": 95.2,
+                "cost": 0.0001,
+                "robustness": 20.0
+              },
+              "medium": {
+                "accuracy": 79.0,
+                "cost": 0.0001,
+                "robustness": 53.8
+              },
+              "hard": {
+                "accuracy": 31.0,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 79.1,
+                "cost": 0.0001,
+                "robustness": 47.4
+              }
+            }
+          },
+          "Medicine and health": {
+            "metrics": {
+              "easy": {
+                "accuracy": 94.2,
+                "cost": 0.0001,
+                "robustness": 58.8
+              },
+              "medium": {
+                "accuracy": 53.3,
+                "cost": 0.0001,
+                "robustness": 71.4
+              },
+              "hard": {
+                "accuracy": 7.1,
+                "cost": 0.0001,
+                "robustness": 66.7
+              },
+              "all": {
+                "accuracy": 74.3,
+                "cost": 0.0001,
+                "robustness": 61.7
+              }
+            }
+          },
+          "Management and public relations": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.3,
+                "cost": 0.0,
+                "robustness": 75.0
+              },
+              "medium": {
+                "accuracy": 81.8,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 93.2,
+                "cost": 0.0,
+                "robustness": 60.0
+              }
+            }
+          }
+        }
+      },
+      "Arts & recreation": {
+        "metrics": {
+          "easy": {
+            "accuracy": 94.6,
+            "cost": 0.0001,
+            "robustness": 50.0
+          },
+          "medium": {
+            "accuracy": 53.7,
+            "cost": 0.0002,
+            "robustness": 72.7
+          },
+          "hard": {
+            "accuracy": 6.1,
+            "cost": 0.0001,
+            "robustness": 0.0
+          },
+          "all": {
+            "accuracy": 61.1,
+            "cost": 0.0001,
+            "robustness": 50.0
+          }
+        },
+        "subcategories": {
+          "Sports, games and entertainment": {
+            "metrics": {
+              "easy": {
+                "accuracy": 92.1,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 54.0,
+                "cost": 0.0001,
+                "robustness": 75.0
+              },
+              "hard": {
+                "accuracy": 6.1,
+                "cost": 0.0001,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 61.1,
+                "cost": 0.0001,
+                "robustness": 62.5
+              }
+            }
+          },
+          "Music": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.0,
+                "cost": 0.0001,
+                "robustness": 40.0
+              },
+              "medium": {
+                "accuracy": 43.1,
+                "cost": 0.0002,
+                "robustness": 60.0
+              },
+              "hard": {
+                "accuracy": 8.0,
+                "cost": 0.0003,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 62.1,
+                "cost": 0.0002,
+                "robustness": 45.5
+              }
+            }
+          },
+          "Arts": {
+            "metrics": {
+              "easy": {
+                "accuracy": 94.9,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "medium": {
+                "accuracy": 84.6,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 5.4,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 59.7,
+                "cost": 0.0,
+                "robustness": 40.0
+              }
+            }
+          }
+        }
+      },
+      "Literature": {
+        "metrics": {
+          "easy": {
+            "accuracy": 100.0,
+            "cost": 0.0,
+            "robustness": 66.7
+          },
+          "medium": {
+            "accuracy": 56.2,
+            "cost": 0.0001,
+            "robustness": 50.0
+          },
+          "hard": {
+            "accuracy": 30.1,
+            "cost": 0.0001,
+            "robustness": 50.0
+          },
+          "all": {
+            "accuracy": 44.0,
+            "cost": 0.0001,
+            "robustness": 51.7
+          }
+        },
+        "subcategories": {
+          "Literature, rhetoric and criticism": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0,
+                "robustness": 66.7
+              },
+              "medium": {
+                "accuracy": 56.2,
+                "cost": 0.0001,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 30.1,
+                "cost": 0.0001,
+                "robustness": 50.0
+              },
+              "all": {
+                "accuracy": 44.0,
+                "cost": 0.0001,
+                "robustness": 51.7
+              }
+            }
+          }
+        }
+      },
+      "History": {
+        "metrics": {
+          "easy": {
+            "accuracy": 96.8,
+            "cost": 0.0,
+            "robustness": 52.2
+          },
+          "medium": {
+            "accuracy": 62.1,
+            "cost": 0.0001,
+            "robustness": 16.7
+          },
+          "hard": {
+            "accuracy": 10.1,
+            "cost": 0.0001,
+            "robustness": 30.0
+          },
+          "all": {
+            "accuracy": 69.6,
+            "cost": 0.0001,
+            "robustness": 41.0
+          }
+        },
+        "subcategories": {
+          "Geography": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0,
+                "robustness": 37.5
+              },
+              "medium": {
+                "accuracy": 51.7,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "hard": {
+                "accuracy": 8.3,
+                "cost": 0.0001,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 83.3,
+                "cost": 0.0,
+                "robustness": 33.3
+              }
+            }
+          },
+          "History": {
+            "metrics": {
+              "easy": {
+                "accuracy": 96.0,
+                "cost": 0.0001,
+                "robustness": 54.5
+              },
+              "medium": {
+                "accuracy": 63.3,
+                "cost": 0.0001,
+                "robustness": 20.0
+              },
+              "hard": {
+                "accuracy": 10.3,
+                "cost": 0.0001,
+                "robustness": 30.0
+              },
+              "all": {
+                "accuracy": 63.5,
+                "cost": 0.0001,
+                "robustness": 38.5
+              }
+            }
+          },
+          "Biography and genealogy": {
+            "metrics": {
+              "easy": {
+                "accuracy": 92.9,
+                "cost": 0.0,
+                "robustness": 75.0
+              },
+              "medium": {
+                "accuracy": 77.8,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 88.5,
+                "cost": 0.0,
+                "robustness": 75.0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "auto_router": {
+    "metrics": {
+      "easy": {
+        "accuracy": 94.9,
+        "cost": 0.0001,
+        "robustness": 48.0
+      },
+      "medium": {
+        "accuracy": 65.2,
+        "cost": 0.0001,
+        "robustness": 45.1
+      },
+      "hard": {
+        "accuracy": 25.1,
+        "cost": 0.0002,
+        "robustness": 56.9
+      },
+      "all": {
+        "accuracy": 69.9,
+        "cost": 0.0001,
+        "robustness": 49.5
+      }
+    },
+    "categories": {
+      "Computer science, information, and general works": {
+        "metrics": {
+          "easy": {
+            "accuracy": 97.7,
+            "cost": 0.0001,
+            "robustness": 42.3
+          },
+          "medium": {
+            "accuracy": 77.5,
+            "cost": 0.0002,
+            "robustness": 57.1
+          },
+          "hard": {
+            "accuracy": 31.4,
+            "cost": 0.0005,
+            "robustness": 60.0
+          },
+          "all": {
+            "accuracy": 79.4,
+            "cost": 0.0002,
+            "robustness": 51.6
+          }
+        },
+        "subcategories": {
+          "Library and information sciences": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.5,
+                "cost": 0.0001,
+                "robustness": 38.5
+              },
+              "medium": {
+                "accuracy": 55.3,
+                "cost": 0.0001,
+                "robustness": 25.0
+              },
+              "hard": {
+                "accuracy": 5.6,
+                "cost": 0.0001,
+                "robustness": 50.0
+              },
+              "all": {
+                "accuracy": 80.1,
+                "cost": 0.0001,
+                "robustness": 36.8
+              }
+            }
+          },
+          "Computer science, knowledge, and systems": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.8,
+                "cost": 0.0001,
+                "robustness": 46.2
+              },
+              "medium": {
+                "accuracy": 82.5,
+                "cost": 0.0002,
+                "robustness": 64.7
+              },
+              "hard": {
+                "accuracy": 35.9,
+                "cost": 0.0006,
+                "robustness": 61.5
+              },
+              "all": {
+                "accuracy": 79.2,
+                "cost": 0.0002,
+                "robustness": 58.1
+              }
+            }
+          }
+        }
+      },
+      "Philosophy and psychology": {
+        "metrics": {
+          "easy": {
+            "accuracy": 92.9,
+            "cost": 0.0001,
+            "robustness": 51.9
+          },
+          "medium": {
+            "accuracy": 62.1,
+            "cost": 0.0001,
+            "robustness": 30.0
+          },
+          "hard": {
+            "accuracy": 12.3,
+            "cost": 0.0001,
+            "robustness": 28.6
+          },
+          "all": {
+            "accuracy": 74.3,
+            "cost": 0.0001,
+            "robustness": 43.2
+          }
+        },
+        "subcategories": {
+          "Ethics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 89.2,
+                "cost": 0.0,
+                "robustness": 50.0
+              },
+              "medium": {
+                "accuracy": 32.9,
+                "cost": 0.0001,
+                "robustness": 0.0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0001,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 68.2,
+                "cost": 0.0001,
+                "robustness": 33.3
+              }
+            }
+          },
+          "Philosophy": {
+            "metrics": {
+              "easy": {
+                "accuracy": 86.5,
+                "cost": 0.0,
+                "robustness": 33.3
+              },
+              "medium": {
+                "accuracy": 70.0,
+                "cost": 0.0001,
+                "robustness": 0.0
+              },
+              "hard": {
+                "accuracy": 17.8,
+                "cost": 0.0001,
+                "robustness": 66.7
+              },
+              "all": {
+                "accuracy": 55.7,
+                "cost": 0.0001,
+                "robustness": 37.5
+              }
+            }
+          },
+          "Psychology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 96.7,
+                "cost": 0.0001,
+                "robustness": 83.3
+              },
+              "medium": {
+                "accuracy": 85.4,
+                "cost": 0.0001,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 5.6,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 85.0,
+                "cost": 0.0001,
+                "robustness": 62.5
+              }
+            }
+          },
+          "Philosophical logic": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0001,
+                "robustness": 25.0
+              },
+              "medium": {
+                "accuracy": 89.5,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 20.0,
+                "cost": 0.0001,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 92.6,
+                "cost": 0.0001,
+                "robustness": 57.1
+              }
+            }
+          }
+        }
+      },
+      "Social Science": {
+        "metrics": {
+          "easy": {
+            "accuracy": 94.3,
+            "cost": 0.0001,
+            "robustness": 50.0
+          },
+          "medium": {
+            "accuracy": 63.6,
+            "cost": 0.0001,
+            "robustness": 25.0
+          },
+          "hard": {
+            "accuracy": 7.4,
+            "cost": 0.0002,
+            "robustness": 42.9
+          },
+          "all": {
+            "accuracy": 64.7,
+            "cost": 0.0001,
+            "robustness": 40.5
+          }
+        },
+        "subcategories": {
+          "Economics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.3,
+                "cost": 0.0001,
+                "robustness": 41.7
+              },
+              "medium": {
+                "accuracy": 73.6,
+                "cost": 0.0002,
+                "robustness": 33.3
+              },
+              "hard": {
+                "accuracy": 8.8,
+                "cost": 0.0003,
+                "robustness": 33.3
+              },
+              "all": {
+                "accuracy": 71.6,
+                "cost": 0.0001,
+                "robustness": 38.1
+              }
+            }
+          },
+          "Law": {
+            "metrics": {
+              "easy": {
+                "accuracy": 87.7,
+                "cost": 0.0002,
+                "robustness": 33.3
+              },
+              "medium": {
+                "accuracy": 47.6,
+                "cost": 0.0002,
+                "robustness": 0.0
+              },
+              "hard": {
+                "accuracy": 6.7,
+                "cost": 0.0002,
+                "robustness": 50.0
+              },
+              "all": {
+                "accuracy": 56.3,
+                "cost": 0.0002,
+                "robustness": 22.2
+              }
+            }
+          },
+          "Social sciences, sociology, and anthropology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 66.7,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "medium": {
+                "accuracy": 44.4,
+                "cost": 0.0,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 5.9,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 21.8,
+                "cost": 0.0,
+                "robustness": 33.3
+              }
+            }
+          },
+          "Social problems": {
+            "metrics": {
+              "easy": {
+                "accuracy": 93.6,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 33.3,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 77.0,
+                "cost": 0.0,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      },
+      "Language": {
+        "metrics": {
+          "easy": {
+            "accuracy": 88.5,
+            "cost": 0.0001,
+            "robustness": 63.6
+          },
+          "medium": {
+            "accuracy": 44.9,
+            "cost": 0.0001,
+            "robustness": 44.4
+          },
+          "hard": {
+            "accuracy": 48.4,
+            "cost": 0.0002,
+            "robustness": 80.0
+          },
+          "all": {
+            "accuracy": 59.6,
+            "cost": 0.0001,
+            "robustness": 68.9
+          }
+        },
+        "subcategories": {
+          "Language": {
+            "metrics": {
+              "easy": {
+                "accuracy": 88.5,
+                "cost": 0.0001,
+                "robustness": 63.6
+              },
+              "medium": {
+                "accuracy": 44.9,
+                "cost": 0.0001,
+                "robustness": 44.4
+              },
+              "hard": {
+                "accuracy": 48.4,
+                "cost": 0.0002,
+                "robustness": 80.0
+              },
+              "all": {
+                "accuracy": 59.6,
+                "cost": 0.0001,
+                "robustness": 68.9
+              }
+            }
+          }
+        }
+      },
+      "Science": {
+        "metrics": {
+          "easy": {
+            "accuracy": 97.2,
+            "cost": 0.0001,
+            "robustness": 43.6
+          },
+          "medium": {
+            "accuracy": 75.2,
+            "cost": 0.0001,
+            "robustness": 47.6
+          },
+          "hard": {
+            "accuracy": 18.0,
+            "cost": 0.0003,
+            "robustness": 55.6
+          },
+          "all": {
+            "accuracy": 79.4,
+            "cost": 0.0001,
+            "robustness": 46.4
+          }
+        },
+        "subcategories": {
+          "Mathematics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 96.2,
+                "cost": 0.0001,
+                "robustness": 18.2
+              },
+              "medium": {
+                "accuracy": 79.6,
+                "cost": 0.0001,
+                "robustness": 63.6
+              },
+              "hard": {
+                "accuracy": 28.1,
+                "cost": 0.0006,
+                "robustness": 20.0
+              },
+              "all": {
+                "accuracy": 79.2,
+                "cost": 0.0002,
+                "robustness": 37.0
+              }
+            }
+          },
+          "Earth sciences and geology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.3,
+                "cost": 0.0001,
+                "robustness": 37.5
+              },
+              "medium": {
+                "accuracy": 67.8,
+                "cost": 0.0001,
+                "robustness": 16.7
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0002,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 88.2,
+                "cost": 0.0001,
+                "robustness": 33.3
+              }
+            }
+          },
+          "Biology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.3,
+                "cost": 0.0001,
+                "robustness": 71.4
+              },
+              "medium": {
+                "accuracy": 58.8,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 11.1,
+                "cost": 0.0002,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 88.1,
+                "cost": 0.0001,
+                "robustness": 71.4
+              }
+            }
+          },
+          "Chemistry": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0001,
+                "robustness": 33.3
+              },
+              "medium": {
+                "accuracy": 82.4,
+                "cost": 0.0001,
+                "robustness": 0.0
+              },
+              "hard": {
+                "accuracy": 15.4,
+                "cost": 0.0002,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 81.1,
+                "cost": 0.0001,
+                "robustness": 20.0
+              }
+            }
+          },
+          "Physics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.7,
+                "cost": 0.0,
+                "robustness": 66.7
+              },
+              "medium": {
+                "accuracy": 73.8,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 36.4,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 80.4,
+                "cost": 0.0001,
+                "robustness": 80.0
+              }
+            }
+          },
+          "Animals (Zoology)": {
+            "metrics": {
+              "easy": {
+                "accuracy": 95.0,
+                "cost": 0.0,
+                "robustness": 50.0
+              },
+              "medium": {
+                "accuracy": 80.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 0,
+                "cost": 0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 92.0,
+                "cost": 0.0,
+                "robustness": 50.0
+              }
+            }
+          },
+          "Science": {
+            "metrics": {
+              "easy": {
+                "accuracy": 96.7,
+                "cost": 0.0,
+                "robustness": 60.0
+              },
+              "medium": {
+                "accuracy": 52.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 5.1,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 39.5,
+                "cost": 0.0,
+                "robustness": 75.0
+              }
+            }
+          }
+        }
+      },
+      "Technology": {
+        "metrics": {
+          "easy": {
+            "accuracy": 93.8,
+            "cost": 0.0001,
+            "robustness": 55.8
+          },
+          "medium": {
+            "accuracy": 62.9,
+            "cost": 0.0001,
+            "robustness": 42.9
+          },
+          "hard": {
+            "accuracy": 18.5,
+            "cost": 0.0002,
+            "robustness": 14.3
+          },
+          "all": {
+            "accuracy": 76.1,
+            "cost": 0.0001,
+            "robustness": 47.9
+          }
+        },
+        "subcategories": {
+          "Engineering": {
+            "metrics": {
+              "easy": {
+                "accuracy": 96.0,
+                "cost": 0.0001,
+                "robustness": 60.0
+              },
+              "medium": {
+                "accuracy": 80.2,
+                "cost": 0.0002,
+                "robustness": 46.2
+              },
+              "hard": {
+                "accuracy": 42.9,
+                "cost": 0.0003,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 81.5,
+                "cost": 0.0002,
+                "robustness": 52.6
+              }
+            }
+          },
+          "Medicine and health": {
+            "metrics": {
+              "easy": {
+                "accuracy": 92.9,
+                "cost": 0.0001,
+                "robustness": 52.9
+              },
+              "medium": {
+                "accuracy": 50.8,
+                "cost": 0.0001,
+                "robustness": 42.9
+              },
+              "hard": {
+                "accuracy": 9.7,
+                "cost": 0.0001,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 73.2,
+                "cost": 0.0001,
+                "robustness": 44.7
+              }
+            }
+          },
+          "Management and public relations": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.3,
+                "cost": 0.0001,
+                "robustness": 75.0
+              },
+              "medium": {
+                "accuracy": 63.6,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 90.4,
+                "cost": 0.0001,
+                "robustness": 60.0
+              }
+            }
+          }
+        }
+      },
+      "Arts & recreation": {
+        "metrics": {
+          "easy": {
+            "accuracy": 93.0,
+            "cost": 0.0,
+            "robustness": 62.5
+          },
+          "medium": {
+            "accuracy": 48.6,
+            "cost": 0.0001,
+            "robustness": 63.6
+          },
+          "hard": {
+            "accuracy": 11.6,
+            "cost": 0.0001,
+            "robustness": 80.0
+          },
+          "all": {
+            "accuracy": 59.7,
+            "cost": 0.0001,
+            "robustness": 66.7
+          }
+        },
+        "subcategories": {
+          "Sports, games and entertainment": {
+            "metrics": {
+              "easy": {
+                "accuracy": 90.7,
+                "cost": 0.0,
+                "robustness": 50.0
+              },
+              "medium": {
+                "accuracy": 58.0,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 12.1,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 63.1,
+                "cost": 0.0001,
+                "robustness": 87.5
+              }
+            }
+          },
+          "Music": {
+            "metrics": {
+              "easy": {
+                "accuracy": 93.9,
+                "cost": 0.0,
+                "robustness": 80.0
+              },
+              "medium": {
+                "accuracy": 31.9,
+                "cost": 0.0001,
+                "robustness": 40.0
+              },
+              "hard": {
+                "accuracy": 24.0,
+                "cost": 0.0001,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 56.7,
+                "cost": 0.0001,
+                "robustness": 54.5
+              }
+            }
+          },
+          "Arts": {
+            "metrics": {
+              "easy": {
+                "accuracy": 96.6,
+                "cost": 0.0001,
+                "robustness": 0.0
+              },
+              "medium": {
+                "accuracy": 74.4,
+                "cost": 0.0,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 5.4,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 57.8,
+                "cost": 0.0001,
+                "robustness": 60.0
+              }
+            }
+          }
+        }
+      },
+      "Literature": {
+        "metrics": {
+          "easy": {
+            "accuracy": 99.1,
+            "cost": 0.0001,
+            "robustness": 33.3
+          },
+          "medium": {
+            "accuracy": 67.2,
+            "cost": 0.0001,
+            "robustness": 50.0
+          },
+          "hard": {
+            "accuracy": 27.4,
+            "cost": 0.0002,
+            "robustness": 45.8
+          },
+          "all": {
+            "accuracy": 42.9,
+            "cost": 0.0002,
+            "robustness": 44.8
+          }
+        },
+        "subcategories": {
+          "Literature, rhetoric and criticism": {
+            "metrics": {
+              "easy": {
+                "accuracy": 99.1,
+                "cost": 0.0001,
+                "robustness": 33.3
+              },
+              "medium": {
+                "accuracy": 67.2,
+                "cost": 0.0001,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 27.4,
+                "cost": 0.0002,
+                "robustness": 45.8
+              },
+              "all": {
+                "accuracy": 42.9,
+                "cost": 0.0002,
+                "robustness": 44.8
+              }
+            }
+          }
+        }
+      },
+      "History": {
+        "metrics": {
+          "easy": {
+            "accuracy": 94.1,
+            "cost": 0.0001,
+            "robustness": 30.4
+          },
+          "medium": {
+            "accuracy": 62.1,
+            "cost": 0.0001,
+            "robustness": 33.3
+          },
+          "hard": {
+            "accuracy": 9.4,
+            "cost": 0.0001,
+            "robustness": 70.0
+          },
+          "all": {
+            "accuracy": 68.0,
+            "cost": 0.0001,
+            "robustness": 41.0
+          }
+        },
+        "subcategories": {
+          "Geography": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.2,
+                "cost": 0.0,
+                "robustness": 37.5
+              },
+              "medium": {
+                "accuracy": 48.3,
+                "cost": 0.0,
+                "robustness": 0.0
+              },
+              "hard": {
+                "accuracy": 16.7,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 81.3,
+                "cost": 0.0,
+                "robustness": 33.3
+              }
+            }
+          },
+          "History": {
+            "metrics": {
+              "easy": {
+                "accuracy": 91.9,
+                "cost": 0.0001,
+                "robustness": 27.3
+              },
+              "medium": {
+                "accuracy": 62.6,
+                "cost": 0.0001,
+                "robustness": 40.0
+              },
+              "hard": {
+                "accuracy": 8.8,
+                "cost": 0.0001,
+                "robustness": 70.0
+              },
+              "all": {
+                "accuracy": 61.0,
+                "cost": 0.0001,
+                "robustness": 46.2
+              }
+            }
+          },
+          "Biography and genealogy": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.6,
+                "cost": 0.0,
+                "robustness": 25.0
+              },
+              "medium": {
+                "accuracy": 100.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 96.2,
+                "cost": 0.0,
+                "robustness": 25.0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "weave-router": {
+    "metrics": {
+      "easy": {
+        "accuracy": 97.1,
+        "cost": 0.0006,
+        "robustness": 79.3
+      },
+      "medium": {
+        "accuracy": 76.6,
+        "cost": 0.0011,
+        "robustness": 78.8
+      },
+      "hard": {
+        "accuracy": 38.5,
+        "cost": 0.0014,
+        "robustness": 78.9
+      },
+      "all": {
+        "accuracy": 78.4,
+        "cost": 0.0009,
+        "robustness": 79.0
+      }
+    },
+    "categories": {
+      "Computer science, information, and general works": {
+        "metrics": {
+          "easy": {
+            "accuracy": 95.2,
+            "cost": 0.0004,
+            "robustness": 88.5
+          },
+          "medium": {
+            "accuracy": 71.2,
+            "cost": 0.0011,
+            "robustness": 85.7
+          },
+          "hard": {
+            "accuracy": 32.1,
+            "cost": 0.0022,
+            "robustness": 73.3
+          },
+          "all": {
+            "accuracy": 78.1,
+            "cost": 0.0009,
+            "robustness": 83.9
+          }
+        },
+        "subcategories": {
+          "Library and information sciences": {
+            "metrics": {
+              "easy": {
+                "accuracy": 96.7,
+                "cost": 0.0003,
+                "robustness": 92.3
+              },
+              "medium": {
+                "accuracy": 67.9,
+                "cost": 0.0007,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 11.8,
+                "cost": 0.0006,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 83.1,
+                "cost": 0.0004,
+                "robustness": 94.7
+              }
+            }
+          },
+          "Computer science, knowledge, and systems": {
+            "metrics": {
+              "easy": {
+                "accuracy": 94.2,
+                "cost": 0.0004,
+                "robustness": 84.6
+              },
+              "medium": {
+                "accuracy": 72.0,
+                "cost": 0.0012,
+                "robustness": 82.4
+              },
+              "hard": {
+                "accuracy": 36.5,
+                "cost": 0.0025,
+                "robustness": 69.2
+              },
+              "all": {
+                "accuracy": 76.1,
+                "cost": 0.0012,
+                "robustness": 79.1
+              }
+            }
+          }
+        }
+      },
+      "Philosophy and psychology": {
+        "metrics": {
+          "easy": {
+            "accuracy": 96.1,
+            "cost": 0.0004,
+            "robustness": 81.5
+          },
+          "medium": {
+            "accuracy": 72.5,
+            "cost": 0.0007,
+            "robustness": 90.0
+          },
+          "hard": {
+            "accuracy": 38.2,
+            "cost": 0.0012,
+            "robustness": 85.7
+          },
+          "all": {
+            "accuracy": 82.6,
+            "cost": 0.0006,
+            "robustness": 84.1
+          }
+        },
+        "subcategories": {
+          "Ethics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 93.5,
+                "cost": 0.0003,
+                "robustness": 92.9
+              },
+              "medium": {
+                "accuracy": 40.0,
+                "cost": 0.0007,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0004,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 73.1,
+                "cost": 0.0004,
+                "robustness": 95.2
+              }
+            }
+          },
+          "Philosophy": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0004,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 97.4,
+                "cost": 0.0007,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 47.5,
+                "cost": 0.0014,
+                "robustness": 66.7
+              },
+              "all": {
+                "accuracy": 81.0,
+                "cost": 0.0009,
+                "robustness": 75.0
+              }
+            }
+          },
+          "Psychology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.5,
+                "cost": 0.0006,
+                "robustness": 50.0
+              },
+              "medium": {
+                "accuracy": 91.3,
+                "cost": 0.0009,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 33.3,
+                "cost": 0.0011,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 89.7,
+                "cost": 0.0007,
+                "robustness": 62.5
+              }
+            }
+          },
+          "Philosophical logic": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.5,
+                "cost": 0.0005,
+                "robustness": 75.0
+              },
+              "medium": {
+                "accuracy": 97.3,
+                "cost": 0.0007,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 80.0,
+                "cost": 0.0015,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 97.2,
+                "cost": 0.0006,
+                "robustness": 85.7
+              }
+            }
+          }
+        }
+      },
+      "Social Science": {
+        "metrics": {
+          "easy": {
+            "accuracy": 98.0,
+            "cost": 0.0007,
+            "robustness": 94.4
+          },
+          "medium": {
+            "accuracy": 77.5,
+            "cost": 0.0012,
+            "robustness": 83.3
+          },
+          "hard": {
+            "accuracy": 21.3,
+            "cost": 0.0013,
+            "robustness": 71.4
+          },
+          "all": {
+            "accuracy": 74.6,
+            "cost": 0.001,
+            "robustness": 86.5
+          }
+        },
+        "subcategories": {
+          "Economics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.4,
+                "cost": 0.0006,
+                "robustness": 91.7
+              },
+              "medium": {
+                "accuracy": 81.8,
+                "cost": 0.0012,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 21.3,
+                "cost": 0.0015,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 78.1,
+                "cost": 0.001,
+                "robustness": 95.2
+              }
+            }
+          },
+          "Law": {
+            "metrics": {
+              "easy": {
+                "accuracy": 95.1,
+                "cost": 0.0012,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 72.9,
+                "cost": 0.0017,
+                "robustness": 75.0
+              },
+              "hard": {
+                "accuracy": 20.7,
+                "cost": 0.0014,
+                "robustness": 50.0
+              },
+              "all": {
+                "accuracy": 71.8,
+                "cost": 0.0014,
+                "robustness": 77.8
+              }
+            }
+          },
+          "Social sciences, sociology, and anthropology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0004,
+                "robustness": 0
+              },
+              "medium": {
+                "accuracy": 72.2,
+                "cost": 0.0005,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 25.0,
+                "cost": 0.0011,
+                "robustness": 0.0
+              },
+              "all": {
+                "accuracy": 45.3,
+                "cost": 0.0009,
+                "robustness": 33.3
+              }
+            }
+          },
+          "Social problems": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0003,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 44.4,
+                "cost": 0.0005,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0003,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 83.6,
+                "cost": 0.0003,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      },
+      "Language": {
+        "metrics": {
+          "easy": {
+            "accuracy": 94.3,
+            "cost": 0.0013,
+            "robustness": 27.3
+          },
+          "medium": {
+            "accuracy": 53.3,
+            "cost": 0.0011,
+            "robustness": 44.4
+          },
+          "hard": {
+            "accuracy": 53.0,
+            "cost": 0.0011,
+            "robustness": 84.0
+          },
+          "all": {
+            "accuracy": 65.4,
+            "cost": 0.0012,
+            "robustness": 62.2
+          }
+        },
+        "subcategories": {
+          "Language": {
+            "metrics": {
+              "easy": {
+                "accuracy": 94.3,
+                "cost": 0.0013,
+                "robustness": 27.3
+              },
+              "medium": {
+                "accuracy": 53.3,
+                "cost": 0.0011,
+                "robustness": 44.4
+              },
+              "hard": {
+                "accuracy": 53.0,
+                "cost": 0.0011,
+                "robustness": 84.0
+              },
+              "all": {
+                "accuracy": 65.4,
+                "cost": 0.0012,
+                "robustness": 62.2
+              }
+            }
+          }
+        }
+      },
+      "Science": {
+        "metrics": {
+          "easy": {
+            "accuracy": 99.2,
+            "cost": 0.0005,
+            "robustness": 82.1
+          },
+          "medium": {
+            "accuracy": 87.1,
+            "cost": 0.0009,
+            "robustness": 85.7
+          },
+          "hard": {
+            "accuracy": 33.1,
+            "cost": 0.0016,
+            "robustness": 88.9
+          },
+          "all": {
+            "accuracy": 87.7,
+            "cost": 0.0008,
+            "robustness": 84.1
+          }
+        },
+        "subcategories": {
+          "Mathematics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 99.6,
+                "cost": 0.0004,
+                "robustness": 81.8
+              },
+              "medium": {
+                "accuracy": 91.3,
+                "cost": 0.0009,
+                "robustness": 90.9
+              },
+              "hard": {
+                "accuracy": 49.2,
+                "cost": 0.002,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 90.3,
+                "cost": 0.0009,
+                "robustness": 88.9
+              }
+            }
+          },
+          "Earth sciences and geology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.8,
+                "cost": 0.0003,
+                "robustness": 87.5
+              },
+              "medium": {
+                "accuracy": 76.3,
+                "cost": 0.0006,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 25.0,
+                "cost": 0.0009,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 92.1,
+                "cost": 0.0004,
+                "robustness": 93.3
+              }
+            }
+          },
+          "Biology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 99.1,
+                "cost": 0.0008,
+                "robustness": 85.7
+              },
+              "medium": {
+                "accuracy": 75.0,
+                "cost": 0.0011,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 62.5,
+                "cost": 0.0013,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 94.2,
+                "cost": 0.0009,
+                "robustness": 85.7
+              }
+            }
+          },
+          "Chemistry": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0007,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 93.8,
+                "cost": 0.001,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 36.4,
+                "cost": 0.0015,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 89.5,
+                "cost": 0.0009,
+                "robustness": 80.0
+              }
+            }
+          },
+          "Physics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.7,
+                "cost": 0.0004,
+                "robustness": 66.7
+              },
+              "medium": {
+                "accuracy": 89.2,
+                "cost": 0.0014,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 40.0,
+                "cost": 0.0019,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 87.9,
+                "cost": 0.001,
+                "robustness": 60.0
+              }
+            }
+          },
+          "Animals (Zoology)": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0003,
+                "robustness": 50.0
+              },
+              "medium": {
+                "accuracy": 80.0,
+                "cost": 0.0002,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 0,
+                "cost": 0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 96.0,
+                "cost": 0.0003,
+                "robustness": 50.0
+              }
+            }
+          },
+          "Science": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0002,
+                "robustness": 80.0
+              },
+              "medium": {
+                "accuracy": 70.8,
+                "cost": 0.0004,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 7.8,
+                "cost": 0.0012,
+                "robustness": 66.7
+              },
+              "all": {
+                "accuracy": 48.6,
+                "cost": 0.0008,
+                "robustness": 75.0
+              }
+            }
+          }
+        }
+      },
+      "Technology": {
+        "metrics": {
+          "easy": {
+            "accuracy": 96.1,
+            "cost": 0.0006,
+            "robustness": 72.1
+          },
+          "medium": {
+            "accuracy": 76.9,
+            "cost": 0.0012,
+            "robustness": 90.5
+          },
+          "hard": {
+            "accuracy": 31.5,
+            "cost": 0.0014,
+            "robustness": 85.7
+          },
+          "all": {
+            "accuracy": 83.7,
+            "cost": 0.0009,
+            "robustness": 78.9
+          }
+        },
+        "subcategories": {
+          "Engineering": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.4,
+                "cost": 0.0006,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 93.3,
+                "cost": 0.0015,
+                "robustness": 92.3
+              },
+              "hard": {
+                "accuracy": 67.6,
+                "cost": 0.0023,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 92.5,
+                "cost": 0.0012,
+                "robustness": 94.7
+              }
+            }
+          },
+          "Medicine and health": {
+            "metrics": {
+              "easy": {
+                "accuracy": 95.3,
+                "cost": 0.0007,
+                "robustness": 64.7
+              },
+              "medium": {
+                "accuracy": 66.2,
+                "cost": 0.001,
+                "robustness": 85.7
+              },
+              "hard": {
+                "accuracy": 20.6,
+                "cost": 0.0011,
+                "robustness": 83.3
+              },
+              "all": {
+                "accuracy": 80.1,
+                "cost": 0.0008,
+                "robustness": 70.2
+              }
+            }
+          },
+          "Management and public relations": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0003,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 81.8,
+                "cost": 0.0005,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0003,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 94.5,
+                "cost": 0.0003,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      },
+      "Arts & recreation": {
+        "metrics": {
+          "easy": {
+            "accuracy": 98.2,
+            "cost": 0.0006,
+            "robustness": 87.5
+          },
+          "medium": {
+            "accuracy": 80.2,
+            "cost": 0.0017,
+            "robustness": 54.5
+          },
+          "hard": {
+            "accuracy": 36.1,
+            "cost": 0.0026,
+            "robustness": 80.0
+          },
+          "all": {
+            "accuracy": 83.5,
+            "cost": 0.0014,
+            "robustness": 70.8
+          }
+        },
+        "subcategories": {
+          "Sports, games and entertainment": {
+            "metrics": {
+              "easy": {
+                "accuracy": 99.2,
+                "cost": 0.0009,
+                "robustness": 50.0
+              },
+              "medium": {
+                "accuracy": 92.1,
+                "cost": 0.002,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 63.6,
+                "cost": 0.0035,
+                "robustness": 50.0
+              },
+              "all": {
+                "accuracy": 94.8,
+                "cost": 0.0018,
+                "robustness": 50.0
+              }
+            }
+          },
+          "Music": {
+            "metrics": {
+              "easy": {
+                "accuracy": 95.9,
+                "cost": 0.0004,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 63.3,
+                "cost": 0.002,
+                "robustness": 80.0
+              },
+              "hard": {
+                "accuracy": 27.8,
+                "cost": 0.0024,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 75.6,
+                "cost": 0.0014,
+                "robustness": 90.9
+              }
+            }
+          },
+          "Arts": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0002,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 100.0,
+                "cost": 0.0005,
+                "robustness": 0.0
+              },
+              "hard": {
+                "accuracy": 32.6,
+                "cost": 0.0016,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 79.4,
+                "cost": 0.0008,
+                "robustness": 60.0
+              }
+            }
+          }
+        }
+      },
+      "Literature": {
+        "metrics": {
+          "easy": {
+            "accuracy": 100.0,
+            "cost": 0.0003,
+            "robustness": 100.0
+          },
+          "medium": {
+            "accuracy": 92.2,
+            "cost": 0.0008,
+            "robustness": 50.0
+          },
+          "hard": {
+            "accuracy": 44.2,
+            "cost": 0.001,
+            "robustness": 70.8
+          },
+          "all": {
+            "accuracy": 58.3,
+            "cost": 0.0009,
+            "robustness": 72.4
+          }
+        },
+        "subcategories": {
+          "Literature, rhetoric and criticism": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0003,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 92.2,
+                "cost": 0.0008,
+                "robustness": 50.0
+              },
+              "hard": {
+                "accuracy": 44.2,
+                "cost": 0.001,
+                "robustness": 70.8
+              },
+              "all": {
+                "accuracy": 58.3,
+                "cost": 0.0009,
+                "robustness": 72.4
+              }
+            }
+          }
+        }
+      },
+      "History": {
+        "metrics": {
+          "easy": {
+            "accuracy": 98.4,
+            "cost": 0.0005,
+            "robustness": 82.6
+          },
+          "medium": {
+            "accuracy": 81.1,
+            "cost": 0.001,
+            "robustness": 66.7
+          },
+          "hard": {
+            "accuracy": 26.2,
+            "cost": 0.0012,
+            "robustness": 80.0
+          },
+          "all": {
+            "accuracy": 79.0,
+            "cost": 0.0008,
+            "robustness": 79.5
+          }
+        },
+        "subcategories": {
+          "Geography": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.2,
+                "cost": 0.0004,
+                "robustness": 87.5
+              },
+              "medium": {
+                "accuracy": 75.9,
+                "cost": 0.0005,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 50.0,
+                "cost": 0.0009,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 90.0,
+                "cost": 0.0004,
+                "robustness": 88.9
+              }
+            }
+          },
+          "History": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.7,
+                "cost": 0.0006,
+                "robustness": 72.7
+              },
+              "medium": {
+                "accuracy": 81.0,
+                "cost": 0.0012,
+                "robustness": 60.0
+              },
+              "hard": {
+                "accuracy": 24.2,
+                "cost": 0.0013,
+                "robustness": 80.0
+              },
+              "all": {
+                "accuracy": 73.8,
+                "cost": 0.0009,
+                "robustness": 73.1
+              }
+            }
+          },
+          "Biography and genealogy": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.6,
+                "cost": 0.0002,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 100.0,
+                "cost": 0.0003,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0002,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 96.2,
+                "cost": 0.0002,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "sqwish-router": {
+    "metrics": {
+      "easy": {
+        "accuracy": 96.7,
+        "cost": 0.0001,
+        "robustness": 100.0
+      },
+      "medium": {
+        "accuracy": 77.4,
+        "cost": 0.0002,
+        "robustness": 100.0
+      },
+      "hard": {
+        "accuracy": 34.1,
+        "cost": 0.0002,
+        "robustness": 100.0
+      },
+      "all": {
+        "accuracy": 76.4,
+        "cost": 0.0002,
+        "robustness": 100.0
+      }
+    },
+    "categories": {
+      "Computer science, information, and general works": {
+        "metrics": {
+          "easy": {
+            "accuracy": 97.5,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "medium": {
+            "accuracy": 84.0,
+            "cost": 0.0002,
+            "robustness": 100.0
+          },
+          "hard": {
+            "accuracy": 34.7,
+            "cost": 0.0003,
+            "robustness": 100.0
+          },
+          "all": {
+            "accuracy": 82.1,
+            "cost": 0.0002,
+            "robustness": 100.0
+          }
+        },
+        "subcategories": {
+          "Library and information sciences": {
+            "metrics": {
+              "easy": {
+                "accuracy": 95.6,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 70.6,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 11.1,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 82.6,
+                "cost": 0.0,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Computer science, knowledge, and systems": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.8,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 87.0,
+                "cost": 0.0002,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 38.8,
+                "cost": 0.0004,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 81.9,
+                "cost": 0.0002,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      },
+      "Philosophy and psychology": {
+        "metrics": {
+          "easy": {
+            "accuracy": 96.6,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "medium": {
+            "accuracy": 84.4,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "hard": {
+            "accuracy": 38.3,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "all": {
+            "accuracy": 86.1,
+            "cost": 0.0001,
+            "robustness": 100.0
+          }
+        },
+        "subcategories": {
+          "Ethics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 95.1,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 78.8,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 84.6,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 89.8,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Philosophy": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.3,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 77.5,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 26.7,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 64.8,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Psychology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 96.7,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 89.6,
+                "cost": 0.0001,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 22.2,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 87.7,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Philosophical logic": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 97.4,
+                "cost": 0.0002,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 80.0,
+                "cost": 0.0005,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 98.1,
+                "cost": 0.0002,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      },
+      "Social Science": {
+        "metrics": {
+          "easy": {
+            "accuracy": 96.6,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "medium": {
+            "accuracy": 74.3,
+            "cost": 0.0003,
+            "robustness": 100.0
+          },
+          "hard": {
+            "accuracy": 17.4,
+            "cost": 0.0003,
+            "robustness": 100.0
+          },
+          "all": {
+            "accuracy": 71.7,
+            "cost": 0.0002,
+            "robustness": 100.0
+          }
+        },
+        "subcategories": {
+          "Economics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.8,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 79.1,
+                "cost": 0.0003,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 18.8,
+                "cost": 0.0004,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 75.8,
+                "cost": 0.0002,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Law": {
+            "metrics": {
+              "easy": {
+                "accuracy": 95.4,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 71.4,
+                "cost": 0.0003,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 26.7,
+                "cost": 0.0003,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 72.8,
+                "cost": 0.0002,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Social sciences, sociology, and anthropology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "medium": {
+                "accuracy": 61.1,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 8.8,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 30.9,
+                "cost": 0.0,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Social problems": {
+            "metrics": {
+              "easy": {
+                "accuracy": 93.6,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 33.3,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 77.0,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      },
+      "Language": {
+        "metrics": {
+          "easy": {
+            "accuracy": 91.9,
+            "cost": 0.0,
+            "robustness": 100.0
+          },
+          "medium": {
+            "accuracy": 74.9,
+            "cost": 0.0,
+            "robustness": 100.0
+          },
+          "hard": {
+            "accuracy": 59.2,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "all": {
+            "accuracy": 72.7,
+            "cost": 0.0001,
+            "robustness": 100.0
+          }
+        },
+        "subcategories": {
+          "Language": {
+            "metrics": {
+              "easy": {
+                "accuracy": 91.9,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 74.9,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 59.2,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 72.7,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      },
+      "Science": {
+        "metrics": {
+          "easy": {
+            "accuracy": 99.0,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "medium": {
+            "accuracy": 82.6,
+            "cost": 0.0003,
+            "robustness": 100.0
+          },
+          "hard": {
+            "accuracy": 30.9,
+            "cost": 0.0005,
+            "robustness": 100.0
+          },
+          "all": {
+            "accuracy": 84.5,
+            "cost": 0.0002,
+            "robustness": 100.0
+          }
+        },
+        "subcategories": {
+          "Mathematics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.9,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 84.8,
+                "cost": 0.0004,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 47.2,
+                "cost": 0.001,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 85.4,
+                "cost": 0.0004,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Earth sciences and geology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.8,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 72.9,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 15.4,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 90.9,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Biology": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 76.5,
+                "cost": 0.0001,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 44.4,
+                "cost": 0.0003,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 93.7,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Chemistry": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.7,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 91.2,
+                "cost": 0.0002,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 23.1,
+                "cost": 0.0003,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 84.4,
+                "cost": 0.0002,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Physics": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.7,
+                "cost": 0.0002,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 88.1,
+                "cost": 0.0004,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 45.5,
+                "cost": 0.0003,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 87.6,
+                "cost": 0.0003,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Animals (Zoology)": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 60.0,
+                "cost": 0.0001,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 0,
+                "cost": 0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 92.0,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Science": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 72.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 6.8,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 45.6,
+                "cost": 0.0,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      },
+      "Technology": {
+        "metrics": {
+          "easy": {
+            "accuracy": 95.6,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "medium": {
+            "accuracy": 72.9,
+            "cost": 0.0003,
+            "robustness": 100.0
+          },
+          "hard": {
+            "accuracy": 30.6,
+            "cost": 0.0003,
+            "robustness": 100.0
+          },
+          "all": {
+            "accuracy": 81.5,
+            "cost": 0.0002,
+            "robustness": 100.0
+          }
+        },
+        "subcategories": {
+          "Engineering": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.4,
+                "cost": 0.0002,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 88.0,
+                "cost": 0.0005,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 57.1,
+                "cost": 0.0009,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 88.1,
+                "cost": 0.0005,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Medicine and health": {
+            "metrics": {
+              "easy": {
+                "accuracy": 94.8,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 62.8,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 21.2,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 78.6,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Management and public relations": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.3,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 63.6,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0001,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 90.4,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      },
+      "Arts & recreation": {
+        "metrics": {
+          "easy": {
+            "accuracy": 94.0,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "medium": {
+            "accuracy": 65.1,
+            "cost": 0.0004,
+            "robustness": 100.0
+          },
+          "hard": {
+            "accuracy": 14.3,
+            "cost": 0.0003,
+            "robustness": 100.0
+          },
+          "all": {
+            "accuracy": 66.7,
+            "cost": 0.0003,
+            "robustness": 100.0
+          }
+        },
+        "subcategories": {
+          "Sports, games and entertainment": {
+            "metrics": {
+              "easy": {
+                "accuracy": 92.1,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 70.0,
+                "cost": 0.0002,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 16.7,
+                "cost": 0.0002,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 68.6,
+                "cost": 0.0002,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Music": {
+            "metrics": {
+              "easy": {
+                "accuracy": 93.9,
+                "cost": 0.0002,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 53.4,
+                "cost": 0.0007,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 12.0,
+                "cost": 0.0013,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 65.8,
+                "cost": 0.0005,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Arts": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.3,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 87.2,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 12.5,
+                "cost": 0.0,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 64.3,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      },
+      "Literature": {
+        "metrics": {
+          "easy": {
+            "accuracy": 100.0,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "medium": {
+            "accuracy": 77.5,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "hard": {
+            "accuracy": 35.9,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "all": {
+            "accuracy": 50.3,
+            "cost": 0.0001,
+            "robustness": 100.0
+          }
+        },
+        "subcategories": {
+          "Literature, rhetoric and criticism": {
+            "metrics": {
+              "easy": {
+                "accuracy": 100.0,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 77.5,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 35.9,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 50.3,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      },
+      "History": {
+        "metrics": {
+          "easy": {
+            "accuracy": 97.1,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "medium": {
+            "accuracy": 74.0,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "hard": {
+            "accuracy": 14.1,
+            "cost": 0.0001,
+            "robustness": 100.0
+          },
+          "all": {
+            "accuracy": 73.6,
+            "cost": 0.0001,
+            "robustness": 100.0
+          }
+        },
+        "subcategories": {
+          "Geography": {
+            "metrics": {
+              "easy": {
+                "accuracy": 98.2,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 62.1,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 25.0,
+                "cost": 0.0,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 85.3,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          },
+          "History": {
+            "metrics": {
+              "easy": {
+                "accuracy": 96.4,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 76.3,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "hard": {
+                "accuracy": 13.2,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "all": {
+                "accuracy": 68.1,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          },
+          "Biography and genealogy": {
+            "metrics": {
+              "easy": {
+                "accuracy": 97.6,
+                "cost": 0.0001,
+                "robustness": 100.0
+              },
+              "medium": {
+                "accuracy": 77.8,
+                "cost": 0.0001,
+                "robustness": 0
+              },
+              "hard": {
+                "accuracy": 0.0,
+                "cost": 0.0001,
+                "robustness": 0
+              },
+              "all": {
+                "accuracy": 92.3,
+                "cost": 0.0001,
+                "robustness": 100.0
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
