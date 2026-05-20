@@ -116,9 +116,7 @@
     "type": "closed-source",
     "description": "OpenAI's internal routing system for GPT model family",
     "affiliation": "OpenAI",
-    "modelPool": [
-      "gpt-5-chat"
-    ],
+    "modelPool": ["gpt-5-chat"],
     "paperUrl": "https://openai.com/index/introducing-gpt-5/",
     "websiteUrl": "https://openai.com/index/introducing-gpt-5/"
   },
@@ -248,10 +246,7 @@
     "type": "open-source",
     "description": "Binary selection between strong and weak models",
     "affiliation": "Berkeley",
-    "modelPool": [
-      "openai-gpt-4o",
-      "mixtral-8x7b-instruct"
-    ],
+    "modelPool": ["openai-gpt-4o", "mixtral-8x7b-instruct"],
     "paperUrl": "https://arxiv.org/abs/2406.18665",
     "websiteUrl": "https://arxiv.org/abs/2406.18665",
     "githubUrl": "https://github.com/lm-sys/RouteLLM",

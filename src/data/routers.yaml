@@ -199,7 +199,7 @@ chayan:
 R2-Router:
   name: R2-Router
   type: open-source
-  description: "R2-Router: Global KNN (K=80, cosine, distance-weighted) trained on sub_10 split. 6 models, 4 budgets. Routes via risk=(1-lambda)*quality - lambda*tokens*price. Lambda=0.999."
+  description: 'R2-Router: Global KNN (K=80, cosine, distance-weighted) trained on sub_10 split. 6 models, 4 budgets. Routes via risk=(1-lambda)*quality - lambda*tokens*price. Lambda=0.999.'
   affiliation: UCF
   modelPool:
     - qwen/qwen3-235b-a22b-2507
