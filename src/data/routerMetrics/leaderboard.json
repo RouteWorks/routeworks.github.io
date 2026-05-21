@@ -11,17 +11,6 @@
     "Cost per 1k": 0.18
   },
   {
-    "Router Name": "Weave Router",
-    "Arena Score": 76.09,
-    "Optimal Selection Score": 5.6,
-    "Optimal Cost Score": 17.19,
-    "Optimal Acc. Score": 89.21,
-    "Robustness Score": 79.76,
-    "Latency Score": null,
-    "Accuracy": 79.32,
-    "Cost per 1k": 0.61
-  },
-  {
     "Router Name": "R2-Router",
     "Arena Score": 71.6,
     "Optimal Selection Score": 24.51,
