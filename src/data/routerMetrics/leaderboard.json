@@ -11,6 +11,17 @@
     "Cost per 1k": 0.18
   },
   {
+    "Router Name": "Weave Router",
+    "Arena Score": 72.82,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 100.0,
+    "Latency Score": null,
+    "Accuracy": 76.32,
+    "Cost per 1k": 0.94
+  },
+  {
     "Router Name": "OrcaRouter-Adaptive",
     "Arena Score": 72.08,
     "Optimal Selection Score": null,
@@ -67,14 +78,14 @@
   },
   {
     "Router Name": "azure",
-    "Arena Score": 66.66,
-    "Optimal Selection Score": 22.52,
-    "Optimal Cost Score": 46.322,
-    "Optimal Acc. Score": 81.96,
-    "Robustness Score": 54.07,
+    "Arena Score": 71.87,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 71.43,
     "Latency Score": null,
-    "Accuracy": 68.09,
-    "Cost per 1k": 0.54
+    "Accuracy": 72.82,
+    "Cost per 1k": 0.22
   },
   {
     "Router Name": "nirt_bert",

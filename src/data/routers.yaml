@@ -2,7 +2,7 @@ OrcaRouter-Adaptive:
   name: OrcaRouter-Adaptive
   type: closed-source
   description: LinUCB contextual bandit with embedding features routing across a 10-model pool spanning Anthropic, Google, OpenAI, DeepSeek, and Alibaba.
-  affiliation: ''
+  affiliation: Continuum AI
   modelPool:
     - anthropic/claude-haiku-4-5-20251001
     - anthropic/claude-sonnet-4
@@ -15,27 +15,21 @@ OrcaRouter-Adaptive:
     - alibaba/qwen3-235b-a22b-instruct-2507
     - alibaba/qwen3-30b-a3b-instruct-2507
   websiteUrl: https://www.orcarouter.ai/
-
-# --- Weave Router temporarily removed from the public leaderboard. ---
-# Restore by uncommenting this block AND re-adding the matching entries
-# in leaderboard.json, routers.json, and category_scores.json (key:
-# "weave-router"). flip_labels/flip_labels_weave-router.json is kept.
-#
-# Weave Router:
-#   name: Weave Router
-#   type: open-source
-#   description: Cluster-routing (v0.62) over a 7-model BYOK pool spanning Anthropic, OpenAI, Google, and OpenRouter providers. Embeds each prompt with Jina v2 INT8 ONNX (768-dim), runs top-p=4 cluster sum against per-cluster rankings trained on the RouterArena full split with k=160 clusters, then selects the cost-quality optimum via an alpha-blended score (alpha=0.25).
-#   affiliation: Weave
-#   modelPool:
-#     - claude-opus-4-7
-#     - gpt-5.5
-#     - gemini-3.1-pro-preview
-#     - gemini-3.1-flash-lite-preview
-#     - deepseek/deepseek-v4-pro
-#     - deepseek/deepseek-v4-flash
-#     - qwen/qwen3-235b-a22b-2507
-#   websiteUrl: https://weaverouter.com
-#   githubUrl: https://github.com/workweave/router
+  
+Weave Router:
+  name: Weave Router
+  type: open-source
+  description: 'Weave Router (v0.54): 6-model cluster routing trained only on OpenRouterBench labels + Artificial Analysis quality priors. No RouterArena prompts in any training signal.'
+  affiliation: Weave
+  modelPool:
+    - deepseek/deepseek-v4-flash
+    - deepseek/deepseek-v4-pro
+    - gemini-3.1-flash-lite-preview
+    - gemini-3.1-pro-preview
+    - Qwen/Qwen3-Coder-Next
+    - qwen/qwen3-next-80b-a3b-instruct
+  websiteUrl: https://workweave.ai
+  githubUrl: https://github.com/workweave/router
 
 RouterDC:
   name: RouterDC
