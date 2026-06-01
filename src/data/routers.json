@@ -3,14 +3,15 @@
     "name": "Sqwish Router",
     "type": "closed-source",
     "description": "Sqwish Router final submission.",
-    "affiliation": "Sqwish",
+    "affiliation": "@namitha-sqwish",
     "modelPool": [
       "qwen/qwen3-235b-a22b-2507",
       "qwen/qwen3-next-80b-a3b-instruct",
       "Qwen/Qwen3-Coder-Next",
       "google/gemini-3.1-flash-lite",
       "deepseek/deepseek-v4-flash"
-    ]
+    ],
+    "githubUrl": "https://github.com/namitha-sqwish"
   },
   "Weave Router": {
     "name": "Weave Router",
@@ -110,7 +111,9 @@
     "type": "closed-source",
     "description": "OpenAI's internal routing system for GPT model family",
     "affiliation": "OpenAI",
-    "modelPool": ["gpt-5-chat"],
+    "modelPool": [
+      "gpt-5-chat"
+    ],
     "paperUrl": "https://openai.com/index/introducing-gpt-5/",
     "websiteUrl": "https://openai.com/index/introducing-gpt-5/"
   },
@@ -240,7 +243,10 @@
     "type": "open-source",
     "description": "Binary selection between strong and weak models",
     "affiliation": "Berkeley",
-    "modelPool": ["openai-gpt-4o", "mixtral-8x7b-instruct"],
+    "modelPool": [
+      "openai-gpt-4o",
+      "mixtral-8x7b-instruct"
+    ],
     "paperUrl": "https://arxiv.org/abs/2406.18665",
     "websiteUrl": "https://arxiv.org/abs/2406.18665",
     "githubUrl": "https://github.com/lm-sys/RouteLLM",
@@ -331,12 +337,70 @@
     "name": "Auto Router",
     "type": "open-source",
     "description": "Cyclic baseline that rotates through its 4-model pool.",
-    "affiliation": "RouterArena",
+    "affiliation": "@cxf2015",
     "modelPool": [
       "deepseek/deepseek-v3.2",
       "qwen/qwen3-235b-a22b-2507",
       "qwen/qwen3.5-9b",
       "openai/gpt-4o"
+    ],
+    "githubUrl": "https://github.com/cxf2015"
+  },
+  "AgentForge Router": {
+    "name": "AgentForge Router",
+    "affiliation": "@YangY-Z",
+    "githubUrl": "https://github.com/YangY-Z",
+    "type": "open-source",
+    "description": "Submitted by @YangY-Z.",
+    "modelPool": [
+      "qwen/qwen3-235b-a22b-2507",
+      "google/gemini-3.1-flash-lite",
+      "deepseek/deepseek-v4-flash",
+      "deepseek/deepseek-v3.2",
+      "qwen/qwen3-next-80b-a3b-instruct",
+      "Qwen/Qwen3-Coder-Next",
+      "gemini-2.5-flash",
+      "qwen/qwen3-30b-a3b-instruct-2507",
+      "gpt-4o-mini",
+      "claude-3-haiku-20240307"
+    ]
+  },
+  "Nadir Router": {
+    "name": "Nadir Router",
+    "affiliation": "NadirRouter",
+    "githubUrl": "https://github.com/NadirRouter/NadirClaw",
+    "type": "open-source",
+    "description": "Submitted by NadirRouter.",
+    "modelPool": [
+      "qwen/qwen3-235b-a22b-2507",
+      "gpt-4o-mini",
+      "deepseek/deepseek-v3.2",
+      "claude-3-haiku-20240307",
+      "openai/gpt-5-mini",
+      "deepseek/deepseek-reasoner",
+      "deepseek/deepseek-v4-flash",
+      "grok-4-1-fast-reasoning",
+      "anthropic/claude-sonnet-4",
+      "anthropic/claude-sonnet-4-5"
+    ]
+  },
+  "OrcaRouter-Adaptive": {
+    "name": "OrcaRouter-Adaptive",
+    "affiliation": "@ZhenghuaBao",
+    "githubUrl": "https://github.com/ZhenghuaBao",
+    "type": "open-source",
+    "description": "Submitted by @ZhenghuaBao.",
+    "modelPool": [
+      "anthropic/claude-haiku-4-5-20251001",
+      "anthropic/claude-sonnet-4",
+      "google/gemini-2.5-flash-lite",
+      "google/gemini-2.5-flash",
+      "openai/gpt-4o-mini",
+      "openai/gpt-5-mini",
+      "deepseek/deepseek-chat",
+      "deepseek/deepseek-reasoner",
+      "alibaba/qwen3-235b-a22b-instruct-2507",
+      "alibaba/qwen3-30b-a3b-instruct-2507"
     ]
   }
 }
