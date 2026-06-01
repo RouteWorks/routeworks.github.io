@@ -1,11 +1,11 @@
 [
   {
     "global index": "AIME_112",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "AIME_58",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ArcMMLU_12",
@@ -13,19 +13,19 @@
   },
   {
     "global index": "ArcMMLU_123",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ArcMMLU_16",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ArcMMLU_182",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ArcMMLU_230",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ArcMMLU_293",
@@ -33,7 +33,7 @@
   },
   {
     "global index": "ArcMMLU_349",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ArcMMLU_378",
@@ -41,7 +41,7 @@
   },
   {
     "global index": "ArcMMLU_443",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ArcMMLU_496",
@@ -49,7 +49,7 @@
   },
   {
     "global index": "ArcMMLU_631",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ArcMMLU_646",
@@ -57,7 +57,7 @@
   },
   {
     "global index": "ArcMMLU_659",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ArcMMLU_676",
@@ -65,11 +65,11 @@
   },
   {
     "global index": "ArcMMLU_685",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ArcMMLU_689",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ArcMMLU_702",
@@ -77,15 +77,15 @@
   },
   {
     "global index": "ArcMMLU_713",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ArcMMLU_98",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "AsDiv_1165",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "AsDiv_1347",
@@ -93,7 +93,7 @@
   },
   {
     "global index": "AsDiv_472",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "AsDiv_733",
@@ -101,31 +101,31 @@
   },
   {
     "global index": "ChessInstruct_0",
-    "flip": 0
-  },
-  {
-    "global index": "ChessInstruct_107",
-    "flip": 0
-  },
-  {
-    "global index": "ChessInstruct_144",
     "flip": 1
   },
   {
-    "global index": "ChessInstruct_42",
+    "global index": "ChessInstruct_107",
+    "flip": 1
+  },
+  {
+    "global index": "ChessInstruct_144",
     "flip": 0
+  },
+  {
+    "global index": "ChessInstruct_42",
+    "flip": 1
   },
   {
     "global index": "ChessInstruct_58",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ChessInstruct_71",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "ChessInstruct_84",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "Ethics_commonsense_28",
@@ -137,23 +137,23 @@
   },
   {
     "global index": "Ethics_commonsense_6",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "Ethics_commonsense_62",
-    "flip": 1
-  },
-  {
-    "global index": "Ethics_commonsense_70",
-    "flip": 1
-  },
-  {
-    "global index": "Ethics_commonsense_85",
     "flip": 0
   },
   {
-    "global index": "Ethics_commonsense_90",
+    "global index": "Ethics_commonsense_70",
+    "flip": 0
+  },
+  {
+    "global index": "Ethics_commonsense_85",
     "flip": 1
+  },
+  {
+    "global index": "Ethics_commonsense_90",
+    "flip": 0
   },
   {
     "global index": "Ethics_deontology_0",
@@ -165,11 +165,11 @@
   },
   {
     "global index": "Ethics_deontology_31",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "Ethics_deontology_32",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "Ethics_deontology_56",
@@ -181,7 +181,7 @@
   },
   {
     "global index": "Ethics_justice_45",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "Ethics_justice_76",
@@ -193,7 +193,7 @@
   },
   {
     "global index": "Ethics_virtue_14",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "Ethics_virtue_26",
@@ -201,15 +201,15 @@
   },
   {
     "global index": "Ethics_virtue_30",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "Ethics_virtue_48",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "Ethics_virtue_51",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "FinQA_149",
@@ -221,19 +221,19 @@
   },
   {
     "global index": "FinQA_56",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "FinQA_60",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GSM8K_43",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GeoBench_1002",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GeoBench_1094",
@@ -241,11 +241,11 @@
   },
   {
     "global index": "GeoBench_1102",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GeoBench_1113",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GeoBench_124",
@@ -253,7 +253,7 @@
   },
   {
     "global index": "GeoBench_1243",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GeoBench_30",
@@ -261,19 +261,19 @@
   },
   {
     "global index": "GeoBench_502",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GeoBench_526",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GeoBench_591",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GeoBench_766",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GeoBench_87",
@@ -281,19 +281,19 @@
   },
   {
     "global index": "GeoBench_915",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GeoBench_944",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GeoBench_968",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GeoGraphyData_100k_27",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "GeoGraphyData_100k_42",
@@ -301,23 +301,23 @@
   },
   {
     "global index": "LiveCodeBench_105",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_114",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_118",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_131",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_136",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_181",
@@ -325,35 +325,35 @@
   },
   {
     "global index": "LiveCodeBench_237",
-    "flip": 0
-  },
-  {
-    "global index": "LiveCodeBench_271",
     "flip": 1
   },
   {
-    "global index": "LiveCodeBench_350",
+    "global index": "LiveCodeBench_271",
     "flip": 0
+  },
+  {
+    "global index": "LiveCodeBench_350",
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_386",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_405",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_43",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_431",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_437",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_476",
@@ -361,23 +361,23 @@
   },
   {
     "global index": "LiveCodeBench_485",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_49",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_491",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_499",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MATH_108",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MATH_442",
@@ -385,11 +385,11 @@
   },
   {
     "global index": "MATH_53",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_biology_2808",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_biology_2912",
@@ -397,7 +397,7 @@
   },
   {
     "global index": "MMLUPro_biology_2980",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_biology_2985",
@@ -425,31 +425,31 @@
   },
   {
     "global index": "MMLUPro_business_378",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_business_430",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_business_503",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_business_507",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_business_6",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_business_784",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_chemistry_3796",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_chemistry_3837",
@@ -461,11 +461,11 @@
   },
   {
     "global index": "MMLUPro_chemistry_4067",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_chemistry_4407",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_computer science_9086",
@@ -477,35 +477,35 @@
   },
   {
     "global index": "MMLUPro_computer science_9136",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_computer science_9138",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_computer science_9149",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_computer science_9200",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_computer science_9212",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_computer science_9239",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_computer science_9264",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_computer science_9285",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_computer science_9289",
@@ -513,7 +513,7 @@
   },
   {
     "global index": "MMLUPro_computer science_9414",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_computer science_9415",
@@ -521,19 +521,19 @@
   },
   {
     "global index": "MMLUPro_computer science_9430",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_computer science_9452",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_computer science_9471",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_computer science_9475",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_economics_5769",
@@ -541,7 +541,7 @@
   },
   {
     "global index": "MMLUPro_economics_5907",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_economics_5931",
@@ -549,11 +549,11 @@
   },
   {
     "global index": "MMLUPro_economics_5965",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_economics_6114",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_economics_6122",
@@ -561,11 +561,11 @@
   },
   {
     "global index": "MMLUPro_economics_6135",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_economics_6325",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_economics_6353",
@@ -577,27 +577,27 @@
   },
   {
     "global index": "MMLUPro_engineering_10125",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_engineering_10179",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_engineering_10195",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_engineering_10199",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_engineering_10298",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_engineering_10342",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_engineering_10395",
@@ -609,11 +609,11 @@
   },
   {
     "global index": "MMLUPro_engineering_10432",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_engineering_10473",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_engineering_10537",
@@ -621,15 +621,15 @@
   },
   {
     "global index": "MMLUPro_engineering_10701",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_engineering_10823",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_engineering_10864",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_health_4885",
@@ -637,11 +637,11 @@
   },
   {
     "global index": "MMLUPro_health_4973",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_health_5093",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_health_5144",
@@ -657,11 +657,11 @@
   },
   {
     "global index": "MMLUPro_health_5261",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_health_5473",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_health_5514",
@@ -669,7 +669,7 @@
   },
   {
     "global index": "MMLUPro_history_4486",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_history_4490",
@@ -677,7 +677,7 @@
   },
   {
     "global index": "MMLUPro_history_4497",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_history_4509",
@@ -689,7 +689,7 @@
   },
   {
     "global index": "MMLUPro_history_4523",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_history_4605",
@@ -697,31 +697,31 @@
   },
   {
     "global index": "MMLUPro_history_4629",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_history_4638",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_history_4717",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_history_4749",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_history_4752",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_history_4774",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_history_4810",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_history_4833",
@@ -729,19 +729,19 @@
   },
   {
     "global index": "MMLUPro_history_4836",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_history_4841",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_law_1007",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_law_1031",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_law_1386",
@@ -749,15 +749,15 @@
   },
   {
     "global index": "MMLUPro_law_1462",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_law_1484",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_law_1518",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_law_1818",
@@ -769,15 +769,15 @@
   },
   {
     "global index": "MMLUPro_law_899",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_math_6429",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_math_6526",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_math_6623",
@@ -789,7 +789,7 @@
   },
   {
     "global index": "MMLUPro_math_7101",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_math_7249",
@@ -797,19 +797,19 @@
   },
   {
     "global index": "MMLUPro_math_7284",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_math_7451",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_math_7577",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_philosophy_9510",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_philosophy_9536",
@@ -817,23 +817,23 @@
   },
   {
     "global index": "MMLUPro_philosophy_9663",
-    "flip": 0
-  },
-  {
-    "global index": "MMLUPro_philosophy_9672",
-    "flip": 0
-  },
-  {
-    "global index": "MMLUPro_philosophy_9943",
-    "flip": 0
-  },
-  {
-    "global index": "MMLUPro_physics_7773",
     "flip": 1
   },
   {
-    "global index": "MMLUPro_physics_7887",
+    "global index": "MMLUPro_philosophy_9672",
+    "flip": 1
+  },
+  {
+    "global index": "MMLUPro_philosophy_9943",
+    "flip": 1
+  },
+  {
+    "global index": "MMLUPro_physics_7773",
     "flip": 0
+  },
+  {
+    "global index": "MMLUPro_physics_7887",
+    "flip": 1
   },
   {
     "global index": "MMLUPro_physics_7893",
@@ -841,7 +841,7 @@
   },
   {
     "global index": "MMLUPro_physics_8888",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_physics_9017",
@@ -849,11 +849,11 @@
   },
   {
     "global index": "MMLUPro_psychology_2005",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_psychology_2186",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_psychology_2329",
@@ -861,23 +861,23 @@
   },
   {
     "global index": "MMLUPro_psychology_2406",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_psychology_2420",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLUPro_psychology_2450",
-    "flip": 1
-  },
-  {
-    "global index": "MMLUPro_psychology_2457",
     "flip": 0
   },
   {
-    "global index": "MMLUPro_psychology_2524",
+    "global index": "MMLUPro_psychology_2457",
     "flip": 1
+  },
+  {
+    "global index": "MMLUPro_psychology_2524",
+    "flip": 0
   },
   {
     "global index": "MMLU_formal_logic_121",
@@ -897,11 +897,11 @@
   },
   {
     "global index": "MMLU_formal_logic_7",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLU_formal_logic_70",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLU_formal_logic_85",
@@ -909,7 +909,7 @@
   },
   {
     "global index": "MMLU_management_4",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLU_management_41",
@@ -921,7 +921,7 @@
   },
   {
     "global index": "MMLU_management_91",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MMLU_management_93",
@@ -929,15 +929,15 @@
   },
   {
     "global index": "MathQA_158",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MathQA_1742",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MathQA_202",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MathQA_2092",
@@ -953,7 +953,7 @@
   },
   {
     "global index": "MathQA_827",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MathQA_84",
@@ -961,19 +961,19 @@
   },
   {
     "global index": "MedMCQA_1005",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MedMCQA_1054",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MedMCQA_1298",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MedMCQA_1309",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MedMCQA_1362",
@@ -981,15 +981,15 @@
   },
   {
     "global index": "MedMCQA_145",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MedMCQA_2010",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MedMCQA_2323",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MedMCQA_2366",
@@ -1001,27 +1001,27 @@
   },
   {
     "global index": "MedMCQA_511",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MedMCQA_59",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MedMCQA_643",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MedMCQA_853",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MusicTheoryBench_126",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MusicTheoryBench_14",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MusicTheoryBench_147",
@@ -1029,15 +1029,15 @@
   },
   {
     "global index": "MusicTheoryBench_152",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MusicTheoryBench_188",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MusicTheoryBench_189",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MusicTheoryBench_240",
@@ -1045,19 +1045,19 @@
   },
   {
     "global index": "MusicTheoryBench_33",
-    "flip": 0
-  },
-  {
-    "global index": "MusicTheoryBench_337",
-    "flip": 0
-  },
-  {
-    "global index": "MusicTheoryBench_340",
     "flip": 1
   },
   {
-    "global index": "MusicTheoryBench_70",
+    "global index": "MusicTheoryBench_337",
+    "flip": 1
+  },
+  {
+    "global index": "MusicTheoryBench_340",
     "flip": 0
+  },
+  {
+    "global index": "MusicTheoryBench_70",
+    "flip": 1
   },
   {
     "global index": "NarrativeQA_131",
@@ -1077,7 +1077,7 @@
   },
   {
     "global index": "NarrativeQA_3282",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "NarrativeQA_4102",
@@ -1085,7 +1085,7 @@
   },
   {
     "global index": "NarrativeQA_4128",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "NarrativeQA_4347",
@@ -1093,7 +1093,7 @@
   },
   {
     "global index": "NarrativeQA_4540",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "NarrativeQA_5022",
@@ -1105,7 +1105,7 @@
   },
   {
     "global index": "NarrativeQA_533",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "NarrativeQA_5894",
@@ -1121,19 +1121,19 @@
   },
   {
     "global index": "NarrativeQA_7964",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "NarrativeQA_8215",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "NarrativeQA_8598",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "NarrativeQA_927",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "OpenTDB_Animals_2545",
@@ -1149,11 +1149,11 @@
   },
   {
     "global index": "OpenTDB_Celebrities_1078",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "OpenTDB_Celebrities_1456",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "OpenTDB_Celebrities_3577",
@@ -1161,15 +1161,15 @@
   },
   {
     "global index": "OpenTDB_Celebrities_3968",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "OpenTDB_General Knowledge_1178",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "OpenTDB_General Knowledge_1807",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "OpenTDB_General Knowledge_1957",
@@ -1177,7 +1177,7 @@
   },
   {
     "global index": "OpenTDB_General Knowledge_2181",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "OpenTDB_General Knowledge_3404",
@@ -1185,7 +1185,7 @@
   },
   {
     "global index": "OpenTDB_General Knowledge_3727",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "OpenTDB_General Knowledge_4019",
@@ -1193,27 +1193,27 @@
   },
   {
     "global index": "OpenTDB_Geography_2099",
-    "flip": 0
-  },
-  {
-    "global index": "OpenTDB_Geography_2346",
-    "flip": 0
-  },
-  {
-    "global index": "OpenTDB_Geography_3880",
-    "flip": 0
-  },
-  {
-    "global index": "OpenTDB_Geography_792",
     "flip": 1
   },
   {
-    "global index": "OpenTDB_History_1162",
+    "global index": "OpenTDB_Geography_2346",
+    "flip": 1
+  },
+  {
+    "global index": "OpenTDB_Geography_3880",
+    "flip": 1
+  },
+  {
+    "global index": "OpenTDB_Geography_792",
     "flip": 0
   },
   {
+    "global index": "OpenTDB_History_1162",
+    "flip": 1
+  },
+  {
     "global index": "OpenTDB_History_2026",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "OpenTDB_History_3712",
@@ -1221,19 +1221,19 @@
   },
   {
     "global index": "OpenTDB_History_3902",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "OpenTDB_Science & Nature_1175",
-    "flip": 0
-  },
-  {
-    "global index": "OpenTDB_Science & Nature_1560",
     "flip": 1
   },
   {
-    "global index": "OpenTDB_Science & Nature_3716",
+    "global index": "OpenTDB_Science & Nature_1560",
     "flip": 0
+  },
+  {
+    "global index": "OpenTDB_Science & Nature_3716",
+    "flip": 1
   },
   {
     "global index": "OpenTDB_Science & Nature_476",
@@ -1241,7 +1241,7 @@
   },
   {
     "global index": "OpenTDB_Sports_2289",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "OpenTDB_Vehicles_1173",
@@ -1253,15 +1253,15 @@
   },
   {
     "global index": "OpenTDB_Vehicles_2519",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "OpenTDB_Vehicles_3234",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_0",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_154",
@@ -1269,7 +1269,7 @@
   },
   {
     "global index": "PubMedQA_18",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_238",
@@ -1277,7 +1277,7 @@
   },
   {
     "global index": "PubMedQA_250",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_337",
@@ -1285,7 +1285,7 @@
   },
   {
     "global index": "PubMedQA_362",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_437",
@@ -1293,27 +1293,27 @@
   },
   {
     "global index": "PubMedQA_510",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_520",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_575",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_582",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_588",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_610",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_63",
@@ -1321,31 +1321,31 @@
   },
   {
     "global index": "PubMedQA_643",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_687",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_722",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_73",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_755",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_8",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_81",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_854",
@@ -1361,7 +1361,7 @@
   },
   {
     "global index": "QANTA_Fine Arts_1702",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Fine Arts_828",
@@ -1369,7 +1369,7 @@
   },
   {
     "global index": "QANTA_Fine Arts_865",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Geography_1023",
@@ -1385,19 +1385,19 @@
   },
   {
     "global index": "QANTA_History_1084",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_History_1154",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_History_433",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_History_473",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_History_926",
@@ -1405,11 +1405,11 @@
   },
   {
     "global index": "QANTA_Literature_1045",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Literature_1073",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Literature_1239",
@@ -1417,11 +1417,11 @@
   },
   {
     "global index": "QANTA_Literature_1326",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Literature_1727",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Literature_1843",
@@ -1433,7 +1433,7 @@
   },
   {
     "global index": "QANTA_Literature_408",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Literature_475",
@@ -1469,15 +1469,15 @@
   },
   {
     "global index": "QANTA_Science_619",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Social Science_1847",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Social Science_2",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Social Science_77",
@@ -1489,7 +1489,7 @@
   },
   {
     "global index": "SocialiQA_22095",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "SocialiQA_26846",
@@ -1497,7 +1497,7 @@
   },
   {
     "global index": "SocialiQA_7839",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "SuperGLUE-CausalReasoning_4526",
@@ -1509,11 +1509,11 @@
   },
   {
     "global index": "SuperGLUE-ClozeTest_17965",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "SuperGLUE-ClozeTest_18766",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "SuperGLUE-Entailment_19410",
@@ -1533,11 +1533,11 @@
   },
   {
     "global index": "SuperGLUE-QA_1408",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "SuperGLUE-QA_3137",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "SuperGLUE-QA_4046",
@@ -1549,7 +1549,7 @@
   },
   {
     "global index": "SuperGLUE-QA_4160",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "SuperGLUE-RC_7725",
@@ -1561,7 +1561,7 @@
   },
   {
     "global index": "SuperGLUE-RC_8531",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-Wic_19695",
@@ -1577,31 +1577,31 @@
   },
   {
     "global index": "SuperGLUE-Wic_20189",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "SuperGLUE-Wic_20253",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "SuperGLUE-Wsc_20368",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "SuperGLUE-Wsc_20370",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-cs-en_156",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-cs-en_246",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-cs-en_568",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-de-en_46",
@@ -1609,7 +1609,7 @@
   },
   {
     "global index": "WMT19-de-en_715",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-de-en_883",
@@ -1617,15 +1617,15 @@
   },
   {
     "global index": "WMT19-fi-en_222",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-fi-en_610",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-gu-en_116",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-gu-en_123",
@@ -1633,15 +1633,15 @@
   },
   {
     "global index": "WMT19-gu-en_191",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-gu-en_491",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-gu-en_968",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-kk-en_528",
@@ -1649,23 +1649,23 @@
   },
   {
     "global index": "WMT19-kk-en_826",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-lt-en_135",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-lt-en_269",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-lt-en_636",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-ru-en_222",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "WMT19-zh-en_218",
@@ -1673,10 +1673,10 @@
   },
   {
     "global index": "WMT19-zh-en_252",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "WMT19-zh-en_59",
-    "flip": 0
+    "flip": 1
   }
 ]
