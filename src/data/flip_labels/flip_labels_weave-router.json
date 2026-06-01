@@ -81,7 +81,7 @@
   },
   {
     "global index": "ArcMMLU_98",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "AsDiv_1165",
@@ -101,11 +101,11 @@
   },
   {
     "global index": "ChessInstruct_0",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "ChessInstruct_107",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "ChessInstruct_144",
@@ -121,11 +121,11 @@
   },
   {
     "global index": "ChessInstruct_71",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "ChessInstruct_84",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "Ethics_commonsense_28",
@@ -153,7 +153,7 @@
   },
   {
     "global index": "Ethics_commonsense_90",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "Ethics_deontology_0",
@@ -241,7 +241,7 @@
   },
   {
     "global index": "GeoBench_1102",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "GeoBench_1113",
@@ -293,7 +293,7 @@
   },
   {
     "global index": "GeoGraphyData_100k_27",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "GeoGraphyData_100k_42",
@@ -309,7 +309,7 @@
   },
   {
     "global index": "LiveCodeBench_118",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "LiveCodeBench_131",
@@ -329,7 +329,7 @@
   },
   {
     "global index": "LiveCodeBench_271",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "LiveCodeBench_350",
@@ -341,7 +341,7 @@
   },
   {
     "global index": "LiveCodeBench_405",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "LiveCodeBench_43",
@@ -349,11 +349,11 @@
   },
   {
     "global index": "LiveCodeBench_431",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "LiveCodeBench_437",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "LiveCodeBench_476",
@@ -401,7 +401,7 @@
   },
   {
     "global index": "MMLUPro_biology_2985",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_biology_3188",
@@ -453,7 +453,7 @@
   },
   {
     "global index": "MMLUPro_chemistry_3837",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_chemistry_3974",
@@ -477,7 +477,7 @@
   },
   {
     "global index": "MMLUPro_computer science_9136",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_computer science_9138",
@@ -509,11 +509,11 @@
   },
   {
     "global index": "MMLUPro_computer science_9289",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_computer science_9414",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_computer science_9415",
@@ -533,7 +533,7 @@
   },
   {
     "global index": "MMLUPro_computer science_9475",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_economics_5769",
@@ -545,7 +545,7 @@
   },
   {
     "global index": "MMLUPro_economics_5931",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_economics_5965",
@@ -593,7 +593,7 @@
   },
   {
     "global index": "MMLUPro_engineering_10298",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_engineering_10342",
@@ -633,7 +633,7 @@
   },
   {
     "global index": "MMLUPro_health_4885",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_health_4973",
@@ -657,11 +657,11 @@
   },
   {
     "global index": "MMLUPro_health_5261",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_health_5473",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_health_5514",
@@ -673,23 +673,23 @@
   },
   {
     "global index": "MMLUPro_history_4490",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_history_4497",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_history_4509",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_history_4517",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_history_4523",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_history_4605",
@@ -717,7 +717,7 @@
   },
   {
     "global index": "MMLUPro_history_4774",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_history_4810",
@@ -749,11 +749,11 @@
   },
   {
     "global index": "MMLUPro_law_1462",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_law_1484",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_law_1518",
@@ -773,7 +773,7 @@
   },
   {
     "global index": "MMLUPro_math_6429",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_math_6526",
@@ -785,7 +785,7 @@
   },
   {
     "global index": "MMLUPro_math_6848",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_math_7101",
@@ -825,11 +825,11 @@
   },
   {
     "global index": "MMLUPro_philosophy_9943",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_physics_7773",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_physics_7887",
@@ -845,7 +845,7 @@
   },
   {
     "global index": "MMLUPro_physics_9017",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_psychology_2005",
@@ -869,15 +869,15 @@
   },
   {
     "global index": "MMLUPro_psychology_2450",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_psychology_2457",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_psychology_2524",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLU_formal_logic_121",
@@ -901,7 +901,7 @@
   },
   {
     "global index": "MMLU_formal_logic_70",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLU_formal_logic_85",
@@ -933,7 +933,7 @@
   },
   {
     "global index": "MathQA_1742",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MathQA_202",
@@ -1029,7 +1029,7 @@
   },
   {
     "global index": "MusicTheoryBench_152",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MusicTheoryBench_188",
@@ -1105,7 +1105,7 @@
   },
   {
     "global index": "NarrativeQA_533",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "NarrativeQA_5894",
@@ -1129,7 +1129,7 @@
   },
   {
     "global index": "NarrativeQA_8598",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "NarrativeQA_927",
@@ -1141,7 +1141,7 @@
   },
   {
     "global index": "OpenTDB_Animals_262",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "OpenTDB_Art_1429",
@@ -1265,7 +1265,7 @@
   },
   {
     "global index": "PubMedQA_154",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "PubMedQA_18",
@@ -1273,15 +1273,15 @@
   },
   {
     "global index": "PubMedQA_238",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "PubMedQA_250",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "PubMedQA_337",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "PubMedQA_362",
@@ -1289,11 +1289,11 @@
   },
   {
     "global index": "PubMedQA_437",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "PubMedQA_510",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "PubMedQA_520",
@@ -1321,11 +1321,11 @@
   },
   {
     "global index": "PubMedQA_643",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "PubMedQA_687",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "PubMedQA_722",
@@ -1337,7 +1337,7 @@
   },
   {
     "global index": "PubMedQA_755",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "PubMedQA_8",
@@ -1349,11 +1349,11 @@
   },
   {
     "global index": "PubMedQA_854",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "PubMedQA_905",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Fine Arts_1212",
@@ -1365,11 +1365,11 @@
   },
   {
     "global index": "QANTA_Fine Arts_828",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Fine Arts_865",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Geography_1023",
@@ -1401,7 +1401,7 @@
   },
   {
     "global index": "QANTA_History_926",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Literature_1045",
@@ -1413,7 +1413,7 @@
   },
   {
     "global index": "QANTA_Literature_1239",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Literature_1326",
@@ -1421,11 +1421,11 @@
   },
   {
     "global index": "QANTA_Literature_1727",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Literature_1843",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Literature_386",
@@ -1433,19 +1433,19 @@
   },
   {
     "global index": "QANTA_Literature_408",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Literature_475",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Literature_833",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Philosophy_1270",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Philosophy_499",
@@ -1457,11 +1457,11 @@
   },
   {
     "global index": "QANTA_Science_1360",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Science_1473",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Science_308",
@@ -1473,7 +1473,7 @@
   },
   {
     "global index": "QANTA_Social Science_1847",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "QANTA_Social Science_2",
@@ -1481,7 +1481,7 @@
   },
   {
     "global index": "QANTA_Social Science_77",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SocialiQA_13810",
@@ -1505,7 +1505,7 @@
   },
   {
     "global index": "SuperGLUE-ClozeTest_12894",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-ClozeTest_17965",
@@ -1513,7 +1513,7 @@
   },
   {
     "global index": "SuperGLUE-ClozeTest_18766",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-Entailment_19410",
@@ -1521,23 +1521,23 @@
   },
   {
     "global index": "SuperGLUE-Entailment_19567",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-Entailment_522",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-Entailment_767",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-QA_1408",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-QA_3137",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-QA_4046",
@@ -1549,7 +1549,7 @@
   },
   {
     "global index": "SuperGLUE-QA_4160",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-RC_7725",
@@ -1561,19 +1561,19 @@
   },
   {
     "global index": "SuperGLUE-RC_8531",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-Wic_19695",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-Wic_19738",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-Wic_20079",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-Wic_20189",
@@ -1581,15 +1581,15 @@
   },
   {
     "global index": "SuperGLUE-Wic_20253",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-Wsc_20368",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "SuperGLUE-Wsc_20370",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "WMT19-cs-en_156",
@@ -1649,7 +1649,7 @@
   },
   {
     "global index": "WMT19-kk-en_826",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "WMT19-lt-en_135",
@@ -1661,7 +1661,7 @@
   },
   {
     "global index": "WMT19-lt-en_636",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "WMT19-ru-en_222",
