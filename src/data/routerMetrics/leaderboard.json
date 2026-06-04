@@ -1,5 +1,16 @@
 [
   {
+    "Router Name": "vllm",
+    "Arena Score": 75.38,
+    "Optimal Selection Score": 20.12,
+    "Optimal Cost Score": 24.52,
+    "Optimal Acc. Score": 89.87,
+    "Robustness Score": 73.1,
+    "Latency Score": null,
+    "Accuracy": 75.97,
+    "Cost per 1k": 0.11
+  },
+  {
     "Router Name": "Sqwish Router",
     "Arena Score": 75.27,
     "Optimal Selection Score": 7.41,
@@ -86,17 +97,6 @@
     "Latency Score": null,
     "Accuracy": 70.17,
     "Cost per 1k": 0.12
-  },
-  {
-    "Router Name": "vllm",
-    "Arena Score": 67.23,
-    "Optimal Selection Score": 84.66,
-    "Optimal Cost Score": 90.71,
-    "Optimal Acc. Score": 89.24,
-    "Robustness Score": 90.95,
-    "Latency Score": null,
-    "Accuracy": 66.53,
-    "Cost per 1k": 0.06
   },
   {
     "Router Name": "mirt_bert",
