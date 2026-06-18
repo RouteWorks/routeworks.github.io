@@ -1,16 +1,5 @@
 [
   {
-    "Router Name": "vllm",
-    "Arena Score": 75.38,
-    "Optimal Selection Score": 20.12,
-    "Optimal Cost Score": 24.52,
-    "Optimal Acc. Score": 89.87,
-    "Robustness Score": 73.1,
-    "Latency Score": null,
-    "Accuracy": 75.97,
-    "Cost per 1k": 0.11
-  },
-  {
     "Router Name": "Sqwish Router",
     "Arena Score": 75.27,
     "Optimal Selection Score": 7.41,
@@ -33,17 +22,6 @@
     "Cost per 1k": 0.13
   },
   {
-    "Router Name": "Nadir Router",
-    "Arena Score": 73.33,
-    "Optimal Selection Score": null,
-    "Optimal Cost Score": null,
-    "Optimal Acc. Score": null,
-    "Robustness Score": 25.48,
-    "Latency Score": null,
-    "Accuracy": 74.87,
-    "Cost per 1k": 0.29
-  },
-  {
     "Router Name": "Weave Router",
     "Arena Score": 72.82,
     "Optimal Selection Score": null,
@@ -53,6 +31,28 @@
     "Latency Score": null,
     "Accuracy": 76.32,
     "Cost per 1k": 0.94
+  },
+  {
+    "Router Name": "Nadir Router",
+    "Arena Score": 72.29,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 25.48,
+    "Latency Score": null,
+    "Accuracy": 75.01,
+    "Cost per 1k": 0.68
+  },
+  {
+    "Router Name": "vllm",
+    "Arena Score": 72.15,
+    "Optimal Selection Score": 20.77,
+    "Optimal Cost Score": 17.19,
+    "Optimal Acc. Score": 90.0,
+    "Robustness Score": 73.1,
+    "Latency Score": null,
+    "Accuracy": 73.19,
+    "Cost per 1k": 0.23
   },
   {
     "Router Name": "OrcaRouter-Adaptive",
@@ -66,17 +66,6 @@
     "Cost per 1k": 1.0
   },
   {
-    "Router Name": "azure",
-    "Arena Score": 71.87,
-    "Optimal Selection Score": null,
-    "Optimal Cost Score": null,
-    "Optimal Acc. Score": null,
-    "Robustness Score": 71.43,
-    "Latency Score": null,
-    "Accuracy": 72.82,
-    "Cost per 1k": 0.22
-  },
-  {
     "Router Name": "R2-Router",
     "Arena Score": 71.6,
     "Optimal Selection Score": 24.51,
@@ -86,6 +75,17 @@
     "Latency Score": null,
     "Accuracy": 71.23,
     "Cost per 1k": 0.06
+  },
+  {
+    "Router Name": "azure",
+    "Arena Score": 70.42,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 71.43,
+    "Latency Score": null,
+    "Accuracy": 72.94,
+    "Cost per 1k": 0.73
   },
   {
     "Router Name": "Auto Router",

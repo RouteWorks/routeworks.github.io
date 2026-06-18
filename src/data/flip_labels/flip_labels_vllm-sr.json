@@ -221,11 +221,11 @@
   },
   {
     "global index": "FinQA_56",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "FinQA_60",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "GSM8K_43",
@@ -297,31 +297,31 @@
   },
   {
     "global index": "GeoGraphyData_100k_42",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_105",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_114",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_118",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_131",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_136",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_181",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_237",
@@ -329,7 +329,7 @@
   },
   {
     "global index": "LiveCodeBench_271",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_350",
@@ -345,7 +345,7 @@
   },
   {
     "global index": "LiveCodeBench_43",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_431",
@@ -357,23 +357,23 @@
   },
   {
     "global index": "LiveCodeBench_476",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_485",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_49",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_491",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "LiveCodeBench_499",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MATH_108",
@@ -437,7 +437,7 @@
   },
   {
     "global index": "MMLUPro_business_507",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_business_6",
@@ -645,7 +645,7 @@
   },
   {
     "global index": "MMLUPro_health_5144",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_health_5214",
@@ -841,7 +841,7 @@
   },
   {
     "global index": "MMLUPro_physics_8888",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_physics_9017",
@@ -961,7 +961,7 @@
   },
   {
     "global index": "MedMCQA_1005",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "MedMCQA_1054",
@@ -1061,7 +1061,7 @@
   },
   {
     "global index": "NarrativeQA_131",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "NarrativeQA_1683",
@@ -1357,7 +1357,7 @@
   },
   {
     "global index": "QANTA_Fine Arts_1212",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Fine Arts_1702",
@@ -1369,7 +1369,7 @@
   },
   {
     "global index": "QANTA_Fine Arts_865",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Geography_1023",
@@ -1385,7 +1385,7 @@
   },
   {
     "global index": "QANTA_History_1084",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_History_1154",
@@ -1393,7 +1393,7 @@
   },
   {
     "global index": "QANTA_History_433",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_History_473",
@@ -1421,7 +1421,7 @@
   },
   {
     "global index": "QANTA_Literature_1727",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Literature_1843",
@@ -1433,11 +1433,11 @@
   },
   {
     "global index": "QANTA_Literature_408",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Literature_475",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Literature_833",
@@ -1461,7 +1461,7 @@
   },
   {
     "global index": "QANTA_Science_1473",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Science_308",
@@ -1477,11 +1477,11 @@
   },
   {
     "global index": "QANTA_Social Science_2",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "QANTA_Social Science_77",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "SocialiQA_13810",
