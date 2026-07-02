@@ -1,5 +1,16 @@
 [
   {
+    "Router Name": "vllm",
+    "Arena Score": 75.3,
+    "Optimal Selection Score": 16.81,
+    "Optimal Cost Score": 25.1,
+    "Optimal Acc. Score": 89.37,
+    "Robustness Score": 67.62,
+    "Latency Score": null,
+    "Accuracy": 77.18,
+    "Cost per 1k": 0.3
+  },
+  {
     "Router Name": "Sqwish Router",
     "Arena Score": 75.27,
     "Optimal Selection Score": 7.41,
@@ -44,17 +55,6 @@
     "Cost per 1k": 0.68
   },
   {
-    "Router Name": "vllm",
-    "Arena Score": 72.15,
-    "Optimal Selection Score": 20.77,
-    "Optimal Cost Score": 17.19,
-    "Optimal Acc. Score": 90.0,
-    "Robustness Score": 73.1,
-    "Latency Score": null,
-    "Accuracy": 73.19,
-    "Cost per 1k": 0.23
-  },
-  {
     "Router Name": "OrcaRouter-Adaptive",
     "Arena Score": 72.08,
     "Optimal Selection Score": null,
@@ -64,6 +64,17 @@
     "Latency Score": null,
     "Accuracy": 75.54,
     "Cost per 1k": 1.0
+  },
+  {
+    "Router Name": "Hybrid Router",
+    "Arena Score": 72.08,
+    "Optimal Selection Score": 89.87,
+    "Optimal Cost Score": 94.19,
+    "Optimal Acc. Score": 92.81,
+    "Robustness Score": 96.67,
+    "Latency Score": null,
+    "Accuracy": 71.38,
+    "Cost per 1k": 0.04
   },
   {
     "Router Name": "R2-Router",

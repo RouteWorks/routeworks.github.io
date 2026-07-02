@@ -402,5 +402,17 @@
       "alibaba/qwen3-235b-a22b-instruct-2507",
       "alibaba/qwen3-30b-a3b-instruct-2507"
     ]
+  },
+  "Hybrid Router": {
+    "name": "Hybrid Router",
+    "affiliation": "@mikemao27",
+    "githubUrl": "https://github.com/mikemao27",
+    "type": "open-source",
+    "description": "Submitted by @mikemao27.",
+    "modelPool": [
+      "qwen/qwen3-235b-a22b-2507",
+      "qwen/qwen3-30b-a3b-instruct-2507",
+      "mistralai/ministral-3b-2512"
+    ]
   }
 }
