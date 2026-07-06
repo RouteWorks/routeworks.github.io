@@ -33,6 +33,17 @@
     "Cost per 1k": 0.13
   },
   {
+    "Router Name": "Cross-Router",
+    "Arena Score": 73.71,
+    "Optimal Selection Score": 40.18,
+    "Optimal Cost Score": 44.03,
+    "Optimal Acc. Score": 89.58,
+    "Robustness Score": 59.05,
+    "Latency Score": null,
+    "Accuracy": 75.13,
+    "Cost per 1k": 0.26
+  },
+  {
     "Router Name": "Weave Router",
     "Arena Score": 72.82,
     "Optimal Selection Score": null,
@@ -86,6 +97,17 @@
     "Latency Score": null,
     "Accuracy": 71.23,
     "Cost per 1k": 0.06
+  },
+  {
+    "Router Name": "LLM Router",
+    "Arena Score": 71.26,
+    "Optimal Selection Score": 18.01,
+    "Optimal Cost Score": 20.46,
+    "Optimal Acc. Score": 89.13,
+    "Robustness Score": 30.0,
+    "Latency Score": null,
+    "Accuracy": 72.05,
+    "Cost per 1k": 0.2
   },
   {
     "Router Name": "azure",

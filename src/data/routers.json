@@ -414,5 +414,31 @@
       "qwen/qwen3-30b-a3b-instruct-2507",
       "mistralai/ministral-3b-2512"
     ]
+  },
+  "Cross-Router": {
+    "name": "Cross-Router",
+    "affiliation": "@JiaHg",
+    "githubUrl": "https://github.com/JiaHg",
+    "type": "open-source",
+    "description": "Submitted by @JiaHg.",
+    "modelPool": [
+      "google/gemini-3.1-flash-lite",
+      "deepseek/deepseek-v4-flash",
+      "deepseek/deepseek-v4-pro"
+    ]
+  },
+  "LLM Router": {
+    "name": "LLM Router",
+    "affiliation": "@ypollak2",
+    "githubUrl": "https://github.com/ypollak2",
+    "type": "open-source",
+    "description": "Submitted by @ypollak2.",
+    "modelPool": [
+      "qwen/qwen3-235b-a22b-2507",
+      "qwen/qwen3-next-80b-a3b-instruct",
+      "Qwen/Qwen3-Coder-Next",
+      "google/gemini-3.1-flash-lite",
+      "deepseek/deepseek-v4-flash"
+    ]
   }
 }
