@@ -440,5 +440,39 @@
       "google/gemini-3.1-flash-lite",
       "deepseek/deepseek-v4-flash"
     ]
+  },
+  "Nadir-Tumbler": {
+    "name": "Nadir-Tumbler",
+    "affiliation": "@doramirdor",
+    "githubUrl": "https://github.com/doramirdor",
+    "type": "open-source",
+    "description": "Submitted by @doramirdor.",
+    "modelPool": [
+      "qwen/qwen3-235b-a22b-2507",
+      "deepseek/deepseek-v3.2",
+      "grok-4-1-fast-reasoning"
+    ]
+  },
+  "chuzom-solo-v32": {
+    "name": "chuzom-solo-v32",
+    "affiliation": "@ypollak2",
+    "githubUrl": "https://github.com/ypollak2",
+    "type": "open-source",
+    "description": "Submitted by @ypollak2.",
+    "modelPool": [
+      "deepseek/deepseek-v3.2"
+    ]
+  },
+  "BARouter": {
+    "name": "BARouter",
+    "affiliation": "@zulk2002",
+    "githubUrl": "https://github.com/zulk2002",
+    "type": "open-source",
+    "description": "Submitted by @zulk2002.",
+    "modelPool": [
+      "qwen3-235b-a22b-instruct-2507",
+      "gpt-4.1",
+      "deepseek-v3.1"
+    ]
   }
 }
