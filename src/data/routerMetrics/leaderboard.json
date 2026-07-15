@@ -1,5 +1,16 @@
 [
   {
+    "Router Name": "Cross-Router",
+    "Arena Score": 76.12,
+    "Optimal Selection Score": 17.66,
+    "Optimal Cost Score": 45.49,
+    "Optimal Acc. Score": 90.31,
+    "Robustness Score": 67.14,
+    "Latency Score": null,
+    "Accuracy": 78.14,
+    "Cost per 1k": 0.3
+  },
+  {
     "Router Name": "vllm",
     "Arena Score": 75.3,
     "Optimal Selection Score": 16.81,
@@ -22,6 +33,17 @@
     "Cost per 1k": 0.18
   },
   {
+    "Router Name": "Nadir-Tumbler",
+    "Arena Score": 75.17,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 66.43,
+    "Latency Score": null,
+    "Accuracy": 75.34,
+    "Cost per 1k": 0.08
+  },
+  {
     "Router Name": "AgentForge Router",
     "Arena Score": 74.13,
     "Optimal Selection Score": 17.84,
@@ -31,17 +53,6 @@
     "Latency Score": null,
     "Accuracy": 74.72,
     "Cost per 1k": 0.13
-  },
-  {
-    "Router Name": "Cross-Router",
-    "Arena Score": 73.71,
-    "Optimal Selection Score": 40.18,
-    "Optimal Cost Score": 44.03,
-    "Optimal Acc. Score": 89.58,
-    "Robustness Score": 59.05,
-    "Latency Score": null,
-    "Accuracy": 75.13,
-    "Cost per 1k": 0.26
   },
   {
     "Router Name": "Weave Router",
@@ -110,6 +121,17 @@
     "Cost per 1k": 0.2
   },
   {
+    "Router Name": "chuzom-solo-v32",
+    "Arena Score": 70.61,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 100.0,
+    "Latency Score": null,
+    "Accuracy": 70.59,
+    "Cost per 1k": 0.1
+  },
+  {
     "Router Name": "azure",
     "Arena Score": 70.42,
     "Optimal Selection Score": null,
@@ -130,6 +152,17 @@
     "Latency Score": null,
     "Accuracy": 70.17,
     "Cost per 1k": 0.12
+  },
+  {
+    "Router Name": "BARouter",
+    "Arena Score": 67.09,
+    "Optimal Selection Score": 58.56,
+    "Optimal Cost Score": 59.03,
+    "Optimal Acc. Score": 87.91,
+    "Robustness Score": 52.38,
+    "Latency Score": null,
+    "Accuracy": 68.8,
+    "Cost per 1k": 0.63
   },
   {
     "Router Name": "mirt_bert",
