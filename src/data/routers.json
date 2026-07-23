@@ -474,5 +474,17 @@
       "gpt-4.1",
       "deepseek-v3.1"
     ]
+  },
+  "Lynkr": {
+    "name": "Lynkr",
+    "affiliation": "@vishalveerareddy123",
+    "githubUrl": "https://github.com/vishalveerareddy123",
+    "type": "open-source",
+    "description": "Submitted by @vishalveerareddy123.",
+    "modelPool": [
+      "openai/gpt-oss-120b",
+      "qwen/qwen3-235b-a22b-2507",
+      "z-ai/glm-4.7"
+    ]
   }
 }

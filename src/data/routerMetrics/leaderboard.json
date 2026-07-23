@@ -154,6 +154,17 @@
     "Cost per 1k": 0.12
   },
   {
+    "Router Name": "Lynkr",
+    "Arena Score": 67.65,
+    "Optimal Selection Score": 10.97,
+    "Optimal Cost Score": 16.08,
+    "Optimal Acc. Score": 84.48,
+    "Robustness Score": 92.38,
+    "Latency Score": null,
+    "Accuracy": 68.41,
+    "Cost per 1k": 0.29
+  },
+  {
     "Router Name": "BARouter",
     "Arena Score": 67.09,
     "Optimal Selection Score": 58.56,
