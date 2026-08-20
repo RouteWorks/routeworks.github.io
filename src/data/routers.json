@@ -486,5 +486,55 @@
       "qwen/qwen3-235b-a22b-2507",
       "z-ai/glm-4.7"
     ]
+  },
+  "nadir-caliper": {
+    "name": "nadir-caliper",
+    "affiliation": "@doramirdor",
+    "githubUrl": "https://github.com/doramirdor",
+    "type": "open-source",
+    "description": "Submitted by @doramirdor.",
+    "modelPool": [
+      "qwen/qwen3-235b-a22b-2507",
+      "google/gemini-3.1-flash-lite",
+      "grok-4.3",
+      "deepseek/deepseek-v3.2"
+    ]
+  },
+  "Paix2": {
+    "name": "Paix2",
+    "affiliation": "@xufan866",
+    "githubUrl": "https://github.com/xufan866",
+    "type": "open-source",
+    "description": "Submitted by @xufan866.",
+    "modelPool": [
+      "MiniMax-M3",
+      "agnes-2.0-flash",
+      "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+      "THUDM/GLM-4-9B-0414"
+    ]
+  },
+  "Divyam": {
+    "name": "Divyam",
+    "affiliation": "@samikd",
+    "githubUrl": "https://github.com/samikd",
+    "type": "open-source",
+    "description": "Submitted by @samikd.",
+    "modelPool": [
+      "qwen/qwen3-235b-a22b-2507",
+      "Qwen/Qwen3-Coder-Next",
+      "gemini-3-flash-preview",
+      "google/gemini-3.1-flash-lite"
+    ]
+  },
+  "AsiaInfo-Router": {
+    "name": "AsiaInfo-Router",
+    "affiliation": "@Uncle-LL",
+    "githubUrl": "https://github.com/Uncle-LL",
+    "type": "open-source",
+    "description": "Submitted by @Uncle-LL.",
+    "modelPool": [
+      "claude-opus-4-7",
+      "deepseek/deepseek-v4-flash"
+    ]
   }
 }
