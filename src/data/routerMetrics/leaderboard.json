@@ -1,36 +1,47 @@
 [
   {
+    "Router Name": "Paix2",
+    "Arena Score": 77.63,
+    "Optimal Selection Score": 89.67,
+    "Optimal Cost Score": 62.92,
+    "Optimal Acc. Score": 100.0,
+    "Robustness Score": 77.86,
+    "Latency Score": null,
+    "Accuracy": 79.69,
+    "Cost per 1k": 0.27
+  },
+  {
+    "Router Name": "Sqwish Router",
+    "Arena Score": 76.21,
+    "Optimal Selection Score": 9.04,
+    "Optimal Cost Score": 23.49,
+    "Optimal Acc. Score": 94.07,
+    "Robustness Score": 51.67,
+    "Latency Score": null,
+    "Accuracy": 79.76,
+    "Cost per 1k": 0.7
+  },
+  {
+    "Router Name": "Divyam",
+    "Arena Score": 75.85,
+    "Optimal Selection Score": 4.93,
+    "Optimal Cost Score": 16.03,
+    "Optimal Acc. Score": 93.43,
+    "Robustness Score": 98.33,
+    "Latency Score": null,
+    "Accuracy": 78.59,
+    "Cost per 1k": 0.48
+  },
+  {
     "Router Name": "Cross-Router",
-    "Arena Score": 76.12,
+    "Arena Score": 75.75,
     "Optimal Selection Score": 17.66,
     "Optimal Cost Score": 45.49,
     "Optimal Acc. Score": 90.31,
     "Robustness Score": 67.14,
     "Latency Score": null,
     "Accuracy": 78.14,
-    "Cost per 1k": 0.3
-  },
-  {
-    "Router Name": "vllm",
-    "Arena Score": 75.3,
-    "Optimal Selection Score": 16.81,
-    "Optimal Cost Score": 25.1,
-    "Optimal Acc. Score": 89.37,
-    "Robustness Score": 67.62,
-    "Latency Score": null,
-    "Accuracy": 77.18,
-    "Cost per 1k": 0.3
-  },
-  {
-    "Router Name": "Sqwish Router",
-    "Arena Score": 75.27,
-    "Optimal Selection Score": 7.41,
-    "Optimal Cost Score": 25.1,
-    "Optimal Acc. Score": 90.47,
-    "Robustness Score": 100.0,
-    "Latency Score": null,
-    "Accuracy": 76.4,
-    "Cost per 1k": 0.18
+    "Cost per 1k": 0.4
   },
   {
     "Router Name": "Nadir-Tumbler",
@@ -44,6 +55,28 @@
     "Cost per 1k": 0.08
   },
   {
+    "Router Name": "vllm",
+    "Arena Score": 74.86,
+    "Optimal Selection Score": 16.81,
+    "Optimal Cost Score": 25.1,
+    "Optimal Acc. Score": 89.37,
+    "Robustness Score": 67.62,
+    "Latency Score": null,
+    "Accuracy": 77.18,
+    "Cost per 1k": 0.42
+  },
+  {
+    "Router Name": "nadir-caliper",
+    "Arena Score": 74.55,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 79.76,
+    "Latency Score": null,
+    "Accuracy": 75.84,
+    "Cost per 1k": 0.22
+  },
+  {
     "Router Name": "AgentForge Router",
     "Arena Score": 74.13,
     "Optimal Selection Score": 17.84,
@@ -53,6 +86,17 @@
     "Latency Score": null,
     "Accuracy": 74.72,
     "Cost per 1k": 0.13
+  },
+  {
+    "Router Name": "BARouter",
+    "Arena Score": 73.79,
+    "Optimal Selection Score": 64.41,
+    "Optimal Cost Score": 67.13,
+    "Optimal Acc. Score": 93.84,
+    "Robustness Score": 68.81,
+    "Latency Score": null,
+    "Accuracy": 75.72,
+    "Cost per 1k": 0.36
   },
   {
     "Router Name": "Weave Router",
@@ -165,17 +209,6 @@
     "Cost per 1k": 0.29
   },
   {
-    "Router Name": "BARouter",
-    "Arena Score": 67.09,
-    "Optimal Selection Score": 58.56,
-    "Optimal Cost Score": 59.03,
-    "Optimal Acc. Score": 87.91,
-    "Robustness Score": 52.38,
-    "Latency Score": null,
-    "Accuracy": 68.8,
-    "Cost per 1k": 0.63
-  },
-  {
     "Router Name": "mirt_bert",
     "Arena Score": 66.89,
     "Optimal Selection Score": 3.44,
@@ -196,6 +229,17 @@
     "Latency Score": 10.42,
     "Accuracy": 66.34,
     "Cost per 1k": 0.21
+  },
+  {
+    "Router Name": "AsiaInfo-Router",
+    "Arena Score": 65.87,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 69.52,
+    "Latency Score": null,
+    "Accuracy": 75.2,
+    "Cost per 1k": 8.54
   },
   {
     "Router Name": "gpt5",
