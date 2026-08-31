@@ -11,6 +11,17 @@
     "Cost per 1k": 0.27
   },
   {
+    "Router Name": "KT-ModelRouter",
+    "Arena Score": 76.28,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 80.48,
+    "Latency Score": null,
+    "Accuracy": 78.14,
+    "Cost per 1k": 0.27
+  },
+  {
     "Router Name": "Sqwish Router",
     "Arena Score": 76.21,
     "Optimal Selection Score": 9.04,
@@ -42,17 +53,6 @@
     "Latency Score": null,
     "Accuracy": 78.14,
     "Cost per 1k": 0.4
-  },
-  {
-    "Router Name": "Nadir-Tumbler",
-    "Arena Score": 75.17,
-    "Optimal Selection Score": null,
-    "Optimal Cost Score": null,
-    "Optimal Acc. Score": null,
-    "Robustness Score": 66.43,
-    "Latency Score": null,
-    "Accuracy": 75.34,
-    "Cost per 1k": 0.08
   },
   {
     "Router Name": "vllm",
@@ -163,6 +163,17 @@
     "Latency Score": null,
     "Accuracy": 72.05,
     "Cost per 1k": 0.2
+  },
+  {
+    "Router Name": "cruq-router",
+    "Arena Score": 70.77,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 81.67,
+    "Latency Score": null,
+    "Accuracy": 71.35,
+    "Cost per 1k": 0.18
   },
   {
     "Router Name": "chuzom-solo-v32",
