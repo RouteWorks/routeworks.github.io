@@ -441,18 +441,6 @@
       "deepseek/deepseek-v4-flash"
     ]
   },
-  "Nadir-Tumbler": {
-    "name": "Nadir-Tumbler",
-    "affiliation": "@doramirdor",
-    "githubUrl": "https://github.com/doramirdor",
-    "type": "open-source",
-    "description": "Submitted by @doramirdor.",
-    "modelPool": [
-      "qwen/qwen3-235b-a22b-2507",
-      "deepseek/deepseek-v3.2",
-      "grok-4-1-fast-reasoning"
-    ]
-  },
   "chuzom-solo-v32": {
     "name": "chuzom-solo-v32",
     "affiliation": "@ypollak2",
@@ -534,6 +522,31 @@
     "description": "Submitted by @Uncle-LL.",
     "modelPool": [
       "claude-opus-4-7",
+      "deepseek/deepseek-v4-flash"
+    ]
+  },
+  "KT-ModelRouter": {
+    "name": "KT-ModelRouter",
+    "affiliation": "@DusanBaek",
+    "githubUrl": "https://github.com/KT-A-Autonomous-Tech-Team/ModelRouter",
+    "type": "open-source",
+    "description": "Submitted by @DusanBaek.",
+    "modelPool": [
+      "deepseek/deepseek-v4-flash",
+      "deepseek/deepseek-v4-pro",
+      "google/gemma-4-31b-it",
+      "google/gemini-3-flash-preview",
+      "qwen/qwen3-235b-a22b-2507"
+    ]
+  },
+  "cruq-router": {
+    "name": "cruq-router",
+    "affiliation": "@nabaruns",
+    "githubUrl": "https://github.com/nabaruns",
+    "type": "open-source",
+    "description": "Submitted by @nabaruns.",
+    "modelPool": [
+      "qwen/qwen3-235b-a22b-2507",
       "deepseek/deepseek-v4-flash"
     ]
   }
