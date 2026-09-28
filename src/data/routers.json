@@ -536,5 +536,30 @@
       "qwen/qwen3-235b-a22b-2507",
       "deepseek/deepseek-v4-flash"
     ]
+  },
+  "R**2: Reasonometry Router": {
+    "name": "R**2: Reasonometry Router",
+    "affiliation": "@sashakolpakov",
+    "githubUrl": "https://github.com/sashakolpakov",
+    "type": "closed-source",
+    "description": "Submitted by @sashakolpakov.",
+    "modelPool": [
+      "gemini-3-flash-preview",
+      "qwen/qwen3-235b-a22b-2507"
+    ]
+  },
+  "SapientAI Auto Router": {
+    "name": "SapientAI Auto Router",
+    "affiliation": "Publicis Sapient",
+    "githubUrl": "https://github.com/subhajeet-sapient",
+    "type": "closed-source",
+    "description": "Submitted by Publicis Sapient.",
+    "modelPool": [
+      "gpt-5-nano",
+      "google/gemini-3.1-flash-lite",
+      "gemini-3-flash-preview",
+      "deepseek/deepseek-v4-flash",
+      "Qwen/Qwen3-Coder-Next"
+    ]
   }
 }

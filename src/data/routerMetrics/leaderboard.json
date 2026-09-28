@@ -44,6 +44,28 @@
     "Cost per 1k": 0.4
   },
   {
+    "Router Name": "R**2: Reasonometry Router",
+    "Arena Score": 75.53,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 93.57,
+    "Latency Score": null,
+    "Accuracy": 78.11,
+    "Cost per 1k": 0.45
+  },
+  {
+    "Router Name": "SapientAI Auto Router",
+    "Arena Score": 75.41,
+    "Optimal Selection Score": 5.93,
+    "Optimal Cost Score": 19.99,
+    "Optimal Acc. Score": 92.0,
+    "Robustness Score": 73.33,
+    "Latency Score": null,
+    "Accuracy": 77.89,
+    "Cost per 1k": 0.43
+  },
+  {
     "Router Name": "vllm",
     "Arena Score": 74.86,
     "Optimal Selection Score": 16.81,
