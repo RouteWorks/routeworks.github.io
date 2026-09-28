@@ -1,16 +1,5 @@
 [
   {
-    "Router Name": "Paix2",
-    "Arena Score": 77.63,
-    "Optimal Selection Score": 89.67,
-    "Optimal Cost Score": 62.92,
-    "Optimal Acc. Score": 100.0,
-    "Robustness Score": 77.86,
-    "Latency Score": null,
-    "Accuracy": 79.69,
-    "Cost per 1k": 0.27
-  },
-  {
     "Router Name": "KT-ModelRouter",
     "Arena Score": 76.28,
     "Optimal Selection Score": null,
