@@ -492,7 +492,7 @@
     "name": "Divyam",
     "affiliation": "@samikd",
     "githubUrl": "https://github.com/samikd",
-    "type": "open-source",
+    "type": "closed-source",
     "description": "Submitted by @samikd.",
     "modelPool": [
       "qwen/qwen3-235b-a22b-2507",
@@ -505,7 +505,7 @@
     "name": "AsiaInfo-Router",
     "affiliation": "@Uncle-LL",
     "githubUrl": "https://github.com/Uncle-LL",
-    "type": "open-source",
+    "type": "closed-source",
     "description": "Submitted by @Uncle-LL.",
     "modelPool": [
       "claude-opus-4-7",
