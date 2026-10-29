@@ -17,7 +17,7 @@
   },
   {
     "global index": "ArcMMLU_16",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "ArcMMLU_182",
@@ -33,7 +33,7 @@
   },
   {
     "global index": "ArcMMLU_349",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "ArcMMLU_378",
@@ -45,11 +45,11 @@
   },
   {
     "global index": "ArcMMLU_496",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "ArcMMLU_631",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "ArcMMLU_646",
@@ -57,7 +57,7 @@
   },
   {
     "global index": "ArcMMLU_659",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "ArcMMLU_676",
@@ -157,7 +157,7 @@
   },
   {
     "global index": "Ethics_deontology_0",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "Ethics_deontology_2",
@@ -165,15 +165,15 @@
   },
   {
     "global index": "Ethics_deontology_31",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "Ethics_deontology_32",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "Ethics_deontology_56",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "Ethics_justice_1",
@@ -413,7 +413,7 @@
   },
   {
     "global index": "MMLUPro_biology_3225",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_business_226",
@@ -621,11 +621,11 @@
   },
   {
     "global index": "MMLUPro_engineering_10701",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_engineering_10823",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_engineering_10864",
@@ -809,7 +809,7 @@
   },
   {
     "global index": "MMLUPro_philosophy_9510",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_philosophy_9536",
@@ -825,7 +825,7 @@
   },
   {
     "global index": "MMLUPro_philosophy_9943",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLUPro_physics_7773",
@@ -885,11 +885,11 @@
   },
   {
     "global index": "MMLU_formal_logic_16",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLU_formal_logic_32",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLU_formal_logic_63",
@@ -897,11 +897,11 @@
   },
   {
     "global index": "MMLU_formal_logic_7",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLU_formal_logic_70",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MMLU_formal_logic_85",
@@ -965,15 +965,15 @@
   },
   {
     "global index": "MedMCQA_1054",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MedMCQA_1298",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MedMCQA_1309",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MedMCQA_1362",
@@ -989,7 +989,7 @@
   },
   {
     "global index": "MedMCQA_2323",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MedMCQA_2366",
@@ -1009,7 +1009,7 @@
   },
   {
     "global index": "MedMCQA_643",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MedMCQA_853",
@@ -1017,7 +1017,7 @@
   },
   {
     "global index": "MusicTheoryBench_126",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MusicTheoryBench_14",
@@ -1037,7 +1037,7 @@
   },
   {
     "global index": "MusicTheoryBench_189",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "MusicTheoryBench_240",
@@ -1057,7 +1057,7 @@
   },
   {
     "global index": "MusicTheoryBench_70",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "NarrativeQA_131",
@@ -1137,7 +1137,7 @@
   },
   {
     "global index": "OpenTDB_Animals_2545",
-    "flip": 1
+    "flip": 0
   },
   {
     "global index": "OpenTDB_Animals_262",
@@ -1293,7 +1293,7 @@
   },
   {
     "global index": "PubMedQA_510",
-    "flip": 0
+    "flip": 1
   },
   {
     "global index": "PubMedQA_520",
