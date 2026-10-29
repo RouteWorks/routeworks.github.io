@@ -23254,47 +23254,47 @@
   "divyam": {
     "metrics": {
       "easy": {
-        "accuracy": 97.6,
-        "cost": 0.0003,
-        "robustness": 98.0
+        "accuracy": 97.4,
+        "cost": 0.0004,
+        "robustness": 72.7
       },
       "medium": {
-        "accuracy": 78.3,
-        "cost": 0.0006,
-        "robustness": 99.1
+        "accuracy": 81.2,
+        "cost": 0.0008,
+        "robustness": 77.0
       },
       "hard": {
-        "accuracy": 40.5,
-        "cost": 0.0007,
-        "robustness": 98.2
+        "accuracy": 45.1,
+        "cost": 0.0011,
+        "robustness": 79.8
       },
       "all": {
-        "accuracy": 78.6,
-        "cost": 0.0005,
-        "robustness": 98.3
+        "accuracy": 80.4,
+        "cost": 0.0007,
+        "robustness": 75.7
       }
     },
     "categories": {
       "Arts & recreation": {
         "metrics": {
           "easy": {
-            "accuracy": 97.3,
-            "cost": 0.0003,
+            "accuracy": 97.0,
+            "cost": 0.0005,
             "robustness": 100.0
           },
           "medium": {
-            "accuracy": 71.8,
-            "cost": 0.0005,
+            "accuracy": 81.2,
+            "cost": 0.0016,
             "robustness": 100.0
           },
           "hard": {
-            "accuracy": 26.5,
-            "cost": 0.0006,
+            "accuracy": 34.0,
+            "cost": 0.0022,
             "robustness": 100.0
           },
           "all": {
-            "accuracy": 73.1,
-            "cost": 0.0005,
+            "accuracy": 78.0,
+            "cost": 0.0013,
             "robustness": 100.0
           }
         },
@@ -23303,22 +23303,22 @@
             "metrics": {
               "easy": {
                 "accuracy": 96.6,
-                "cost": 0.0002,
+                "cost": 0.0003,
                 "robustness": 100.0
               },
               "medium": {
                 "accuracy": 94.9,
-                "cost": 0.0003,
+                "cost": 0.0006,
                 "robustness": 100.0
               },
               "hard": {
-                "accuracy": 26.8,
-                "cost": 0.0003,
+                "accuracy": 33.9,
+                "cost": 0.0011,
                 "robustness": 100.0
               },
               "all": {
-                "accuracy": 70.8,
-                "cost": 0.0003,
+                "accuracy": 73.4,
+                "cost": 0.0007,
                 "robustness": 100.0
               }
             }
@@ -23326,23 +23326,23 @@
           "Music": {
             "metrics": {
               "easy": {
-                "accuracy": 96.0,
-                "cost": 0.0003,
+                "accuracy": 98.0,
+                "cost": 0.0005,
                 "robustness": 100.0
               },
               "medium": {
-                "accuracy": 56.0,
-                "cost": 0.0006,
+                "accuracy": 69.0,
+                "cost": 0.0022,
                 "robustness": 100.0
               },
               "hard": {
                 "accuracy": 24.0,
-                "cost": 0.0006,
+                "cost": 0.0034,
                 "robustness": 100.0
               },
               "all": {
-                "accuracy": 69.2,
-                "cost": 0.0005,
+                "accuracy": 76.2,
+                "cost": 0.0016,
                 "robustness": 100.0
               }
             }
@@ -23350,23 +23350,23 @@
           "Sports, games and entertainment": {
             "metrics": {
               "easy": {
-                "accuracy": 98.6,
-                "cost": 0.0004,
+                "accuracy": 96.4,
+                "cost": 0.0006,
                 "robustness": 100.0
               },
               "medium": {
-                "accuracy": 81.0,
-                "cost": 0.0006,
+                "accuracy": 90.0,
+                "cost": 0.0013,
                 "robustness": 100.0
               },
               "hard": {
-                "accuracy": 27.3,
-                "cost": 0.0009,
+                "accuracy": 37.9,
+                "cost": 0.0028,
                 "robustness": 100.0
               },
               "all": {
-                "accuracy": 77.5,
-                "cost": 0.0006,
+                "accuracy": 81.7,
+                "cost": 0.0013,
                 "robustness": 100.0
               }
             }
@@ -23376,48 +23376,48 @@
       "Computer science, information, and general works": {
         "metrics": {
           "easy": {
-            "accuracy": 99.0,
-            "cost": 0.0003,
-            "robustness": 100.0
+            "accuracy": 98.4,
+            "cost": 0.0004,
+            "robustness": 73.1
           },
           "medium": {
-            "accuracy": 90.9,
-            "cost": 0.0008,
-            "robustness": 100.0
+            "accuracy": 89.2,
+            "cost": 0.0006,
+            "robustness": 76.2
           },
           "hard": {
-            "accuracy": 65.7,
-            "cost": 0.0016,
-            "robustness": 93.3
+            "accuracy": 53.9,
+            "cost": 0.0013,
+            "robustness": 100.0
           },
           "all": {
-            "accuracy": 90.5,
-            "cost": 0.0007,
-            "robustness": 98.4
+            "accuracy": 87.6,
+            "cost": 0.0006,
+            "robustness": 80.6
           }
         },
         "subcategories": {
           "Computer science, knowledge, and systems": {
             "metrics": {
               "easy": {
-                "accuracy": 99.8,
+                "accuracy": 98.8,
                 "cost": 0.0004,
-                "robustness": 100.0
+                "robustness": 76.9
               },
               "medium": {
-                "accuracy": 93.6,
-                "cost": 0.0009,
-                "robustness": 100.0
+                "accuracy": 90.7,
+                "cost": 0.0006,
+                "robustness": 76.5
               },
               "hard": {
-                "accuracy": 73.7,
-                "cost": 0.0018,
-                "robustness": 92.3
+                "accuracy": 59.3,
+                "cost": 0.0015,
+                "robustness": 100.0
               },
               "all": {
-                "accuracy": 92.0,
-                "cost": 0.0009,
-                "robustness": 97.7
+                "accuracy": 87.5,
+                "cost": 0.0007,
+                "robustness": 83.7
               }
             }
           },
@@ -23425,23 +23425,23 @@
             "metrics": {
               "easy": {
                 "accuracy": 97.8,
-                "cost": 0.0003,
-                "robustness": 100.0
+                "cost": 0.0004,
+                "robustness": 69.2
               },
               "medium": {
-                "accuracy": 78.8,
-                "cost": 0.0003,
-                "robustness": 100.0
+                "accuracy": 82.4,
+                "cost": 0.0005,
+                "robustness": 75.0
               },
               "hard": {
-                "accuracy": 19.4,
-                "cost": 0.0003,
+                "accuracy": 22.2,
+                "cost": 0.0006,
                 "robustness": 100.0
               },
               "all": {
-                "accuracy": 86.6,
-                "cost": 0.0003,
-                "robustness": 100.0
+                "accuracy": 87.6,
+                "cost": 0.0004,
+                "robustness": 73.7
               }
             }
           }
@@ -23450,24 +23450,24 @@
       "History": {
         "metrics": {
           "easy": {
-            "accuracy": 98.1,
-            "cost": 0.0003,
-            "robustness": 95.7
+            "accuracy": 98.7,
+            "cost": 0.0004,
+            "robustness": 65.2
           },
           "medium": {
-            "accuracy": 83.1,
-            "cost": 0.0004,
-            "robustness": 100.0
+            "accuracy": 86.4,
+            "cost": 0.0006,
+            "robustness": 83.3
           },
           "hard": {
-            "accuracy": 28.9,
-            "cost": 0.0004,
-            "robustness": 100.0
+            "accuracy": 37.6,
+            "cost": 0.0009,
+            "robustness": 70.0
           },
           "all": {
-            "accuracy": 79.6,
-            "cost": 0.0003,
-            "robustness": 97.4
+            "accuracy": 82.6,
+            "cost": 0.0005,
+            "robustness": 69.2
           }
         },
         "subcategories": {
@@ -23475,23 +23475,23 @@
             "metrics": {
               "easy": {
                 "accuracy": 97.6,
-                "cost": 0.0002,
-                "robustness": 100.0
+                "cost": 0.0003,
+                "robustness": 75.0
               },
               "medium": {
                 "accuracy": 100.0,
-                "cost": 0.0002,
+                "cost": 0.0003,
                 "robustness": 0
               },
               "hard": {
                 "accuracy": 0.0,
-                "cost": 0.0003,
+                "cost": 0.0,
                 "robustness": 0
               },
               "all": {
                 "accuracy": 96.2,
-                "cost": 0.0002,
-                "robustness": 100.0
+                "cost": 0.0003,
+                "robustness": 75.0
               }
             }
           },
@@ -23500,46 +23500,46 @@
               "easy": {
                 "accuracy": 99.1,
                 "cost": 0.0002,
-                "robustness": 100.0
+                "robustness": 62.5
               },
               "medium": {
-                "accuracy": 62.1,
-                "cost": 0.0002,
+                "accuracy": 65.5,
+                "cost": 0.0004,
                 "robustness": 100.0
               },
               "hard": {
-                "accuracy": 58.3,
-                "cost": 0.0002,
+                "accuracy": 66.7,
+                "cost": 0.0007,
                 "robustness": 0
               },
               "all": {
-                "accuracy": 88.7,
-                "cost": 0.0002,
-                "robustness": 100.0
+                "accuracy": 90.0,
+                "cost": 0.0003,
+                "robustness": 66.7
               }
             }
           },
           "History": {
             "metrics": {
               "easy": {
-                "accuracy": 97.8,
-                "cost": 0.0004,
-                "robustness": 90.9
+                "accuracy": 98.7,
+                "cost": 0.0005,
+                "robustness": 63.6
               },
               "medium": {
-                "accuracy": 86.3,
-                "cost": 0.0004,
-                "robustness": 100.0
+                "accuracy": 89.9,
+                "cost": 0.0007,
+                "robustness": 80.0
               },
               "hard": {
-                "accuracy": 26.5,
-                "cost": 0.0004,
-                "robustness": 100.0
+                "accuracy": 35.3,
+                "cost": 0.0009,
+                "robustness": 70.0
               },
               "all": {
-                "accuracy": 75.1,
-                "cost": 0.0004,
-                "robustness": 96.2
+                "accuracy": 78.9,
+                "cost": 0.0006,
+                "robustness": 69.2
               }
             }
           }
@@ -23550,22 +23550,22 @@
           "easy": {
             "accuracy": 93.3,
             "cost": 0.0003,
-            "robustness": 100.0
+            "robustness": 54.5
           },
           "medium": {
-            "accuracy": 50.3,
-            "cost": 0.0004,
-            "robustness": 100.0
+            "accuracy": 52.1,
+            "cost": 0.0006,
+            "robustness": 66.7
           },
           "hard": {
-            "accuracy": 56.2,
+            "accuracy": 57.8,
             "cost": 0.0005,
-            "robustness": 96.0
+            "robustness": 64.0
           },
           "all": {
-            "accuracy": 65.9,
-            "cost": 0.0004,
-            "robustness": 97.8
+            "accuracy": 67.0,
+            "cost": 0.0005,
+            "robustness": 62.2
           }
         },
         "subcategories": {
@@ -23574,22 +23574,22 @@
               "easy": {
                 "accuracy": 93.3,
                 "cost": 0.0003,
-                "robustness": 100.0
+                "robustness": 54.5
               },
               "medium": {
-                "accuracy": 50.3,
-                "cost": 0.0004,
-                "robustness": 100.0
+                "accuracy": 52.1,
+                "cost": 0.0006,
+                "robustness": 66.7
               },
               "hard": {
-                "accuracy": 56.2,
+                "accuracy": 57.8,
                 "cost": 0.0005,
-                "robustness": 96.0
+                "robustness": 64.0
               },
               "all": {
-                "accuracy": 65.9,
-                "cost": 0.0004,
-                "robustness": 97.8
+                "accuracy": 67.0,
+                "cost": 0.0005,
+                "robustness": 62.2
               }
             }
           }
@@ -23600,22 +23600,22 @@
           "easy": {
             "accuracy": 100.0,
             "cost": 0.0003,
-            "robustness": 100.0
+            "robustness": 66.7
           },
           "medium": {
-            "accuracy": 83.4,
-            "cost": 0.0003,
-            "robustness": 100.0
+            "accuracy": 90.5,
+            "cost": 0.0006,
+            "robustness": 50.0
           },
           "hard": {
-            "accuracy": 40.1,
-            "cost": 0.0005,
-            "robustness": 100.0
+            "accuracy": 49.2,
+            "cost": 0.0011,
+            "robustness": 83.3
           },
           "all": {
-            "accuracy": 53.9,
-            "cost": 0.0005,
-            "robustness": 100.0
+            "accuracy": 61.4,
+            "cost": 0.0009,
+            "robustness": 79.3
           }
         },
         "subcategories": {
@@ -23624,22 +23624,22 @@
               "easy": {
                 "accuracy": 100.0,
                 "cost": 0.0003,
-                "robustness": 100.0
+                "robustness": 66.7
               },
               "medium": {
-                "accuracy": 83.4,
-                "cost": 0.0003,
-                "robustness": 100.0
+                "accuracy": 90.5,
+                "cost": 0.0006,
+                "robustness": 50.0
               },
               "hard": {
-                "accuracy": 40.1,
-                "cost": 0.0005,
-                "robustness": 100.0
+                "accuracy": 49.2,
+                "cost": 0.0011,
+                "robustness": 83.3
               },
               "all": {
-                "accuracy": 53.9,
-                "cost": 0.0005,
-                "robustness": 100.0
+                "accuracy": 61.4,
+                "cost": 0.0009,
+                "robustness": 79.3
               }
             }
           }
@@ -23648,96 +23648,96 @@
       "Philosophy and psychology": {
         "metrics": {
           "easy": {
-            "accuracy": 97.1,
+            "accuracy": 95.8,
             "cost": 0.0003,
-            "robustness": 92.6
+            "robustness": 66.7
           },
           "medium": {
-            "accuracy": 71.1,
-            "cost": 0.0004,
-            "robustness": 100.0
+            "accuracy": 75.4,
+            "cost": 0.0006,
+            "robustness": 80.0
           },
           "hard": {
-            "accuracy": 35.8,
-            "cost": 0.0004,
-            "robustness": 100.0
+            "accuracy": 37.0,
+            "cost": 0.0009,
+            "robustness": 57.1
           },
           "all": {
-            "accuracy": 82.1,
-            "cost": 0.0003,
-            "robustness": 95.5
+            "accuracy": 82.9,
+            "cost": 0.0005,
+            "robustness": 68.2
           }
         },
         "subcategories": {
           "Ethics": {
             "metrics": {
               "easy": {
-                "accuracy": 95.7,
-                "cost": 0.0003,
-                "robustness": 92.9
+                "accuracy": 93.0,
+                "cost": 0.0002,
+                "robustness": 64.3
               },
               "medium": {
-                "accuracy": 42.4,
-                "cost": 0.0003,
-                "robustness": 100.0
+                "accuracy": 48.2,
+                "cost": 0.0006,
+                "robustness": 80.0
               },
               "hard": {
                 "accuracy": 0.0,
                 "cost": 0.0003,
-                "robustness": 100.0
+                "robustness": 0.0
               },
               "all": {
                 "accuracy": 75.3,
                 "cost": 0.0003,
-                "robustness": 95.2
+                "robustness": 61.9
               }
             }
           },
           "Philosophical logic": {
             "metrics": {
               "easy": {
-                "accuracy": 98.5,
+                "accuracy": 100.0,
                 "cost": 0.0004,
-                "robustness": 100.0
+                "robustness": 25.0
               },
               "medium": {
-                "accuracy": 84.2,
-                "cost": 0.0005,
+                "accuracy": 94.7,
+                "cost": 0.0009,
                 "robustness": 100.0
               },
               "hard": {
-                "accuracy": 60.0,
-                "cost": 0.0007,
+                "accuracy": 80.0,
+                "cost": 0.0017,
                 "robustness": 0
               },
               "all": {
-                "accuracy": 91.7,
-                "cost": 0.0004,
-                "robustness": 100.0
+                "accuracy": 97.2,
+                "cost": 0.0006,
+                "robustness": 57.1
               }
             }
           },
           "Philosophy": {
             "metrics": {
               "easy": {
-                "accuracy": 97.3,
-                "cost": 0.0003,
-                "robustness": 100.0
+                "accuracy": 94.6,
+                "cost": 0.0005,
+                "robustness": 66.7
               },
               "medium": {
                 "accuracy": 95.0,
-                "cost": 0.0004,
-                "robustness": 100.0
+                "cost": 0.0008,
+                "robustness": 50.0
               },
               "hard": {
-                "accuracy": 42.2,
-                "cost": 0.0004,
+                "accuracy": 44.4,
+                "cost": 0.0011,
                 "robustness": 100.0
               },
               "all": {
                 "accuracy": 76.2,
-                "cost": 0.0004,
-                "robustness": 100.0
+                "cost": 0.0008,
+                "robustness": 75.0
               }
             }
           },
@@ -23745,8 +23745,8 @@
             "metrics": {
               "easy": {
                 "accuracy": 98.3,
-                "cost": 0.0003,
-                "robustness": 83.3
+                "cost": 0.0004,
+                "robustness": 100.0
               },
               "medium": {
                 "accuracy": 91.7,
@@ -23754,12 +23754,12 @@
                 "robustness": 0
               },
               "hard": {
-                "accuracy": 38.9,
-                "cost": 0.0004,
-                "robustness": 100.0
+                "accuracy": 33.3,
+                "cost": 0.0005,
+                "robustness": 50.0
               },
               "all": {
-                "accuracy": 90.9,
+                "accuracy": 90.4,
                 "cost": 0.0004,
                 "robustness": 87.5
               }
@@ -23770,24 +23770,24 @@
       "Science": {
         "metrics": {
           "easy": {
-            "accuracy": 98.6,
+            "accuracy": 99.0,
             "cost": 0.0003,
-            "robustness": 100.0
+            "robustness": 69.2
           },
           "medium": {
-            "accuracy": 83.3,
+            "accuracy": 84.3,
             "cost": 0.0006,
-            "robustness": 100.0
+            "robustness": 76.2
           },
           "hard": {
-            "accuracy": 26.3,
-            "cost": 0.0008,
-            "robustness": 100.0
+            "accuracy": 41.2,
+            "cost": 0.0011,
+            "robustness": 88.9
           },
           "all": {
-            "accuracy": 83.9,
+            "accuracy": 86.4,
             "cost": 0.0005,
-            "robustness": 100.0
+            "robustness": 73.9
           }
         },
         "subcategories": {
@@ -23796,7 +23796,7 @@
               "easy": {
                 "accuracy": 100.0,
                 "cost": 0.0002,
-                "robustness": 100.0
+                "robustness": 50.0
               },
               "medium": {
                 "accuracy": 80.0,
@@ -23811,7 +23811,7 @@
               "all": {
                 "accuracy": 96.0,
                 "cost": 0.0002,
-                "robustness": 100.0
+                "robustness": 50.0
               }
             }
           },
@@ -23820,11 +23820,11 @@
               "easy": {
                 "accuracy": 100.0,
                 "cost": 0.0004,
-                "robustness": 100.0
+                "robustness": 71.4
               },
               "medium": {
                 "accuracy": 100.0,
-                "cost": 0.0005,
+                "cost": 0.0006,
                 "robustness": 0
               },
               "hard": {
@@ -23835,7 +23835,7 @@
               "all": {
                 "accuracy": 96.5,
                 "cost": 0.0004,
-                "robustness": 100.0
+                "robustness": 71.4
               }
             }
           },
@@ -23844,22 +23844,22 @@
               "easy": {
                 "accuracy": 100.0,
                 "cost": 0.0004,
-                "robustness": 100.0
+                "robustness": 33.3
               },
               "medium": {
-                "accuracy": 94.1,
+                "accuracy": 91.2,
                 "cost": 0.0006,
-                "robustness": 100.0
+                "robustness": 50.0
               },
               "hard": {
-                "accuracy": 23.1,
-                "cost": 0.0005,
+                "accuracy": 38.5,
+                "cost": 0.001,
                 "robustness": 0
               },
               "all": {
-                "accuracy": 86.7,
+                "accuracy": 87.8,
                 "cost": 0.0005,
-                "robustness": 100.0
+                "robustness": 40.0
               }
             }
           },
@@ -23868,70 +23868,70 @@
               "easy": {
                 "accuracy": 98.4,
                 "cost": 0.0003,
-                "robustness": 100.0
+                "robustness": 75.0
               },
               "medium": {
-                "accuracy": 69.5,
-                "cost": 0.0003,
-                "robustness": 100.0
+                "accuracy": 72.9,
+                "cost": 0.0005,
+                "robustness": 83.3
               },
               "hard": {
-                "accuracy": 23.1,
-                "cost": 0.0003,
-                "robustness": 100.0
+                "accuracy": 46.2,
+                "cost": 0.0008,
+                "robustness": 0.0
               },
               "all": {
-                "accuracy": 90.3,
+                "accuracy": 91.8,
                 "cost": 0.0003,
-                "robustness": 100.0
+                "robustness": 73.3
               }
             }
           },
           "Mathematics": {
             "metrics": {
               "easy": {
-                "accuracy": 97.7,
-                "cost": 0.0004,
-                "robustness": 100.0
+                "accuracy": 98.5,
+                "cost": 0.0002,
+                "robustness": 81.8
               },
               "medium": {
-                "accuracy": 85.2,
-                "cost": 0.0007,
-                "robustness": 100.0
+                "accuracy": 84.8,
+                "cost": 0.0006,
+                "robustness": 81.8
               },
               "hard": {
-                "accuracy": 31.5,
-                "cost": 0.0013,
+                "accuracy": 55.1,
+                "cost": 0.0016,
                 "robustness": 100.0
               },
               "all": {
-                "accuracy": 82.7,
-                "cost": 0.0007,
-                "robustness": 100.0
+                "accuracy": 86.4,
+                "cost": 0.0006,
+                "robustness": 85.2
               }
             }
           },
           "Physics": {
             "metrics": {
               "easy": {
-                "accuracy": 97.7,
-                "cost": 0.0003,
-                "robustness": 100.0
+                "accuracy": 100.0,
+                "cost": 0.0004,
+                "robustness": 33.3
               },
               "medium": {
-                "accuracy": 88.1,
-                "cost": 0.0006,
-                "robustness": 100.0
+                "accuracy": 85.7,
+                "cost": 0.0007,
+                "robustness": 50.0
               },
               "hard": {
-                "accuracy": 45.5,
-                "cost": 0.0005,
+                "accuracy": 36.4,
+                "cost": 0.0006,
                 "robustness": 0
               },
               "all": {
-                "accuracy": 87.6,
+                "accuracy": 86.6,
                 "cost": 0.0005,
-                "robustness": 100.0
+                "robustness": 40.0
               }
             }
           },
@@ -23939,23 +23939,23 @@
             "metrics": {
               "easy": {
                 "accuracy": 100.0,
-                "cost": 0.0003,
-                "robustness": 100.0
+                "cost": 0.0002,
+                "robustness": 80.0
               },
               "medium": {
-                "accuracy": 64.0,
-                "cost": 0.0003,
+                "accuracy": 84.0,
+                "cost": 0.0006,
                 "robustness": 0
               },
               "hard": {
-                "accuracy": 13.6,
-                "cost": 0.0003,
+                "accuracy": 20.3,
+                "cost": 0.0008,
                 "robustness": 100.0
               },
               "all": {
-                "accuracy": 47.4,
-                "cost": 0.0003,
-                "robustness": 100.0
+                "accuracy": 55.3,
+                "cost": 0.0006,
+                "robustness": 87.5
               }
             }
           }
@@ -23964,71 +23964,71 @@
       "Social Science": {
         "metrics": {
           "easy": {
-            "accuracy": 96.6,
-            "cost": 0.0004,
-            "robustness": 100.0
+            "accuracy": 97.0,
+            "cost": 0.0005,
+            "robustness": 88.9
           },
           "medium": {
-            "accuracy": 77.9,
-            "cost": 0.0005,
-            "robustness": 91.7
+            "accuracy": 80.6,
+            "cost": 0.0008,
+            "robustness": 75.0
           },
           "hard": {
-            "accuracy": 22.8,
-            "cost": 0.0005,
-            "robustness": 100.0
+            "accuracy": 26.2,
+            "cost": 0.0011,
+            "robustness": 85.7
           },
           "all": {
-            "accuracy": 74.1,
-            "cost": 0.0005,
-            "robustness": 97.3
+            "accuracy": 76.0,
+            "cost": 0.0007,
+            "robustness": 83.8
           }
         },
         "subcategories": {
           "Economics": {
             "metrics": {
               "easy": {
-                "accuracy": 96.2,
-                "cost": 0.0004,
-                "robustness": 100.0
-              },
-              "medium": {
-                "accuracy": 77.9,
-                "cost": 0.0006,
+                "accuracy": 97.3,
+                "cost": 0.0005,
                 "robustness": 83.3
               },
+              "medium": {
+                "accuracy": 83.4,
+                "cost": 0.0008,
+                "robustness": 50.0
+              },
               "hard": {
-                "accuracy": 22.5,
-                "cost": 0.0006,
+                "accuracy": 26.2,
+                "cost": 0.0012,
                 "robustness": 100.0
               },
               "all": {
-                "accuracy": 75.4,
-                "cost": 0.0005,
-                "robustness": 95.2
+                "accuracy": 78.6,
+                "cost": 0.0008,
+                "robustness": 76.2
               }
             }
           },
           "Law": {
             "metrics": {
               "easy": {
-                "accuracy": 98.5,
-                "cost": 0.0005,
+                "accuracy": 96.9,
+                "cost": 0.0008,
                 "robustness": 100.0
               },
               "medium": {
-                "accuracy": 82.5,
-                "cost": 0.0005,
+                "accuracy": 77.8,
+                "cost": 0.001,
                 "robustness": 100.0
               },
               "hard": {
-                "accuracy": 33.3,
-                "cost": 0.0005,
+                "accuracy": 23.3,
+                "cost": 0.001,
                 "robustness": 100.0
               },
               "all": {
-                "accuracy": 79.7,
-                "cost": 0.0005,
+                "accuracy": 75.3,
+                "cost": 0.0009,
                 "robustness": 100.0
               }
             }
@@ -24037,23 +24037,23 @@
             "metrics": {
               "easy": {
                 "accuracy": 95.7,
-                "cost": 0.0002,
+                "cost": 0.0001,
                 "robustness": 100.0
               },
               "medium": {
                 "accuracy": 33.3,
-                "cost": 0.0002,
+                "cost": 0.0001,
                 "robustness": 0
               },
               "hard": {
-                "accuracy": 0.0,
-                "cost": 0.0002,
-                "robustness": 100.0
+                "accuracy": 20.0,
+                "cost": 0.0001,
+                "robustness": 0.0
               },
               "all": {
-                "accuracy": 78.7,
-                "cost": 0.0002,
-                "robustness": 100.0
+                "accuracy": 80.3,
+                "cost": 0.0001,
+                "robustness": 75.0
               }
             }
           },
@@ -24061,22 +24061,22 @@
             "metrics": {
               "easy": {
                 "accuracy": 100.0,
-                "cost": 0.0002,
+                "cost": 0.0005,
                 "robustness": 0
               },
               "medium": {
-                "accuracy": 83.3,
-                "cost": 0.0003,
+                "accuracy": 88.9,
+                "cost": 0.0007,
                 "robustness": 100.0
               },
               "hard": {
-                "accuracy": 17.6,
-                "cost": 0.0003,
+                "accuracy": 29.4,
+                "cost": 0.001,
                 "robustness": 100.0
               },
               "all": {
-                "accuracy": 43.6,
-                "cost": 0.0003,
+                "accuracy": 52.7,
+                "cost": 0.0009,
                 "robustness": 100.0
               }
             }
@@ -24086,48 +24086,48 @@
       "Technology": {
         "metrics": {
           "easy": {
-            "accuracy": 97.0,
-            "cost": 0.0004,
-            "robustness": 97.7
+            "accuracy": 96.1,
+            "cost": 0.0005,
+            "robustness": 76.7
           },
           "medium": {
-            "accuracy": 75.5,
-            "cost": 0.0006,
-            "robustness": 100.0
+            "accuracy": 80.5,
+            "cost": 0.0008,
+            "robustness": 71.4
           },
           "hard": {
-            "accuracy": 30.6,
-            "cost": 0.0005,
-            "robustness": 100.0
+            "accuracy": 36.3,
+            "cost": 0.0009,
+            "robustness": 85.7
           },
           "all": {
-            "accuracy": 83.1,
-            "cost": 0.0005,
-            "robustness": 98.6
+            "accuracy": 84.7,
+            "cost": 0.0006,
+            "robustness": 76.1
           }
         },
         "subcategories": {
           "Engineering": {
             "metrics": {
               "easy": {
-                "accuracy": 97.6,
-                "cost": 0.0005,
+                "accuracy": 96.8,
+                "cost": 0.0004,
                 "robustness": 100.0
               },
               "medium": {
-                "accuracy": 89.2,
+                "accuracy": 91.6,
                 "cost": 0.0008,
-                "robustness": 100.0
+                "robustness": 76.9
               },
               "hard": {
-                "accuracy": 54.8,
-                "cost": 0.0008,
+                "accuracy": 61.9,
+                "cost": 0.0012,
                 "robustness": 100.0
               },
               "all": {
-                "accuracy": 88.1,
+                "accuracy": 89.9,
                 "cost": 0.0007,
-                "robustness": 100.0
+                "robustness": 84.2
               }
             }
           },
@@ -24136,11 +24136,11 @@
               "easy": {
                 "accuracy": 96.7,
                 "cost": 0.0003,
-                "robustness": 100.0
+                "robustness": 75.0
               },
               "medium": {
-                "accuracy": 63.6,
-                "cost": 0.0003,
+                "accuracy": 72.7,
+                "cost": 0.0005,
                 "robustness": 100.0
               },
               "hard": {
@@ -24149,33 +24149,33 @@
                 "robustness": 0
               },
               "all": {
-                "accuracy": 90.4,
+                "accuracy": 91.8,
                 "cost": 0.0003,
-                "robustness": 100.0
+                "robustness": 80.0
               }
             }
           },
           "Medicine and health": {
             "metrics": {
               "easy": {
-                "accuracy": 96.9,
-                "cost": 0.0004,
-                "robustness": 97.1
+                "accuracy": 95.9,
+                "cost": 0.0005,
+                "robustness": 73.5
               },
               "medium": {
-                "accuracy": 66.5,
-                "cost": 0.0004,
-                "robustness": 100.0
+                "accuracy": 73.1,
+                "cost": 0.0007,
+                "robustness": 57.1
               },
               "hard": {
-                "accuracy": 21.2,
-                "cost": 0.0004,
-                "robustness": 100.0
+                "accuracy": 26.5,
+                "cost": 0.0009,
+                "robustness": 83.3
               },
               "all": {
-                "accuracy": 80.8,
-                "cost": 0.0004,
-                "robustness": 97.9
+                "accuracy": 82.5,
+                "cost": 0.0006,
+                "robustness": 72.3
               }
             }
           }
