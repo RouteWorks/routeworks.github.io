@@ -1,5 +1,27 @@
 [
   {
+    "Router Name": "BizRouter",
+    "Arena Score": 77.04,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 97.38,
+    "Latency Score": null,
+    "Accuracy": 81.61,
+    "Cost per 1k": 1.0
+  },
+  {
+    "Router Name": "Divyam",
+    "Arena Score": 76.88,
+    "Optimal Selection Score": 6.57,
+    "Optimal Cost Score": 16.91,
+    "Optimal Acc. Score": 92.85,
+    "Robustness Score": 75.71,
+    "Latency Score": null,
+    "Accuracy": 80.43,
+    "Cost per 1k": 0.65
+  },
+  {
     "Router Name": "KT-ModelRouter",
     "Arena Score": 76.28,
     "Optimal Selection Score": null,
@@ -30,17 +52,6 @@
     "Robustness Score": 99.76,
     "Latency Score": null,
     "Accuracy": 78.94,
-    "Cost per 1k": 0.48
-  },
-  {
-    "Router Name": "Divyam",
-    "Arena Score": 75.85,
-    "Optimal Selection Score": 4.93,
-    "Optimal Cost Score": 16.03,
-    "Optimal Acc. Score": 93.43,
-    "Robustness Score": 98.33,
-    "Latency Score": null,
-    "Accuracy": 78.59,
     "Cost per 1k": 0.48
   },
   {
@@ -119,6 +130,17 @@
     "Latency Score": null,
     "Accuracy": 75.72,
     "Cost per 1k": 0.36
+  },
+  {
+    "Router Name": "NuRoute Artemis",
+    "Arena Score": 72.87,
+    "Optimal Selection Score": null,
+    "Optimal Cost Score": null,
+    "Optimal Acc. Score": null,
+    "Robustness Score": 80.0,
+    "Latency Score": null,
+    "Accuracy": 75.47,
+    "Cost per 1k": 0.6
   },
   {
     "Router Name": "Weave Router",
