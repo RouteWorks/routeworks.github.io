@@ -121,17 +121,6 @@
     "Cost per 1k": 0.36
   },
   {
-    "Router Name": "AgentForge Router",
-    "Arena Score": 74.2,
-    "Optimal Selection Score": 18.08,
-    "Optimal Cost Score": 53.56,
-    "Optimal Acc. Score": 98.69,
-    "Robustness Score": 40.48,
-    "Latency Score": null,
-    "Accuracy": 74.8,
-    "Cost per 1k": 0.13
-  },
-  {
     "Router Name": "NuRoute Artemis",
     "Arena Score": 73.47,
     "Optimal Selection Score": null,
@@ -184,17 +173,6 @@
     "Robustness Score": 96.67,
     "Latency Score": null,
     "Accuracy": 71.46,
-    "Cost per 1k": 0.04
-  },
-  {
-    "Router Name": "R2-Router",
-    "Arena Score": 71.86,
-    "Optimal Selection Score": 66.87,
-    "Optimal Cost Score": 80.13,
-    "Optimal Acc. Score": 99.85,
-    "Robustness Score": 45.71,
-    "Latency Score": null,
-    "Accuracy": 71.18,
     "Cost per 1k": 0.04
   },
   {
